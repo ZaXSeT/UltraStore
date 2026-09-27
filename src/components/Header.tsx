@@ -6,7 +6,7 @@ import { ShoppingBag, Menu, X, Compass } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Header() {
-  const { totalItemCount } = useCart();
+  const { totalItemCount, openCart } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -103,8 +103,8 @@ export function Header() {
 
         {/* Actions */}
         <div className="flex items-center space-x-3 sm:space-x-4">
-          <Link
-            href="/cart"
+          <button
+            onClick={openCart}
             className="relative px-3.5 py-2 rounded bg-[#FFFFFF] border border-[#202724] text-[#202724] hover:bg-[#184E46] hover:text-[#F4F1EA] transition-all flex items-center gap-2 font-mono text-xs font-bold shadow-[2px_2px_0px_#202724]"
             aria-label="Keranjang"
           >
@@ -115,7 +115,7 @@ export function Header() {
                 {totalItemCount}
               </span>
             )}
-          </Link>
+          </button>
 
           {/* Mobile Menu Button */}
           <button

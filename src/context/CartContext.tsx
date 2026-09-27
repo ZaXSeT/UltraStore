@@ -11,6 +11,9 @@ interface CartContextType {
   clearCart: () => void;
   getGroupedItems: () => OrderGroup[];
   totalItemCount: number;
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -18,6 +21,10 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
 
   useEffect(() => {
     try {
@@ -133,6 +140,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         getGroupedItems,
         totalItemCount,
+        isCartOpen,
+        openCart,
+        closeCart,
       }}
     >
       {children}

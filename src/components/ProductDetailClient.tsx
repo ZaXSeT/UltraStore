@@ -10,7 +10,7 @@ import { ProductImage } from "./ProductImage";
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const router = useRouter();
-  const { addItem } = useCart();
+  const { addItem, openCart, closeCart } = useCart();
 
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant>(product.variants[0]);
   const [selectedOfferType, setSelectedOfferType] = useState<OfferType>(
@@ -58,12 +58,14 @@ export function ProductDetailClient({ product }: { product: Product }) {
       image: activeImage,
     });
     setAddedNotice(true);
+    openCart();
     setTimeout(() => setAddedNotice(false), 2500);
   };
 
   const handleBuyNow = () => {
     handleAddToCart();
-    router.push("/cart");
+    closeCart();
+    router.push(`/checkout?group=${encodeURIComponent(selectedOfferType === "PREORDER" ? `PREORDER:${matchedOffer.batchId || "default"}` : "READY")}`);
   };
 
   return (
