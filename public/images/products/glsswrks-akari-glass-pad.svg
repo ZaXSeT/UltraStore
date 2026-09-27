@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Clean Studio Background -->
+    <rect width="800" height="800" fill="#FFFFFF" rx="24"/>
+    <rect x="12" y="12" width="776" height="776" rx="16" stroke="#F1F5F9" stroke-width="2"/>
+
+    <!-- Subtle Tech Coordinate Grid -->
+    <g stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 8" opacity="0.6">
+      <line x1="100" y1="0" x2="100" y2="800" />
+      <line x1="700" y1="0" x2="700" y2="800" />
+      <line x1="0" y1="100" x2="800" y2="100" />
+      <line x1="0" y1="700" x2="800" y2="700" />
+    </g>
+
+    <!-- Brand Meta Header -->
+    <g opacity="0.85">
+      <rect x="40" y="40" width="8" height="8" rx="2" fill="#8B5CF6" />
+      <text x="56" y="48" fill="#0F172A" font-size="12" font-family="monospace" font-weight="bold" letter-spacing="1.5">// GLSSWRKS</text>
+      <text x="760" y="48" fill="#64748B" font-size="11" font-family="monospace" text-anchor="end">Tempered Glass Micro-Etched</text>
+    </g>
+
+    <!-- Product Artwork -->
+    
+      <!-- Shadow -->
+      <rect x="160" y="550" width="480" height="30" rx="16" fill="#000000" fill-opacity="0.1" filter="blur(8px)" />
+
+      <!-- Glass Mousepad Base -->
+      <rect x="150" y="210" width="500" height="380" rx="20" fill="#0F172A" stroke="#8B5CF6" stroke-width="4" />
+
+      <!-- Glass Layer with Artwork Gradient -->
+      <defs>
+        <linearGradient id="akariWave" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#4C1D95" />
+          <stop offset="40%" stop-color="#7C3AED" />
+          <stop offset="70%" stop-color="#C084FC" />
+          <stop offset="100%" stop-color="#38BDF8" />
+        </linearGradient>
+      </defs>
+      <rect x="160" y="220" width="480" height="360" rx="14" fill="url(#akariWave)" opacity="0.9" />
+
+      <!-- Geometric Wave Art Lines -->
+      <path d="M 160 480 Q 280 320 400 420 T 640 340 L 640 580 L 160 580 Z" fill="#2E1065" opacity="0.7" />
+      <path d="M 160 510 Q 300 360 440 460 T 640 380" stroke="#F472B6" stroke-width="4" fill="none" opacity="0.8" />
+      <path d="M 160 430 Q 320 280 480 380 T 640 300" stroke="#38BDF8" stroke-width="3" fill="none" opacity="0.8" />
+
+      <!-- Glass Specular Reflection Highlight -->
+      <path d="M 170 230 L 400 230 L 250 480 L 170 480 Z" fill="#FFFFFF" opacity="0.12" />
+
+      <!-- GLSSWRKS Branding -->
+      <rect x="520" y="240" width="100" height="24" rx="4" fill="#0F172A" fill-opacity="0.8" />
+      <text x="570" y="256" fill="#F8FAFC" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">AKARI // 01</text>
+    
+
+    <!-- Corner Framing Target Markers -->
+    <path d="M 40 60 L 40 40 L 60 40" stroke="#CBD5E1" stroke-width="2" fill="none" />
+    <path d="M 760 60 L 760 40 L 740 40" stroke="#CBD5E1" stroke-width="2" fill="none" />
+    <path d="M 40 740 L 40 760 L 60 760" stroke="#CBD5E1" stroke-width="2" fill="none" />
+    <path d="M 760 740 L 760 760 L 740 760" stroke="#CBD5E1" stroke-width="2" fill="none" />
+
+    <!-- Authentic Model Watermark -->
+    <text x="400" y="750" fill="#94A3B8" font-size="11" font-family="monospace" font-weight="600" text-anchor="middle" letter-spacing="2">ULTRASTORE VERIFIED GEAR // AKARI PREMIUM GLASSPAD</text>
+  </svg>

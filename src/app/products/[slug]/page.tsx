@@ -17,18 +17,18 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 space-y-6">
       {/* Breadcrumb */}
-      <nav className="flex items-center space-x-2 text-xs font-mono text-[#59635E]">
-        <Link href="/" className="hover:text-[#202724]">Home</Link>
+      <nav className="flex items-center space-x-2 text-xs font-mono text-slate-500">
+        <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link href="/shop" className="hover:text-[#202724]">Katalog</Link>
+        <Link href="/shop" className="hover:text-slate-900 transition-colors">Katalog</Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link href={`/shop?category=${product.category.slug}`} className="hover:text-[#202724]">
+        <Link href={`/shop?category=${product.category.slug}`} className="hover:text-slate-900 transition-colors">
           {product.category.name}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#202724] font-semibold truncate max-w-xs">{product.name}</span>
+        <span className="text-slate-900 font-semibold truncate max-w-xs">{product.name}</span>
       </nav>
 
       {/* Main PDP Component */}

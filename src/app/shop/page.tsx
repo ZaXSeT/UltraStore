@@ -33,24 +33,24 @@ export default async function ShopPage({
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 space-y-8">
       {/* Header */}
-      <div className="border-b-2 border-[#202724] pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="border-b border-slate-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="text-[11px] font-mono uppercase tracking-widest text-[#184E46] font-bold flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
+          <div className="text-[11px] font-mono uppercase tracking-widest text-teal-600 font-bold flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-teal-500"></span>
             <span>// ARCHIVE HARDWARE ENTHUSIAST</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#202724] mt-1 font-mono uppercase">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mt-1 font-mono uppercase">
             Precision Gear Collection
           </h1>
-          <p className="text-xs sm:text-sm text-[#59635E] mt-1 font-mono">
+          <p className="text-xs sm:text-sm text-slate-500 mt-1 font-mono">
             Katalog gear enthusiast: WLMouse, ATK/VXE, Lamzu, GLSSWRKS, X-Raypad, Wooting, dan lainnya.
           </p>
         </div>
 
         {/* Search Bar Form */}
-        <form method="GET" action="/shop" className="relative w-full md:w-72">
+        <form method="GET" action="/shop" className="relative w-full md:w-80">
           {category && <input type="hidden" name="category" value={category} />}
           {brand && <input type="hidden" name="brand" value={brand} />}
           {offer && <input type="hidden" name="offer" value={offer} />}
@@ -59,18 +59,18 @@ export default async function ShopPage({
             name="q"
             defaultValue={q || ""}
             placeholder="Cari model atau brand..."
-            className="w-full bg-[#FFFFFF] border border-[#202724] rounded px-3.5 py-2 pl-9 text-xs font-mono text-[#202724] placeholder-[#59635E] focus:outline-none focus:ring-1 focus:ring-[#184E46] shadow-[2px_2px_0px_#202724]"
+            className="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 pl-10 text-xs font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 shadow-sm"
           />
-          <Search className="w-4 h-4 text-[#59635E] absolute left-3 top-2.5" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
         </form>
       </div>
 
       {/* Filter Matrix */}
-      <div className="space-y-4 bg-[#FFFFFF] border border-[#202724]/20 p-4 sm:p-5 rounded shadow-sm">
+      <div className="space-y-4 bg-white border border-slate-200 p-5 rounded-2xl shadow-sm">
         {/* Row 1: Categories */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-          <span className="text-xs font-mono font-bold text-[#202724] uppercase min-w-[110px] flex items-center gap-1">
-            <Tag className="w-3.5 h-3.5 text-[#184E46]" />
+          <span className="text-xs font-mono font-bold text-slate-900 uppercase min-w-[110px] flex items-center gap-1">
+            <Tag className="w-3.5 h-3.5 text-teal-600" />
             KATEGORI:
           </span>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -85,10 +85,10 @@ export default async function ShopPage({
                     ...(offer ? { offer } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className={`px-3 py-1 text-xs font-mono rounded border transition-all ${
+                  className={`px-3 py-1.5 text-xs font-mono rounded-lg border transition-all ${
                     isActive
-                      ? "bg-[#184E46] border-[#184E46] text-[#F4F1EA] font-bold shadow-[2px_2px_0px_#202724]"
-                      : "bg-[#F4F1EA] border-[#202724]/20 text-[#202724] hover:border-[#202724]"
+                      ? "bg-teal-600 border-teal-600 text-white font-bold shadow-sm"
+                      : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
                   {c.label}
@@ -98,9 +98,9 @@ export default async function ShopPage({
           </div>
         </div>
 
-        {/* Row 2: Brands (Dropdown / Chips inspired by Infinitas screenshots) */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-3 border-t border-[#202724]/10">
-          <span className="text-xs font-mono font-bold text-[#202724] uppercase min-w-[110px]">
+        {/* Row 2: Brands */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-3 border-t border-slate-100">
+          <span className="text-xs font-mono font-bold text-slate-900 uppercase min-w-[110px]">
             // BRAND:
           </span>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -110,10 +110,10 @@ export default async function ShopPage({
                 ...(offer ? { offer } : {}),
                 ...(q ? { q } : {}),
               }).toString()}`}
-              className={`px-2.5 py-1 text-xs font-mono rounded border transition-all ${
+              className={`px-2.5 py-1 text-xs font-mono rounded-lg border transition-all ${
                 !brand
-                  ? "bg-[#202724] border-[#202724] text-[#F4F1EA] font-bold"
-                  : "bg-white border-[#202724]/20 text-[#59635E] hover:border-[#202724] hover:text-[#202724]"
+                  ? "bg-slate-900 border-slate-900 text-white font-bold"
+                  : "bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-900"
               }`}
             >
               Semua Brand
@@ -129,10 +129,10 @@ export default async function ShopPage({
                     ...(offer ? { offer } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className={`px-2.5 py-1 text-xs font-mono rounded border transition-all flex items-center gap-1 ${
+                  className={`px-2.5 py-1 text-xs font-mono rounded-lg border transition-all flex items-center gap-1 ${
                     isBrandActive
-                      ? "bg-[#184E46] border-[#184E46] text-[#F4F1EA] font-bold shadow-[2px_2px_0px_#202724]"
-                      : "bg-white border-[#202724]/20 text-[#202724] hover:border-[#202724]"
+                      ? "bg-teal-600 border-teal-600 text-white font-bold shadow-sm"
+                      : "bg-white border-slate-200 text-slate-700 hover:border-slate-300"
                   }`}
                 >
                   <span>{b.name}</span>
@@ -144,20 +144,20 @@ export default async function ShopPage({
         </div>
 
         {/* Row 3: Offer Status & Reset */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-[#202724]/10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-slate-100">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold text-[#202724] uppercase min-w-[110px]">
+            <span className="text-xs font-mono font-bold text-slate-900 uppercase min-w-[110px]">
               STATUS OPSI:
             </span>
-            <div className="flex items-center gap-1 bg-[#F4F1EA] p-1 rounded border border-[#202724]/20 text-xs font-mono">
+            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-mono">
               <Link
                 href={`/shop?${new URLSearchParams({
                   ...(category ? { category } : {}),
                   ...(brand ? { brand } : {}),
                   ...(q ? { q } : {}),
                 }).toString()}`}
-                className={`px-2.5 py-1 rounded transition-colors ${
-                  !offer ? "bg-[#202724] text-[#F4F1EA] font-bold" : "text-[#59635E] hover:text-[#202724]"
+                className={`px-3 py-1 rounded-lg transition-colors ${
+                  !offer ? "bg-white text-slate-900 font-bold shadow-sm" : "text-slate-500 hover:text-slate-900"
                 }`}
               >
                 Semua
@@ -169,10 +169,10 @@ export default async function ShopPage({
                   offer: "READY",
                   ...(q ? { q } : {}),
                 }).toString()}`}
-                className={`px-2.5 py-1 rounded transition-colors ${
+                className={`px-3 py-1 rounded-lg transition-colors ${
                   offer === "READY"
-                    ? "bg-[#184E46] text-[#F4F1EA] font-bold"
-                    : "text-[#59635E] hover:text-[#184E46]"
+                    ? "bg-teal-600 text-white font-bold shadow-sm"
+                    : "text-slate-500 hover:text-teal-600"
                 }`}
               >
                 Ready Stock
@@ -184,10 +184,10 @@ export default async function ShopPage({
                   offer: "PREORDER",
                   ...(q ? { q } : {}),
                 }).toString()}`}
-                className={`px-2.5 py-1 rounded transition-colors ${
+                className={`px-3 py-1 rounded-lg transition-colors ${
                   offer === "PREORDER"
-                    ? "bg-[#A84329] text-[#F4F1EA] font-bold"
-                    : "text-[#59635E] hover:text-[#A84329]"
+                    ? "bg-orange-600 text-white font-bold shadow-sm"
+                    : "text-slate-500 hover:text-orange-600"
                 }`}
               >
                 Pre-Order
@@ -198,7 +198,7 @@ export default async function ShopPage({
           {(category || brand || offer || q) && (
             <Link
               href="/shop"
-              className="text-xs font-mono text-[#A84329] hover:underline flex items-center gap-1 self-start sm:self-auto"
+              className="text-xs font-mono text-orange-600 hover:underline flex items-center gap-1 self-start sm:self-auto font-medium"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               Reset Semua Filter
@@ -208,28 +208,28 @@ export default async function ShopPage({
       </div>
 
       {/* Meta Count */}
-      <div className="flex items-center justify-between text-xs font-mono text-[#59635E] border-b border-[#202724]/10 pb-2">
-        <span>// MENAMPILKAN {products.length} GEAR</span>
+      <div className="flex items-center justify-between text-xs font-mono text-slate-500 border-b border-slate-200 pb-2">
+        <span>// MENAMPILKAN {products.length} GEAR TERVERIFIKASI</span>
         <span>AUTH DISTRIBUTOR · PENGIRIMAN DARI JAKARTA</span>
       </div>
 
-      {/* Product Grid (Responsive: 1 col mobile, 2 col sm, 3 col lg, 4 col xl) */}
+      {/* Product Grid (Full Width Responsive Grid) */}
       {products.length === 0 ? (
-        <div className="bg-[#FFFFFF] border border-[#202724] rounded p-12 text-center space-y-3 shadow-[4px_4px_0px_#202724]">
-          <Filter className="w-8 h-8 text-[#59635E] mx-auto opacity-50" />
-          <h3 className="text-base font-bold text-[#202724] font-mono uppercase">Tidak ada gear yang cocok</h3>
-          <p className="text-xs text-[#59635E] max-w-sm mx-auto font-mono">
+        <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center space-y-3 shadow-sm">
+          <Filter className="w-8 h-8 text-slate-400 mx-auto opacity-50" />
+          <h3 className="text-base font-bold text-slate-900 font-mono uppercase">Tidak ada gear yang cocok</h3>
+          <p className="text-xs text-slate-500 max-w-sm mx-auto font-mono">
             Kombinasi kategori atau filter brand saat ini belum memiliki stok terdaftar.
           </p>
           <Link
             href="/shop"
-            className="inline-block px-4 py-2 bg-[#184E46] text-[#F4F1EA] text-xs font-bold font-mono rounded mt-2 shadow-[2px_2px_0px_#202724]"
+            className="inline-block px-4 py-2 bg-slate-900 text-white text-xs font-bold font-mono rounded-xl mt-2 shadow-sm hover:bg-teal-600 transition-colors"
           >
             Reset Filter
           </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 sm:gap-6">
           {products.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}

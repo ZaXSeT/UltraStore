@@ -71,7 +71,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
       {/* 1. GALLERY COLUMN (58% / 7 cols) */}
       <div className="lg:col-span-7 space-y-4">
         {/* Main Image 1:1 Aspect Ratio */}
-        <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded aspect-square flex items-center justify-center p-8 relative overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-2xl aspect-square flex items-center justify-center p-8 relative overflow-hidden shadow-sm">
           <ProductImage
             src={activeImage}
             alt={selectedVariant.name}
@@ -82,13 +82,13 @@ export function ProductDetailClient({ product }: { product: Product }) {
           {/* Offer Badge Overlay */}
           <div className="absolute top-4 left-4">
             {selectedOfferType === "PREORDER" ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded bg-[#F4E5DC] text-[#A84329] border border-[#A84329]/30">
-                <span className="w-2 h-2 rounded-full bg-[#A84329] animate-pulse"></span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded-full bg-orange-50 text-orange-700 border border-orange-200 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
                 PRE-ORDER BATCH
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded bg-[#E4ECE6] text-[#184E46] border border-[#184E46]/30">
-                <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded-full bg-teal-50 text-teal-700 border border-teal-200 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-teal-500"></span>
                 READY STOCK
               </span>
             )}
@@ -103,10 +103,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 key={idx}
                 type="button"
                 onClick={() => setActiveImage(m.url)}
-                className={`w-20 h-20 bg-[#FFFFFF] border rounded p-2 flex items-center justify-center transition-all ${
+                className={`w-20 h-20 bg-white border rounded-xl p-2 flex items-center justify-center transition-all ${
                   activeImage === m.url
-                    ? "border-[#184E46] ring-1 ring-[#184E46]"
-                    : "border-[#D9DDD5] hover:border-[#78857C]"
+                    ? "border-teal-600 ring-2 ring-teal-500/20 shadow-sm"
+                    : "border-slate-200 hover:border-slate-300"
                 }`}
               >
                 <ProductImage src={m.url} alt={m.altText} category={product.category.name} className="w-full h-full object-contain" />
@@ -116,32 +116,32 @@ export function ProductDetailClient({ product }: { product: Product }) {
         )}
 
         {/* Specifications Table */}
-        <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-8 mt-8 space-y-4">
-          <h3 className="font-bold text-base text-[#202724] border-b border-[#D9DDD5] pb-3 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#184E46] rounded-full"></span>
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 mt-8 space-y-4 shadow-sm">
+          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2 font-mono uppercase">
+            <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
             Spesifikasi Terverifikasi Resmi
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs font-mono">
             {Object.entries(product.specs).map(([key, val]) => (
-              <div key={key} className="flex justify-between border-b border-[#D9DDD5]/40 py-2">
-                <span className="text-[#59635E]">{key}</span>
-                <span className="text-[#202724] font-semibold text-right">{val}</span>
+              <div key={key} className="flex justify-between border-b border-slate-100 py-2">
+                <span className="text-slate-500">{key}</span>
+                <span className="text-slate-900 font-semibold text-right">{val}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Box Contents */}
-        <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-8 space-y-4">
-          <h3 className="font-bold text-base text-[#202724] border-b border-[#D9DDD5] pb-3 flex items-center gap-2">
-            <Box className="w-4 h-4 text-[#184E46]" />
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2 font-mono uppercase">
+            <Box className="w-4 h-4 text-teal-600" />
             Isi Dalam Kotak Kemasan
           </h3>
-          <ul className="space-y-2 text-xs font-mono text-[#202724]">
+          <ul className="space-y-2 text-xs font-mono text-slate-700">
             {product.boxContents.map((item, i) => (
               <li key={i} className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-[#184E46] shrink-0" />
+                <Check className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -150,38 +150,38 @@ export function ProductDetailClient({ product }: { product: Product }) {
       </div>
 
       {/* 2. PURCHASE PANEL COLUMN (42% / 5 cols sticky) */}
-      <div className="lg:col-span-5 bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-8 space-y-6 sticky top-28 shadow-sm">
+      <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-28 shadow-sm">
         {/* Brand & Title */}
         <div>
-          <div className="text-xs font-mono text-[#59635E] uppercase tracking-wider mb-1 flex items-center justify-between">
-            <span>{product.brand.name}</span>
-            <span className="text-[11px] bg-[#F4F1EA] px-2 py-0.5 rounded border border-[#D9DDD5]">
+          <div className="text-xs font-mono text-teal-600 font-bold uppercase tracking-wider mb-1 flex items-center justify-between">
+            <span>// {product.brand.name}</span>
+            <span className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200">
               {selectedVariant.sku}
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-[#202724] tracking-tight leading-snug">
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight leading-snug">
             {product.name}
           </h1>
-          <p className="text-xs text-[#59635E] mt-2 leading-relaxed">
+          <p className="text-xs text-slate-500 mt-2 leading-relaxed">
             {product.description}
           </p>
         </div>
 
         {/* Price Tag */}
-        <div className="p-4 bg-[#F4F1EA] border border-[#D9DDD5] rounded">
-          <div className="text-xs font-mono text-[#59635E]">Harga Final Satuan</div>
-          <div className="text-3xl font-bold text-[#202724] font-mono tracking-tight mt-0.5">
+        <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+          <div className="text-xs font-mono text-slate-500">Harga Final Satuan</div>
+          <div className="text-3xl font-extrabold text-slate-900 font-mono tracking-tight mt-0.5">
             {formatIdr(matchedOffer.price || selectedVariant.price)}
           </div>
-          <div className="text-[11px] text-[#59635E] mt-1 font-mono flex items-center gap-1">
-            <Truck className="w-3.5 h-3.5 text-[#184E46]" />
+          <div className="text-[11px] text-slate-500 mt-1 font-mono flex items-center gap-1">
+            <Truck className="w-3.5 h-3.5 text-teal-600" />
             <span>Ongkir dihitung saat checkout · Pajak & bea masuk sudah termasuk</span>
           </div>
         </div>
 
         {/* Offer Selection (Ready Stock vs Pre-order) */}
         <div className="space-y-2">
-          <label className="text-xs font-mono font-bold text-[#202724] uppercase tracking-wider">
+          <label className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider">
             Tipe Penawaran (Offer)
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -194,18 +194,18 @@ export function ProductDetailClient({ product }: { product: Product }) {
                   key={offerType}
                   type="button"
                   onClick={() => setSelectedOfferType(offerType)}
-                  className={`p-3.5 rounded text-left border transition-all ${
+                  className={`p-3.5 rounded-xl text-left border transition-all ${
                     isSelected
                       ? isReady
-                        ? "border-[#184E46] bg-[#E4ECE6]/50 ring-1 ring-[#184E46]"
-                        : "border-[#A84329] bg-[#F4E5DC]/50 ring-1 ring-[#A84329]"
-                      : "border-[#D9DDD5] bg-[#FFFFFF] hover:border-[#78857C]"
+                        ? "border-teal-600 bg-teal-50/70 ring-1 ring-teal-600"
+                        : "border-orange-500 bg-orange-50/70 ring-1 ring-orange-500"
+                      : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span
                       className={`text-xs font-bold font-mono ${
-                        isReady ? "text-[#184E46]" : "text-[#A84329]"
+                        isReady ? "text-teal-700" : "text-orange-700"
                       }`}
                     >
                       {isReady ? "READY STOCK" : "PRE-ORDER"}
@@ -213,12 +213,12 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     {isSelected && (
                       <span
                         className={`w-2 h-2 rounded-full ${
-                          isReady ? "bg-[#184E46]" : "bg-[#A84329]"
+                          isReady ? "bg-teal-500" : "bg-orange-500"
                         }`}
                       ></span>
                     )}
                   </div>
-                  <div className="text-[11px] text-[#59635E] mt-1 font-mono">
+                  <div className="text-[11px] text-slate-500 mt-1 font-mono">
                     {isReady ? "Kirim 1-2 hari" : targetOffer?.estimatedShipping || "Batch jadwal"}
                   </div>
                 </button>
@@ -228,10 +228,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Preorder drop ledger link */}
           {selectedOfferType === "PREORDER" && (
-            <div className="text-xs font-mono pt-1 text-[#A84329]">
+            <div className="text-xs font-mono pt-1 text-orange-600">
               <Link
                 href={`/drops/${product.slug}-batch-04`}
-                className="underline hover:text-[#88341f] flex items-center gap-1"
+                className="underline hover:text-orange-700 flex items-center gap-1 font-medium"
               >
                 <span>Periksa Drop Ledger & kuota batch ini</span>
                 <ArrowRight className="w-3 h-3" />
@@ -243,7 +243,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Variant Selection */}
         {product.variants.length > 1 && (
           <div className="space-y-2">
-            <label className="text-xs font-mono font-bold text-[#202724] uppercase tracking-wider">
+            <label className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider">
               Pilih Varian
             </label>
             <div className="space-y-2">
@@ -257,21 +257,21 @@ export function ProductDetailClient({ product }: { product: Product }) {
                       setSelectedVariant(v);
                       if (v.media[0]) setActiveImage(v.media[0].url);
                     }}
-                    className={`w-full p-3 rounded text-left border transition-all flex items-center justify-between ${
+                    className={`w-full p-3 rounded-xl text-left border transition-all flex items-center justify-between ${
                       isSelected
-                        ? "border-[#184E46] bg-[#E4ECE6]/30 ring-1 ring-[#184E46]"
-                        : "border-[#D9DDD5] bg-[#FFFFFF] hover:border-[#78857C]"
+                        ? "border-teal-600 bg-teal-50/50 ring-1 ring-teal-600"
+                        : "border-slate-200 bg-white hover:border-slate-300"
                     }`}
                   >
                     <div>
-                      <div className="text-xs font-bold text-[#202724]">{v.name}</div>
-                      <div className="text-[11px] text-[#59635E] font-mono mt-0.5">
+                      <div className="text-xs font-bold text-slate-900">{v.name}</div>
+                      <div className="text-[11px] text-slate-500 font-mono mt-0.5">
                         {Object.entries(v.attributes)
                           .map(([k, val]) => `${k}: ${val}`)
                           .join(" · ")}
                       </div>
                     </div>
-                    <div className="text-xs font-mono font-bold text-[#202724]">
+                    <div className="text-xs font-mono font-bold text-slate-900">
                       {formatIdr(v.price)}
                     </div>
                   </button>
@@ -284,8 +284,8 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Action Buttons */}
         <div className="space-y-3 pt-2">
           {addedNotice && (
-            <div className="bg-[#E4ECE6] border border-[#184E46]/30 text-[#184E46] text-xs font-mono py-2 px-3 rounded flex items-center gap-2">
-              <Check className="w-4 h-4" />
+            <div className="bg-teal-50 border border-teal-200 text-teal-800 text-xs font-mono py-2.5 px-3.5 rounded-xl flex items-center gap-2">
+              <Check className="w-4 h-4 text-teal-600" />
               <span>Gear berhasil ditambahkan ke keranjang belanja.</span>
             </div>
           )}
@@ -294,7 +294,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="w-full py-3.5 border-2 border-[#184E46] text-[#184E46] text-xs font-bold font-mono uppercase tracking-wider rounded hover:bg-[#E4ECE6] transition-colors"
+              className="w-full py-3.5 border-2 border-slate-900 text-slate-900 text-xs font-bold font-mono uppercase tracking-wider rounded-xl hover:bg-slate-900 hover:text-white transition-colors"
             >
               + Keranjang
             </button>
@@ -302,10 +302,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleBuyNow}
-              className={`w-full py-3.5 text-white text-xs font-bold font-mono uppercase tracking-wider rounded shadow-sm transition-colors ${
+              className={`w-full py-3.5 text-white text-xs font-bold font-mono uppercase tracking-wider rounded-xl shadow-sm transition-colors ${
                 selectedOfferType === "PREORDER"
-                  ? "bg-[#A84329] hover:bg-[#8e3822]"
-                  : "bg-[#184E46] hover:bg-[#123d37]"
+                  ? "bg-orange-600 hover:bg-orange-700"
+                  : "bg-teal-600 hover:bg-teal-700"
               }`}
             >
               {selectedOfferType === "PREORDER" ? "Pre-Order Sekarang" : "Beli Sekarang"}
@@ -314,13 +314,13 @@ export function ProductDetailClient({ product }: { product: Product }) {
         </div>
 
         {/* Invariant & Trust Notes */}
-        <div className="border-t border-[#D9DDD5] pt-4 space-y-2 text-xs font-mono text-[#59635E]">
+        <div className="border-t border-slate-100 pt-4 space-y-2 text-xs font-mono text-slate-500">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#184E46]" />
+            <ShieldCheck className="w-4 h-4 text-teal-600" />
             <span>Garansi resmi UltraStore 1 tahun distributor</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-[#184E46]" />
+            <Clock className="w-4 h-4 text-teal-600" />
             <span>Pemesanan mengikat kuota dan reservasi stok atomik</span>
           </div>
         </div>

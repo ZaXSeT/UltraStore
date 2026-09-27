@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className="min-h-screen flex flex-col bg-[#F4F1EA] text-[#202724]">
+      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A]">
         <CartProvider>
           <Header />
           <main className="flex-1">{children}</main>

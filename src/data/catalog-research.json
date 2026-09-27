@@ -18,7 +18,7 @@
       "manufacturerPartNumber": "WLM-BX-BLK",
       "category": "Mouse",
       "officialProductUrl": "https://www.wlmouse.com/products/beastx",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -39,7 +39,7 @@
           "priceIdr": 2150000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
           "imageVariantMatch": true
         },
         {
@@ -49,7 +49,7 @@
           "priceIdr": 2250000,
           "offerType": "READY",
           "stockOnHand": 4,
-          "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -63,7 +63,7 @@
       "manufacturerPartNumber": "ATK-68-PRO",
       "category": "Keyboard",
       "officialProductUrl": "https://www.atk.pro/products/atk68",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -85,7 +85,7 @@
           "priceIdr": 1690000,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
           "imageVariantMatch": true
         },
         {
@@ -97,7 +97,7 @@
           "priceIdr": 1690000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -111,7 +111,7 @@
       "manufacturerPartNumber": "LMZ-MY-4K-BLK",
       "category": "Mouse",
       "officialProductUrl": "https://lamzu.com/products/lamzu-maya",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -131,7 +131,7 @@
           "priceIdr": 1580000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
           "imageVariantMatch": true
         },
         {
@@ -141,7 +141,7 @@
           "priceIdr": 1620000,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -155,7 +155,7 @@
       "manufacturerPartNumber": "GLS-AKR-4942",
       "category": "Mousepad",
       "officialProductUrl": "https://glsswrks.gg/products/akari",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -176,7 +176,7 @@
           "batchId": "batch_glsswrks_akari_nov2026",
           "estimatedShipping": "20–30 November 2026",
           "stockOnHand": 0,
-          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -190,7 +190,7 @@
       "manufacturerPartNumber": "XRP-AC2-SKR-XXL",
       "category": "Mousepad",
       "officialProductUrl": "https://shop.x-raypad.com/shop/aqua-control-ii-sakura-gaming-mouse-pad/",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -209,7 +209,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 25,
-          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
           "imageVariantMatch": true
         },
         {
@@ -219,7 +219,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
           "imageVariantMatch": true
         }
       ]
@@ -233,7 +233,7 @@
       "manufacturerPartNumber": "PX2H11",
       "category": "Mouse",
       "officialProductUrl": "https://www.pulsar.gg/products/x2h-wireless-mouse",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/pulsar-x2h-high-hump-wireless.png",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -252,7 +252,7 @@
           "priceIdr": 1540000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/pulsar-x2h-high-hump-wireless.png",
           "imageVariantMatch": true
         }
       ]
@@ -266,7 +266,7 @@
       "manufacturerPartNumber": "WS-ZM75-SE",
       "category": "Keyboard",
       "officialProductUrl": "https://meletrix.com/collections/zoom75",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -288,7 +288,7 @@
           "batchId": "batch_ws_zoom75_dec2026",
           "estimatedShipping": "05–15 Desember 2026",
           "stockOnHand": 0,
-          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -302,7 +302,7 @@
       "manufacturerPartNumber": "HMX-XIN-90P",
       "category": "Switches & Parts",
       "officialProductUrl": "https://unikeyboards.com/products/hmx-xinhai-linear-switch",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/hmx-xinhai-linear-switch.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -323,7 +323,7 @@
           "priceIdr": 485000,
           "offerType": "READY",
           "stockOnHand": 30,
-          "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/hmx-xinhai-linear-switch.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -337,7 +337,7 @@
       "manufacturerPartNumber": "PDS-FA-4942",
       "category": "Mousepad",
       "officialProductUrl": "https://padsmith.com/products/first-attack",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/padsmith-first-attack-mousepad.png",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -356,7 +356,7 @@
           "priceIdr": 690000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/padsmith-first-attack-mousepad.png",
           "imageVariantMatch": true
         }
       ]
@@ -370,7 +370,7 @@
       "manufacturerPartNumber": "SYO-O3C-CNC",
       "category": "Keyboard",
       "officialProductUrl": "https://sayodevice.com/products/o3c",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/sayodevice-o3c-rapid-trigger-keypad.png",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -390,7 +390,7 @@
           "priceIdr": 490000,
           "offerType": "READY",
           "stockOnHand": 22,
-          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/sayodevice-o3c-rapid-trigger-keypad.png",
           "imageVariantMatch": true
         }
       ]
@@ -404,7 +404,7 @@
       "manufacturerPartNumber": "DAR-M3P-4K",
       "category": "Mouse",
       "officialProductUrl": "https://darmoshark.cn/products/m3-pro-4k",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/darmoshark-m3-pro-4k.png",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -423,7 +423,7 @@
           "priceIdr": 790000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/darmoshark-m3-pro-4k.png",
           "imageVariantMatch": true
         }
       ]
@@ -437,7 +437,7 @@
       "manufacturerPartNumber": "UWS-UPD-V2",
       "category": "Mousepad",
       "officialProductUrl": "https://unusualwaysports.com",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/unusual-way-sports-glass-blend.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -455,7 +455,7 @@
           "priceIdr": 380000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/unusual-way-sports-glass-blend.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -469,7 +469,7 @@
       "manufacturerPartNumber": "WK3-US1-L60-001",
       "category": "Keyboard",
       "officialProductUrl": "https://wooting.io/wooting-60he",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/wooting-60he-plus.png",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -495,7 +495,7 @@
           "batchId": "batch_wooting_60he_nov2026",
           "estimatedShipping": "18–28 November 2026",
           "stockOnHand": 0,
-          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/wooting-60he-plus.png",
           "imageVariantMatch": true
         }
       ]
@@ -509,7 +509,7 @@
       "manufacturerPartNumber": "V1M-D1",
       "category": "Keyboard",
       "officialProductUrl": "https://www.keychron.com/products/keychron-v1-max-qmk-via-wireless-custom-mechanical-keyboard",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/keychron-v1-max.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -531,7 +531,7 @@
           "priceIdr": 1549000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/keychron-v1-max.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -545,7 +545,7 @@
       "manufacturerPartNumber": "FX-ZR-SF-XL-B",
       "category": "Mousepad",
       "officialProductUrl": "https://www.artisan-jp.com/fx-zero-eng.html",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/artisan-ninja-fx-zero.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -565,7 +565,7 @@
           "priceIdr": 890000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/artisan-ninja-fx-zero.jpg",
           "imageVariantMatch": true
         }
       ]
@@ -579,7 +579,7 @@
       "manufacturerPartNumber": "509144",
       "category": "Audio",
       "officialProductUrl": "https://www.sennheiser-hearing.com/en-US/p/hd-560s/",
-      "sourceImageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+      "sourceImageUrl": "/images/products/sennheiser-hd-560s.jpg",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -598,7 +598,7 @@
           "priceIdr": 3199000,
           "offerType": "READY",
           "stockOnHand": 7,
-          "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+          "imageUrl": "/images/products/sennheiser-hd-560s.jpg",
           "imageVariantMatch": true
         }
       ]
