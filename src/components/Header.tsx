@@ -3,28 +3,33 @@
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { ShoppingBag, Menu, X, Compass } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Header() {
   const { totalItemCount } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#202724]/15">
       {/* Top Ticker / Meta Bar */}
-      <div className="bg-[#202724] text-[#F4F1EA] text-[11px] py-1.5 px-4 font-mono overflow-hidden border-b border-black">
+      <div className="bg-[#202724] text-[#F4F1EA] text-[10px] sm:text-[11px] py-1.5 px-4 font-mono overflow-hidden border-b border-black">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#184E46] animate-pulse"></span>
-            <span className="tracking-wider uppercase">ULTRASTORE // HARDWARE ARCHIVE</span>
+          <div className="flex items-center gap-2 truncate">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#184E46] animate-pulse shrink-0"></span>
+            <span className="tracking-wider uppercase truncate">ULTRASTORE // HARDWARE ARCHIVE</span>
             <span className="hidden sm:inline text-[#59635E]">|</span>
-            <span className="hidden sm:inline text-neutral-300">AUTHORIZED ENTHUSIAST GEAR DISTRIBUTOR</span>
+            <span className="hidden md:inline text-neutral-300">AUTHORIZED ENTHUSIAST GEAR DISTRIBUTOR</span>
           </div>
-          <div className="flex items-center gap-4 text-[#D9DDD5]">
+          <div className="flex items-center gap-3 sm:gap-4 text-[#D9DDD5] shrink-0">
             <span className="hidden md:inline font-mono">JKT-ID // WAL-SQLITE</span>
             <Link href="/track-order" className="hover:text-white transition-colors flex items-center gap-1">
               <Compass className="w-3 h-3 text-[#184E46]" />
-              <span>LACAK ORDER</span>
+              <span className="whitespace-nowrap">LACAK ORDER</span>
             </Link>
           </div>
         </div>
@@ -34,12 +39,12 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Creative Precision Monogram & Wordmark */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 bg-[#202724] border border-[#202724] rounded flex items-center justify-center text-[#F4F1EA] shadow-[2px_2px_0px_#184E46] group-hover:shadow-[3px_3px_0px_#184E46] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 bg-[#202724] border border-[#202724] rounded flex items-center justify-center text-[#F4F1EA] shadow-[2px_2px_0px_#184E46] group-hover:shadow-[3px_3px_0px_#184E46] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
             <svg
               viewBox="0 0 32 32"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-[#F4F1EA] transition-transform duration-300 group-hover:scale-105"
+              className="w-5 h-5 sm:w-6 sm:h-6 text-[#F4F1EA] transition-transform duration-300 group-hover:scale-105"
             >
               <path
                 d="M7 6V18C7 22.9706 11.0294 27 16 27C20.9706 27 25 22.9706 25 18V6H20V18C20 20.2091 18.2091 22 16 22C13.7909 22 12 20.2091 12 18V6H7Z"
@@ -56,14 +61,14 @@ export function Header() {
 
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-2xl tracking-tighter text-[#202724] uppercase font-mono group-hover:text-[#184E46] transition-colors">
+              <span className="font-extrabold text-xl sm:text-2xl tracking-tighter text-[#202724] uppercase font-mono group-hover:text-[#184E46] transition-colors">
                 ULTRA<span className="text-[#184E46]">STORE</span>
               </span>
               <span className="text-[9px] font-mono px-1 py-0.5 rounded bg-[#202724]/5 border border-[#202724]/20 text-[#202724] font-semibold">
                 LABS
               </span>
             </div>
-            <span className="text-[10px] font-mono tracking-widest text-[#59635E] uppercase -mt-1 flex items-center gap-1">
+            <span className="hidden sm:flex text-[10px] font-mono tracking-widest text-[#59635E] uppercase -mt-1 items-center gap-1">
               <span>PRECISION GEAR ARCHIVE</span>
               <span className="text-[#A84329]">_</span>
             </span>
@@ -105,7 +110,7 @@ export function Header() {
           >
             <ShoppingBag className="w-4 h-4" />
             <span className="hidden sm:inline">CART</span>
-            {totalItemCount > 0 && (
+            {mounted && totalItemCount > 0 && (
               <span className="bg-[#184E46] text-[#F4F1EA] text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                 {totalItemCount}
               </span>

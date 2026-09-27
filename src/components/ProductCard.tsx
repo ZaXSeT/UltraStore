@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Product } from "../lib/types";
+import { ProductImage } from "./ProductImage";
 
 export function ProductCard({ product }: { product: Product }) {
   const primaryOffer = product.offers[0];
@@ -20,13 +21,13 @@ export function ProductCard({ product }: { product: Product }) {
       href={`/products/${product.slug}`}
       className="group block bg-[#FFFFFF] border border-[#202724]/20 rounded overflow-hidden hover:border-[#202724] hover:shadow-[4px_4px_0px_#202724] transition-all flex flex-col justify-between"
     >
-      {/* 1:1 Product Image Container (Neat, Padded, No Overflow) */}
+      {/* 1:1 Product Image Container (Neat, Padded, Robust Fallback) */}
       <div className="relative aspect-square w-full bg-[#FFFFFF] flex items-center justify-center p-5 sm:p-6 border-b border-[#202724]/10 overflow-hidden">
-        <img
+        <ProductImage
           src={primaryVariant?.media[0]?.url || product.primaryImage}
           alt={product.name}
-          className="max-h-full max-w-full w-auto h-auto object-contain object-center group-hover:scale-105 transition-transform duration-300"
-          loading="lazy"
+          category={product.category.name}
+          className="group-hover:scale-105"
         />
 
         {/* Badge Overlay */}
@@ -43,11 +44,6 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           )}
         </div>
-
-        {/* Corner Crosshair Notch */}
-        <span className="absolute bottom-2 right-2 text-[10px] font-mono text-[#59635E]/40 select-none">
-          +
-        </span>
       </div>
 
       {/* Product Details */}

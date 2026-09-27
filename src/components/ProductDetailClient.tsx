@@ -6,6 +6,7 @@ import { useCart } from "../context/CartContext";
 import { useRouter } from "next/navigation";
 import { Check, ShieldCheck, Box, Clock, Truck, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ProductImage } from "./ProductImage";
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const router = useRouter();
@@ -20,10 +21,18 @@ export function ProductDetailClient({ product }: { product: Product }) {
   );
   const [addedNotice, setAddedNotice] = useState(false);
 
+  // Distinct offer types to prevent duplicate buttons
+  const distinctOfferTypes: OfferType[] = Array.from(
+    new Set(product.offers.map((o) => o.offerType))
+  );
+
   // Match the offer for this variant & offer type
-  const matchedOffer = product.offers.find(
-    (o) => o.variantId === selectedVariant.id && o.offerType === selectedOfferType
-  ) || product.offers.find((o) => o.offerType === selectedOfferType) || product.offers[0];
+  const matchedOffer =
+    product.offers.find(
+      (o) => o.variantId === selectedVariant.id && o.offerType === selectedOfferType
+    ) ||
+    product.offers.find((o) => o.offerType === selectedOfferType) ||
+    product.offers[0];
 
   const formatIdr = (val: number) => {
     return new Intl.NumberFormat("id-ID", {
@@ -63,9 +72,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
       <div className="lg:col-span-7 space-y-4">
         {/* Main Image 1:1 Aspect Ratio */}
         <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded aspect-square flex items-center justify-center p-8 relative overflow-hidden">
-          <img
+          <ProductImage
             src={activeImage}
             alt={selectedVariant.name}
+            category={product.category.name}
             className="w-full h-full object-contain"
           />
 
@@ -99,7 +109,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     : "border-[#D9DDD5] hover:border-[#78857C]"
                 }`}
               >
-                <img src={m.url} alt={m.altText} className="w-full h-full object-contain" />
+                <ProductImage src={m.url} alt={m.altText} category={product.category.name} className="w-full h-full object-contain" />
               </button>
             ))}
           </div>
@@ -175,14 +185,15 @@ export function ProductDetailClient({ product }: { product: Product }) {
             Tipe Penawaran (Offer)
           </label>
           <div className="grid grid-cols-2 gap-3">
-            {product.offers.map((offer) => {
-              const isSelected = selectedOfferType === offer.offerType;
-              const isReady = offer.offerType === "READY";
+            {distinctOfferTypes.map((offerType) => {
+              const isSelected = selectedOfferType === offerType;
+              const isReady = offerType === "READY";
+              const targetOffer = product.offers.find((o) => o.offerType === offerType);
               return (
                 <button
-                  key={offer.id}
+                  key={offerType}
                   type="button"
-                  onClick={() => setSelectedOfferType(offer.offerType)}
+                  onClick={() => setSelectedOfferType(offerType)}
                   className={`p-3.5 rounded text-left border transition-all ${
                     isSelected
                       ? isReady
@@ -208,7 +219,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     )}
                   </div>
                   <div className="text-[11px] text-[#59635E] mt-1 font-mono">
-                    {isReady ? "Kirim 1-2 hari" : offer.estimatedShipping || "Batch jadwal"}
+                    {isReady ? "Kirim 1-2 hari" : targetOffer?.estimatedShipping || "Batch jadwal"}
                   </div>
                 </button>
               );

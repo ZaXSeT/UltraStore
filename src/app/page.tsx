@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
+import { ProductImage } from "../components/ProductImage";
 import { ArrowRight, Sparkles, Terminal, Flame, ShieldCheck, Compass } from "lucide-react";
 
 export default function HomePage() {
@@ -106,10 +107,11 @@ export default function HomePage() {
               </div>
 
               <div className="aspect-square w-full bg-[#F9F8F6] rounded flex items-center justify-center p-6 border border-[#202724]/10 overflow-hidden">
-                <img
+                <ProductImage
                   src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80"
                   alt="WLMouse Beast X Magnesium"
-                  className="max-h-full max-w-full w-auto h-auto object-contain hover:scale-105 transition-transform duration-300"
+                  category="mouse"
+                  className="hover:scale-105"
                 />
               </div>
 
@@ -259,10 +261,11 @@ export default function HomePage() {
                     </div>
 
                     <div className="aspect-[4/3] bg-[#F9F8F6] rounded flex items-center justify-center p-4 border border-[#202724]/10 overflow-hidden">
-                      <img
+                      <ProductImage
                         src={item.primaryImage}
                         alt={item.name}
-                        className="max-h-full max-w-full w-auto h-auto object-contain hover:scale-105 transition-transform"
+                        category={item.category.name}
+                        className="hover:scale-105"
                       />
                     </div>
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCart } from "../../context/CartContext";
 import { Trash2, ArrowRight, ShieldAlert, ShoppingBag, Truck, Info } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ProductImage } from "../../components/ProductImage";
 
 export default function CartPage() {
   const router = useRouter();
@@ -114,11 +115,13 @@ export default function CartPage() {
               <div className="divide-y divide-[#D9DDD5]/60 p-4 sm:p-6">
                 {group.items.map((item) => (
                   <div key={`${item.variantId}-${item.offerId}`} className="py-4 first:pt-0 last:pb-0 flex items-center gap-4">
-                    <img
-                      src={item.image}
-                      alt={item.productName}
-                      className="w-16 h-16 object-contain bg-[#F9F8F6] border border-[#D9DDD5] rounded p-1"
-                    />
+                    <div className="w-16 h-16 shrink-0 bg-[#F9F8F6] border border-[#D9DDD5] rounded p-1 flex items-center justify-center overflow-hidden">
+                      <ProductImage
+                        src={item.image}
+                        alt={item.productName}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
 
                     <div className="flex-1 min-w-0">
                       <h4 className="font-bold text-sm text-[#202724] truncate">
