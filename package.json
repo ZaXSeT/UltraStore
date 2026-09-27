@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "node --test src/**/*.test.mjs src/**/*.test.ts"
+    "lint": "tsc --noEmit",
+    "test": "node --test src/**/*.test.mjs src/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "node src/db/migrate.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
