@@ -1,0 +1,607 @@
+{
+  "researched_at": "2026-09-28T06:00:00.000Z",
+  "methodology": "Verified against official enthusiast hardware specs from community-standard brand catalogs (WLMouse, VXE/ATK, Lamzu, Wuque, X-Raypad, Pulsar, GLSSWRKS, Padsmith, HMX, Geonworks, SayoDevice, Darmoshark, Unusual Way Sports).",
+  "categories": [
+    "Keyboard",
+    "Mouse",
+    "Mousepad",
+    "Switches & Parts",
+    "Audio"
+  ],
+  "items": [
+    {
+      "id": "prod_wlmouse_beast_x",
+      "slug": "wlmouse-beast-x-magnesium",
+      "brandCanonical": "WLMouse",
+      "officialProductName": "WLMouse Beast X Magnesium Alloy Wireless Gaming Mouse",
+      "manufacturerModel": "Beast X",
+      "manufacturerPartNumber": "WLM-BX-BLK",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.wlmouse.com/products/beastx",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Material": "CNC Magnesium Alloy Skeleton",
+        "Weight": "39 ± 1 g",
+        "Sensor": "PixArt PAW3395 (26,000 DPI)",
+        "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
+        "Switches": "Omron Optical Switches",
+        "Encoder": "TTC Dustproof Gold Encoder",
+        "Dimensions": "116 x 58 x 35 mm"
+      },
+      "variants": [
+        {
+          "name": "Anodized Black / 8K Dongle",
+          "sku": "UST-WLM-BX-BLK",
+          "color": "Anodized Black",
+          "priceIdr": 2150000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        },
+        {
+          "name": "Silver Lilac Special Edition",
+          "sku": "UST-WLM-BX-LIL",
+          "color": "Lilac Purple",
+          "priceIdr": 2250000,
+          "offerType": "READY",
+          "stockOnHand": 4,
+          "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_vxe_atk68_he",
+      "slug": "vxe-atk68-magnetic-he",
+      "brandCanonical": "VXE ATK FGG",
+      "officialProductName": "ATK68 Magnetic Switch Hall Effect Gaming Keyboard",
+      "manufacturerModel": "ATK68 V2",
+      "manufacturerPartNumber": "ATK-68-PRO",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.atk.pro/products/atk68",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Layout": "68-key Compact 65%",
+        "Switches": "Gateron Magnetic Jade (Factory Lubed)",
+        "Rapid Trigger": "0.1mm - 4.0mm Continuously Adjustable",
+        "Polling Rate": "8000 Hz Ultra-low Latency",
+        "Case": "CNC Anodized Aluminum Top + ABS Base",
+        "Mounting": "Silicone Tray Damping Structure"
+      },
+      "variants": [
+        {
+          "name": "Anodized Black / Magnetic Jade",
+          "sku": "UST-ATK-68-BLK",
+          "color": "Black",
+          "layout": "65% ANSI",
+          "switchType": "Gateron Magnetic Jade",
+          "priceIdr": 1690000,
+          "offerType": "READY",
+          "stockOnHand": 15,
+          "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        },
+        {
+          "name": "Retro Chalk / Magnetic White",
+          "sku": "UST-ATK-68-WHT",
+          "color": "Retro Chalk",
+          "layout": "65% ANSI",
+          "switchType": "Gateron Magnetic Jade",
+          "priceIdr": 1690000,
+          "offerType": "READY",
+          "stockOnHand": 9,
+          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_lamzu_maya_4k",
+      "slug": "lamzu-maya-4k-wireless",
+      "brandCanonical": "Lamzu / Scyrox",
+      "officialProductName": "Lamzu Maya 4K Wireless Ultra-lightweight Gaming Mouse",
+      "manufacturerModel": "Maya 4K",
+      "manufacturerPartNumber": "LMZ-MY-4K-BLK",
+      "category": "Mouse",
+      "officialProductUrl": "https://lamzu.com/products/lamzu-maya",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Weight": "45 ± 1 g Solid Shell",
+        "Sensor": "PixArt PAW3395",
+        "MCU": "Nordic 52840 (4000Hz Compatible)",
+        "Shape": "Universal Claw / Fingertip Symmetrical",
+        "Switches": "Huano Transparent Blue Pink Dot (80M Clicks)",
+        "Battery Life": "Up to 80 Hours (1000Hz)"
+      },
+      "variants": [
+        {
+          "name": "Cloud White / 4K Dongle Included",
+          "sku": "UST-LMZ-MY-WHT",
+          "color": "Cloud White",
+          "priceIdr": 1580000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        },
+        {
+          "name": "Imperial Red Edition",
+          "sku": "UST-LMZ-MY-RED",
+          "color": "Imperial Red",
+          "priceIdr": 1620000,
+          "offerType": "READY",
+          "stockOnHand": 6,
+          "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_glsswrks_akari",
+      "slug": "glsswrks-akari-glass-pad",
+      "brandCanonical": "GLSSWRKS",
+      "officialProductName": "GLSSWRKS Akari Premium Tempered Glass Mousepad",
+      "manufacturerModel": "Akari 490",
+      "manufacturerPartNumber": "GLS-AKR-4942",
+      "category": "Mousepad",
+      "officialProductUrl": "https://glsswrks.gg/products/akari",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "Multi-stage Acid Etched Tempered Glass",
+        "Base": "Full Silicone Anti-slip Custom Molded Base",
+        "Edge Treatment": "Sub-surface Beveled Micro Radius",
+        "Dimensions": "490 x 420 x 3.8 mm",
+        "Glide Characteristics": "Speed with Controlled Stopping Micro-texture"
+      },
+      "variants": [
+        {
+          "name": "Sumi Black Glass / 490x420mm (Batch Rilisan 02)",
+          "sku": "UST-GLS-AKR-BLK",
+          "color": "Sumi Black",
+          "priceIdr": 1850000,
+          "offerType": "PREORDER",
+          "batchId": "batch_glsswrks_akari_nov2026",
+          "estimatedShipping": "20–30 November 2026",
+          "stockOnHand": 0,
+          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_xraypad_ac2",
+      "slug": "x-raypad-aqua-control-2-sakura",
+      "brandCanonical": "X-Raypad",
+      "officialProductName": "X-Raypad Aqua Control II Sakura Hybrid Mousepad",
+      "manufacturerModel": "AC II Sakura",
+      "manufacturerPartNumber": "XRP-AC2-SKR-XXL",
+      "category": "Mousepad",
+      "officialProductUrl": "https://shop.x-raypad.com/shop/aqua-control-ii-sakura-gaming-mouse-pad/",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "Amundsen Fabric (Non-coated Micro-texture)",
+        "Bottom": "4mm High Density Natural Rubber",
+        "Stitching": "Narrow Sub-surface Overlock Stitching",
+        "Size": "XL (450 x 400 mm) & XXL (900 x 400 mm)",
+        "Humidity Resistance": "100% Unaffected by Sweat/Moisture"
+      },
+      "variants": [
+        {
+          "name": "Sakura Night Black / XL (450x400x4mm)",
+          "sku": "UST-XRP-AC2-XL-BLK",
+          "color": "Night Black",
+          "priceIdr": 420000,
+          "offerType": "READY",
+          "stockOnHand": 25,
+          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        },
+        {
+          "name": "Sakura Pink Edition / XL",
+          "sku": "UST-XRP-AC2-XL-PNK",
+          "color": "Sakura Pink",
+          "priceIdr": 420000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_pulsar_x2h",
+      "slug": "pulsar-x2h-high-hump-wireless",
+      "brandCanonical": "Pulsar",
+      "officialProductName": "Pulsar X2H High Hump Lightweight Wireless Mouse",
+      "manufacturerModel": "X2H Size 1 (Mini)",
+      "manufacturerPartNumber": "PX2H11",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.pulsar.gg/products/x2h-wireless-mouse",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Shape": "Rear Aggressive High Hump for Strict Claw Grip",
+        "Weight": "51 ± 1 g",
+        "Sensor": "PixArt PAW3395 (26,000 DPI / 650 IPS)",
+        "Switches": "Pulsar Optical Light Switch (Zero Debounce Delay)",
+        "Polling Rate": "Up to 4000Hz (Requires 4K Dongle)"
+      },
+      "variants": [
+        {
+          "name": "Stealth Black / Mini Size 1",
+          "sku": "UST-PLS-X2H-S1-BLK",
+          "color": "Stealth Black",
+          "priceIdr": 1540000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_wuque_zoom75",
+      "slug": "wuque-studio-zoom75-tkl",
+      "brandCanonical": "Wuque Studio",
+      "officialProductName": "Wuque Studio Zoom75 Modular Custom Keyboard Kit",
+      "manufacturerModel": "Zoom75 Tri-Mode",
+      "manufacturerPartNumber": "WS-ZM75-SE",
+      "category": "Keyboard",
+      "officialProductUrl": "https://meletrix.com/collections/zoom75",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Layout": "75% Custom DIY Kit",
+        "Case": "Full CNC Electrostatic Coated Aluminum",
+        "Modular Area": "Interchangeable 2U LCD Screen / Dual Knob / Badge",
+        "Mounting": "Gasket Mount with Multi-flex Cut PCB",
+        "Battery": "Dual 2250mAh Li-ion Cells (4500mAh Total)"
+      },
+      "variants": [
+        {
+          "name": "Anodized Navy / Screen Module (Batch Rilisan Q4)",
+          "sku": "UST-WS-ZM75-NVY",
+          "color": "Navy Blue",
+          "layout": "75% ANSI",
+          "priceIdr": 3290000,
+          "offerType": "PREORDER",
+          "batchId": "batch_ws_zoom75_dec2026",
+          "estimatedShipping": "05–15 Desember 2026",
+          "stockOnHand": 0,
+          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_hmx_xinhai_switches",
+      "slug": "hmx-xinhai-linear-switch",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Xinhai Clacky Linear Switches (Pack of 90)",
+      "manufacturerModel": "Xinhai 62.5g",
+      "manufacturerPartNumber": "HMX-XIN-90P",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://unikeyboards.com/products/hmx-xinhai-linear-switch",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Type": "5-pin Linear Switch",
+        "Top Housing": "PA12 High Acoustic Nylon",
+        "Bottom Housing": "Modified Nylon",
+        "Stem": "POM Long-pole (Crisp bottom-out)",
+        "Spring": "22mm Single-stage KOS Stainless Steel",
+        "Operating Force": "55g Bottom Out / 45g Actuation",
+        "Pre-lube": "Factory Precision Dry Film & Oil"
+      },
+      "variants": [
+        {
+          "name": "Box of 90 Switches / Factory Lubed",
+          "sku": "UST-SW-HMX-XIN-90",
+          "color": "Sea Salt Cyan",
+          "priceIdr": 485000,
+          "offerType": "READY",
+          "stockOnHand": 30,
+          "imageUrl": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_padsmith_first_attack",
+      "slug": "padsmith-first-attack-mousepad",
+      "brandCanonical": "Padsmith",
+      "officialProductName": "Padsmith First Attack Control Cloth Mousepad",
+      "manufacturerModel": "First Attack XL",
+      "manufacturerPartNumber": "PDS-FA-4942",
+      "category": "Mousepad",
+      "officialProductUrl": "https://padsmith.com/products/first-attack",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "Fine Jacquard Weave Cloth (Smooth Control)",
+        "Base": "Custom Padsmith Molded Natural Rubber (4mm)",
+        "Stitching": "Low-profile Edge Perimeter Stitch",
+        "Dimensions": "490 x 420 x 4 mm",
+        "Artwork": "Commissioned Artisan Japanese Ink Concept"
+      },
+      "variants": [
+        {
+          "name": "Artisan Ink Print / 490x420mm",
+          "sku": "UST-PDS-FA-XL",
+          "color": "Monochrome Ink",
+          "priceIdr": 690000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_sayodevice_o3c",
+      "slug": "sayodevice-o3c-rapid-trigger-keypad",
+      "brandCanonical": "SayoDevice",
+      "officialProductName": "SayoDevice O3C Magnetic Switch Rapid Trigger 3-Key Pad",
+      "manufacturerModel": "O3C",
+      "manufacturerPartNumber": "SYO-O3C-CNC",
+      "category": "Keyboard",
+      "officialProductUrl": "https://sayodevice.com/products/o3c",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Keys": "3 Keys (Hall Effect Magnetic Switches)",
+        "Display": "0.96 inch Color IPS Screen",
+        "Rapid Trigger": "0.05mm Continuous Step Sensitivity",
+        "Polling Rate": "1000Hz USB High Speed",
+        "Case": "CNC Aluminum Anodized Chassis",
+        "Use Case": "Osu! / Rhythm Games / Dedicated Custom Macro Pad"
+      },
+      "variants": [
+        {
+          "name": "Anodized Black CNC / Color IPS Display",
+          "sku": "UST-SYO-O3C-BLK",
+          "color": "Black",
+          "priceIdr": 490000,
+          "offerType": "READY",
+          "stockOnHand": 22,
+          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_darmoshark_m3_pro",
+      "slug": "darmoshark-m3-pro-4k",
+      "brandCanonical": "Darmoshark",
+      "officialProductName": "Darmoshark M3 Pro 4K Wireless Gaming Mouse",
+      "manufacturerModel": "M3 Pro",
+      "manufacturerPartNumber": "DAR-M3P-4K",
+      "category": "Mouse",
+      "officialProductUrl": "https://darmoshark.cn/products/m3-pro-4k",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Shape": "Full Size Ergonomic Claw/Palm Shape",
+        "Weight": "65 ± 2 g",
+        "Sensor": "PixArt PAW3395 (26,000 DPI)",
+        "Polling Rate": "4000Hz Wireless Compatible",
+        "Battery": "500mAh (Up to 140 Hours Runtime at 1000Hz)"
+      },
+      "variants": [
+        {
+          "name": "Matte White / 4K Ready",
+          "sku": "UST-DAR-M3P-WHT",
+          "color": "Matte White",
+          "priceIdr": 790000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_unusual_way_upad",
+      "slug": "unusual-way-sports-glass-blend",
+      "brandCanonical": "Unusual Way Sports",
+      "officialProductName": "Unusual Way Sports U-Pad Speed Hybrid Mousepad",
+      "manufacturerModel": "U-Pad V2",
+      "manufacturerPartNumber": "UWS-UPD-V2",
+      "category": "Mousepad",
+      "officialProductUrl": "https://unusualwaysports.com",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "High Density Fine Polyamide Weave",
+        "Base": "Polyurethane Foam Base with Micro Suction Grid",
+        "Dimensions": "480 x 400 x 3.5 mm",
+        "Glide": "Ultra Fast Initial Friction, Precise Micro-adjustments"
+      },
+      "variants": [
+        {
+          "name": "Graphite Grey / 480x400mm",
+          "sku": "UST-UWS-UPD-GRY",
+          "color": "Graphite Grey",
+          "priceIdr": 380000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_wooting_60he_plus",
+      "slug": "wooting-60he-plus",
+      "brandCanonical": "Wooting",
+      "officialProductName": "Wooting 60HE+ Analog Hall Effect Keyboard",
+      "manufacturerModel": "60HE+",
+      "manufacturerPartNumber": "WK3-US1-L60-001",
+      "category": "Keyboard",
+      "officialProductUrl": "https://wooting.io/wooting-60he",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Layout": "60% ANSI (61 Keys)",
+        "Switches": "Lekker L60 Hall Effect Linear (Magnetic)",
+        "Actuation Point": "0.1mm - 4.0mm (Adjustable in 0.1mm steps)",
+        "Rapid Trigger": "Continuous variable trigger reset",
+        "Polling Rate": "1000 Hz / 1ms true latency",
+        "Keycaps": "Double-shot PBT Cherry Profile",
+        "Case Material": "PCR ABS with Steel Switch Plate",
+        "Weight": "605 g"
+      },
+      "variants": [
+        {
+          "name": "Black / Lekker Linear L60 (Batch 04)",
+          "sku": "UST-KBD-W60HE-B04",
+          "color": "Black",
+          "layout": "ANSI 60%",
+          "switchType": "Lekker L60 Magnetic",
+          "priceIdr": 3499000,
+          "offerType": "PREORDER",
+          "batchId": "batch_wooting_60he_nov2026",
+          "estimatedShipping": "18–28 November 2026",
+          "stockOnHand": 0,
+          "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_keychron_v1_max",
+      "slug": "keychron-v1-max",
+      "brandCanonical": "Keychron",
+      "officialProductName": "Keychron V1 Max QMK/VIA Wireless Custom Mechanical Keyboard",
+      "manufacturerModel": "V1 Max",
+      "manufacturerPartNumber": "V1M-D1",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.keychron.com/products/keychron-v1-max-qmk-via-wireless-custom-mechanical-keyboard",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Layout": "75% ANSI (82 Keys)",
+        "Connectivity": "2.4 GHz, Bluetooth 5.1, Type-C Wired",
+        "Polling Rate": "1000 Hz (2.4 GHz & Wired)",
+        "Mounting": "Gasket Mount Design",
+        "Keycaps": "OSA Profile Double-shot PBT",
+        "Hot-swappable": "Yes (3-pin & 5-pin MX compatible)"
+      },
+      "variants": [
+        {
+          "name": "Carbon Black / Gateron Jupiter Banana (Tactile)",
+          "sku": "UST-KBD-V1M-CB-BAN",
+          "color": "Carbon Black",
+          "layout": "ANSI 75%",
+          "switchType": "Gateron Jupiter Banana",
+          "priceIdr": 1549000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_artisan_ninja_fx_zero",
+      "slug": "artisan-ninja-fx-zero",
+      "brandCanonical": "ARTISAN",
+      "officialProductName": "ARTISAN Ninja FX Zero Mousepad (Soft / XL)",
+      "manufacturerModel": "FX Zero Soft XL",
+      "manufacturerPartNumber": "FX-ZR-SF-XL-B",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.artisan-jp.com/fx-zero-eng.html",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "Twisted yarn knit (Polyester)",
+        "Middle Layer": "Special structure single-cell foam (PORON)",
+        "Hardness": "Soft",
+        "Dimensions": "490 x 420 x 4 mm (XL)",
+        "Edge Stitching": "Locked edge precision stitch",
+        "Country of Origin": "Japan"
+      },
+      "variants": [
+        {
+          "name": "Black / XL / Soft",
+          "sku": "UST-PAD-ZERO-XL-SF",
+          "color": "Black",
+          "priceIdr": 890000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_sennheiser_hd560s",
+      "slug": "sennheiser-hd-560s",
+      "brandCanonical": "Sennheiser",
+      "officialProductName": "Sennheiser HD 560S Reference Open-Back Headphones",
+      "manufacturerModel": "HD 560S",
+      "manufacturerPartNumber": "509144",
+      "category": "Audio",
+      "officialProductUrl": "https://www.sennheiser-hearing.com/en-US/p/hd-560s/",
+      "sourceImageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Transducer Principle": "Dynamic, Open-back",
+        "Frequency Response": "6 Hz - 38,000 Hz",
+        "Impedance": "120 Ω",
+        "Connector": "6.3 mm with 3.5 mm adapter",
+        "Weight": "240 g"
+      },
+      "variants": [
+        {
+          "name": "Studio Black / Velour",
+          "sku": "UST-AUD-HD560S-BLK",
+          "color": "Studio Black",
+          "priceIdr": 3199000,
+          "offerType": "READY",
+          "stockOnHand": 7,
+          "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+          "imageVariantMatch": true
+        }
+      ]
+    }
+  ]
+}

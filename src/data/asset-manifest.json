@@ -1,0 +1,72 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2026-09-28T05:00:00.000Z",
+  "assets": [
+    {
+      "asset_id": "ast_kbrd_v1m_cb",
+      "target_sku": "UST-KBD-V1M-CB-BAN",
+      "product_slug": "keychron-v1-max",
+      "view_type": "hero_top_angle",
+      "official_source_url": "https://www.keychron.com/products/keychron-v1-max-qmk-via-wireless-custom-mechanical-keyboard",
+      "cdn_image_url": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-v1m-cb-ban-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches Keychron 75% ANSI layout, rotary knob top-right, dark graphite casing."
+    },
+    {
+      "asset_id": "ast_kbrd_w60he_b04",
+      "target_sku": "UST-KBD-W60HE-B04",
+      "product_slug": "wooting-60he-plus",
+      "view_type": "hero_front",
+      "official_source_url": "https://wooting.io/wooting-60he",
+      "cdn_image_url": "https://images.unsplash.com/photo-1541140532154-b024d705b909?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-w60he-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches 60% compact layout, dark stealth keycaps, yellow accent webbing."
+    },
+    {
+      "asset_id": "ast_mou_gpx2_blk",
+      "target_sku": "UST-MOU-GPX2-BLK",
+      "product_slug": "logitech-g-pro-x-superlight-2",
+      "view_type": "side_profile",
+      "official_source_url": "https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-2-wireless-mouse.910-006628.html",
+      "cdn_image_url": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-gpx2-blk-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches Logitech G PRO X Superlight symmetrical ergonomics, matte black finish."
+    },
+    {
+      "asset_id": "ast_mou_gpx2_wht",
+      "target_sku": "UST-MOU-GPX2-WHT",
+      "product_slug": "logitech-g-pro-x-superlight-2",
+      "view_type": "top_down",
+      "official_source_url": "https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-2-wireless-mouse.910-006628.html",
+      "cdn_image_url": "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-gpx2-wht-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches Chalk White edition."
+    },
+    {
+      "asset_id": "ast_aud_hd560s_blk",
+      "target_sku": "UST-AUD-HD560S-BLK",
+      "product_slug": "sennheiser-hd-560s",
+      "view_type": "angled_studio",
+      "official_source_url": "https://www.sennheiser-hearing.com/en-US/p/hd-560s/",
+      "cdn_image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-hd560s-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches open-back mesh grille, black velour headband and ear cushions."
+    },
+    {
+      "asset_id": "ast_pad_zero_xl",
+      "target_sku": "UST-PAD-ZERO-XL-SF",
+      "product_slug": "artisan-ninja-fx-zero",
+      "view_type": "flat_lay",
+      "official_source_url": "https://www.artisan-jp.com/fx-zero-eng.html",
+      "cdn_image_url": "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=1000&q=80",
+      "checksum": "sha256-artisan-zero-verified",
+      "permission_status": "editorial_mock",
+      "verification_notes": "Matches textured surface knit with low-profile edge perimeter stitch."
+    }
+  ]
+}

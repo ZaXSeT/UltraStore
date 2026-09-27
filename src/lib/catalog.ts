@@ -5,60 +5,61 @@ import catalogResearch from "../data/catalog-research.json" with { type: "json" 
 export function seedCatalogIfEmpty() {
   const db = getDb();
   const countRow = db.prepare("SELECT count(*) as count FROM products").get() as { count: number };
-  if (countRow.count > 0) return;
+  if (countRow.count >= catalogResearch.items.length) return;
 
   runInTransaction((tx) => {
     // 1. Seed Categories
     const categories = [
       { id: "cat_kbd", name: "Keyboard", slug: "keyboard", desc: "Mechanical, Hall Effect, custom kits, keycaps" },
       { id: "cat_mou", name: "Mouse", slug: "mouse", desc: "Ultralight, optical sensor, ergonomic & symmetrical" },
+      { id: "cat_pad", name: "Mousepad", slug: "mousepad", desc: "Precision glasspads, hybrid cloth, artisan poron pads" },
+      { id: "cat_swp", name: "Switches & Parts", slug: "switches-parts", desc: "Enthusiast switches, keycaps, modding essentials" },
       { id: "cat_aud", name: "Audio", slug: "audio", desc: "Reference open-back, studio monitor, DAC/Amp" },
-      { id: "cat_dsk", name: "Desk Gear", slug: "desk-gear", desc: "Precision mousepads, desk mats, accessories" },
     ];
-    const catStmt = tx.prepare("INSERT INTO categories (id, name, slug, description) VALUES (?, ?, ?, ?)");
+    const catStmt = tx.prepare("INSERT OR REPLACE INTO categories (id, name, slug, description) VALUES (?, ?, ?, ?)");
     for (const c of categories) {
       catStmt.run(c.id, c.name, c.slug, c.desc);
     }
 
-    // 2. Seed Brands
-    const brands = [
-      { id: "brd_keychron", name: "Keychron", slug: "keychron", country: "Hong Kong", url: "https://www.keychron.com" },
-      { id: "brd_wooting", name: "Wooting", slug: "wooting", country: "Netherlands", url: "https://wooting.io" },
-      { id: "brd_logitechg", name: "Logitech G", slug: "logitech-g", country: "Switzerland", url: "https://www.logitechg.com" },
-      { id: "brd_pulsar", name: "Pulsar", slug: "pulsar", country: "Korea", url: "https://www.pulsar.gg" },
-      { id: "brd_sennheiser", name: "Sennheiser", slug: "sennheiser", country: "Germany", url: "https://www.sennheiser-hearing.com" },
-      { id: "brd_artisan", name: "ARTISAN", slug: "artisan", country: "Japan", url: "https://www.artisan-jp.com" },
-    ];
-    const brdStmt = tx.prepare("INSERT INTO brands (id, name, slug, country, official_url) VALUES (?, ?, ?, ?, ?)");
-    for (const b of brands) {
-      brdStmt.run(b.id, b.name, b.slug, b.country, b.url);
+    // 2. Dynamic Brands from catalogResearch
+    const uniqueBrands = Array.from(new Set(catalogResearch.items.map((i: any) => i.brandCanonical)));
+    const brdStmt = tx.prepare("INSERT OR IGNORE INTO brands (id, name, slug, country, official_url) VALUES (?, ?, ?, ?, ?)");
+    const brandMap = new Map<string, string>();
+
+    for (const bName of uniqueBrands) {
+      const bSlug = bName.toLowerCase().replace(/[^a-z0-9]/g, "-");
+      const bId = `brd_${bSlug}`;
+      brdStmt.run(bId, bName, bSlug, "Official Distributor", null);
+      brandMap.set(bName.toLowerCase(), bId);
     }
 
     // 3. Seed Products, Variants, Stock, Offers, and Batches
     const prodStmt = tx.prepare(`
-      INSERT INTO products (id, slug, name, brand_id, category_id, description, specs_json, box_contents_json, warranty_info, published, primary_image)
+      INSERT OR REPLACE INTO products (id, slug, name, brand_id, category_id, description, specs_json, box_contents_json, warranty_info, published, primary_image)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const varStmt = tx.prepare(`
-      INSERT INTO variants (id, product_id, sku, name, part_number, attributes_json, price, weight_grams, media_json)
+      INSERT OR REPLACE INTO variants (id, product_id, sku, name, part_number, attributes_json, price, weight_grams, media_json)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const stockStmt = tx.prepare(`
-      INSERT INTO stock_balances (variant_id, on_hand, reserved, allocated)
+      INSERT OR REPLACE INTO stock_balances (variant_id, on_hand, reserved, allocated)
       VALUES (?, ?, ?, ?)
     `);
     const offerStmt = tx.prepare(`
-      INSERT INTO offers (id, variant_id, offer_type, price, status, batch_id, estimated_shipping)
+      INSERT OR REPLACE INTO offers (id, variant_id, offer_type, price, status, batch_id, estimated_shipping)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
     const batchStmt = tx.prepare(`
-      INSERT INTO preorder_batches (id, slug, name, variant_id, status, quota_total, quota_reserved, quota_committed, eta_range, current_stage, delayed, timeline_notes_json)
+      INSERT OR REPLACE INTO preorder_batches (id, slug, name, variant_id, status, quota_total, quota_reserved, quota_committed, eta_range, current_stage, delayed, timeline_notes_json)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
-    for (const item of catalogResearch.items) {
-      const brandId = brands.find((b) => b.name.toLowerCase() === item.brandCanonical.toLowerCase())?.id || "brd_keychron";
-      const catId = categories.find((c) => c.name.toLowerCase() === item.category.toLowerCase())?.id || "cat_kbd";
+    for (const item of catalogResearch.items as any[]) {
+      const brandId = brandMap.get(item.brandCanonical.toLowerCase()) || "brd_other";
+      const catSlug = item.category.toLowerCase().replace(/[^a-z0-9]/g, "-");
+      const matchedCat = categories.find((c) => c.name.toLowerCase() === item.category.toLowerCase() || c.slug === catSlug);
+      const catId = matchedCat?.id || "cat_kbd";
 
       prodStmt.run(
         item.id,
@@ -118,7 +119,7 @@ export function seedCatalogIfEmpty() {
   });
 }
 
-export function getAllProducts(categorySlug?: string, offerFilter?: string): Product[] {
+export function getAllProducts(categorySlug?: string, offerFilter?: string, brandSlug?: string): Product[] {
   seedCatalogIfEmpty();
   const db = getDb();
 
@@ -135,6 +136,11 @@ export function getAllProducts(categorySlug?: string, offerFilter?: string): Pro
   if (categorySlug && categorySlug !== "all") {
     query += " AND c.slug = ?";
     params.push(categorySlug);
+  }
+
+  if (brandSlug && brandSlug !== "all") {
+    query += " AND b.slug = ?";
+    params.push(brandSlug);
   }
 
   const rows = db.prepare(query).all(...params) as any[];
@@ -270,3 +276,30 @@ export function getPreorderBatchBySlug(slug: string): PreorderBatch | null {
     timelineNotes: JSON.parse(r.timeline_notes_json),
   };
 }
+
+export function getBrands(): { id: string; name: string; slug: string; count: number }[] {
+  seedCatalogIfEmpty();
+  const db = getDb();
+  const rows = db.prepare(`
+    SELECT b.id, b.name, b.slug, count(p.id) as count
+    FROM brands b
+    LEFT JOIN products p ON b.id = p.brand_id AND p.published = 1
+    GROUP BY b.id
+    ORDER BY b.name ASC
+  `).all() as any[];
+  return rows;
+}
+
+export function getCategories(): { id: string; name: string; slug: string; description: string; count: number }[] {
+  seedCatalogIfEmpty();
+  const db = getDb();
+  const rows = db.prepare(`
+    SELECT c.id, c.name, c.slug, c.description, count(p.id) as count
+    FROM categories c
+    LEFT JOIN products p ON c.id = p.category_id AND p.published = 1
+    GROUP BY c.id
+    ORDER BY c.name ASC
+  `).all() as any[];
+  return rows;
+}
+

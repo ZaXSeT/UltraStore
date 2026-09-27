@@ -1,120 +1,214 @@
 import Link from "next/link";
-import { getAllProducts } from "../lib/catalog";
+import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
-import { ArrowRight, CheckCircle2, Clock, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, Sparkles, Terminal, Flame, ShieldCheck, Compass } from "lucide-react";
 
 export default function HomePage() {
   const products = getAllProducts();
+  const brands = getBrands();
+
   const readyProducts = products.filter((p) =>
     p.offers.some((o) => o.offerType === "READY")
-  ).slice(0, 4);
+  ).slice(0, 8);
 
-  const preorderProduct = products.find((p) =>
+  const preorderBatches = products.filter((p) =>
     p.offers.some((o) => o.offerType === "PREORDER")
   );
 
   return (
-    <div className="space-y-20 pb-16">
-      {/* 1. HERO SECTION (Precision Workshop 7/5 Grid) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16">
+    <div className="space-y-16 sm:space-y-24 pb-20">
+      {/* 1. BRAND TICKER / MARQUEE (Enthusiast Brands from Infinitas) */}
+      <section className="bg-[#202724] text-[#F4F1EA] py-3 border-y-2 border-black overflow-hidden font-mono text-xs">
+        <div className="flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar px-4">
+          <span className="bg-[#184E46] text-[#F4F1EA] px-2 py-0.5 rounded font-bold uppercase text-[10px]">
+            OFFICIAL DISTRIBUTOR
+          </span>
+          {brands.map((b) => (
+            <Link
+              key={b.slug}
+              href={`/shop?brand=${b.slug}`}
+              className="hover:text-[#184E46] transition-colors flex items-center gap-2 group"
+            >
+              <span className="font-bold tracking-wider">{b.name}</span>
+              <span className="text-[#59635E] group-hover:text-[#184E46]">/</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 2. HERO SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-widest text-[#184E46] uppercase bg-[#E4ECE6] px-3 py-1 rounded">
-              <span>ULTRASTORE / GEAR SELECTION</span>
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#184E46] uppercase bg-[#E4ECE6] px-3 py-1 rounded border border-[#184E46]/30">
+              <Terminal className="w-3.5 h-3.5" />
+              <span>PRECISION HARDWARE ARCHIVE // 2026</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#202724] leading-[1.1]">
-              Gear pilihan.<br />
-              <span className="text-[#184E46]">Setup dengan karakter.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter text-[#202724] leading-[1.05] uppercase font-mono">
+              Find your next <br />
+              <span className="text-[#184E46] underline decoration-4 underline-offset-8">
+                Endgame Setup
+              </span>
+              <span className="text-[#A84329] animate-pulse">_</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#59635E] max-w-xl leading-relaxed">
-              Temukan peripheral presisi untuk cara kamu bekerja dan bermain. Pilih ready stock yang siap dikirim hari ini, atau ikuti rilisan pre-order batch dengan jadwal produksi yang transparan.
+            <p className="text-sm sm:text-base text-[#59635E] max-w-xl font-mono leading-relaxed">
+              Koleksi peripheral presisi berlisensi resmi: mouse magnesium 39g, keyboard Hall Effect rapid trigger 0.1mm, mousepad tempered glass, dan clacky linear switches.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="/shop?offer=READY"
-                className="px-6 py-3.5 bg-[#184E46] text-[#F4F1EA] text-sm font-semibold rounded hover:bg-[#123d37] transition-colors flex items-center gap-2 shadow-sm"
+                className="px-6 py-3.5 bg-[#184E46] text-[#F4F1EA] text-xs font-bold font-mono rounded hover:bg-[#123d37] transition-all flex items-center gap-2 shadow-[3px_3px_0px_#202724]"
               >
-                <span>Belanja ready stock</span>
+                <span>EXPLORE READY STOCK</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
                 href="/shop?offer=PREORDER"
-                className="px-6 py-3.5 bg-[#F4E5DC] text-[#A84329] border border-[#A84329]/30 text-sm font-semibold rounded hover:bg-[#ebd5c8] transition-colors"
+                className="px-6 py-3.5 bg-[#FFFFFF] border-2 border-[#202724] text-[#202724] hover:bg-[#F4F1EA] text-xs font-bold font-mono rounded transition-all shadow-[3px_3px_0px_#202724] flex items-center gap-2"
               >
-                Lihat jadwal pre-order
+                <span>DROP BATCH SCHEDULE</span>
+                <span className="w-2 h-2 rounded-full bg-[#A84329] animate-ping"></span>
               </Link>
             </div>
 
             {/* Invariant Guarantees */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[#D9DDD5] text-xs font-mono text-[#59635E]">
-              <div>
-                <span className="block font-bold text-[#202724]">100% RESMI</span>
-                <span>Spesifikasi pabrik faktual</span>
+            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-[#202724]/15 text-xs font-mono">
+              <div className="p-2.5 rounded bg-white border border-[#202724]/10 shadow-sm">
+                <span className="block font-bold text-[#202724] uppercase">// DISTRIBUTOR</span>
+                <span className="text-[11px] text-[#59635E]">100% Terverifikasi</span>
               </div>
-              <div>
-                <span className="block font-bold text-[#202724]">ATOMIK</span>
-                <span>Tanpa overselling stok</span>
+              <div className="p-2.5 rounded bg-white border border-[#202724]/10 shadow-sm">
+                <span className="block font-bold text-[#184E46] uppercase">// ATOMIC STOCK</span>
+                <span className="text-[11px] text-[#59635E]">Zero overselling</span>
               </div>
-              <div>
-                <span className="block font-bold text-[#202724]">DROP LEDGER</span>
-                <span>Progres PO terlacak</span>
+              <div className="p-2.5 rounded bg-white border border-[#202724]/10 shadow-sm">
+                <span className="block font-bold text-[#A84329] uppercase">// DROP LEDGER</span>
+                <span className="text-[11px] text-[#59635E]">Lacak batch PO</span>
               </div>
             </div>
           </div>
 
           {/* Right Column (5 cols) Featured Hero Graphic */}
           <div className="lg:col-span-5">
-            <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-8 relative shadow-sm">
-              <div className="absolute top-4 right-4 bg-[#F4F1EA] border border-[#D9DDD5] px-2.5 py-1 text-[11px] font-mono text-[#59635E] rounded">
-                FEATURED / 01
+            <div className="bg-[#FFFFFF] border-2 border-[#202724] rounded p-6 relative shadow-[6px_6px_0px_#202724]">
+              <div className="flex items-center justify-between border-b border-[#202724]/10 pb-3 mb-4">
+                <span className="text-xs font-mono font-bold text-[#184E46]">
+                  FEATURED DROPS // 01
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E4ECE6] text-[#184E46] font-bold">
+                  8000Hz POLLING
+                </span>
               </div>
 
-              <div className="aspect-[4/3] w-full flex items-center justify-center p-4">
+              <div className="aspect-square w-full bg-[#F9F8F6] rounded flex items-center justify-center p-6 border border-[#202724]/10 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=1000&q=80"
-                  alt="Keychron V1 Max Custom Keyboard"
-                  className="w-full h-full object-contain"
+                  src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80"
+                  alt="WLMouse Beast X Magnesium"
+                  className="max-h-full max-w-full w-auto h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
-              <div className="mt-4 pt-4 border-t border-[#D9DDD5] flex items-center justify-between">
+              <div className="mt-4 pt-4 border-t border-[#202724]/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-mono text-[#59635E]">KEYCHRON V1 MAX</div>
-                  <div className="text-sm font-bold text-[#202724]">75% Wireless Custom QMK/VIA</div>
+                  <div className="text-[11px] font-mono font-bold text-[#184E46]">// WLMOUSE</div>
+                  <div className="text-sm font-bold text-[#202724]">Beast X Magnesium 39g</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs font-mono text-[#184E46] font-bold">READY STOCK</div>
-                  <div className="text-sm font-mono font-bold text-[#202724]">Rp1.549.000</div>
+                  <div className="text-[10px] font-mono text-[#59635E]">READY STOCK</div>
+                  <div className="text-sm font-mono font-bold text-[#202724]">Rp2.150.000</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Editorial Baseline */}
-        <div className="mt-14 pt-4 border-t border-[#D9DDD5] flex items-center justify-between text-xs font-mono text-[#59635E]">
-          <span>01 / DESK ESSENTIALS</span>
-          <span>CURATED HARDWARE FOR WORK & PLAY</span>
+      {/* 3. CATEGORY PILLARS (Infinitas Style Navigation) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border-b-2 border-[#202724] pb-3 mb-6 flex items-center justify-between">
+          <span className="text-xs font-mono font-bold uppercase text-[#202724]">
+            // EXPLORE BY GEAR CATEGORY
+          </span>
+          <Link href="/shop" className="text-xs font-mono font-semibold text-[#184E46] hover:underline flex items-center gap-1">
+            Lihat semua katalog <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Link
+            href="/shop?category=keyboard"
+            className="p-5 bg-white border border-[#202724] rounded shadow-[3px_3px_0px_#202724] hover:bg-[#184E46] hover:text-white transition-all group"
+          >
+            <div className="text-xs font-mono font-bold text-[#184E46] group-hover:text-white mb-1">
+              [ 01 // CAT ]
+            </div>
+            <h3 className="font-extrabold text-base font-mono uppercase">Keyboards</h3>
+            <p className="text-xs text-[#59635E] group-hover:text-neutral-200 font-mono mt-1">
+              Hall Effect, Rapid Trigger, Custom Kits
+            </p>
+          </Link>
+
+          <Link
+            href="/shop?category=mouse"
+            className="p-5 bg-white border border-[#202724] rounded shadow-[3px_3px_0px_#202724] hover:bg-[#184E46] hover:text-white transition-all group"
+          >
+            <div className="text-xs font-mono font-bold text-[#184E46] group-hover:text-white mb-1">
+              [ 02 // CAT ]
+            </div>
+            <h3 className="font-extrabold text-base font-mono uppercase">Mice</h3>
+            <p className="text-xs text-[#59635E] group-hover:text-neutral-200 font-mono mt-1">
+              Magnesium 39g, 4K/8K Polling, Optical
+            </p>
+          </Link>
+
+          <Link
+            href="/shop?category=mousepad"
+            className="p-5 bg-white border border-[#202724] rounded shadow-[3px_3px_0px_#202724] hover:bg-[#184E46] hover:text-white transition-all group"
+          >
+            <div className="text-xs font-mono font-bold text-[#184E46] group-hover:text-white mb-1">
+              [ 03 // CAT ]
+            </div>
+            <h3 className="font-extrabold text-base font-mono uppercase">Mousepads</h3>
+            <p className="text-xs text-[#59635E] group-hover:text-neutral-200 font-mono mt-1">
+              Acid Etched Glass, Poron Base, Hybrid
+            </p>
+          </Link>
+
+          <Link
+            href="/shop?category=switches-parts"
+            className="p-5 bg-white border border-[#202724] rounded shadow-[3px_3px_0px_#202724] hover:bg-[#184E46] hover:text-white transition-all group"
+          >
+            <div className="text-xs font-mono font-bold text-[#184E46] group-hover:text-white mb-1">
+              [ 04 // CAT ]
+            </div>
+            <h3 className="font-extrabold text-base font-mono uppercase">Switches & Gear</h3>
+            <p className="text-xs text-[#59635E] group-hover:text-neutral-200 font-mono mt-1">
+              HMX Linears, Keycaps, Osu Keypads
+            </p>
+          </Link>
         </div>
       </section>
 
-      {/* 2. SECTION: READY FOR YOUR DESK */}
+      {/* 4. READY STOCK SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 border-b-2 border-[#202724] pb-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#184E46] font-bold">Ready for your desk</span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#202724] mt-1">
-              Siap masuk setup kamu
+            <span className="text-xs font-mono uppercase tracking-widest text-[#184E46] font-bold flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
+              // READY TO DISPATCH
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#202724] mt-1 font-mono uppercase">
+              Stok Tersedia di Jakarta
             </h2>
           </div>
           <Link
             href="/shop?offer=READY"
-            className="text-sm font-semibold text-[#184E46] hover:text-[#123d37] flex items-center gap-1 font-mono"
+            className="text-xs font-bold text-[#184E46] hover:text-[#123d37] flex items-center gap-1 font-mono uppercase"
           >
             Lihat semua ready stock <ArrowRight className="w-4 h-4" />
           </Link>
@@ -127,135 +221,78 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. SECTION: THE NEXT DROP (Pre-order Spotlight) */}
-      {preorderProduct && (
+      {/* 5. PRE-ORDER BATCH SPOTLIGHT */}
+      {preorderBatches.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFFFF] border-2 border-[#A84329]/30 rounded overflow-hidden p-6 sm:p-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Photo */}
-              <div className="lg:col-span-5 bg-[#F9F8F6] rounded p-6 flex items-center justify-center border border-[#D9DDD5]">
-                <img
-                  src={preorderProduct.primaryImage}
-                  alt={preorderProduct.name}
-                  className="w-full h-auto max-h-72 object-contain"
-                />
-              </div>
-
-              {/* Right Content */}
-              <div className="lg:col-span-7 space-y-5">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F4E5DC] text-[#A84329] text-xs font-mono font-bold">
-                    <span className="w-2 h-2 rounded-full bg-[#A84329] animate-pulse"></span>
-                    THE NEXT DROP · BATCH RILISAN 04
-                  </span>
-                  <span className="text-xs font-mono text-[#59635E]">
-                    Est. Kirim: 18–28 November 2026
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#202724] tracking-tight">
-                  {preorderProduct.name}
-                </h3>
-
-                <p className="text-sm sm:text-base text-[#59635E] leading-relaxed">
-                  Analog Hall Effect magnetic switch dengan kapabilitas Rapid Trigger variabel hingga akurasi 0.1mm. Kuota produksi terikat langsung dengan jalur perakitan pabrik resmi.
-                </p>
-
-                {/* Quota Progress */}
-                <div className="space-y-2 pt-2">
-                  <div className="flex justify-between text-xs font-mono">
-                    <span className="text-[#59635E]">Alokasi Terisi: 12 dari 50 Unit</span>
-                    <span className="text-[#A84329] font-bold">24% Terpesan</span>
-                  </div>
-                  <div className="w-full h-2.5 bg-[#F4F1EA] rounded-full overflow-hidden border border-[#D9DDD5]">
-                    <div className="h-full bg-[#A84329] rounded-full" style={{ width: "24%" }}></div>
-                  </div>
-                </div>
-
-                <div className="pt-4 flex flex-wrap items-center gap-4">
-                  <Link
-                    href={`/products/${preorderProduct.slug}`}
-                    className="px-6 py-3 bg-[#A84329] text-white text-sm font-semibold rounded hover:bg-[#8e3822] transition-colors flex items-center gap-2"
-                  >
-                    <span>Pre-order batch ini (Rp3.499.000)</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-
-                  <Link
-                    href={`/drops/${preorderProduct.slug}-batch-04`}
-                    className="text-sm font-semibold text-[#59635E] hover:text-[#202724] font-mono underline underline-offset-4"
-                  >
-                    Buka Drop Ledger timeline
-                  </Link>
-                </div>
-              </div>
+          <div className="border-b-2 border-[#A84329] pb-4 mb-8 flex items-center justify-between">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-[#A84329] font-bold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#A84329] animate-pulse"></span>
+                // ACTIVE DROP BATCHES
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#202724] mt-1 font-mono uppercase">
+                Jadwal Rilisan Pre-Order
+              </h2>
             </div>
+            <Link
+              href="/shop?offer=PREORDER"
+              className="text-xs font-bold text-[#A84329] hover:underline flex items-center gap-1 font-mono uppercase"
+            >
+              Semua batch <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {preorderBatches.map((item) => {
+              const poOffer = item.offers.find((o) => o.offerType === "PREORDER");
+              return (
+                <div
+                  key={item.id}
+                  className="bg-white border-2 border-[#202724] rounded p-6 shadow-[5px_5px_0px_#A84329] flex flex-col justify-between"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between text-xs font-mono">
+                      <span className="font-bold text-[#A84329] bg-[#F4E5DC] px-2 py-0.5 rounded border border-[#A84329]/30">
+                        BATCH ACTIVE
+                      </span>
+                      <span className="text-[#59635E]">{item.brand.name}</span>
+                    </div>
+
+                    <div className="aspect-[4/3] bg-[#F9F8F6] rounded flex items-center justify-center p-4 border border-[#202724]/10 overflow-hidden">
+                      <img
+                        src={item.primaryImage}
+                        alt={item.name}
+                        className="max-h-full max-w-full w-auto h-auto object-contain hover:scale-105 transition-transform"
+                      />
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-base text-[#202724] line-clamp-2">
+                        {item.name}
+                      </h3>
+                      <p className="text-xs text-[#59635E] font-mono mt-1">
+                        Est. Pengiriman: {poOffer?.estimatedShipping || "Jadwal Terjadwal"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-[#202724]/10 flex items-center justify-between">
+                    <span className="font-extrabold font-mono text-base text-[#202724]">
+                      Rp{item.variants[0]?.price.toLocaleString("id-ID")}
+                    </span>
+                    <Link
+                      href={`/products/${item.slug}`}
+                      className="px-3.5 py-1.5 bg-[#A84329] text-white text-xs font-mono font-bold rounded shadow-[2px_2px_0px_#202724] hover:bg-[#8e3822] transition-colors"
+                    >
+                      Ikut Batch
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
-
-      {/* 4. SECTION: PILIH BERDASARKAN KEBUTUHAN */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#59635E]">Kurasi Meja</span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#202724] mt-1">
-            Pilih berdasarkan kebutuhan
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <Link
-            href="/shop?category=audio"
-            className="group bg-[#FFFFFF] border border-[#D9DDD5] p-6 rounded hover:border-[#184E46] transition-all"
-          >
-            <div className="text-xs font-mono text-[#184E46] mb-2">01 / FOCUS & AUDIO</div>
-            <h3 className="text-lg font-bold text-[#202724] group-hover:text-[#184E46] transition-colors">
-              Meja kerja tenang
-            </h3>
-            <p className="text-xs text-[#59635E] mt-2 leading-relaxed">
-              Headphone open-back reference dengan separasi instrumen jernih untuk produktivitas panjang tanpa lelah telinga.
-            </p>
-            <div className="mt-6 text-xs font-mono font-semibold text-[#184E46] flex items-center gap-1">
-              Lihat gear audio <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </Link>
-
-          {/* Card 2 */}
-          <Link
-            href="/shop?category=mouse"
-            className="group bg-[#FFFFFF] border border-[#D9DDD5] p-6 rounded hover:border-[#184E46] transition-all"
-          >
-            <div className="text-xs font-mono text-[#184E46] mb-2">02 / SPEED & AGILITY</div>
-            <h3 className="text-lg font-bold text-[#202724] group-hover:text-[#184E46] transition-colors">
-              Main lebih ringan
-            </h3>
-            <p className="text-xs text-[#59635E] mt-2 leading-relaxed">
-              Mouse wireless sub-60 gram, sensor optik 32.000 DPI, dan polling rate hingga 4000 Hz untuk kontrol instingtif.
-            </p>
-            <div className="mt-6 text-xs font-mono font-semibold text-[#184E46] flex items-center gap-1">
-              Lihat gear mouse <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </Link>
-
-          {/* Card 3 */}
-          <Link
-            href="/shop?category=keyboard"
-            className="group bg-[#FFFFFF] border border-[#D9DDD5] p-6 rounded hover:border-[#184E46] transition-all"
-          >
-            <div className="text-xs font-mono text-[#184E46] mb-2">03 / TACTILE & ACOUSTIC</div>
-            <h3 className="text-lg font-bold text-[#202724] group-hover:text-[#184E46] transition-colors">
-              Mulai mechanical
-            </h3>
-            <p className="text-xs text-[#59635E] mt-2 leading-relaxed">
-              Pilihan layout 75% & 60% gasket mount dengan switch Jupiter & Lekker yang siap pakai tanpa perlu modding rumit.
-            </p>
-            <div className="mt-6 text-xs font-mono font-semibold text-[#184E46] flex items-center gap-1">
-              Lihat keyboard <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }
