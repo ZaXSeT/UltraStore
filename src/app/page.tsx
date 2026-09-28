@@ -39,9 +39,9 @@ export default function HomePage() {
   }));
 
   return (
-    <div className="w-full space-y-16 lg:space-y-24 pb-28">
+    <div className="w-full space-y-12 lg:space-y-16 pb-28">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
-      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-3 text-xs tracking-tight">
+      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2.5 text-xs tracking-tight">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -64,9 +64,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. AWWWARDS-CALIBER EDITORIAL HERO */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="relative border border-neutral-200/90 rounded-3xl bg-white overflow-hidden shadow-[0_2px_40px_rgba(0,0,0,0.03)]">
+      {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (Zero top gap, flush border) */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-3 sm:pt-4">
+        <div className="relative border border-neutral-200/90 bg-white overflow-hidden shadow-[0_2px_40px_rgba(0,0,0,0.03)]">
           {/* Subtle Technical Grid Blueprint Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 

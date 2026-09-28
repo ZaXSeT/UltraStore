@@ -315,7 +315,7 @@ export default function AdminPage() {
             href="http://localhost:3000"
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-2 px-4 py-2 border border-[#111215] bg-[#111215] hover:bg-[#0E52FF] hover:border-[#0E52FF] text-white font-mono text-xs uppercase tracking-wider transition-all duration-200"
+            className="group flex items-center gap-2 px-4 py-2 border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all duration-200 shadow-sm"
           >
             <span>Live Storefront</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -398,8 +398,18 @@ export default function AdminPage() {
               {/* Announcement Strip */}
               <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
                 <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
-                  <span className="font-mono text-xs font-black uppercase text-[#111215]">Top Notification Strip</span>
-                  <span className="font-mono text-[10px] text-[#8F94A3]">HEADER BAR</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs font-black uppercase text-[#111215]">Top Notification Strip</span>
+                    <span className="font-mono text-[10px] text-[#8F94A3]">HEADER BAR</span>
+                  </div>
+                  <button
+                    onClick={handleSaveShowcase}
+                    disabled={saving}
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-[10px] uppercase font-bold tracking-wider transition-all disabled:opacity-50 shadow-sm"
+                  >
+                    <Save className="w-3 h-3" />
+                    <span>Save Strip</span>
+                  </button>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1">
@@ -426,8 +436,16 @@ export default function AdminPage() {
               {/* Hero Matrix Section */}
               <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
                 <div className="xl:col-span-7 space-y-6 bg-white border border-[#E2E5EB] p-6 sm:p-8">
-                  <div className="border-b border-[#E2E5EB] pb-3">
+                  <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
                     <span className="font-mono text-xs font-black uppercase text-[#111215]">Hero Focus Product</span>
+                    <button
+                      onClick={handleSaveShowcase}
+                      disabled={saving}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-[10px] uppercase font-bold tracking-wider transition-all disabled:opacity-50 shadow-sm"
+                    >
+                      <Save className="w-3 h-3" />
+                      <span>Save Hero</span>
+                    </button>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -589,10 +607,20 @@ export default function AdminPage() {
                 {/* 5-Slot Category Configuration Block */}
                 <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
                   <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
-                    <span className="font-mono text-xs font-black uppercase text-[#111215]">
-                      5-Slot Homepage Category Directory &amp; Navigation Links
-                    </span>
-                    <span className="font-mono text-[10px] text-[#8F94A3]">SSR / DYNAMIC</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs font-black uppercase text-[#111215]">
+                        5-Slot Homepage Category Directory &amp; Navigation Links
+                      </span>
+                      <span className="font-mono text-[10px] text-[#8F94A3]">SSR / DYNAMIC</span>
+                    </div>
+                    <button
+                      onClick={handleSaveShowcase}
+                      disabled={saving}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-[10px] uppercase font-bold tracking-wider transition-all disabled:opacity-50 shadow-sm"
+                    >
+                      <Save className="w-3 h-3" />
+                      <span>Save Categories</span>
+                    </button>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
