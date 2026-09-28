@@ -82,7 +82,7 @@ export function seedCatalogIfEmpty() {
           item.id,
           v.sku,
           v.name,
-          item.manufacturerPartNumber,
+          item.manufacturerPartNumber || null,
           JSON.stringify({ color: v.color, layout: v.layout, switch: v.switchType }),
           v.priceIdr,
           650,
@@ -112,7 +112,7 @@ export function seedCatalogIfEmpty() {
               { date: "2026-09-25", stage: "supplier_production", note: "Konfirmasi slot awal masuk pabrik perakitan.", actor: "Wooting Supplier Ops" }
             ])
           );
-          offerStmt.run(`off_po_${variantId}`, variantId, "PREORDER", v.priceIdr, "active", batchId, v.estimatedShipping);
+          offerStmt.run(`off_po_${variantId}`, variantId, "PREORDER", v.priceIdr, "active", batchId, v.estimatedShipping || null);
         }
       }
     }
