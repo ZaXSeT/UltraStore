@@ -4,7 +4,7 @@ import { ShopSidebar } from "../../components/ShopSidebar";
 import Link from "next/link";
 import { Filter, RotateCcw, X, ShieldCheck, Check } from "lucide-react";
 import { getServerLocale } from "../../lib/server-locale";
-import { copy } from "../../lib/locale";
+import { categoryLabel, copy } from "../../lib/locale";
 
 export default async function ShopPage({
   searchParams,
@@ -96,7 +96,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
                 >
-                  <span>{t("Kategori", "Category")}: {activeCategoryObj.name}</span>
+                  <span>{t("Kategori", "Category")}: {categoryLabel(activeCategoryObj.slug, activeCategoryObj.name, locale)}</span>
                   <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
                 </Link>
               )}

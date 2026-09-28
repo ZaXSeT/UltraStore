@@ -4,7 +4,7 @@ import { ProductDetailClient } from "../../../components/ProductDetailClient";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { getServerLocale } from "../../../lib/server-locale";
-import { copy } from "../../../lib/locale";
+import { categoryLabel, copy } from "../../../lib/locale";
 
 export default async function ProductPage({
   params,
@@ -29,7 +29,7 @@ export default async function ProductPage({
         <Link href="/shop" className="hover:text-slate-900 transition-colors">{t("Katalog", "Shop")}</Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <Link href={`/shop?category=${product.category.slug}`} className="hover:text-slate-900 transition-colors">
-          {product.category.name}
+          {categoryLabel(product.category.slug, product.category.name, locale)}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <span className="text-slate-900 font-semibold truncate max-w-xs">{product.name}</span>

@@ -38,6 +38,8 @@ export default async function HomePage() {
 
   const macroCategories = macroCategoriesConfig.map((cat) => ({
     ...cat,
+    title: locale === "en" ? cat.titleEn || cat.title : cat.title === "Keyboards" ? "Keyboard" : cat.title === "Gaming Mice" ? "Mouse Gaming" : cat.title === "Precision Glasspads" ? "Glasspad Presisi" : cat.title === "Artisan Switches" ? "Switch Pilihan" : cat.title === "Pre-Order Drops" ? "Rilis Pre-Order" : cat.title,
+    spec: locale === "en" ? cat.specEn || cat.spec : cat.spec === "Verified Manufacturer Batches" ? "Batch Pabrikan Terverifikasi" : cat.spec,
     count: cat.href.includes("offer=PREORDER")
       ? preorderBatches.length
       : products.filter((p) => p.category.slug === cat.href.replace("/shop?category=", "")).length,

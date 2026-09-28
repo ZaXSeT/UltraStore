@@ -48,32 +48,37 @@ body {
   background: #CBD5E1;
   border-radius: 3px;
 }
-/* Logo Metallic Shimmer Animation */
-@keyframes logoSheen {
+/* Logo Metallic Shimmer Animation (Left to Right Light Beam Sweep) */
+@keyframes logoShineSweep {
   0% {
-    background-position: 250% 0;
+    background-position: -200% 0;
   }
   100% {
-    background-position: -250% 0;
+    background-position: 200% 0;
   }
 }
 
 .logo-shimmer {
   display: inline-block;
+  font-weight: 900;
   background: linear-gradient(
     115deg,
-    #0A2540 0%,
-    #0E52FF 20%,
-    #38BDF8 38%,
+    #0F172A 0%,
+    #0F172A 30%,
+    #0E52FF 42%,
     #FFFFFF 50%,
-    #38BDF8 62%,
-    #0E52FF 80%,
-    #0A2540 100%
+    #38BDF8 58%,
+    #0F172A 70%,
+    #0F172A 100%
   ) !important;
-  background-size: 250% auto !important;
+  background-size: 200% auto !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   color: transparent !important;
-  animation: logoSheen 3.5s ease-in-out infinite alternate !important;
+  animation: logoShineSweep 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+}
+
+.logo-shimmer:hover {
+  animation-duration: 1.2s !important;
 }

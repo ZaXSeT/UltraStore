@@ -431,6 +431,15 @@ export default function AdminPage() {
                     />
                   </div>
                 </div>
+                <div className="border-t border-[#E2E5EB] pt-4 space-y-3">
+                  <p className="font-mono text-[10px] font-black uppercase text-[#111215]">English storefront copy</p>
+                  {(["primaryText", "secondaryText", "trackLinkText"] as const).map((key) => (
+                    <label key={key} className="block space-y-1">
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">{key === "primaryText" ? "Primary message" : key === "secondaryText" ? "Secondary detail" : "Track order link"} (EN)</span>
+                      <input type="text" value={announcement.english?.[key] || ""} onChange={(e) => setAnnouncement({ ...announcement, english: { ...announcement.english, [key]: e.target.value } })} className="w-full px-3.5 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]" />
+                    </label>
+                  ))}
+                </div>
               </div>
 
               {/* Hero Matrix Section */}
@@ -507,6 +516,15 @@ export default function AdminPage() {
                       onChange={(e) => setHero({ ...hero, description: e.target.value })}
                       className="w-full px-3.5 py-2.5 text-xs leading-relaxed border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                     />
+                  </div>
+                  <div className="border-t border-[#E2E5EB] pt-4 space-y-3">
+                    <p className="font-mono text-[10px] font-black uppercase text-[#111215]">English storefront copy</p>
+                    {(["badgeText", "description", "availability", "ctaText", "secondaryCtaText"] as const).map((key) => (
+                      <label key={key} className="block space-y-1">
+                        <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">{key} (EN)</span>
+                        <input type="text" value={hero.english?.[key] || ""} onChange={(e) => setHero({ ...hero, english: { ...hero.english, [key]: e.target.value } })} className="w-full px-3.5 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]" />
+                      </label>
+                    ))}
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -657,6 +675,10 @@ export default function AdminPage() {
                           />
                         </div>
                         <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Title Display (EN)</label>
+                          <input type="text" value={cat.titleEn || ""} onChange={(e) => setCategories(categories.map((item, itemIndex) => itemIndex === idx ? { ...item, titleEn: e.target.value } : item))} className="w-full px-3 py-1.5 font-bold text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]" />
+                        </div>
+                        <div className="space-y-1">
                           <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Spec Teaser Subtitle</label>
                           <input
                             type="text"
@@ -693,6 +715,10 @@ export default function AdminPage() {
                               />
                             </label>
                           </div>
+                        </div>
+                        <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Spec Teaser (EN)</label>
+                          <input type="text" value={cat.specEn || ""} onChange={(e) => setCategories(categories.map((item, itemIndex) => itemIndex === idx ? { ...item, specEn: e.target.value } : item))} className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]" />
                         </div>
                       </div>
                     ))}

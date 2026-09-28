@@ -5,7 +5,7 @@ import type { Product } from "../lib/types";
 import { ProductImage } from "./ProductImage";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { formatRupiah } from "../lib/locale";
+import { categoryLabel, formatRupiah } from "../lib/locale";
 
 export function ProductCard({ product }: { product: Product }) {
   const { locale, t } = useLanguage();
@@ -53,7 +53,7 @@ export function ProductCard({ product }: { product: Product }) {
               {product.brand.name}
             </span>
             <span className="font-mono text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded">
-              {product.category.name}
+              {categoryLabel(product.category.slug, product.category.name, locale)}
             </span>
           </div>
 

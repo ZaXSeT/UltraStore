@@ -1,4 +1,5 @@
 export interface HeroConfig {
+  english?: Partial<Pick<HeroConfig, "badgeText" | "description" | "availability" | "ctaText" | "secondaryCtaText">>;
   badgeText: string;
   tagline: string;
   titleLine1: string;
@@ -21,6 +22,8 @@ export interface HeroConfig {
 }
 
 export interface MacroCategoryConfig {
+  titleEn?: string;
+  specEn?: string;
   index: string;
   title: string;
   spec: string;
@@ -29,6 +32,7 @@ export interface MacroCategoryConfig {
 }
 
 export interface AnnouncementConfig {
+  english?: Partial<Pick<AnnouncementConfig, "primaryText" | "secondaryText" | "trackLinkText">>;
   badge: string;
   primaryText: string;
   secondaryText: string;

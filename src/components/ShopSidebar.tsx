@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "../context/LanguageContext";
+import { categoryLabel } from "../lib/locale";
 import {
   Keyboard,
   Mouse,
@@ -65,7 +66,7 @@ export function ShopSidebar({
   searchQuery = "",
   totalProducts,
 }: ShopSidebarProps) {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [brandSearch, setBrandSearch] = useState("");
@@ -212,7 +213,7 @@ export function ShopSidebar({
                       : "text-neutral-700 hover:bg-neutral-50"
                   }`}
                 >
-                  <span className="uppercase tracking-wider truncate">{c.name}</span>
+                  <span className="uppercase tracking-wider truncate">{categoryLabel(c.slug, c.name, locale)}</span>
                   <span className="text-[10px] opacity-60 font-tabular">{c.count}</span>
                 </button>
 

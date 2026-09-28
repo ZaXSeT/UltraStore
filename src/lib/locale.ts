@@ -18,3 +18,15 @@ export function formatRupiah(value: number, locale: StoreLocale): string {
     maximumFractionDigits: 0,
   }).format(value);
 }
+
+export function categoryLabel(slug: string, original: string, locale: StoreLocale): string {
+  const labels: Record<string, [string, string]> = {
+    keyboard: ["Keyboard", "Keyboards"],
+    mouse: ["Mouse", "Mice"],
+    mousepad: ["Mousepad", "Mousepads"],
+    "switches-parts": ["Switch & Komponen", "Switches & Parts"],
+    audio: ["Audio", "Audio"],
+  };
+  const pair = labels[slug];
+  return pair ? pair[locale === "en" ? 1 : 0] : original;
+}
