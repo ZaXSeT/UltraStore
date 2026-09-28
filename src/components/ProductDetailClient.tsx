@@ -73,7 +73,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
       {/* 1. GALLERY COLUMN (7 cols) */}
       <div className="lg:col-span-7 space-y-6">
         {/* Main Image 1:1 Aspect Ratio */}
-        <div className="bg-white border border-slate-200/80 rounded-2xl aspect-square flex items-center justify-center p-8 relative overflow-hidden shadow-sm">
+        <div className="bg-white border border-slate-200/80 rounded-2xl aspect-square flex items-center justify-center p-4 sm:p-6 relative overflow-hidden shadow-sm">
           <ProductImage
             src={activeImage}
             alt={selectedVariant.name}

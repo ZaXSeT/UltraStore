@@ -7,10 +7,10 @@ import { Filter, RotateCcw, X, ShieldCheck, Check } from "lucide-react";
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string; brand?: string; offer?: string; q?: string }>;
+  searchParams: Promise<{ category?: string; brand?: string; offer?: string; q?: string; surface?: string }>;
 }) {
-  const { category, brand, offer, q } = await searchParams;
-  let products = getAllProducts(category, offer, brand);
+  const { category, brand, offer, q, surface } = await searchParams;
+  let products = getAllProducts(category, offer, brand, surface);
   const allBrands = getBrands();
   const allCategories = getCategories();
 
@@ -66,6 +66,7 @@ export default async function ShopPage({
             currentCategory={category}
             currentBrand={brand}
             currentOffer={offer}
+            currentSurface={surface}
             searchQuery={q}
             totalProducts={products.length}
           />
@@ -117,12 +118,29 @@ export default async function ShopPage({
                   href={`/shop?${new URLSearchParams({
                     ...(category ? { category } : {}),
                     ...(brand ? { brand } : {}),
+                    ...(surface ? { surface } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors text-xs font-medium"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 hover:bg-blue-100 transition-colors text-xs font-medium"
                 >
-                  <span>Status: {offer === "READY" ? "Ready Stock" : "Pre-Order"}</span>
-                  <X className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600" />
+                  <span>Tipe: {offer}</span>
+                  <X className="w-3.5 h-3.5 text-blue-500 hover:text-blue-700" />
+                </Link>
+              )}
+
+              {/* Active Mousepad Surface Chip */}
+              {surface && (
+                <Link
+                  href={`/shop?${new URLSearchParams({
+                    ...(category ? { category } : {}),
+                    ...(brand ? { brand } : {}),
+                    ...(offer ? { offer } : {}),
+                    ...(q ? { q } : {}),
+                  }).toString()}`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-white border border-slate-700 hover:bg-blue-600 transition-colors text-xs font-medium"
+                >
+                  <span>Surface: {surface === "glass" ? "Glasspad (Kaca)" : "Cloth / Poron"}</span>
+                  <X className="w-3.5 h-3.5 text-slate-300 hover:text-white" />
                 </Link>
               )}
 

@@ -40,6 +40,7 @@ interface ShopSidebarProps {
   currentCategory?: string;
   currentBrand?: string;
   currentOffer?: string;
+  currentSurface?: string;
   searchQuery?: string;
   totalProducts: number;
 }
@@ -59,6 +60,7 @@ export function ShopSidebar({
   currentCategory = "",
   currentBrand = "",
   currentOffer = "",
+  currentSurface = "",
   searchQuery = "",
   totalProducts,
 }: ShopSidebarProps) {
@@ -71,6 +73,7 @@ export function ShopSidebar({
     category?: string;
     brand?: string;
     offer?: string;
+    surface?: string;
     q?: string;
   }) => {
     const params = new URLSearchParams();
@@ -78,6 +81,7 @@ export function ShopSidebar({
       category: currentCategory,
       brand: currentBrand,
       offer: currentOffer,
+      surface: currentSurface,
       q: searchQuery,
       ...updates,
     };
@@ -85,6 +89,7 @@ export function ShopSidebar({
     if (merged.category) params.set("category", merged.category);
     if (merged.brand) params.set("brand", merged.brand);
     if (merged.offer) params.set("offer", merged.offer);
+    if (merged.surface) params.set("surface", merged.surface);
     if (merged.q && merged.q.trim() !== "") params.set("q", merged.q.trim());
 
     const query = params.toString();
@@ -108,7 +113,7 @@ export function ShopSidebar({
   };
 
   const hasActiveFilters = Boolean(
-    currentCategory || currentBrand || currentOffer || searchQuery
+    currentCategory || currentBrand || currentOffer || currentSurface || searchQuery
   );
 
   const filteredBrands = allBrands.filter((b) =>
@@ -168,7 +173,7 @@ export function ShopSidebar({
           {currentCategory && (
             <button
               type="button"
-              onClick={() => updateFilters({ category: "" })}
+              onClick={() => updateFilters({ category: "", surface: "" })}
               className="text-xs font-medium text-blue-600 hover:text-blue-700"
             >
               Semua
@@ -180,7 +185,7 @@ export function ShopSidebar({
           {/* All Categories Item */}
           <button
             type="button"
-            onClick={() => updateFilters({ category: "" })}
+            onClick={() => updateFilters({ category: "", surface: "" })}
             className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left ${
               !currentCategory
                 ? "bg-blue-600 text-white font-semibold shadow-sm"
@@ -207,30 +212,71 @@ export function ShopSidebar({
             const isActive = currentCategory === c.slug;
             const Icon = CATEGORY_ICONS[c.slug] || Sparkles;
             return (
-              <button
-                key={c.slug}
-                type="button"
-                onClick={() => updateFilters({ category: c.slug })}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left ${
-                  isActive
-                    ? "bg-blue-600 text-white font-semibold shadow-sm"
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Icon className={`w-4 h-4 ${isActive ? "text-blue-200" : "text-slate-400"}`} />
-                  <span className="truncate">{c.name}</span>
-                </div>
-                <span
-                  className={`text-[11px] px-2 py-0.5 rounded-full font-mono ${
+              <div key={c.slug} className="space-y-1">
+                <button
+                  type="button"
+                  onClick={() => updateFilters({ category: c.slug, surface: "" })}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left ${
                     isActive
-                      ? "bg-blue-700 text-white font-bold"
-                      : "bg-slate-100 text-slate-500"
+                      ? "bg-blue-600 text-white font-semibold shadow-sm"
+                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                   }`}
                 >
-                  {c.count}
-                </span>
-              </button>
+                  <div className="flex items-center gap-2.5">
+                    <Icon className={`w-4 h-4 ${isActive ? "text-blue-200" : "text-slate-400"}`} />
+                    <span className="truncate">{c.name}</span>
+                  </div>
+                  <span
+                    className={`text-[11px] px-2 py-0.5 rounded-full font-mono ${
+                      isActive
+                        ? "bg-blue-700 text-white font-bold"
+                        : "bg-slate-100 text-slate-500"
+                    }`}
+                  >
+                    {c.count}
+                  </span>
+                </button>
+
+                {/* Sub-Filter Khusus Mousepad: Glass vs Non-Glass (Cloth/Poron) */}
+                {c.slug === "mousepad" && (currentCategory === "mousepad" || currentCategory === "") && (
+                  <div className="pl-6 pt-1 space-y-1">
+                    <div className="text-[10px] font-mono uppercase font-bold text-slate-400 tracking-wider mb-1">
+                      Material Surface
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => updateFilters({ category: "mousepad", surface: "glass" })}
+                      className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
+                        currentSurface === "glass"
+                          ? "bg-slate-900 text-white font-bold"
+                          : "text-slate-600 hover:bg-slate-100"
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                        <span>Glasspad (Kaca)</span>
+                      </div>
+                      <span className="text-[10px] opacity-70">16</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => updateFilters({ category: "mousepad", surface: "cloth" })}
+                      className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-medium transition-all ${
+                        currentSurface === "cloth"
+                          ? "bg-slate-900 text-white font-bold"
+                          : "text-slate-600 hover:bg-slate-100"
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                        <span>Cloth / Poron Base</span>
+                      </div>
+                      <span className="text-[10px] opacity-70">14</span>
+                    </button>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>

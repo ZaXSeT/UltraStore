@@ -23,7 +23,7 @@ export function ProductCard({ product }: { product: Product }) {
       className="group block bg-white border border-neutral-200/90 rounded-2xl overflow-hidden hover:border-neutral-950 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* 1:1 Product Image Studio Canvas */}
-      <div className="relative aspect-square w-full bg-neutral-50/70 flex items-center justify-center p-6 border-b border-neutral-100 overflow-hidden">
+      <div className="relative aspect-square w-full bg-neutral-100 flex items-center justify-center border-b border-neutral-100 overflow-hidden">
         <ProductImage
           src={primaryVariant?.media[0]?.url || product.primaryImage}
           alt={product.name}

@@ -1,6 +1,6 @@
-import { S3Client, PutObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
 
-const accountId = process.env.R2_ACCOUNT_ID;
+const accountId = process.env.R2_ACCOUNT_ID || "e9f6cff37d5d30f39a1865ce7c3d765e";
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
 const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
 const bucketName = process.env.R2_BUCKET_NAME || "ultrastore-assets";
@@ -18,10 +18,32 @@ export const r2Client = (accountId && accessKeyId && secretAccessKey)
     })
   : null;
 
+export async function deleteImageFromR2(keyOrUrl: string): Promise<boolean> {
+  if (!r2Client) return false;
+  try {
+    let key = keyOrUrl;
+    if (key.startsWith("http")) {
+      const u = new URL(key);
+      key = u.pathname.replace(/^\/+/, "");
+    }
+    await r2Client.send(
+      new DeleteObjectCommand({
+        Bucket: bucketName,
+        Key: key,
+      })
+    );
+    return true;
+  } catch (err) {
+    console.error("Failed to delete old object from R2:", err);
+    return false;
+  }
+}
+
 export async function uploadImageToR2(
   key: string,
   body: Buffer | Uint8Array,
-  contentType: string = "image/webp"
+  contentType: string = "image/webp",
+  oldKeyOrUrl?: string
 ): Promise<{ success: boolean; url: string; error?: string }> {
   const cleanKey = key.replace(/^\/+/, "");
   
@@ -35,6 +57,11 @@ export async function uploadImageToR2(
   }
 
   try {
+    // Prune previous asset version if updating to prevent orphaned bloat
+    if (oldKeyOrUrl && oldKeyOrUrl !== cleanKey) {
+      await deleteImageFromR2(oldKeyOrUrl);
+    }
+
     await r2Client.send(
       new PutObjectCommand({
         Bucket: bucketName,

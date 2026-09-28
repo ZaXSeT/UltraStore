@@ -118,7 +118,7 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
       src={src}
       alt={alt}
       onError={() => setError(true)}
-      className={`max-h-full max-w-full w-auto h-auto object-contain object-center transition-transform duration-300 ${className}`}
+      className={`w-full h-full object-cover transition-transform duration-300 ${className}`}
       loading="lazy"
     />
   );

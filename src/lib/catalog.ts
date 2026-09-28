@@ -134,7 +134,12 @@ export function seedCatalogIfEmpty() {
   });
 }
 
-export function getAllProducts(categorySlug?: string, offerFilter?: string, brandSlug?: string): Product[] {
+export function getAllProducts(
+  categorySlug?: string,
+  offerFilter?: string,
+  brandSlug?: string,
+  surfaceFilter?: "glass" | "cloth" | string
+): Product[] {
   seedCatalogIfEmpty();
   const db = getDb();
 
@@ -206,8 +211,15 @@ export function getAllProducts(categorySlug?: string, offerFilter?: string, bran
       primaryImage: r.primary_image,
     };
   }).filter((p) => {
-    if (!offerFilter || offerFilter === "ALL") return true;
-    return p.offers.some((o) => o.offerType === offerFilter);
+    if (offerFilter && offerFilter !== "ALL") {
+      if (!p.offers.some((o) => o.offerType === offerFilter)) return false;
+    }
+    if (surfaceFilter && surfaceFilter !== "all") {
+      const isGlass = /glass|kaca/i.test(p.name) || /glass/i.test(p.slug) || /glass/i.test(p.description);
+      if (surfaceFilter === "glass" && !isGlass) return false;
+      if (surfaceFilter === "cloth" && isGlass) return false;
+    }
+    return true;
   });
 }
 
