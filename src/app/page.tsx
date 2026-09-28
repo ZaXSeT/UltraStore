@@ -40,14 +40,22 @@ export default async function HomePage() {
     .filter((p) => p.offers.some((o) => o.offerType === "PREORDER"))
     .slice(0, 8);
 
-  const macroCategories = macroCategoriesConfig.map((cat) => ({
-    ...cat,
-    title: locale === "en" ? cat.titleEn || cat.title : cat.title === "Keyboards" ? "Keyboard" : cat.title === "Gaming Mice" ? "Mouse Gaming" : cat.title === "Precision Glasspads" ? "Glasspad Presisi" : cat.title === "Artisan Switches" ? "Switch Pilihan" : cat.title === "Pre-Order Drops" ? "Rilis Pre-Order" : cat.title,
-    spec: locale === "en" ? cat.specEn || cat.spec : categorySpec(cat.spec, locale),
-    count: cat.href.includes("offer=PREORDER")
-      ? preorderBatches.length
-      : products.filter((p) => p.category.slug === cat.href.replace("/shop?category=", "")).length,
-  }));
+  const macroCategories = macroCategoriesConfig.map((cat) => {
+    const slug = cat.href.replace("/shop?category=", "").replace("/shop?", "");
+    let count = 0;
+    if (cat.href.includes("offer=PREORDER")) {
+      count = products.filter((p) => p.offers.some((o) => o.offerType === "PREORDER")).length;
+    } else {
+      count = products.filter((p) => p.category.slug === slug).length;
+    }
+
+    return {
+      ...cat,
+      title: locale === "en" ? cat.titleEn || cat.title : cat.title === "Keyboards" ? "Keyboard" : cat.title === "Gaming Mice" ? "Mouse Gaming" : cat.title === "Precision Glasspads" ? "Glasspad Presisi" : cat.title === "Artisan Switches" ? "Switch Pilihan" : cat.title === "Pre-Order Drops" ? "Rilis Pre-Order" : cat.title,
+      spec: locale === "en" ? cat.specEn || cat.spec : categorySpec(cat.spec, locale),
+      count,
+    };
+  });
 
   return (
     <div className="w-full">
@@ -173,41 +181,41 @@ export default async function HomePage() {
       <BrandMarquee brands={brandLogos} />
 
       {/* 3. EDITORIAL CATEGORY DIRECTORY */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
+      <section className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-16 space-y-4 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 border-b border-neutral-200 pb-3 sm:pb-4">
           <div>
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-1">
+            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-0.5 sm:mb-1">
               {sections.categoryEyebrow}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
               {sections.categoryTitle}
             </h2>
           </div>
-          <span className="font-mono text-xs text-neutral-400">
+          <span className="font-mono text-[10px] sm:text-xs text-neutral-400">
             {sections.categoryTagline}
           </span>
         </div>
 
-        {/* 5-Column Precision Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+        {/* 5-Column Precision Gallery on Desktop, Compact 2-Column Grid on Mobile */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
           {macroCategories.map((cat) => (
             <Link
               key={cat.title}
               href={cat.href}
-              className="group relative bg-white border border-neutral-200/80 rounded-2xl p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between min-h-[360px] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]"
+              className="group relative bg-white border border-neutral-200/90 p-3 sm:p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between min-h-[200px] sm:min-h-[360px] shadow-xs hover:shadow-md"
             >
               {/* Card Header: Index & Product Count */}
-              <div className="flex items-baseline justify-between border-b border-neutral-100 pb-3">
-                <span className="font-mono text-xs font-bold text-neutral-400 group-hover:text-neutral-950 transition-colors">
+              <div className="flex items-baseline justify-between border-b border-neutral-100 pb-1.5 sm:pb-3">
+                <span className="font-mono text-[10px] sm:text-xs font-bold text-neutral-400 group-hover:text-neutral-950 transition-colors">
                   {cat.index}
                 </span>
-                <span className="font-mono text-[11px] font-semibold text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
+                <span className="font-mono text-[9px] sm:text-[11px] font-bold text-neutral-600 bg-neutral-100 px-1.5 sm:px-2 py-0.5">
                   {cat.count} {t("PRODUK", "ITEMS")}
                 </span>
               </div>
 
               {/* 1:1 Studio Product Frame */}
-              <div className="relative aspect-square w-full my-auto flex items-center justify-center p-4">
+              <div className="relative aspect-square w-full my-auto flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-full h-full">
                   <Image
                     src={cat.image}
@@ -220,16 +228,16 @@ export default async function HomePage() {
               </div>
 
               {/* Card Footer: Typography & Direction Arrow */}
-              <div className="border-t border-neutral-100 pt-3 flex items-end justify-between">
-                <div>
-                  <h3 className="font-extrabold text-sm text-neutral-950 group-hover:text-[#0E52FF] transition-colors leading-tight">
+              <div className="border-t border-neutral-100 pt-2 sm:pt-3 flex items-end justify-between gap-1">
+                <div className="min-w-0 pr-1">
+                  <h3 className="font-extrabold text-xs sm:text-sm text-neutral-950 group-hover:text-[#0E52FF] transition-colors leading-tight truncate">
                     {cat.title}
                   </h3>
-                  <p className="font-mono text-[10px] text-neutral-400 tracking-tight mt-0.5">
+                  <p className="font-mono text-[9px] sm:text-[10px] text-neutral-400 tracking-tight mt-0.5 truncate">
                     {cat.spec}
                   </p>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </Link>
           ))}
@@ -237,27 +245,27 @@ export default async function HomePage() {
       </section>
 
       {/* 4. READY STOCK CATALOG GRID */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
-        <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
+      <section className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-16 space-y-4 sm:space-y-6">
+        <div className="flex items-end justify-between border-b border-neutral-200 pb-3 sm:pb-4">
           <div>
-            <div className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-2">
+            <div className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-emerald-600 mb-0.5 sm:mb-1 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
               <span>{sections.readyEyebrow}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
               {sections.readyTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=READY"
-            className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
+            className="font-mono text-[10px] sm:text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
           >
             <span>{sections.readyCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-5">
           {readyProducts.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
@@ -265,27 +273,27 @@ export default async function HomePage() {
       </section>
 
       {/* 5. PRE-ORDER DROPS */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
-        <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
+      <section className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-16 space-y-4 sm:space-y-6">
+        <div className="flex items-end justify-between border-b border-neutral-200 pb-3 sm:pb-4">
           <div>
-            <div className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500 mb-1 flex items-center gap-2">
+            <div className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-500 mb-0.5 sm:mb-1 flex items-center gap-2">
               <Disc3 className="w-3.5 h-3.5 text-[#0E52FF]" />
               <span>{sections.preorderEyebrow}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
               {sections.preorderTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=PREORDER"
-            className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
+            className="font-mono text-[10px] sm:text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
           >
             <span>{sections.preorderCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-5">
           {preorderBatches.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
