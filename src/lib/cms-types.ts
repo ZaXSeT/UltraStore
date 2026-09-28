@@ -153,22 +153,22 @@ export const DEFAULT_SECTION_HEADERS_CONFIG: SectionHeadersConfig = {
 };
 
 export const DEFAULT_BRAND_LOGOS_CONFIG: BrandLogoConfig[] = [
-  { id: "x-raypad", name: "X-RAYPAD", logoUrl: "/images/brands/x-raypad.svg", href: "/shop?brand=x-raypad", active: true },
-  { id: "talon-games", name: "TALON GAMES", logoUrl: "/images/brands/talon-games.svg", href: "/shop?brand=talon-games", active: true },
-  { id: "deadline-studio", name: "DEADLINE STUDIO", logoUrl: "/images/brands/deadline-studio.svg", href: "/shop?brand=deadline-studio", active: true },
-  { id: "darmoshark", name: "DARMOSHARK", logoUrl: "/images/brands/darmoshark.svg", href: "/shop?brand=darmoshark", active: true },
-  { id: "dysphoria", name: "DYSPHORIA", logoUrl: "/images/brands/dysphoria.svg", href: "/shop?brand=dysphoria", active: true },
-  { id: "atk-gear", name: "ATK GEAR", logoUrl: "/images/brands/atk-gear.svg", href: "/shop?brand=atk-gear", active: true },
-  { id: "ipi", name: "IPI", logoUrl: "/images/brands/ipi.svg", href: "/shop?brand=ipi", active: true },
-  { id: "glsswrks", name: "GLSSWRKS", logoUrl: "/images/brands/glsswrks.svg", href: "/shop?brand=glsswrks", active: true },
-  { id: "lamzu", name: "LAMZU", logoUrl: "/images/brands/lamzu.svg", href: "/shop?brand=lamzu", active: true },
-  { id: "aimstar", name: "AIMSTAR", logoUrl: "/images/brands/aimstar.svg", href: "/shop?brand=aimstar", active: true },
-  { id: "wlmouse", name: "WLMOUSE", logoUrl: "/images/brands/wlmouse.svg", href: "/shop?brand=wlmouse", active: true },
-  { id: "pulsar", name: "PULSAR", logoUrl: "/images/brands/pulsar.png", href: "/shop?brand=pulsar", active: true },
-  { id: "keychron", name: "KEYCHRON", logoUrl: "/images/brands/keychron.svg", href: "/shop?brand=keychron", active: true },
-  { id: "aeboards", name: "AEBOARDS", logoUrl: "/images/brands/aeboards.svg", href: "/shop?brand=aeboards", active: true },
-  { id: "uncle-panda", name: "UNCLE PANDA", logoUrl: "/images/brands/uncle-panda.svg", href: "/shop?brand=uncle-panda", active: true },
-  { id: "xvx", name: "XVX", logoUrl: "/images/brands/xvx.svg", href: "/shop?brand=xvx", active: true },
+  { id: "x-raypad", name: "X-RAYPAD", logoUrl: "/api/r2/brands/x-raypad.svg", href: "/shop?brand=x-raypad", active: true },
+  { id: "talon-games", name: "TALON GAMES", logoUrl: "/api/r2/brands/talon-games.svg", href: "/shop?brand=talon-games", active: true },
+  { id: "deadline-studio", name: "DEADLINE STUDIO", logoUrl: "/api/r2/brands/deadline-studio.svg", href: "/shop?brand=deadline-studio", active: true },
+  { id: "darmoshark", name: "DARMOSHARK", logoUrl: "/api/r2/brands/darmoshark.svg", href: "/shop?brand=darmoshark", active: true },
+  { id: "dysphoria", name: "DYSPHORIA", logoUrl: "/api/r2/brands/dysphoria.svg", href: "/shop?brand=dysphoria", active: true },
+  { id: "atk-gear", name: "ATK GEAR", logoUrl: "/api/r2/brands/atk-gear.svg", href: "/shop?brand=atk-gear", active: true },
+  { id: "ipi", name: "IPI", logoUrl: "/api/r2/brands/ipi.svg", href: "/shop?brand=ipi", active: true },
+  { id: "glsswrks", name: "GLSSWRKS", logoUrl: "/api/r2/brands/glsswrks.svg", href: "/shop?brand=glsswrks", active: true },
+  { id: "lamzu", name: "LAMZU", logoUrl: "/api/r2/brands/lamzu.svg", href: "/shop?brand=lamzu", active: true },
+  { id: "aimstar", name: "AIMSTAR", logoUrl: "/api/r2/brands/aimstar.svg", href: "/shop?brand=aimstar", active: true },
+  { id: "wlmouse", name: "WLMOUSE", logoUrl: "/api/r2/brands/wlmouse.svg", href: "/shop?brand=wlmouse", active: true },
+  { id: "pulsar", name: "PULSAR", logoUrl: "/api/r2/brands/pulsar.png", href: "/shop?brand=pulsar", active: true },
+  { id: "keychron", name: "KEYCHRON", logoUrl: "/api/r2/brands/keychron.svg", href: "/shop?brand=keychron", active: true },
+  { id: "aeboards", name: "AEBOARDS", logoUrl: "/api/r2/brands/aeboards.svg", href: "/shop?brand=aeboards", active: true },
+  { id: "uncle-panda", name: "UNCLE PANDA", logoUrl: "/api/r2/brands/uncle-panda.svg", href: "/shop?brand=uncle-panda", active: true },
+  { id: "xvx", name: "XVX", logoUrl: "/api/r2/brands/xvx.svg", href: "/shop?brand=xvx", active: true },
 ];
 
 export const DEFAULT_FOOTER_CONFIG: FooterConfig = {

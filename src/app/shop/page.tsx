@@ -63,7 +63,7 @@ export default async function ShopPage({
       {/* 2-Column Full-Width Layout: Left Sticky Sidebar + Right Product Grid */}
       <div className="flex flex-col lg:flex-row items-start gap-8">
         {/* Left Column: Sticky Sidebar (Fixed on scroll) */}
-        <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-24 self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
+        <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-28 self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
           <ShopSidebar
             allCategories={allCategories}
             allBrands={allBrands}
