@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Compass, Search, ShieldCheck } from "lucide-react";
-import Link from "next/link";
 
 export default function TrackOrderPage() {
   const router = useRouter();
@@ -22,56 +21,56 @@ export default function TrackOrderPage() {
   return (
     <div className="max-w-xl mx-auto px-4 py-16 space-y-8">
       <div className="text-center space-y-2">
-        <div className="w-12 h-12 rounded-full bg-[#E4ECE6] text-[#184E46] flex items-center justify-center mx-auto">
+        <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
           <Compass className="w-6 h-6" />
         </div>
-        <h1 className="text-2xl font-bold text-[#202724] tracking-tight">
-          Lacak Pesanan Kamu
+        <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Lacak Status Pesanan
         </h1>
-        <p className="text-xs text-[#59635E] font-mono">
-          Masukkan nomor referensi pesanan yang dikirimkan ke invoice atau email kamu.
+        <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto leading-relaxed">
+          Masukkan nomor referensi pesanan yang tertera pada invoice atau konfirmasi pesanan Anda.
         </p>
       </div>
 
-      <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-8 shadow-sm">
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm">
         <form onSubmit={handleTrack} className="space-y-4">
           <div>
-            <label className="block text-xs font-mono font-bold text-[#202724] mb-1 uppercase tracking-wider">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5 tracking-wide">
               Nomor Referensi Pesanan
             </label>
             <input
               type="text"
               required
-              placeholder="UST-YYYYMMDD-XXXX"
+              placeholder="Contoh: UST-20260928-89F2"
               value={reference}
               onChange={(e) => {
                 setReference(e.target.value);
                 setErrorMsg("");
               }}
-              className="w-full p-3 bg-[#F4F1EA] border border-[#78857C] rounded text-sm font-mono text-[#202724] focus:outline-none focus:border-[#184E46]"
+              className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600/10 focus:border-blue-600 transition-all"
             />
           </div>
 
           {errorMsg && (
-            <p className="text-xs text-[#A12D2D] font-mono">{errorMsg}</p>
+            <p className="text-xs text-red-600 font-medium">{errorMsg}</p>
           )}
 
           <button
             type="submit"
-            className="w-full py-3 bg-[#184E46] text-white text-xs font-mono font-bold uppercase tracking-wider rounded hover:bg-[#123d37] transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm"
           >
             <Search className="w-4 h-4" />
             <span>Cari Status Pesanan</span>
           </button>
         </form>
 
-        <div className="border-t border-[#D9DDD5] mt-6 pt-4 text-[11px] font-mono text-[#59635E] space-y-1">
-          <div className="flex items-center gap-1 text-[#184E46] font-bold">
-            <ShieldCheck className="w-3.5 h-3.5" />
+        <div className="border-t border-slate-100 mt-6 pt-4 text-xs text-slate-500 space-y-1">
+          <div className="flex items-center gap-1.5 text-emerald-700 font-semibold">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>Privasi Data Pesanan</span>
           </div>
-          <p>
-            Detail alamat dan informasi transaksi pribadi dilindungi tautan akses bertanda tangan (guest access token) untuk mencegah kebocoran data.
+          <p className="leading-relaxed">
+            Detail alamat dan informasi transaksi pribadi dilindungi tautan akses bertanda tangan (guest access token) untuk menjaga kerahasiaan data pembeli.
           </p>
         </div>
       </div>

@@ -70,10 +70,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      {/* 1. GALLERY COLUMN (58% / 7 cols) */}
-      <div className="lg:col-span-7 space-y-4">
+      {/* 1. GALLERY COLUMN (7 cols) */}
+      <div className="lg:col-span-7 space-y-6">
         {/* Main Image 1:1 Aspect Ratio */}
-        <div className="bg-white border border-slate-200 rounded-2xl aspect-square flex items-center justify-center p-8 relative overflow-hidden shadow-sm">
+        <div className="bg-white border border-slate-200/80 rounded-2xl aspect-square flex items-center justify-center p-8 relative overflow-hidden shadow-sm">
           <ProductImage
             src={activeImage}
             alt={selectedVariant.name}
@@ -84,14 +84,14 @@ export function ProductDetailClient({ product }: { product: Product }) {
           {/* Offer Badge Overlay */}
           <div className="absolute top-4 left-4">
             {selectedOfferType === "PREORDER" ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded-full bg-orange-50 text-orange-700 border border-orange-200 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                PRE-ORDER BATCH
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700 border border-blue-200/80 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                Pre-Order Batch
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold rounded-full bg-teal-50 text-teal-700 border border-teal-200 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-teal-500"></span>
-                READY STOCK
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Ready Stock
               </span>
             )}
           </div>
@@ -107,7 +107,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 onClick={() => setActiveImage(m.url)}
                 className={`w-20 h-20 bg-white border rounded-xl p-2 flex items-center justify-center transition-all ${
                   activeImage === m.url
-                    ? "border-teal-600 ring-2 ring-teal-500/20 shadow-sm"
+                    ? "border-blue-600 ring-2 ring-blue-500/20 shadow-sm"
                     : "border-slate-200 hover:border-slate-300"
                 }`}
               >
@@ -118,32 +118,32 @@ export function ProductDetailClient({ product }: { product: Product }) {
         )}
 
         {/* Specifications Table */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 mt-8 space-y-4 shadow-sm">
-          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2 font-mono uppercase">
-            <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
+        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+            <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
             Spesifikasi Terverifikasi Resmi
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs font-mono">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs">
             {Object.entries(product.specs).map(([key, val]) => (
               <div key={key} className="flex justify-between border-b border-slate-100 py-2">
                 <span className="text-slate-500">{key}</span>
-                <span className="text-slate-900 font-semibold text-right">{val}</span>
+                <span className="text-slate-900 font-medium text-right">{val}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Box Contents */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
-          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2 font-mono uppercase">
-            <Box className="w-4 h-4 text-teal-600" />
+        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+          <h3 className="font-bold text-base text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+            <Box className="w-4 h-4 text-blue-600" />
             Isi Dalam Kotak Kemasan
           </h3>
-          <ul className="space-y-2 text-xs font-mono text-slate-700">
+          <ul className="space-y-2 text-xs text-slate-700">
             {product.boxContents.map((item, i) => (
               <li key={i} className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -151,14 +151,14 @@ export function ProductDetailClient({ product }: { product: Product }) {
         </div>
       </div>
 
-      {/* 2. PURCHASE PANEL COLUMN (42% / 5 cols sticky) */}
-      <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-28 shadow-sm">
+      {/* 2. PURCHASE PANEL COLUMN (5 cols sticky) */}
+      <div className="lg:col-span-5 bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-6 sticky top-28 shadow-sm">
         {/* Brand & Title */}
         <div>
-          <div className="text-xs font-mono text-teal-600 font-bold uppercase tracking-wider mb-1 flex items-center justify-between">
-            <span>// {product.brand.name}</span>
-            <span className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200">
-              {selectedVariant.sku}
+          <div className="text-xs text-blue-600 font-semibold tracking-wide mb-1.5 flex items-center justify-between">
+            <span>{product.brand.name}</span>
+            <span className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">
+              SKU: {selectedVariant.sku}
             </span>
           </div>
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight leading-snug">
@@ -171,20 +171,20 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
         {/* Price Tag */}
         <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-          <div className="text-xs font-mono text-slate-500">Harga Final Satuan</div>
-          <div className="text-3xl font-extrabold text-slate-900 font-mono tracking-tight mt-0.5">
+          <div className="text-xs text-slate-500 font-medium">Harga Final Satuan</div>
+          <div className="text-3xl font-extrabold text-slate-900 font-tabular tracking-tight mt-0.5">
             {formatIdr(matchedOffer.price || selectedVariant.price)}
           </div>
-          <div className="text-[11px] text-slate-500 mt-1 font-mono flex items-center gap-1">
-            <Truck className="w-3.5 h-3.5 text-teal-600" />
-            <span>Ongkir dihitung saat checkout · Pajak & bea masuk sudah termasuk</span>
+          <div className="text-[11px] text-slate-500 mt-1 flex items-center gap-1.5">
+            <Truck className="w-3.5 h-3.5 text-blue-600" />
+            <span>Ongkir dihitung saat checkout · Pajak &amp; bea masuk sudah termasuk</span>
           </div>
         </div>
 
         {/* Offer Selection (Ready Stock vs Pre-order) */}
         <div className="space-y-2">
-          <label className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider">
-            Tipe Penawaran (Offer)
+          <label className="text-xs font-semibold text-slate-900 tracking-wide block">
+            Pilihan Ketersediaan
           </label>
           <div className="grid grid-cols-2 gap-3">
             {distinctOfferTypes.map((offerType) => {
@@ -199,28 +199,28 @@ export function ProductDetailClient({ product }: { product: Product }) {
                   className={`p-3.5 rounded-xl text-left border transition-all ${
                     isSelected
                       ? isReady
-                        ? "border-teal-600 bg-teal-50/70 ring-1 ring-teal-600"
-                        : "border-orange-500 bg-orange-50/70 ring-1 ring-orange-500"
+                        ? "border-emerald-600 bg-emerald-50/70 ring-1 ring-emerald-600"
+                        : "border-blue-600 bg-blue-50/70 ring-1 ring-blue-600"
                       : "border-slate-200 bg-white hover:border-slate-300"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span
-                      className={`text-xs font-bold font-mono ${
-                        isReady ? "text-teal-700" : "text-orange-700"
+                      className={`text-xs font-bold ${
+                        isReady ? "text-emerald-700" : "text-blue-700"
                       }`}
                     >
-                      {isReady ? "READY STOCK" : "PRE-ORDER"}
+                      {isReady ? "Ready Stock" : "Pre-Order"}
                     </span>
                     {isSelected && (
                       <span
                         className={`w-2 h-2 rounded-full ${
-                          isReady ? "bg-teal-500" : "bg-orange-500"
+                          isReady ? "bg-emerald-500" : "bg-blue-600"
                         }`}
                       ></span>
                     )}
                   </div>
-                  <div className="text-[11px] text-slate-500 mt-1 font-mono">
+                  <div className="text-[11px] text-slate-500 mt-1">
                     {isReady ? "Kirim 1-2 hari" : targetOffer?.estimatedShipping || "Batch jadwal"}
                   </div>
                 </button>
@@ -230,12 +230,12 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Preorder drop ledger link */}
           {selectedOfferType === "PREORDER" && (
-            <div className="text-xs font-mono pt-1 text-orange-600">
+            <div className="text-xs pt-1 text-blue-600">
               <Link
                 href={`/drops/${product.slug}-batch-04`}
-                className="underline hover:text-orange-700 flex items-center gap-1 font-medium"
+                className="hover:underline flex items-center gap-1 font-medium"
               >
-                <span>Periksa Drop Ledger & kuota batch ini</span>
+                <span>Lihat rincian jadwal batch ini</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -245,7 +245,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Variant Selection */}
         {product.variants.length > 1 && (
           <div className="space-y-2">
-            <label className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider">
+            <label className="text-xs font-semibold text-slate-900 tracking-wide block">
               Pilih Varian
             </label>
             <div className="space-y-2">
@@ -261,19 +261,19 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     }}
                     className={`w-full p-3 rounded-xl text-left border transition-all flex items-center justify-between ${
                       isSelected
-                        ? "border-teal-600 bg-teal-50/50 ring-1 ring-teal-600"
+                        ? "border-blue-600 bg-blue-50/50 ring-1 ring-blue-600"
                         : "border-slate-200 bg-white hover:border-slate-300"
                     }`}
                   >
                     <div>
-                      <div className="text-xs font-bold text-slate-900">{v.name}</div>
-                      <div className="text-[11px] text-slate-500 font-mono mt-0.5">
+                      <div className="text-xs font-semibold text-slate-900">{v.name}</div>
+                      <div className="text-[11px] text-slate-500 mt-0.5">
                         {Object.entries(v.attributes)
                           .map(([k, val]) => `${k}: ${val}`)
                           .join(" · ")}
                       </div>
                     </div>
-                    <div className="text-xs font-mono font-bold text-slate-900">
+                    <div className="text-xs font-bold text-slate-900 font-tabular">
                       {formatIdr(v.price)}
                     </div>
                   </button>
@@ -286,8 +286,8 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Action Buttons */}
         <div className="space-y-3 pt-2">
           {addedNotice && (
-            <div className="bg-teal-50 border border-teal-200 text-teal-800 text-xs font-mono py-2.5 px-3.5 rounded-xl flex items-center gap-2">
-              <Check className="w-4 h-4 text-teal-600" />
+            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs py-2.5 px-3.5 rounded-xl flex items-center gap-2">
+              <Check className="w-4 h-4 text-emerald-600" />
               <span>Gear berhasil ditambahkan ke keranjang belanja.</span>
             </div>
           )}
@@ -296,7 +296,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="w-full py-3.5 border-2 border-slate-900 text-slate-900 text-xs font-bold font-mono uppercase tracking-wider rounded-xl hover:bg-slate-900 hover:text-white transition-colors"
+              className="w-full py-3.5 border border-slate-300 text-slate-900 text-xs font-semibold rounded-xl hover:bg-slate-50 transition-colors"
             >
               + Keranjang
             </button>
@@ -304,10 +304,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleBuyNow}
-              className={`w-full py-3.5 text-white text-xs font-bold font-mono uppercase tracking-wider rounded-xl shadow-sm transition-colors ${
+              className={`w-full py-3.5 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors ${
                 selectedOfferType === "PREORDER"
-                  ? "bg-orange-600 hover:bg-orange-700"
-                  : "bg-teal-600 hover:bg-teal-700"
+                  ? "bg-blue-600 hover:bg-blue-700"
+                  : "bg-slate-900 hover:bg-slate-800"
               }`}
             >
               {selectedOfferType === "PREORDER" ? "Pre-Order Sekarang" : "Beli Sekarang"}
@@ -316,13 +316,13 @@ export function ProductDetailClient({ product }: { product: Product }) {
         </div>
 
         {/* Invariant & Trust Notes */}
-        <div className="border-t border-slate-100 pt-4 space-y-2 text-xs font-mono text-slate-500">
+        <div className="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-500">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>Garansi resmi UltraStore 1 tahun distributor</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-teal-600" />
+            <Clock className="w-4 h-4 text-blue-600" />
             <span>Pemesanan mengikat kuota dan reservasi stok atomik</span>
           </div>
         </div>

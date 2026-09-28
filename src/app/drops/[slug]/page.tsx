@@ -36,43 +36,43 @@ export default async function DropLedgerPage({
       {/* Back Button */}
       <Link
         href={product ? `/products/${product.slug}` : "/shop"}
-        className="inline-flex items-center gap-2 text-xs font-mono text-[#59635E] hover:text-[#202724]"
+        className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>Kembali ke halaman produk</span>
       </Link>
 
       {/* Header Drop Ledger */}
-      <div className="bg-[#FFFFFF] border-2 border-[#A84329]/30 rounded p-6 sm:p-10 space-y-6">
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#A84329] bg-[#F4E5DC] px-2.5 py-1 rounded">
-              Drop Ledger · Batch Terjadwal
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200/80">
+              Jadwal Pre-Order Terjadwal
             </span>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#202724] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
               {batch.name}
             </h1>
           </div>
 
-          <div className="text-right font-mono">
-            <div className="text-xs text-[#59635E]">Estimasi Masuk Gudang:</div>
-            <div className="text-lg font-bold text-[#202724]">{batch.etaRange}</div>
+          <div className="text-left sm:text-right">
+            <div className="text-xs text-slate-500 font-medium">Estimasi Tiba di Gudang:</div>
+            <div className="text-lg font-bold text-slate-900">{batch.etaRange}</div>
           </div>
         </div>
 
         {/* Quota committed bar */}
-        <div className="space-y-2 pt-4 border-t border-[#D9DDD5]">
-          <div className="flex justify-between text-xs font-mono">
-            <span className="text-[#59635E]">
+        <div className="space-y-2 pt-4 border-t border-slate-100">
+          <div className="flex justify-between text-xs font-medium">
+            <span className="text-slate-600">
               Kuota Terpesan: {batch.quotaCommitted} / {batch.quotaTotal} Unit
             </span>
-            <span className="font-bold text-[#A84329]">
+            <span className="font-semibold text-blue-600">
               Sisa Kuota: {batch.quotaTotal - batch.quotaCommitted} Unit
             </span>
           </div>
-          <div className="w-full h-3 bg-[#F4F1EA] rounded-full overflow-hidden border border-[#D9DDD5]">
+          <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#A84329] rounded-full transition-all"
+              className="h-full bg-blue-600 rounded-full transition-all"
               style={{
                 width: `${Math.min(
                   100,
@@ -87,7 +87,7 @@ export default async function DropLedgerPage({
           <div className="pt-2">
             <Link
               href={`/products/${product.slug}`}
-              className="px-6 py-3 bg-[#A84329] text-white text-xs font-bold font-mono uppercase tracking-wider rounded hover:bg-[#8e3822] transition-colors inline-block"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors inline-block shadow-sm"
             >
               Pesan Slot Pre-Order Sekarang
             </Link>
@@ -96,17 +96,17 @@ export default async function DropLedgerPage({
       </div>
 
       {/* Drop Timeline Phases */}
-      <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-10 space-y-8">
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-8 shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-[#202724] tracking-tight">
+          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
             Tahapan Eksekusi Batch
           </h2>
-          <p className="text-xs text-[#59635E] font-mono mt-1">
-            Status bergerak berdasarkan pencatatan log aktual operator gudang & supplier resmi.
+          <p className="text-xs text-slate-500 mt-1">
+            Status diperbarui langsung berdasarkan pencatatan fisik operator gudang &amp; supplier resmi.
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {stages.map((stage, idx) => {
             const isCompleted = idx < currentStageIndex;
             const isCurrent = idx === currentStageIndex;
@@ -114,21 +114,21 @@ export default async function DropLedgerPage({
             return (
               <div
                 key={stage.key}
-                className={`flex items-start gap-4 p-4 rounded border transition-all ${
+                className={`flex items-start gap-4 p-4 rounded-xl border transition-all ${
                   isCurrent
-                    ? "bg-[#F4E5DC]/30 border-[#A84329]"
+                    ? "bg-blue-50/50 border-blue-300"
                     : isCompleted
-                    ? "bg-[#E4ECE6]/30 border-[#184E46]/30"
-                    : "bg-[#F9F8F6] border-[#D9DDD5] opacity-60"
+                    ? "bg-emerald-50/40 border-emerald-200/80"
+                    : "bg-slate-50 border-slate-200 opacity-60"
                 }`}
               >
                 <div className="mt-0.5">
                   {isCompleted ? (
-                    <CheckCircle2 className="w-5 h-5 text-[#184E46]" />
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                   ) : isCurrent ? (
-                    <Clock className="w-5 h-5 text-[#A84329] animate-spin" />
+                    <Clock className="w-5 h-5 text-blue-600 animate-spin" />
                   ) : (
-                    <Circle className="w-5 h-5 text-[#78857C]" />
+                    <Circle className="w-5 h-5 text-slate-400" />
                   )}
                 </div>
 
@@ -137,19 +137,25 @@ export default async function DropLedgerPage({
                     <h3
                       className={`text-sm font-bold ${
                         isCurrent
-                          ? "text-[#A84329]"
+                          ? "text-blue-900"
                           : isCompleted
-                          ? "text-[#184E46]"
-                          : "text-[#59635E]"
+                          ? "text-emerald-900"
+                          : "text-slate-600"
                       }`}
                     >
                       {stage.label}
                     </h3>
-                    <span className="text-[11px] font-mono uppercase text-[#59635E]">
-                      {isCompleted ? "SELESAI" : isCurrent ? "BERJALAN" : "RENCANA"}
+                    <span className="text-xs font-semibold uppercase">
+                      {isCompleted ? (
+                        <span className="text-emerald-700">Selesai</span>
+                      ) : isCurrent ? (
+                        <span className="text-blue-700">Sedang Berjalan</span>
+                      ) : (
+                        <span className="text-slate-400">Terjadwal</span>
+                      )}
                     </span>
                   </div>
-                  <p className="text-xs text-[#59635E] mt-1">{stage.desc}</p>
+                  <p className="text-xs text-slate-500 mt-1">{stage.desc}</p>
                 </div>
               </div>
             );
@@ -158,24 +164,24 @@ export default async function DropLedgerPage({
       </div>
 
       {/* Timeline Audit Logs */}
-      <div className="bg-[#FFFFFF] border border-[#D9DDD5] rounded p-6 sm:p-10 space-y-6">
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-[#202724] tracking-tight">
+          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
             Catatan Perubahan Faktual
           </h2>
-          <p className="text-xs text-[#59635E] font-mono mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Audit log tercatat tanpa animasi atau progres waktu semu.
           </p>
         </div>
 
-        <div className="divide-y divide-[#D9DDD5] text-xs font-mono">
+        <div className="divide-y divide-slate-100 text-xs">
           {batch.timelineNotes.map((note, i) => (
-            <div key={i} className="py-3 flex flex-col sm:flex-row justify-between gap-2">
+            <div key={i} className="py-3.5 flex flex-col sm:flex-row justify-between gap-2">
               <div className="space-y-0.5">
-                <span className="font-bold text-[#202724]">{note.note}</span>
-                <div className="text-[#59635E]">Aktor: {note.actor}</div>
+                <span className="font-semibold text-slate-900">{note.note}</span>
+                <div className="text-slate-500">Pencatat: {note.actor}</div>
               </div>
-              <div className="text-[#59635E] shrink-0">{note.date}</div>
+              <div className="text-slate-400 shrink-0">{note.date}</div>
             </div>
           ))}
         </div>

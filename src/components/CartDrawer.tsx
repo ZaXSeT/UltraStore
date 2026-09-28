@@ -59,7 +59,7 @@ export function CartDrawer() {
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 ${
           isCartOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={closeCart}
@@ -72,17 +72,17 @@ export function CartDrawer() {
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 bg-slate-50/80 shrink-0">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center text-white">
-              <ShoppingBag className="w-4.5 h-4.5" />
+              <ShoppingBag className="w-4 h-4 text-slate-200" />
             </div>
             <div>
-              <h2 className="text-sm font-extrabold text-slate-900 font-mono uppercase tracking-wide">
-                Keranjang
+              <h2 className="text-sm font-bold text-slate-900">
+                Keranjang Belanja
               </h2>
-              <span className="text-[11px] font-mono text-slate-500">
-                {totalItemCount} item · {groups.length} kelompok
+              <span className="text-xs text-slate-500 font-medium">
+                {totalItemCount} item · {groups.length} kelompok pengiriman
               </span>
             </div>
           </div>
@@ -102,48 +102,48 @@ export function CartDrawer() {
               <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
                 <ShoppingBag className="w-8 h-8" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 font-mono">
-                Keranjang Kosong
+              <h3 className="text-base font-bold text-slate-900">
+                Keranjang Masih Kosong
               </h3>
-              <p className="text-xs text-slate-500 mt-1 font-mono max-w-xs">
-                Belum ada gear yang ditambahkan. Jelajahi katalog untuk menemukan peripheral favoritmu.
+              <p className="text-xs text-slate-500 mt-1 max-w-xs leading-relaxed">
+                Belum ada gear yang ditambahkan. Jelajahi katalog untuk menemukan peripheral impian Anda.
               </p>
               <button
                 onClick={() => {
                   closeCart();
                   router.push("/shop");
                 }}
-                className="mt-5 px-5 py-2.5 bg-slate-950 text-white text-xs font-mono font-bold rounded-xl hover:bg-teal-600 transition-colors"
+                className="mt-5 px-5 py-2.5 bg-slate-900 text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors"
               >
                 Jelajahi Katalog
               </button>
             </div>
           ) : (
             <div className="divide-y divide-slate-100">
-              {groups.map((group, idx) => {
+              {groups.map((group) => {
                 const isReady = group.offerType === "READY";
                 return (
                   <div key={group.groupKey}>
                     {/* Group Label */}
                     <div
-                      className={`px-5 py-2.5 flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider ${
+                      className={`px-6 py-2.5 flex items-center justify-between text-xs font-semibold ${
                         isReady
-                          ? "bg-teal-50/80 text-teal-800 border-b border-teal-200/70"
-                          : "bg-orange-50/80 text-orange-800 border-b border-orange-200/70"
+                          ? "bg-emerald-50 text-emerald-900 border-b border-emerald-100"
+                          : "bg-blue-50 text-blue-900 border-b border-blue-100"
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <span
                           className={`w-2 h-2 rounded-full ${
-                            isReady ? "bg-teal-600" : "bg-orange-600 animate-pulse"
+                            isReady ? "bg-emerald-500" : "bg-blue-600"
                           }`}
                         />
                         <span>{isReady ? "Ready Stock" : "Pre-Order"}</span>
-                        <span className="text-[10px] font-normal text-slate-500">
+                        <span className="text-[11px] font-normal text-slate-500">
                           ({group.batchName || "Langsung"})
                         </span>
                       </div>
-                      <span className="text-[10px] font-normal text-slate-500">
+                      <span className="text-[11px] font-normal text-slate-500">
                         {group.etaRange}
                       </span>
                     </div>
@@ -152,7 +152,7 @@ export function CartDrawer() {
                     {group.items.map((item) => (
                       <div
                         key={`${item.variantId}-${item.offerId}`}
-                        className="px-5 py-4 flex gap-3.5 items-start hover:bg-slate-50/50 transition-colors"
+                        className="px-6 py-4 flex gap-3.5 items-start hover:bg-slate-50/50 transition-colors"
                       >
                         {/* Thumbnail */}
                         <div className="w-14 h-14 shrink-0 bg-slate-50 border border-slate-200 rounded-xl p-1 flex items-center justify-center overflow-hidden">
@@ -165,14 +165,14 @@ export function CartDrawer() {
 
                         {/* Details */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-[13px] text-slate-900 truncate leading-tight">
+                          <h4 className="font-semibold text-xs sm:text-sm text-slate-900 truncate leading-tight">
                             {item.productName}
                           </h4>
-                          <p className="text-[11px] font-mono text-slate-500 truncate mt-0.5">
+                          <p className="text-xs text-slate-500 truncate mt-0.5">
                             {item.variantName}
                           </p>
 
-                          <div className="flex items-center justify-between mt-2">
+                          <div className="flex items-center justify-between mt-2.5">
                             {/* Qty stepper */}
                             <div className="inline-flex items-center gap-0.5 border border-slate-200 rounded-lg bg-slate-50 overflow-hidden">
                               <button
@@ -188,7 +188,7 @@ export function CartDrawer() {
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
-                              <span className="w-8 text-center text-xs font-mono font-bold text-slate-900">
+                              <span className="w-8 text-center text-xs font-semibold text-slate-900 font-tabular">
                                 {item.quantity}
                               </span>
                               <button
@@ -207,7 +207,7 @@ export function CartDrawer() {
                             </div>
 
                             {/* Price */}
-                            <span className="text-xs font-mono font-extrabold text-slate-900">
+                            <span className="text-xs font-bold text-slate-900 font-tabular">
                               {formatIdr(item.price * item.quantity)}
                             </span>
                           </div>
@@ -226,18 +226,18 @@ export function CartDrawer() {
                     ))}
 
                     {/* Group Checkout Button */}
-                    <div className="px-5 py-3 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
-                      <div className="text-xs font-mono">
+                    <div className="px-6 py-3 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
+                      <div className="text-xs">
                         <span className="text-slate-500">Subtotal: </span>
-                        <span className="font-bold text-slate-900">{formatIdr(group.subtotal)}</span>
+                        <span className="font-bold text-slate-900 font-tabular">{formatIdr(group.subtotal)}</span>
                       </div>
                       <button
                         type="button"
                         onClick={() => handleCheckoutGroup(group.groupKey)}
-                        className={`inline-flex items-center gap-1.5 px-4 py-2 text-[11px] font-mono font-bold uppercase tracking-wider text-white rounded-xl shadow-sm transition-colors ${
+                        className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white rounded-xl shadow-sm transition-colors ${
                           isReady
-                            ? "bg-teal-600 hover:bg-teal-700"
-                            : "bg-orange-600 hover:bg-orange-700"
+                            ? "bg-slate-900 hover:bg-slate-800"
+                            : "bg-blue-600 hover:bg-blue-700"
                         }`}
                       >
                         <span>Checkout</span>
@@ -253,19 +253,19 @@ export function CartDrawer() {
 
         {/* Footer (Grand Total) */}
         {items.length > 0 && (
-          <div className="shrink-0 border-t border-slate-200 bg-white px-5 py-4 space-y-3">
+          <div className="shrink-0 border-t border-slate-200 bg-white px-6 py-4 space-y-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500">
-                <Truck className="w-3.5 h-3.5 text-teal-600" />
-                <span>Ongkir dihitung per kelompok saat checkout</span>
+              <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                <Truck className="w-3.5 h-3.5 text-blue-600" />
+                <span>Ongkos kirim dihitung per kelompok saat checkout</span>
               </div>
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-sm font-mono font-bold text-slate-900">
-                Total Semua
+              <span className="text-sm font-semibold text-slate-900">
+                Total Semua Kelompok
               </span>
-              <span className="text-lg font-mono font-extrabold text-slate-900 tracking-tight">
+              <span className="text-lg font-bold text-slate-900 font-tabular tracking-tight">
                 {formatIdr(grandTotal)}
               </span>
             </div>
@@ -276,9 +276,9 @@ export function CartDrawer() {
                 closeCart();
                 router.push(`/checkout?group=${encodeURIComponent(groups[0]?.groupKey || "READY")}`);
               }}
-              className="w-full py-3.5 bg-slate-950 text-white text-xs font-mono font-bold uppercase tracking-wider rounded-xl hover:bg-teal-600 transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-slate-900 text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors shadow-sm flex items-center justify-center gap-2"
             >
-              <span>Checkout Semua Kelompok</span>
+              <span>Lanjut ke Pembayaran</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
