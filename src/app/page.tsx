@@ -39,9 +39,9 @@ export default function HomePage() {
   }));
 
   return (
-    <div className="w-full space-y-12 lg:space-y-16 pb-28">
+    <div className="w-full pb-12 sm:pb-16">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
-      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2.5 text-xs tracking-tight">
+      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -64,9 +64,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (Zero top gap, flush border) */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-3 sm:pt-4">
-        <div className="relative border border-neutral-200/90 bg-white overflow-hidden shadow-[0_2px_40px_rgba(0,0,0,0.03)]">
+      {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (FLUSH ZERO GAP TO TICKER) */}
+      <section className="w-full border-b border-neutral-200/90 bg-white m-0 p-0">
+        <div className="w-full m-0 p-0">
+          <div className="relative border-none bg-white overflow-hidden m-0 p-0">
           {/* Subtle Technical Grid Blueprint Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
@@ -130,15 +131,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Stage (5 cols) - Natural Sizing with Zero Blank Void */}
-            <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+            {/* Right Hero Stage (5 cols) - Flush to Top */}
+            <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
               <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pb-2">
                 <span>{hero.subBadgeTopLeft}</span>
                 <span>{hero.subBadgeTopRight}</span>
               </div>
 
-              <div className="relative my-auto py-2">
-                <div className="relative aspect-square max-w-[420px] mx-auto overflow-hidden border border-neutral-200">
+              <div className="relative w-full flex-1 flex items-center justify-center py-2">
+                <div className="relative aspect-square w-full max-w-[440px] overflow-hidden border border-neutral-200 bg-white">
                   <Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
@@ -157,10 +158,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 3. EDITORIAL CATEGORY DIRECTORY */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-10 sm:pt-14 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
           <div>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-1">
