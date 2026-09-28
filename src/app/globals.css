@@ -3,23 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --canvas: #F8FAFC;
+  --canvas: #F8F9FA;
   --surface: #FFFFFF;
-  --ink: #090D16;
-  --muted: #64748B;
-  --brand-cobalt: #2563EB;
-  --brand-slate: #090D16;
-  --brand-blue: #2563EB;
-  --brand-emerald: #059669;
-  --line: #E2E8F0;
-  --control-border: #CBD5E1;
+  --ink: #111215;
+  --muted: #6B7280;
+  --brand-cobalt: #0E52FF;
+  --brand-slate: #111215;
+  --line: #E5E7EB;
+  --control-border: #D1D5DB;
   --error: #DC2626;
 }
 
 body {
   background-color: var(--canvas);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, -apple-system, "Inter", sans-serif;
+  letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

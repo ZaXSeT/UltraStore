@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Layers, Flame } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
 
 // ponytail: static category tiles & featured collab banner. Upgrade to dynamic CMS when marketing team needs frequent banner swaps.
 export default function HomePage() {
@@ -19,169 +19,218 @@ export default function HomePage() {
 
   const macroCategories = [
     {
+      index: "01",
       title: "Keyboards",
-      subtitle: "8K Hall Effect & Custom Kits",
+      spec: "8K HE & Custom Gasket",
       href: "/shop?category=keyboard",
       count: products.filter((p) => p.category.slug === "keyboard").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
     },
     {
+      index: "02",
       title: "Gaming Mice",
-      subtitle: "Ultralight Magnesium & Optical",
+      spec: "Magnesium & PAW3950 8K",
       href: "/shop?category=mouse",
       count: products.filter((p) => p.category.slug === "mouse").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
     },
     {
+      index: "03",
       title: "Precision Glasspads",
-      subtitle: "Tempered Glass & Poron Cloth",
+      spec: "Aluminosilicate Micro-Etch",
       href: "/shop?category=mousepad",
       count: products.filter((p) => p.category.slug === "mousepad").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
     },
     {
+      index: "04",
       title: "Artisan Switches",
-      subtitle: "Linear, Tactile & HE Magnetic",
+      spec: "Magnetic HE & Custom Linear",
       href: "/shop?category=switches-parts",
       count: products.filter((p) => p.category.slug === "switches-parts").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1727168051",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
     },
     {
+      index: "05",
       title: "Pre-Order Drops",
-      subtitle: "Batch Terjadwal Pabrikan",
+      spec: "Verified Manufacturer Batches",
       href: "/shop?offer=PREORDER",
       count: preorderBatches.length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
     },
   ];
 
   return (
-    <div className="space-y-12 sm:space-y-16 pb-20 w-full">
-      {/* 1. BRAND TICKER (Full Width) */}
-      <section className="bg-[#0B0F17] text-slate-300 py-2.5 border-b border-slate-800 overflow-hidden text-xs w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar">
-          <span className="bg-blue-600 text-white px-2.5 py-0.5 rounded font-bold uppercase text-[10px] tracking-wider shrink-0">
-            Distributor Resmi
-          </span>
-          {brands.map((b) => (
-            <Link
-              key={b.slug}
-              href={`/shop?brand=${b.slug}`}
-              className="hover:text-blue-400 transition-colors flex items-center gap-3 font-medium text-slate-300 shrink-0"
-            >
-              <span>{b.name}</span>
-              <span className="text-slate-700">·</span>
-            </Link>
-          ))}
+    <div className="w-full space-y-16 lg:space-y-24 pb-28">
+      {/* 1. EDITORIAL BRAND TICKER BAR */}
+      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-3 text-xs tracking-tight">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="font-mono uppercase text-[11px] font-bold text-neutral-900 tracking-wider">
+              AUTHORISED DISTRIBUTOR
+            </span>
+          </div>
+
+          <div className="flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar py-0.5 text-neutral-500 font-medium">
+            {brands.map((b) => (
+              <Link
+                key={b.slug}
+                href={`/shop?brand=${b.slug}`}
+                className="hover:text-neutral-950 transition-colors shrink-0"
+              >
+                {b.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 2. FEATURED COLLABORATION HERO BANNER */}
+      {/* 2. AWWWARDS-CALIBER EDITORIAL HERO */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white border border-slate-800 shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-            {/* Banner Copy (7 cols) */}
-            <div className="p-8 sm:p-12 lg:p-14 lg:col-span-7 space-y-6 z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold">
-                <Flame className="w-3.5 h-3.5 text-amber-400" />
-                <span>LIMITED COLLABORATION DROP 2026</span>
+        <div className="relative border border-neutral-200/90 rounded-3xl bg-white overflow-hidden shadow-[0_2px_40px_rgba(0,0,0,0.03)]">
+          {/* Subtle Technical Grid Blueprint Texture */}
+          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[580px] lg:min-h-[640px] items-stretch">
+            {/* Left Editorial Copy (7 cols) */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] bg-blue-50 px-2.5 py-1 rounded border border-blue-100">
+                    EDISI KHUSUS · 2026
+                  </span>
+                  <span className="text-xs font-mono text-neutral-400">
+                    NO. 001/HUB-JKT
+                  </span>
+                </div>
+
+                <div className="space-y-3">
+                  <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-neutral-950 leading-[0.98] uppercase">
+                    GLSSWRKS<br />
+                    <span className="text-neutral-400 font-light">ZOFIA</span> GLASS
+                  </h1>
+                  <p className="text-sm sm:text-base text-neutral-600 max-w-xl font-normal leading-relaxed pt-2">
+                    Permukaan kaca aluminosilikat micro-etched dengan base molded silicone murni. Gesekan seragam omnidirectional untuk aim kompetitif kelas turnamen.
+                  </p>
+                </div>
+
+                {/* Technical Spec Matrix */}
+                <div className="grid grid-cols-3 gap-4 pt-2 border-t border-neutral-100 max-w-lg">
+                  <div>
+                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Dimensi</span>
+                    <span className="font-medium text-xs sm:text-sm text-neutral-900">490 × 420 mm</span>
+                  </div>
+                  <div>
+                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Tebal</span>
+                    <span className="font-medium text-xs sm:text-sm text-neutral-900">3.8 mm CNC Bevel</span>
+                  </div>
+                  <div>
+                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Status</span>
+                    <span className="font-medium text-xs sm:text-sm text-emerald-600 font-mono">READY STOCK</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-2">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white">
-                  GLSSWRKS <span className="text-blue-400">ZOFIA</span><br />
-                  TEMPERED GLASS_
-                </h1>
-                <p className="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
-                  Surface kaca aluminosilikat etched micro-texture dengan base full silicone molded. Kontrol presisi mikroskopis untuk mouse gaming kompetitif.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 pt-1">
-                <span className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
-                  490 x 420 x 3.8 mm
-                </span>
-                <span className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
-                  CNC Beveled Edges
-                </span>
-                <span className="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 font-semibold">
-                  Ready Stock Hub Jakarta
-                </span>
-              </div>
-
+              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <Link
                   href="/products/glsswrks-zofia-tempered-glass"
-                  className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg flex items-center gap-2"
+                  className="px-8 py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center gap-2 group shadow-sm"
                 >
-                  <span>DAPATKAN SEKARANG</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Dapatkan Sekarang</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   href="/shop"
-                  className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all border border-white/20"
+                  className="px-7 py-4 bg-neutral-50 hover:bg-neutral-100 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 border border-neutral-200"
                 >
-                  JELAJAHI KATALOG
+                  Jelajahi Semua Gear
                 </Link>
               </div>
             </div>
 
-            {/* Banner Visual Artwork (5 cols) */}
-            <div className="relative lg:col-span-5 h-72 sm:h-96 lg:h-full min-h-[320px] flex items-center justify-center p-6 overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center">
+            {/* Right Hero Stage (5 cols) */}
+            <div className="lg:col-span-5 bg-gradient-to-br from-neutral-50/80 to-neutral-100/50 border-t lg:border-t-0 lg:border-l border-neutral-200/80 relative flex items-center justify-center p-8 sm:p-12 overflow-hidden group">
+              <div className="relative w-full aspect-square max-w-[420px] transition-transform duration-700 ease-out group-hover:scale-105">
                 <Image
                   src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207"
                   alt="GLSSWRKS Zofia Art Edition Glasspad"
                   fill
                   priority
-                  className="object-contain drop-shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.08)]"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                 />
+              </div>
+
+              {/* Technical Marker Tag */}
+              <div className="absolute bottom-6 right-6 font-mono text-[10px] text-neutral-400 uppercase tracking-widest bg-white/80 px-2.5 py-1 rounded border border-neutral-200/60 backdrop-blur-xs">
+                SPEC · SILICONE BASE
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. 5-COLUMN MACRO CATEGORY SHOWCASE */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wider">
-            <Layers className="w-4 h-4 text-blue-600" />
-            <span>Kategori Gear Presisi</span>
+      {/* 3. EDITORIAL CATEGORY DIRECTORY */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
+          <div>
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-1">
+              ARSITEKTUR PERIFERAL
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+              5 Spesialisasi Gear Presisi
+            </h2>
           </div>
-          <span className="text-xs text-slate-400 font-medium">5 Spesialisasi Periferal</span>
+          <span className="font-mono text-xs text-neutral-400">
+            DISTRIBUSI JAKARTA HUB 2026
+          </span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {/* 5-Column Precision Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
           {macroCategories.map((cat) => (
             <Link
               key={cat.title}
               href={cat.href}
-              className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 hover:border-blue-500 hover:shadow-xl transition-all flex flex-col justify-end aspect-[4/5] p-5 text-white"
+              className="group relative bg-white border border-neutral-200/80 rounded-2xl p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between h-[360px] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]"
             >
-              {/* Background Photo with Subtle Dark Gradient */}
-              <Image
-                src={cat.image}
-                alt={cat.title}
-                fill
-                className="object-cover opacity-75 group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
-                sizes="(max-width: 768px) 50vw, 20vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent" />
-
-              {/* Category Info Overlay */}
-              <div className="relative z-10 space-y-1">
-                <span className="text-[11px] font-mono text-blue-400 font-semibold block uppercase tracking-wider">
-                  {cat.count} Produk
+              {/* Card Header: Index & Product Count */}
+              <div className="flex items-baseline justify-between border-b border-neutral-100 pb-3">
+                <span className="font-mono text-xs font-bold text-neutral-400 group-hover:text-neutral-950 transition-colors">
+                  {cat.index}
                 </span>
-                <h3 className="font-extrabold text-base sm:text-lg text-white group-hover:text-blue-300 transition-colors leading-tight">
-                  {cat.title}
-                </h3>
-                <p className="text-[11px] text-slate-300 line-clamp-1">
-                  {cat.subtitle}
-                </p>
+                <span className="font-mono text-[11px] font-semibold text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
+                  {cat.count} ITEMS
+                </span>
+              </div>
+
+              {/* 1:1 Studio Product Frame */}
+              <div className="relative aspect-square w-full my-auto flex items-center justify-center p-4">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={cat.image}
+                    alt={cat.title}
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  />
+                </div>
+              </div>
+
+              {/* Card Footer: Typography & Direction Arrow */}
+              <div className="border-t border-neutral-100 pt-3 flex items-end justify-between">
+                <div>
+                  <h3 className="font-extrabold text-sm text-neutral-950 group-hover:text-[#0E52FF] transition-colors leading-tight">
+                    {cat.title}
+                  </h3>
+                  <p className="font-mono text-[10px] text-neutral-400 tracking-tight mt-0.5">
+                    {cat.spec}
+                  </p>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </Link>
           ))}
@@ -190,21 +239,21 @@ export default function HomePage() {
 
       {/* 4. READY STOCK CATALOG GRID */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
-        <div className="flex items-end justify-between border-b border-slate-200 pb-4">
+        <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Siap Kirim dari Jakarta Hub</span>
+            <div className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>SIAP KIRIM · JAKARTA CENTRAL HUB</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
               Ready Stock Terverifikasi
             </h2>
           </div>
           <Link
             href="/shop?offer=READY"
-            className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors"
+            className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
           >
-            <span>Lihat Semua Ready</span>
+            <span>Semua Ready Stock</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -218,21 +267,21 @@ export default function HomePage() {
 
       {/* 5. PRE-ORDER DROPS */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
-        <div className="flex items-end justify-between border-b border-slate-200 pb-4">
+        <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-amber-600 mb-1 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-500"></span>
-              <span>Batch Pabrikan Terjadwal</span>
+            <div className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500 mb-1 flex items-center gap-2">
+              <Disc3 className="w-3.5 h-3.5 text-[#0E52FF]" />
+              <span>BATCH RESMI TERJADWAL</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
               Pre-Order Drops
             </h2>
           </div>
           <Link
             href="/shop?offer=PREORDER"
-            className="text-xs font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 transition-colors"
+            className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
           >
-            <span>Lihat Semua Pre-Order</span>
+            <span>Semua Batch Pre-Order</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
