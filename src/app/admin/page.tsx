@@ -12,6 +12,8 @@ import {
   Plus,
   Trash2,
   Edit2,
+  Upload,
+  Crop,
 } from "lucide-react";
 
 export default function AdminPage() {
@@ -45,6 +47,12 @@ export default function AdminPage() {
   const itemsPerPage = 15;
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState<any>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [cropModalOpen, setCropModalOpen] = useState(false);
+  const [tempImageSrc, setTempImageSrc] = useState<string | null>(null);
+  const [rawFile, setRawFile] = useState<File | null>(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
   const [newProduct, setNewProduct] = useState({
     name: "",
     category_id: "cat_pad",
@@ -129,6 +137,46 @@ export default function AdminPage() {
       }
     } catch {
       setSaveMessage("Failed updating product.");
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setRawFile(file);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setTempImageSrc(reader.result as string);
+      setZoomLevel(1);
+      setPanPosition({ x: 0, y: 0 });
+      setCropModalOpen(true);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleApplyCropAndUpload = async () => {
+    if (!rawFile) return;
+    setUploadingImage(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", rawFile);
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success && data.url) {
+        setHero((prev: any) => ({ ...prev, imageUrl: data.url }));
+        setCropModalOpen(false);
+        setSaveMessage("Hero image uploaded to R2.");
+        setTimeout(() => setSaveMessage(null), 3000);
+      } else {
+        alert(data.error || "Upload failed");
+      }
+    } catch {
+      alert("Failed connecting to upload server");
+    } finally {
+      setUploadingImage(false);
     }
   };
 
@@ -498,6 +546,20 @@ export default function AdminPage() {
                       <span>AVAILABILITY:</span>
                       <span className="font-bold text-emerald-700">{hero.availability}</span>
                     </div>
+                  </div>
+
+                  {/* Upload & Crop Action Button */}
+                  <div className="pt-2">
+                    <label className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer transition-colors shadow-sm">
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>Upload &amp; Crop Hero Image</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileSelect}
+                        className="hidden"
+                      />
+                    </label>
                   </div>
                 </div>
               </div>
@@ -939,6 +1001,94 @@ export default function AdminPage() {
             </div>
           )}
         </main>
+
+        {/* Modal Crop Image (1:1 Aspect Ratio) */}
+        {cropModalOpen && tempImageSrc && (
+          <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="bg-white border-2 border-[#111215] max-w-lg w-full p-6 space-y-5 shadow-2xl">
+              <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-3">
+                <div className="flex items-center gap-2">
+                  <Crop className="w-4 h-4 text-[#0E52FF]" />
+                  <span className="font-mono text-xs font-black uppercase text-[#111215]">
+                    1:1 Square Frame Alignment &amp; Crop
+                  </span>
+                </div>
+                <button
+                  onClick={() => setCropModalOpen(false)}
+                  className="font-mono text-xs text-[#8F94A3] hover:text-[#111215]"
+                >
+                  [CLOSE]
+                </button>
+              </div>
+
+              {/* Crop Canvas Viewport */}
+              <div className="relative aspect-square w-full max-w-[340px] mx-auto bg-neutral-900 border-2 border-dashed border-[#0E52FF] overflow-hidden flex items-center justify-center">
+                <img
+                  src={tempImageSrc}
+                  alt="Crop Preview"
+                  style={{
+                    transform: `scale(${zoomLevel}) translate(${panPosition.x}px, ${panPosition.y}px)`,
+                    transition: "transform 0.1s ease-out",
+                  }}
+                  className="max-w-none max-h-none object-contain pointer-events-none select-none"
+                />
+                <div className="absolute inset-0 pointer-events-none border border-white/40 grid grid-cols-3 grid-rows-3">
+                  <div className="border-r border-b border-white/20"></div>
+                  <div className="border-r border-b border-white/20"></div>
+                  <div className="border-b border-white/20"></div>
+                  <div className="border-r border-b border-white/20"></div>
+                  <div className="border-r border-b border-white/20"></div>
+                  <div className="border-b border-white/20"></div>
+                  <div className="border-r border-white/20"></div>
+                  <div className="border-r border-white/20"></div>
+                  <div></div>
+                </div>
+              </div>
+
+              {/* Zoom & Alignment Controls */}
+              <div className="space-y-2">
+                <div className="flex justify-between font-mono text-[10px] text-[#6E7382] uppercase font-bold">
+                  <span>Zoom Level</span>
+                  <span>{zoomLevel.toFixed(1)}x</span>
+                </div>
+                <input
+                  type="range"
+                  min="1"
+                  max="3"
+                  step="0.1"
+                  value={zoomLevel}
+                  onChange={(e) => setZoomLevel(Number(e.target.value))}
+                  className="w-full accent-[#111215]"
+                />
+              </div>
+
+              <div className="flex justify-end gap-3 pt-3 border-t border-[#E2E5EB]">
+                <button
+                  type="button"
+                  onClick={() => setCropModalOpen(false)}
+                  className="px-4 py-2 border border-[#E2E5EB] text-xs font-mono uppercase"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  disabled={uploadingImage}
+                  onClick={handleApplyCropAndUpload}
+                  className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] disabled:opacity-50 transition-colors flex items-center gap-2"
+                >
+                  {uploadingImage ? (
+                    <span>Processing &amp; Uploading to R2...</span>
+                  ) : (
+                    <>
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>Confirm &amp; Push to R2</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
