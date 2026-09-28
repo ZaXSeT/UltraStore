@@ -11,6 +11,7 @@ import {
   ArrowUpRight,
   Plus,
   Trash2,
+  Edit2,
 } from "lucide-react";
 
 export default function AdminPage() {
@@ -41,6 +42,7 @@ export default function AdminPage() {
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
   const [showAddModal, setShowAddModal] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<any>(null);
   const [newProduct, setNewProduct] = useState({
     name: "",
     category_id: "cat_pad",
@@ -104,6 +106,27 @@ export default function AdminPage() {
       setSaveMessage("Failed saving showcase.");
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleUpdateProductFull = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingProduct) return;
+    try {
+      const res = await fetch("/api/admin/products", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(editingProduct),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setEditingProduct(null);
+        loadProducts(productSearch);
+        setSaveMessage("Product details updated.");
+        setTimeout(() => setSaveMessage(null), 3000);
+      }
+    } catch {
+      setSaveMessage("Failed updating product.");
     }
   };
 
@@ -477,61 +500,78 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              {/* 5-Slot Category Directory Grid */}
-              <div className="space-y-4">
-                <div className="border-b border-[#E2E5EB] pb-2">
-                  <span className="font-mono text-xs font-black uppercase text-[#111215]">5-Slot Homepage Directory</span>
+                {/* 5-Slot Category Configuration Block */}
+                <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                    <span className="font-mono text-xs font-black uppercase text-[#111215]">
+                      5-Slot Homepage Category Directory &amp; Navigation Links
+                    </span>
+                    <span className="font-mono text-[10px] text-[#8F94A3]">SSR / DYNAMIC</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {categories.map((cat, idx) => (
+                      <div key={idx} className="border border-[#E2E5EB] p-4 space-y-3 bg-[#FDFDFE]">
+                        <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                          <span className="font-mono text-xs font-black text-[#111215]">SLOT 0{idx + 1}</span>
+                          <span className="font-mono text-[10px] uppercase text-[#6E7382]">{cat.index}</span>
+                        </div>
+                        <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Title Display</label>
+                          <input
+                            type="text"
+                            value={cat.title || ""}
+                            onChange={(e) => {
+                              const updated = [...categories];
+                              updated[idx].title = e.target.value;
+                              setCategories(updated);
+                            }}
+                            className="w-full px-3 py-1.5 font-bold text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Target URL (Link)</label>
+                          <input
+                            type="text"
+                            value={cat.href || ""}
+                            onChange={(e) => {
+                              const updated = [...categories];
+                              updated[idx].href = e.target.value;
+                              setCategories(updated);
+                            }}
+                            className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Spec Teaser Subtitle</label>
+                          <input
+                            type="text"
+                            value={cat.spec || ""}
+                            onChange={(e) => {
+                              const updated = [...categories];
+                              updated[idx].spec = e.target.value;
+                              setCategories(updated);
+                            }}
+                            className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Image Media (R2/CDN URL)</label>
+                          <input
+                            type="text"
+                            value={cat.image || ""}
+                            onChange={(e) => {
+                              const updated = [...categories];
+                              updated[idx].image = e.target.value;
+                              setCategories(updated);
+                            }}
+                            className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {categories.map((cat, idx) => (
-                    <div key={idx} className="bg-white border border-[#E2E5EB] p-5 space-y-3">
-                      <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
-                        <span className="font-mono text-xs font-black text-[#111215]">SLOT 0{idx + 1}</span>
-                        <span className="font-mono text-[10px] uppercase text-[#6E7382]">{cat.index}</span>
-                      </div>
-                      <div className="space-y-1">
-                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Title</label>
-                        <input
-                          type="text"
-                          value={cat.title || ""}
-                          onChange={(e) => {
-                            const updated = [...categories];
-                            updated[idx].title = e.target.value;
-                            setCategories(updated);
-                          }}
-                          className="w-full px-3 py-1.5 font-bold text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Spec Teaser</label>
-                        <input
-                          type="text"
-                          value={cat.spec || ""}
-                          onChange={(e) => {
-                            const updated = [...categories];
-                            updated[idx].spec = e.target.value;
-                            setCategories(updated);
-                          }}
-                          className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Image URL</label>
-                        <input
-                          type="text"
-                          value={cat.image || ""}
-                          onChange={(e) => {
-                            const updated = [...categories];
-                            updated[idx].image = e.target.value;
-                            setCategories(updated);
-                          }}
-                          className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           )}
 
@@ -573,7 +613,79 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              {/* Add Product Modal Overlay */}
+              {/* Edit Product Modal Overlay */}
+              {editingProduct && (
+                <div className="bg-white border-2 border-[#111215] p-6 space-y-4 shadow-xl">
+                  <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                    <span className="font-mono text-xs font-black uppercase text-[#111215]">
+                      Edit Product Parameters: {editingProduct.name}
+                    </span>
+                    <button
+                      onClick={() => setEditingProduct(null)}
+                      className="text-xs font-mono text-[#8F94A3] hover:text-[#111215]"
+                    >
+                      [CLOSE]
+                    </button>
+                  </div>
+
+                  <form onSubmit={handleUpdateProductFull} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Product Designation
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={editingProduct.name}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, name: e.target.value })}
+                          className="w-full px-3 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Stock Quantity (Units)
+                        </label>
+                        <input
+                          type="number"
+                          value={editingProduct.stock ?? editingProduct.total_stock ?? 0}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, stock: Number(e.target.value) })}
+                          className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                        Cloudflare R2 Master Asset URL
+                      </label>
+                      <input
+                        type="text"
+                        value={editingProduct.primary_image || ""}
+                        onChange={(e) => setEditingProduct({ ...editingProduct, primary_image: e.target.value })}
+                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                      />
+                    </div>
+
+                    <div className="flex justify-end gap-3 pt-2 border-t border-[#E2E5EB]">
+                      <button
+                        type="button"
+                        onClick={() => setEditingProduct(null)}
+                        className="px-4 py-2 border border-[#E2E5EB] text-xs font-mono uppercase"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] transition-colors"
+                      >
+                        Update Product
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
               {showAddModal && (
                 <div className="bg-white border-2 border-[#111215] p-6 space-y-4 shadow-xl">
                   <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
@@ -746,6 +858,13 @@ export default function AdminPage() {
                         </td>
                         <td className="py-3 px-4 text-center">
                           <div className="flex items-center justify-center gap-1.5">
+                            <button
+                              onClick={() => setEditingProduct(p)}
+                              className="p-1.5 border border-[#E2E5EB] hover:border-[#111215] text-[#111215] transition-colors"
+                              title="Edit Product"
+                            >
+                              <Edit2 className="w-3.5 h-3.5" />
+                            </button>
                             <button
                               onClick={() => togglePublishProduct(p.id, p.published)}
                               className="p-1.5 border border-[#E2E5EB] hover:border-[#111215] transition-colors"

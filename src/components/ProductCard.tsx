@@ -20,10 +20,10 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group block bg-white border border-neutral-200/90 overflow-hidden hover:border-neutral-950 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
+      className="group relative block bg-white border border-neutral-200/90 overflow-hidden hover:border-[#111215] hover:shadow-[0_16px_36px_rgba(14,82,255,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full"
     >
-      {/* 1:1 Product Image Studio Canvas */}
-      <div className="relative aspect-square w-full bg-neutral-100 flex items-center justify-center border-b border-neutral-100 overflow-hidden">
+      {/* 1:1 Product Image Studio Canvas with Ambient Hover Shift */}
+      <div className="relative aspect-square w-full bg-neutral-100 group-hover:bg-[#F2F5FA] flex items-center justify-center border-b border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300 overflow-hidden">
         <ProductImage
           src={primaryVariant?.media[0]?.url || product.primaryImage}
           alt={product.name}
@@ -47,7 +47,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product Details */}
-      <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white">
+      <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white group-hover:bg-[#FAFBFD] transition-colors duration-300">
         <div>
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors">
