@@ -388,7 +388,7 @@ export default function AdminPage() {
                 <button
                   onClick={handleSaveShowcase}
                   disabled={saving}
-                  className="px-8 py-3.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 flex items-center gap-2 self-start sm:self-auto"
+                  className="px-8 py-3.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 flex items-center gap-2 self-start sm:self-auto shadow-md shadow-blue-500/25"
                 >
                   <Save className="w-4 h-4" />
                   <span>{saving ? "SAVING..." : "COMMIT TO LIVE STORE"}</span>
@@ -572,7 +572,7 @@ export default function AdminPage() {
 
                   {/* Upload & Crop Action Button */}
                   <div className="pt-2">
-                    <label className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer transition-colors shadow-sm">
+                    <label className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer transition-all shadow-md shadow-blue-500/20">
                       <Upload className="w-3.5 h-3.5" />
                       <span>Upload &amp; Crop Hero Image</span>
                       <input
@@ -654,7 +654,7 @@ export default function AdminPage() {
                               }}
                               className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
                             />
-                            <label className="px-2.5 py-1.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-[10px] uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1 transition-colors shrink-0">
+                            <label className="px-2.5 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-[10px] uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1 transition-all shadow-sm shrink-0">
                               <Upload className="w-3 h-3" />
                               <span>Crop</span>
                               <input
@@ -689,7 +689,7 @@ export default function AdminPage() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setShowAddModal(true)}
-                    className="flex items-center gap-2 px-4 py-2.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all"
+                    className="flex items-center gap-2 px-4 py-2.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all shadow-md shadow-blue-500/20"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Add Product</span>
@@ -765,7 +765,7 @@ export default function AdminPage() {
                           onChange={(e) => setEditingProduct({ ...editingProduct, primary_image: e.target.value })}
                           className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                         />
-                        <label className="px-3 py-2 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1.5 transition-colors shrink-0">
+                        <label className="px-3 py-2 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1.5 transition-all shadow-sm shrink-0">
                           <Upload className="w-3.5 h-3.5" />
                           <span>Crop &amp; Upload</span>
                           <input
@@ -788,7 +788,7 @@ export default function AdminPage() {
                       </button>
                       <button
                         type="submit"
-                        className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] transition-colors"
+                        className="px-6 py-2 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase transition-all shadow-sm"
                       >
                         Update Product
                       </button>
@@ -906,7 +906,7 @@ export default function AdminPage() {
                       </button>
                       <button
                         type="submit"
-                        className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] transition-colors"
+                        className="px-6 py-2 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase transition-all shadow-sm"
                       >
                         Save Product
                       </button>
@@ -1024,7 +1024,7 @@ export default function AdminPage() {
                         onClick={() => setCurrentPage(i + 1)}
                         className={`w-8 h-8 flex items-center justify-center border transition-colors ${
                           currentPage === i + 1
-                            ? "border-[#111215] bg-[#111215] text-white font-bold"
+                            ? "border-[#0E52FF] bg-[#0E52FF] text-white font-bold shadow-sm"
                             : "border-[#E2E5EB] bg-white hover:bg-neutral-100 text-[#111215]"
                         }`}
                       >
@@ -1120,7 +1120,7 @@ export default function AdminPage() {
                   type="button"
                   disabled={uploadingImage}
                   onClick={handleApplyCropAndUpload}
-                  className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] disabled:opacity-50 transition-colors flex items-center gap-2"
+                  className="px-6 py-2 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase disabled:opacity-50 transition-all flex items-center gap-2 shadow-md shadow-blue-500/20"
                 >
                   {uploadingImage ? (
                     <span>Processing &amp; Uploading to R2...</span>
