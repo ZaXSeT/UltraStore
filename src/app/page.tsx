@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
-import { ProductImage } from "../components/ProductImage";
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Zap, Compass, Award } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, Zap, Layers, Flame } from "lucide-react";
 
+// ponytail: static category tiles & featured collab banner. Upgrade to dynamic CMS when marketing team needs frequent banner swaps.
 export default function HomePage() {
   const products = getAllProducts();
   const brands = getBrands();
@@ -16,12 +17,48 @@ export default function HomePage() {
     .filter((p) => p.offers.some((o) => o.offerType === "PREORDER"))
     .slice(0, 8);
 
-  const featuredKeyboard = products.find((p) => p.slug === "everglide-ae68-pro-8k-he") || products[0];
+  const macroCategories = [
+    {
+      title: "Keyboards",
+      subtitle: "8K Hall Effect & Custom Kits",
+      href: "/shop?category=keyboard",
+      count: products.filter((p) => p.category.slug === "keyboard").length,
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=1200",
+    },
+    {
+      title: "Gaming Mice",
+      subtitle: "Ultralight Magnesium & Optical",
+      href: "/shop?category=mouse",
+      count: products.filter((p) => p.category.slug === "mouse").length,
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=1200",
+    },
+    {
+      title: "Precision Glasspads",
+      subtitle: "Tempered Glass & Poron Cloth",
+      href: "/shop?category=mousepad",
+      count: products.filter((p) => p.category.slug === "mousepad").length,
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=1200",
+    },
+    {
+      title: "Artisan Switches",
+      subtitle: "Linear, Tactile & HE Magnetic",
+      href: "/shop?category=switches-parts",
+      count: products.filter((p) => p.category.slug === "switches-parts").length,
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=1200",
+    },
+    {
+      title: "Pre-Order Drops",
+      subtitle: "Batch Terjadwal Pabrikan",
+      href: "/shop?offer=PREORDER",
+      count: preorderBatches.length,
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=1200",
+    },
+  ];
 
   return (
-    <div className="space-y-14 sm:space-y-18 pb-20 w-full">
-      {/* 1. BRAND TICKER / MARQUEE (Full Width) */}
-      <section className="bg-slate-950 text-slate-300 py-2.5 border-b border-slate-800 overflow-hidden text-xs w-full">
+    <div className="space-y-12 sm:space-y-16 pb-20 w-full">
+      {/* 1. BRAND TICKER (Full Width) */}
+      <section className="bg-[#0B0F17] text-slate-300 py-2.5 border-b border-slate-800 overflow-hidden text-xs w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar">
           <span className="bg-blue-600 text-white px-2.5 py-0.5 rounded font-bold uppercase text-[10px] tracking-wider shrink-0">
             Distributor Resmi
@@ -39,120 +76,119 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. INFINITAS-INSPIRED ENTHUSIAST HERO SECTION */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-2 sm:pt-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Bold Typography & CTAs (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wide text-blue-700 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-              <span>UltraStore x Enthusiast Hardware 2026</span>
-            </div>
-
-            {/* Infinitas-Inspired Signature Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-slate-950 leading-[1.05]">
-              FIND YOUR<br />
-              <span className="text-blue-600">PERFECT</span><br />
-              KEYBOARD<span className="text-blue-600 animate-pulse">_</span>
-            </h1>
-
-            <div className="space-y-2 max-w-xl">
-              <p className="text-base sm:text-lg font-semibold text-slate-800 tracking-tight">
-                One-stop Gaming &amp; Custom Peripheral Enthusiast Store
-              </p>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Koleksi hardware pilihan: 8K Hall Effect magnetic keyboard dengan 0.001mm rapid trigger, ultralight magnesium gaming mouse, precision tempered glasspad, dan artisan switches bergaransi distributor resmi.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="/shop"
-                className="px-7 py-3.5 bg-slate-950 hover:bg-blue-600 text-white text-sm font-bold tracking-wide rounded-xl transition-all flex items-center gap-2.5 shadow-md hover:shadow-blue-500/20"
-              >
-                <span>SHOP NOW</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                href="/shop?offer=PREORDER"
-                className="px-6 py-3.5 bg-white border border-slate-300 hover:border-blue-600 text-slate-800 hover:text-blue-600 text-sm font-semibold rounded-xl transition-all shadow-sm flex items-center gap-2"
-              >
-                <span className="w-2 h-2 rounded-full bg-amber-500"></span>
-                <span>Pre-Order Drops</span>
-              </Link>
-            </div>
-
-            {/* Quick Guarantees Strip */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200 text-xs">
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <span className="block font-bold text-slate-900 mb-0.5">100% Original</span>
-                <span className="text-slate-500">Pabrikan resmi &amp; garansi 1 tahun</span>
+      {/* 2. FEATURED COLLABORATION HERO BANNER */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white border border-slate-800 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+            {/* Banner Copy (7 cols) */}
+            <div className="p-8 sm:p-12 lg:p-14 lg:col-span-7 space-y-6 z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold">
+                <Flame className="w-3.5 h-3.5 text-amber-400" />
+                <span>LIMITED COLLABORATION DROP 2026</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <span className="block font-bold text-emerald-700 mb-0.5">Ready Hub Jakarta</span>
-                <span className="text-slate-500">Kirim 1-2 hari kerja terlindungi</span>
-              </div>
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <span className="block font-bold text-blue-700 mb-0.5">Enthusiast QC</span>
-                <span className="text-slate-500">Pengecekan fungsi sebelum kirim</span>
-              </div>
-            </div>
-          </div>
 
-          {/* Right Column: Featured Hardware Showcase (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 relative shadow-lg hover:border-blue-500/60 transition-all">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                <span className="text-xs font-bold text-blue-600 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  FLAGSHIP SHOWCASE
+              <div className="space-y-2">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white">
+                  GLSSWRKS <span className="text-blue-400">ZOFIA</span><br />
+                  TEMPERED GLASS_
+                </h1>
+                <p className="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+                  Surface kaca aluminosilikat etched micro-texture dengan base full silicone molded. Kontrol presisi mikroskopis untuk mouse gaming kompetitif.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 pt-1">
+                <span className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
+                  490 x 420 x 3.8 mm
                 </span>
-                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                  8000Hz · 0.001mm RT
+                <span className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
+                  CNC Beveled Edges
+                </span>
+                <span className="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 font-semibold">
+                  Ready Stock Hub Jakarta
                 </span>
               </div>
 
-              <div className="aspect-square w-full bg-slate-50/70 rounded-2xl flex items-center justify-center p-6 border border-slate-100 overflow-hidden relative group">
-                <ProductImage
-                  src={featuredKeyboard.primaryImage}
-                  alt={featuredKeyboard.name}
-                  category={featuredKeyboard.category.name}
-                  className="group-hover:scale-105 transition-transform duration-300 max-h-[85%] max-w-[85%] object-contain"
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <Link
+                  href="/products/glsswrks-zofia-tempered-glass"
+                  className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-lg flex items-center gap-2"
+                >
+                  <span>DAPATKAN SEKARANG</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <Link
+                  href="/shop"
+                  className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all border border-white/20"
+                >
+                  JELAJAHI KATALOG
+                </Link>
+              </div>
+            </div>
+
+            {/* Banner Visual Artwork (5 cols) */}
+            <div className="relative lg:col-span-5 h-72 sm:h-96 lg:h-full min-h-[320px] flex items-center justify-center p-6 overflow-hidden">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=1200"
+                  alt="GLSSWRKS Zofia Art Edition Glasspad"
+                  fill
+                  priority
+                  className="object-contain drop-shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
-                <div className="absolute bottom-3 left-3">
-                  <span className="px-2.5 py-1 text-xs font-bold rounded-full bg-amber-50 text-amber-800 border border-amber-200 shadow-sm">
-                    Pre-Order Batch 1
-                  </span>
-                </div>
               </div>
-
-              <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <div>
-                  <div className="text-xs font-semibold text-blue-600">{featuredKeyboard.brand.name}</div>
-                  <div className="text-base font-extrabold text-slate-900 tracking-tight">{featuredKeyboard.name}</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-slate-400">Harga</div>
-                  <div className="text-base font-extrabold text-slate-900">
-                    Rp {featuredKeyboard.variants[0]?.price.toLocaleString("id-ID")}
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href={`/products/${featuredKeyboard.slug}`}
-                className="mt-4 w-full py-2.5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center gap-2"
-              >
-                <span>Lihat Spesifikasi &amp; Detail</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. READY STOCK PICKS (Full Width Fluid) */}
+      {/* 3. 5-COLUMN MACRO CATEGORY SHOWCASE */}
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wider">
+            <Layers className="w-4 h-4 text-blue-600" />
+            <span>Kategori Gear Presisi</span>
+          </div>
+          <span className="text-xs text-slate-400 font-medium">5 Spesialisasi Periferal</span>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {macroCategories.map((cat) => (
+            <Link
+              key={cat.title}
+              href={cat.href}
+              className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 hover:border-blue-500 hover:shadow-xl transition-all flex flex-col justify-end aspect-[4/5] p-5 text-white"
+            >
+              {/* Background Photo with Subtle Dark Gradient */}
+              <Image
+                src={cat.image}
+                alt={cat.title}
+                fill
+                className="object-cover opacity-75 group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
+                sizes="(max-width: 768px) 50vw, 20vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent" />
+
+              {/* Category Info Overlay */}
+              <div className="relative z-10 space-y-1">
+                <span className="text-[11px] font-mono text-blue-400 font-semibold block uppercase tracking-wider">
+                  {cat.count} Produk
+                </span>
+                <h3 className="font-extrabold text-base sm:text-lg text-white group-hover:text-blue-300 transition-colors leading-tight">
+                  {cat.title}
+                </h3>
+                <p className="text-[11px] text-slate-300 line-clamp-1">
+                  {cat.subtitle}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. READY STOCK CATALOG GRID */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
         <div className="flex items-end justify-between border-b border-slate-200 pb-4">
           <div>
@@ -180,7 +216,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. PRE-ORDER DROPS (Full Width Fluid) */}
+      {/* 5. PRE-ORDER DROPS */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
         <div className="flex items-end justify-between border-b border-slate-200 pb-4">
           <div>
