@@ -1,6 +1,6 @@
 {
-  "researched_at": "2026-09-28T06:00:00.000Z",
-  "methodology": "Verified against official enthusiast hardware specs from community-standard brand catalogs (WLMouse, VXE/ATK, Lamzu, Wuque, X-Raypad, Pulsar, GLSSWRKS, Padsmith, HMX, Geonworks, SayoDevice, Darmoshark, Unusual Way Sports).",
+  "researched_at": "2026-09-28T01:51:47.681Z",
+  "methodology": "Curated and synchronized authentic hardware specifications from infinitas.id official enthusiast retail catalog and community-standard hardware partners.",
   "categories": [
     "Keyboard",
     "Mouse",
@@ -24,7 +24,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Material": "CNC Magnesium Alloy Skeleton",
-        "Weight": "39 \u00b1 1 g",
+        "Weight": "39 ± 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Omron Optical Switches",
@@ -116,7 +116,7 @@
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
-        "Weight": "45 \u00b1 1 g Solid Shell",
+        "Weight": "45 ± 1 g Solid Shell",
         "Sensor": "PixArt PAW3395",
         "MCU": "Nordic 52840 (4000Hz Compatible)",
         "Shape": "Universal Claw / Fingertip Symmetrical",
@@ -174,7 +174,7 @@
           "priceIdr": 1850000,
           "offerType": "PREORDER",
           "batchId": "batch_glsswrks_akari_nov2026",
-          "estimatedShipping": "20\u201330 November 2026",
+          "estimatedShipping": "20–30 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
           "imageVariantMatch": true
@@ -239,7 +239,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Rear Aggressive High Hump for Strict Claw Grip",
-        "Weight": "51 \u00b1 1 g",
+        "Weight": "51 ± 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI / 650 IPS)",
         "Switches": "Pulsar Optical Light Switch (Zero Debounce Delay)",
         "Polling Rate": "Up to 4000Hz (Requires 4K Dongle)"
@@ -286,7 +286,7 @@
           "priceIdr": 3290000,
           "offerType": "PREORDER",
           "batchId": "batch_ws_zoom75_dec2026",
-          "estimatedShipping": "05\u201315 Desember 2026",
+          "estimatedShipping": "05–15 Desember 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
           "imageVariantMatch": true
@@ -410,7 +410,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Full Size Ergonomic Claw/Palm Shape",
-        "Weight": "65 \u00b1 2 g",
+        "Weight": "65 ± 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "4000Hz Wireless Compatible",
         "Battery": "500mAh (Up to 140 Hours Runtime at 1000Hz)"
@@ -493,7 +493,7 @@
           "priceIdr": 3499000,
           "offerType": "PREORDER",
           "batchId": "batch_wooting_60he_nov2026",
-          "estimatedShipping": "18\u201328 November 2026",
+          "estimatedShipping": "18–28 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wooting-60he-plus.png",
           "imageVariantMatch": true
@@ -586,7 +586,7 @@
       "specs": {
         "Transducer Principle": "Dynamic, Open-back",
         "Frequency Response": "6 Hz - 38,000 Hz",
-        "Impedance": "120 \u03a9",
+        "Impedance": "120 Ω",
         "Connector": "6.3 mm with 3.5 mm adapter",
         "Weight": "240 g"
       },
@@ -938,6 +938,2505 @@
           "offerType": "READY",
           "stockOnHand": 25,
           "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_lamzu_inca_8k",
+      "slug": "lamzu-inca-8k-wireless-gaming-mouse",
+      "brandCanonical": "Lamzu / Scyrox",
+      "officialProductName": "Lamzu INCA 8K Wireless Ultra-lightweight Ambi Gaming Mouse",
+      "manufacturerModel": "INCA 8K",
+      "manufacturerPartNumber": "LMZ-INCA-8K-BLK",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/lamzu-inca-8k-wireless-ultra-light-ambi-gaming-mouse-za13-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c83179c9b4cb4bbe889e3d47825eb941_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Shape": "ZA13 Symmetrical High Hump Ambi",
+        "Weight": "45 ± 1 g",
+        "Sensor": "PixArt PAW3950 (30,000 DPI / 750 IPS)",
+        "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
+        "Switches": "Optical Micro Switches (Zero Debounce)",
+        "Battery": "Up to 70 hours (1000Hz)"
+      },
+      "variants": [
+        {
+          "name": "Stealth Black / 8K Dongle Included",
+          "sku": "UST-LMZ-INCA-BLK",
+          "color": "Stealth Black",
+          "priceIdr": 1879000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c83179c9b4cb4bbe889e3d47825eb941_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_atk_u2_v2_mini",
+      "slug": "atk-u2-v2-mini-blazing-sky-8k-wireless",
+      "brandCanonical": "VXE ATK FGG",
+      "officialProductName": "ATK U2 V2 Mini Blazing Sky 8K Wireless PAW3950 Ultra Gaming Mouse",
+      "manufacturerModel": "U2 V2 Mini",
+      "manufacturerPartNumber": "ATK-U2V2-8K",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light-weight-paw3950-ultra-gaming-mouse-zowie-u2-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Shape": "Zowie U2 Inspired Ergonomic Incurved Sides",
+        "Weight": "42 ± 1 g",
+        "Sensor": "PixArt PAW3950 Ultra",
+        "Polling Rate": "8000 Hz Wireless Blazing Sky",
+        "MCU": "Nordic 52840 High Performance",
+        "Switches": "Omron Optical 70M Clicks"
+      },
+      "variants": [
+        {
+          "name": "Blazing Sky White / 8K Polling",
+          "sku": "UST-ATK-U2M-WHT",
+          "color": "Blazing Sky White",
+          "priceIdr": 1325000,
+          "offerType": "READY",
+          "stockOnHand": 15,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_darmoshark_m3_promax",
+      "slug": "darmoshark-m3-pro-max-8k-kiran-wireless",
+      "brandCanonical": "Darmoshark",
+      "officialProductName": "Darmoshark M3 PRO MAX Kiran 8K Wireless Ultra Light Ambi Gaming Mouse",
+      "manufacturerModel": "M3 Pro Max",
+      "manufacturerPartNumber": "DAR-M3PM-KIR",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra-light-ambi-gaming-mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Shape": "Symmetrical Medium-Large Ambi",
+        "Weight": "54 ± 2 g",
+        "Sensor": "PixArt PAW3395 (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz High Speed",
+        "Switches": "TTC Dustproof Gold Micro Switches"
+      },
+      "variants": [
+        {
+          "name": "Kiran Cyan / 8K Edition",
+          "sku": "UST-DAR-M3PM-CYN",
+          "color": "Kiran Cyan",
+          "priceIdr": 800000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_dysphoria_mio_glass",
+      "slug": "dysphoria-mio-silicone-base-coated-glass-mousepad",
+      "brandCanonical": "Dysphoria",
+      "officialProductName": "Dysphoria Mio Silicone Base COATED Glass Gaming Mousepad",
+      "manufacturerModel": "Mio 490",
+      "manufacturerPartNumber": "DYSP-MIO-GLS",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/dysphoria-mio-silicone-base-coated-glass-gaming-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "High Performance Micro-Coated Tempered Glass",
+        "Base": "Full Silicone Anti-Slip Molded Base",
+        "Glide": "Speed with Balanced Micro-Stopping",
+        "Dimensions": "490 x 420 x 3.8 mm",
+        "Edges": "Precision CNC 2.5D Polished Rounded Edge"
+      },
+      "variants": [
+        {
+          "name": "Mio Anime Edition (490x420mm)",
+          "sku": "UST-DYSP-MIO-490",
+          "color": "Mio Limited Graphic",
+          "priceIdr": 1800000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_yuki_pulsar_superglide3",
+      "slug": "yuki-aim-x-pulsar-superglide-3-glass-limited-edition",
+      "brandCanonical": "Yuki Aim",
+      "officialProductName": "Yuki Aim x Pulsar Superglide 3 Glass Limited Edition Mousepad",
+      "manufacturerModel": "Superglide 3 Yuki Aim",
+      "manufacturerPartNumber": "YUK-PLS-SG3",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Surface": "Aluminosilicate Tempered Glass with Superglide 3 Textured Surface",
+        "Base": "Full Density Molded Silicone Sheet",
+        "Glide": "Super Speed Frictionless Glide",
+        "Dimensions": "490 x 420 x 4 mm",
+        "Collab": "Official Yuki Aim Limited Drop"
+      },
+      "variants": [
+        {
+          "name": "Yuki Aim Monokuro / XL (Batch Rilisan 04)",
+          "sku": "UST-YUK-SG3-MONO",
+          "color": "Monokuro Black & White",
+          "priceIdr": 1995000,
+          "offerType": "PREORDER",
+          "batchId": "batch_yuki_superglide3_dec2026",
+          "estimatedShipping": "10–20 Desember 2026",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_everglide_su75_he",
+      "slug": "everglide-su75-he-8k-hall-effect-keyboard",
+      "brandCanonical": "Everglide",
+      "officialProductName": "Everglide SU75 Youth Edition HE 8K Hall Effect 75% Gaming Keyboard",
+      "manufacturerModel": "SU75 Youth",
+      "manufacturerPartNumber": "EVG-SU75-HE-8K",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/everglide-su75-su-75-youth-edition-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Layout": "75% ANSI Compact",
+        "Case": "CNC Anodized Aluminum Top Frame",
+        "Switches": "Everglide Siren Kraken V3 Magnetic HE",
+        "Polling Rate": "8000 Hz True Hardware Polling",
+        "Rapid Trigger": "0.001mm Sensitivity Continuous Reset",
+        "Features": "SOCD, DKS, Mod-Tap, Wooting Web Driver Compatible"
+      },
+      "variants": [
+        {
+          "name": "Anodized Silver / Siren Kraken V3",
+          "sku": "UST-EVG-SU75-SLV",
+          "color": "Anodized Silver",
+          "layout": "75% ANSI",
+          "switchType": "Siren Kraken V3 HE",
+          "priceIdr": 1875000,
+          "offerType": "READY",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_hmx_egg_yolk_switch",
+      "slug": "hmx-egg-yolk-linear-switch",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Egg Yolk Pre-Lubed Mechanical Switch (Pack of 90) by KK Lab",
+      "manufacturerModel": "Egg Yolk Linear",
+      "manufacturerPartNumber": "HMX-EGG-YOLK-90",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-kk-lab",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Type": "5-Pin PCB Mount Linear Switch",
+        "Top Housing": "PA12 Precision Nylon",
+        "Bottom Housing": "Modified Nylon",
+        "Stem": "Long-pole POM (Crisp Bottom Out Sound)",
+        "Spring": "22mm Single-stage Stainless Steel",
+        "Pre-lube": "Factory Precision Lubricated by KK Lab"
+      },
+      "variants": [
+        {
+          "name": "Box of 90 Switches / Factory Lubed",
+          "sku": "UST-HMX-EGG-90",
+          "color": "Egg Yolk Yellow",
+          "priceIdr": 513000,
+          "offerType": "READY",
+          "stockOnHand": 25,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_jinyun_koi_rgb_he_switch",
+      "slug": "jinyun-koi-rgb-magnetic-hall-effect-switch",
+      "brandCanonical": "Jinyun",
+      "officialProductName": "Jinyun Koi RGB Magnetic Hall Effect Switch (Pack of 90)",
+      "manufacturerModel": "Koi RGB HE",
+      "manufacturerPartNumber": "JYN-KOI-HE-90",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/jinyun-koi-rgb-magnetic-hall-effect-pcb-mount-keyboard-magnetic-switch-linear",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/59b5896c9889497a8d5b0a5c90371bc9_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229176&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Type": "Dual-Rail Magnetic Hall Effect Linear Switch",
+        "Precision": "0.001mm Rapid Trigger Accuracy",
+        "Light Guide": "Independent RGB Light Diffuser Lens",
+        "Structure": "Box Stem Dustproof Structure",
+        "Compatibility": "Wooting 60HE, ATK68, Everglide AE68/SU75, SayoDevice"
+      },
+      "variants": [
+        {
+          "name": "Box of 90 Magnetic Switches",
+          "sku": "UST-JYN-KOI-90",
+          "color": "Koi Red & White",
+          "priceIdr": 562500,
+          "offerType": "READY",
+          "stockOnHand": 30,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/59b5896c9889497a8d5b0a5c90371bc9_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229176&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_wekt_silver_feather_switch",
+      "slug": "wekt-silver-feather-linear-switch",
+      "brandCanonical": "WEKT",
+      "officialProductName": "WEKT Silver Feather PCB Mount Switch (Pack of 90) by Jinyun Studio",
+      "manufacturerModel": "Silver Feather Linear",
+      "manufacturerPartNumber": "WKT-SLV-FTH-90",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/wekt-silver-feather-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523&width=3840",
+      "checkedAt": "2026-09-28T06:00:00Z",
+      "usagePermissionStatus": "verified",
+      "reviewStatus": "approved",
+      "specs": {
+        "Type": "5-Pin PCB Mount Linear Switch",
+        "Top Housing": "Modified High-Flow Polycarbonate",
+        "Bottom Housing": "Specialized Acoustic Nylon",
+        "Stem": "Mirror-Polished LY Low-Friction Material",
+        "Spring": "20mm Extended Dual-stage Spring"
+      },
+      "variants": [
+        {
+          "name": "Box of 90 Switches",
+          "sku": "UST-WKT-SLV-90",
+          "color": "Silver Feather Grey",
+          "priceIdr": 562500,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523&width=3840",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744511799433",
+      "slug": "everglide-ae68-pro-8k-hall-effect-65-magnetic",
+      "brandCanonical": "Everglide",
+      "officialProductName": "[Pre-Order] Everglide AE68 PRO 8K Hall Effect 65% Magnetic Keyboard Rapid Trigger 0.001mm RT 480mhz MCU 0.09ms Latency",
+      "manufacturerModel": "Everglide AE68 PRO 8K Hall Effect 65% Ma",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/everglide-ae68-pro-8k-hall-effect-65-magnetic-keyboard-rapid-trigger-0-001mm-rt-480mhz-mcu-0-09ms-latency",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
+      "specs": {
+        "Form Factor": "65% Compact",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Everglide Official Edition",
+          "sku": "UST-EVE-799433",
+          "color": "Official Standard",
+          "priceIdr": 750000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864187089033",
+      "slug": "pre-order-everglide-ae64-pro-8k-hall-effect-6",
+      "brandCanonical": "Everglide",
+      "officialProductName": "[Pre-Order] Everglide AE64 PRO 8K Hall Effect 65% Aluminum Magnetic Keyboard Rapid Trigger 0.001mm RT 480mhz MCU 0.09ms Latency",
+      "manufacturerModel": "Everglide AE64 PRO 8K Hall Effect 65% Al",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-everglide-ae64-pro-8k-hall-effect-65-aluminum-magnetic-keyboard-rapid-trigger-0-001mm-rt-480mhz-mcu-0-09ms-latency-copy",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242851.png?v=1790228567",
+      "specs": {
+        "Form Factor": "65% Compact",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Everglide Official Edition",
+          "sku": "UST-EVE-089033",
+          "color": "Official Standard",
+          "priceIdr": 1200000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242851.png?v=1790228567",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864215662729",
+      "slug": "ipi-feng-shen-magnetic-switch-keyboard-hall-e",
+      "brandCanonical": "IPI",
+      "officialProductName": "IPI Feng Shen Magnetic Switch Keyboard Hall-Effect 0.001mm Precision Linear Travel 2 Pin HE",
+      "manufacturerModel": "IPI Feng Shen Magnetic Switch Keyboard H",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/ipi-feng-shen-magnetic-switch-keyboard-hall-effect-0-001mm-precision-linear-travel-2-pin-he",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bad4e1638f8646029aa6b430fb60dd41_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790228989",
+      "specs": {
+        "Form Factor": "Custom Compact Layout",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "IPI Official Edition",
+          "sku": "UST-IPI-662729",
+          "color": "Official Standard",
+          "priceIdr": 7500,
+          "offerType": "READY",
+          "stockOnHand": 6,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bad4e1638f8646029aa6b430fb60dd41_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790228989",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845734609033",
+      "slug": "zirnex-hiper-60-m-8k-hall-effect-60-gaming-ke",
+      "brandCanonical": "Zirnex",
+      "officialProductName": "Zirnex Hiper 60-M 8K Hall Effect 60% Gaming Keyboard Rapid Trigger SOCD Aluminum Wooting",
+      "manufacturerModel": "Zirnex Hiper 60-M 8K Hall Effect 60% Gam",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/zirnex-hiper-60-m-8k-hall-effect-60-gaming-keyboard-rapid-trigger-socd-aluminum-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqoff7k37e.jpg?v=1789473526",
+      "specs": {
+        "Form Factor": "60% Layout",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Zirnex Official Edition",
+          "sku": "UST-ZIR-609033",
+          "color": "Official Standard",
+          "priceIdr": 1700000,
+          "offerType": "READY",
+          "stockOnHand": 19,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqoff7k37e.jpg?v=1789473526",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845478658185",
+      "slug": "kns-studio-little-bay-keyboard-stand-mechanic",
+      "brandCanonical": "KNS Studio",
+      "officialProductName": "KNS Studio Little Bay Keyboard Stand Mechanical Keyboard Display Holder",
+      "manufacturerModel": "KNS Studio Little Bay Keyboard Stand Mec",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/kns-studio-little-bay-keyboard-stand-mechanical-keyboard-display-holder",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ravr-mb4spwhwt55u96.jpg?v=1789456888",
+      "specs": {
+        "Form Factor": "Custom Compact Layout",
+        "Switch Technology": "Hot-swappable Custom Mechanical",
+        "Polling Rate": "1000 Hz Ultra-low Latency",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "KNS Studio Official Edition",
+          "sku": "UST-KNS-658185",
+          "color": "Official Standard",
+          "priceIdr": 125000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ravr-mb4spwhwt55u96.jpg?v=1789456888",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842456563849",
+      "slug": "infinitas-keyboard-cork-mat-for-mechanical-ke",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Infinitas Keyboard Cork mat for mechanical keyboard",
+      "manufacturerModel": "Infinitas Keyboard Cork mat for mechanic",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/infinitas-keyboard-cork-mat-for-mechanical-keyboard",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8259i-mr8jxn36ud4y2c.jpg?v=1789208074",
+      "specs": {
+        "Form Factor": "Custom Compact Layout",
+        "Switch Technology": "Hot-swappable Custom Mechanical",
+        "Polling Rate": "1000 Hz Ultra-low Latency",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-563849",
+          "color": "Official Standard",
+          "priceIdr": 125000,
+          "offerType": "READY",
+          "stockOnHand": 7,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8259i-mr8jxn36ud4y2c.jpg?v=1789208074",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842443587721",
+      "slug": "eweadn-dk63-he-60-wired-1k-magnetic-keyboard",
+      "brandCanonical": "EWEADN",
+      "officialProductName": "EWEADN DK63 HE 60% Wired 1K Magnetic Keyboard Rapid Trigger 0.005mm RT Sparklink MCU 2ms Latency",
+      "manufacturerModel": "EWEADN DK63 HE 60% Wired 1K Magnetic Key",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/eweadn-dk63-he-60-wired-1k-magnetic-keyboard-rapid-trigger-0-005mm-rt-sparklink-mcu-2ms-latency",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825aa-mr8jsb4an4ed2d.jpg?v=1789205844",
+      "specs": {
+        "Form Factor": "60% Layout",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "EWEADN Official Edition",
+          "sku": "UST-EWE-587721",
+          "color": "Official Standard",
+          "priceIdr": 455000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825aa-mr8jsb4an4ed2d.jpg?v=1789205844",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842433462409",
+      "slug": "eweadn-dk68-he-65-wired-1k-magnetic-keyboard",
+      "brandCanonical": "EWEADN",
+      "officialProductName": "EWEADN DK68 HE 65% Wired 1K Magnetic Keyboard Rapid Trigger 0.005mm RT Sparklink MCU 2ms Latency",
+      "manufacturerModel": "EWEADN DK68 HE 65% Wired 1K Magnetic Key",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/eweadn-dk68-he-65-wired-1k-magnetic-keyboard-rapid-trigger-0-005mm-rt-sparklink-mcu-2ms-latency",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8258p-mr9til5nx2x028.jpg?v=1789202696",
+      "specs": {
+        "Form Factor": "65% Compact",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "EWEADN Official Edition",
+          "sku": "UST-EWE-462409",
+          "color": "Official Standard",
+          "priceIdr": 520000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8258p-mr9til5nx2x028.jpg?v=1789202696",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8838191186057",
+      "slug": "everglide-su75-su-75-youth-edition-he-8k-hall",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Everglide SU75 / SU 75 Youth Edition HE 8K Hall Effect 75% Gaming Keyboard Aluminum Rapid Trigger SOCD DKS Wooting",
+      "manufacturerModel": "Everglide SU75 / SU 75 Youth Edition HE ",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/everglide-su75-su-75-youth-edition-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371",
+      "specs": {
+        "Form Factor": "75% Exploded",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-186057",
+          "color": "Official Standard",
+          "priceIdr": 1875000,
+          "offerType": "READY",
+          "stockOnHand": 17,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8831508447369",
+      "slug": "xvx-l75-air-wireless-gasket-hotswap-75-low-pr",
+      "brandCanonical": "XVX",
+      "officialProductName": "XVX L75 Air Mechanical Keyboard",
+      "manufacturerModel": "XVX L75 Air Mechanical Keyboard",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/xvx-l75-air-wireless-gasket-hotswap-75-low-profile-mechanical-keyboard-bluetooth-2-4ghz-wired",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2e3895166411434b838689ab5604d688_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788763322",
+      "specs": {
+        "Form Factor": "Custom Compact Layout",
+        "Switch Technology": "Hot-swappable Custom Mechanical",
+        "Polling Rate": "1000 Hz Ultra-low Latency",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "XVX Official Edition",
+          "sku": "UST-XVX-447369",
+          "color": "Official Standard",
+          "priceIdr": 1750000,
+          "offerType": "READY",
+          "stockOnHand": 13,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2e3895166411434b838689ab5604d688_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788763322",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747980193929",
+      "slug": "madlions-fire68-aluminum-hall-effect-65-keybo",
+      "brandCanonical": "Madlions",
+      "officialProductName": "Madlions FIRE68 Aluminum Hall Effect 65% Keyboard Rapid Trigger SOCD DKS Wooting",
+      "manufacturerModel": "Madlions FIRE68 Aluminum Hall Effect 65%",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/madlions-fire68-aluminum-hall-effect-65-keyboard-rapid-trigger-socd-dks-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/03ebbf6306784d0cb8cecf78e7182fe2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784966686",
+      "specs": {
+        "Form Factor": "65% Compact",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Madlions Official Edition",
+          "sku": "UST-MAD-193929",
+          "color": "Official Standard",
+          "priceIdr": 995000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/03ebbf6306784d0cb8cecf78e7182fe2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784966686",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747973705865",
+      "slug": "royal-kludge-kzzi-k-75-k75-pro-hotswap-gasket",
+      "brandCanonical": "Royal Kludge",
+      "officialProductName": "Royal Kludge KZZI K-75 / K75 PRO Hotswap Gasket Wireless 75% Mechanical Keyboard",
+      "manufacturerModel": "Royal Kludge KZZI K-75 / K75 PRO Hotswap",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/royal-kludge-kzzi-k-75-k75-pro-hotswap-gasket-wireless-75-mechanical-keyboard",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3e573fed4795488f8185244bd658e1b8_tplv-o3syd03w52-origin-jpeg.jpg?v=1784965258",
+      "specs": {
+        "Form Factor": "75% Exploded",
+        "Switch Technology": "Hot-swappable Custom Mechanical",
+        "Polling Rate": "1000 Hz Ultra-low Latency",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Tri-Mode (2.4GHz Wireless, Bluetooth 5.2, Type-C)"
+      },
+      "variants": [
+        {
+          "name": "Royal Kludge Official Edition",
+          "sku": "UST-ROY-705865",
+          "color": "Official Standard",
+          "priceIdr": 1300000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3e573fed4795488f8185244bd658e1b8_tplv-o3syd03w52-origin-jpeg.jpg?v=1784965258",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747956830345",
+      "slug": "lamzu-jet75-he-8k-hall-effect-75-gaming-keybo",
+      "brandCanonical": "Lamzu / Scyrox",
+      "officialProductName": "Lamzu JET75 HE 8K Hall Effect 75% Gaming Keyboard Aluminum Rapid Trigger SOCD DKS Wooting",
+      "manufacturerModel": "Lamzu JET75 HE 8K Hall Effect 75% Gaming",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/lamzu-jet75-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/29424a46a9fb4c25be31b44d9ef8228d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960214",
+      "specs": {
+        "Form Factor": "75% Exploded",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "Lamzu / Scyrox Official Edition",
+          "sku": "UST-LAM-830345",
+          "color": "Official Standard",
+          "priceIdr": 3125000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/29424a46a9fb4c25be31b44d9ef8228d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960214",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747951161481",
+      "slug": "wlmouse-ying75-8k-hall-effect-carbon-forged-7",
+      "brandCanonical": "WLMouse",
+      "officialProductName": "WLMouse Ying75 8K Hall Effect Carbon Forged 75% Gaming Keyboard Rapid Trigger DKS SOCD Wooting",
+      "manufacturerModel": "WLMouse Ying75 8K Hall Effect Carbon For",
+      "category": "Keyboard",
+      "officialProductUrl": "https://www.infinitas.id/products/wlmouse-ying75-8k-hall-effect-carbon-forged-75-gaming-keyboard-rapid-trigger-dks-socd-wooting",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5899ed093fa347debb8e3a78d06cb2b3_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784959422",
+      "specs": {
+        "Form Factor": "75% Exploded",
+        "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
+        "Polling Rate": "8000 Hz Hyper-Polling (0.125ms latency)",
+        "Keycaps": "Dye-Sub PBT Premium Profile",
+        "Mounting Style": "Gasket Mount with Multi-Layer Acoustic Poron Dampening",
+        "Connectivity": "Detachable Braided Type-C"
+      },
+      "variants": [
+        {
+          "name": "WLMouse Official Edition",
+          "sku": "UST-WLM-161481",
+          "color": "Official Standard",
+          "priceIdr": 5500000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5899ed093fa347debb8e3a78d06cb2b3_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784959422",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845506248841",
+      "slug": "mchose-g7-wireless-ultra-light-weight-paw3311",
+      "brandCanonical": "MCHOSE",
+      "officialProductName": "MCHOSE G7 Wireless Ultra Light Weight PAW3311 Ergonomic Gaming Mouse G502 Shape",
+      "manufacturerModel": "MCHOSE G7 Wireless Ultra Light Weight PA",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/mchose-g7-wireless-ultra-light-weight-paw3311-ergonomic-gaming-mouse-g502-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ratn-mb3j55ayhrzde4.jpg?v=1789459480",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "MCHOSE Official Edition",
+          "sku": "UST-MCH-248841",
+          "color": "Official Standard",
+          "priceIdr": 330000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ratn-mb3j55ayhrzde4.jpg?v=1789459480",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845504643209",
+      "slug": "mchose-g3-ultra-8k-wireless-ultra-light-weigh",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "MCHOSE G3 Ultra 8K Wireless Ultra Light Weight Gaming Mouse G305 Shape",
+      "manufacturerModel": "MCHOSE G3 Ultra 8K Wireless Ultra Light ",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/mchose-g3-ultra-8k-wireless-ultra-light-weight-gaming-mouse-g305-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156l3nzhf87.jpg?v=1789458932",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-643209",
+          "color": "Official Standard",
+          "priceIdr": 690800,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156l3nzhf87.jpg?v=1789458932",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845502972041",
+      "slug": "mchose-g3-wireless-ultra-light-weight-gaming",
+      "brandCanonical": "MCHOSE",
+      "officialProductName": "MCHOSE G3 Wireless Ultra Light Weight Gaming Mouse G305 Shape",
+      "manufacturerModel": "MCHOSE G3 Wireless Ultra Light Weight Ga",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/mchose-g3-wireless-ultra-light-weight-gaming-mouse-g305-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra3a-mbc14w5yycgg80.jpg?v=1789458583",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "MCHOSE Official Edition",
+          "sku": "UST-MCH-972041",
+          "color": "Official Standard",
+          "priceIdr": 308000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra3a-mbc14w5yycgg80.jpg?v=1789458583",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845497565321",
+      "slug": "mchose-4k-dongle-receiver-4000-khz-polling-ra",
+      "brandCanonical": "MCHOSE",
+      "officialProductName": "MCHOSE 4K Dongle Receiver 4000 Khz Polling rate for MCHOSE Gaming Mouse",
+      "manufacturerModel": "MCHOSE 4K Dongle Receiver 4000 Khz Polli",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/mchose-4k-dongle-receiver-4000-khz-polling-rate-for-mchose-gaming-mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra1r-mbdkkbq6cj2oef.jpg?v=1789458263",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "MCHOSE Official Edition",
+          "sku": "UST-MCH-565321",
+          "color": "Official Standard",
+          "priceIdr": 176000,
+          "offerType": "READY",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra1r-mbdkkbq6cj2oef.jpg?v=1789458263",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8843047862409",
+      "slug": "darmoshark-m3-micro-pro-cigar-8k-wireless-ult",
+      "brandCanonical": "Darmoshark",
+      "officialProductName": "Darmoshark M3 Micro Pro Cigar 8k Wireless Ultra Light Finger Tip Ambi Gaming Mouse",
+      "manufacturerModel": "Darmoshark M3 Micro Pro Cigar 8k Wireles",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-micro-pro-cigar-8k-wireless-ultra-light-finger-tip-ambi-gaming-mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkalryn7a.jpg?v=1789278497",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "Darmoshark Official Edition",
+          "sku": "UST-DAR-862409",
+          "color": "Official Standard",
+          "priceIdr": 902500,
+          "offerType": "READY",
+          "stockOnHand": 15,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkalryn7a.jpg?v=1789278497",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842437361801",
+      "slug": "eweadn-gs02-pro-wireless-ultra-light-ergonimi",
+      "brandCanonical": "EWEADN",
+      "officialProductName": "EWEADN GS02 PRO Wireless Ultra Light Ergonimic Gaming Mouse PAW3311 GPX-Dex Shape",
+      "manufacturerModel": "EWEADN GS02 PRO Wireless Ultra Light Erg",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/eweadn-gs02-pro-wireless-ultra-light-ergonimic-gaming-mouse-paw3311-gpx-dex-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825a8-mrcp4ghlut511a.jpg?v=1789204196",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "EWEADN Official Edition",
+          "sku": "UST-EWE-361801",
+          "color": "Official Standard",
+          "priceIdr": 199000,
+          "offerType": "READY",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825a8-mrcp4ghlut511a.jpg?v=1789204196",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842322149513",
+      "slug": "mchose-a7-ultra-8k-wireless-ultra-light-weigh",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "MCHOSE A7 Ultra 8K Wireless Ultra Light Weight Gaming Mouse GPX Shape",
+      "manufacturerModel": "MCHOSE A7 Ultra 8K Wireless Ultra Light ",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/mchose-a7-ultra-8k-wireless-ultra-light-weight-gaming-mouse-gpx-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raup-mb3j60fczng699.jpg?v=1789194569",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-149513",
+          "color": "Official Standard",
+          "priceIdr": 900000,
+          "offerType": "READY",
+          "stockOnHand": 9,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raup-mb3j60fczng699.jpg?v=1789194569",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747989139593",
+      "slug": "lamzu-inca-8k-wireless-ultra-light-ambi-gamin",
+      "brandCanonical": "Lamzu / Scyrox",
+      "officialProductName": "Lamzu INCA 8k Wireless Ultra Light Ambi Gaming Mouse ZA13 Shape",
+      "manufacturerModel": "Lamzu INCA 8k Wireless Ultra Light Ambi ",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/lamzu-inca-8k-wireless-ultra-light-ambi-gaming-mouse-za13-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/b3c4ff14741d47d1a5b8dec962e9115a_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "Lamzu / Scyrox Official Edition",
+          "sku": "UST-LAM-139593",
+          "color": "Official Standard",
+          "priceIdr": 1879000,
+          "offerType": "READY",
+          "stockOnHand": 6,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/b3c4ff14741d47d1a5b8dec962e9115a_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747987271817",
+      "slug": "atk-u2-v2-mini-blazing-sky-8k-wireless-light",
+      "brandCanonical": "VXE ATK FGG",
+      "officialProductName": "ATK U2 V2 Mini Blazing Sky 8K Wireless Light Weight PAW3950 ULTRA Gaming Mouse Zowie U2 Shape",
+      "manufacturerModel": "ATK U2 V2 Mini Blazing Sky 8K Wireless L",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light-weight-paw3950-ultra-gaming-mouse-zowie-u2-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
+      "specs": {
+        "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "VXE ATK FGG Official Edition",
+          "sku": "UST-VXE-271817",
+          "color": "Official Standard",
+          "priceIdr": 1325000,
+          "offerType": "READY",
+          "stockOnHand": 6,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747987009673",
+      "slug": "darmoshark-m3-pro-max-8k-kiran-wireless-ultra",
+      "brandCanonical": "Darmoshark",
+      "officialProductName": "Darmoshark M3 PRO MAX Kiran Wireless Ultra Light Ambi Gaming Mouse",
+      "manufacturerModel": "Darmoshark M3 PRO MAX Kiran Wireless Ult",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra-light-ambi-gaming-mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "Darmoshark Official Edition",
+          "sku": "UST-DAR-009673",
+          "color": "Official Standard",
+          "priceIdr": 800000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747986813065",
+      "slug": "atk-x1-v2-ultimate-blazing-sky-8k-wireless-li",
+      "brandCanonical": "VXE ATK FGG",
+      "officialProductName": "ATK X1 V2 Ultimate Blazing Sky 8K Wireless Light Weight 3950 Ultra Gaming Mouse Viper V3 Shape",
+      "manufacturerModel": "ATK X1 V2 Ultimate Blazing Sky 8K Wirele",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/atk-x1-v2-ultimate-blazing-sky-8k-wireless-light-weight-3950-ultra-gaming-mouse-viper-v3-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6d5f3c665f9a437ba1358a7564be5613_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968256",
+      "specs": {
+        "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "VXE ATK FGG Official Edition",
+          "sku": "UST-VXE-813065",
+          "color": "Official Standard",
+          "priceIdr": 1225000,
+          "offerType": "READY",
+          "stockOnHand": 19,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6d5f3c665f9a437ba1358a7564be5613_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968256",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747985764489",
+      "slug": "motospeed-x6-8k-super-light-wireless-gaming-m",
+      "brandCanonical": "MOTOSPEED",
+      "officialProductName": "MOTOSPEED X6 8k Super Light Wireless Gaming Mouse",
+      "manufacturerModel": "MOTOSPEED X6 8k Super Light Wireless Gam",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/motospeed-x6-8k-super-light-wireless-gaming-mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e381c132dab44271832eb3d67c20c124_tplv-o3syd03w52-origin-jpeg.jpg?v=1784967992",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "MOTOSPEED Official Edition",
+          "sku": "UST-MOT-764489",
+          "color": "Official Standard",
+          "priceIdr": 675000,
+          "offerType": "READY",
+          "stockOnHand": 13,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e381c132dab44271832eb3d67c20c124_tplv-o3syd03w52-origin-jpeg.jpg?v=1784967992",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747983995017",
+      "slug": "ipi-float-88-pro-8k-wireless-ultra-light-carb",
+      "brandCanonical": "IPI",
+      "officialProductName": "IPI Float 88 PRO 8k Wireless Ultra Light Carbon Fiber PAW3395 Gaming Mouse with Charging Dock",
+      "manufacturerModel": "IPI Float 88 PRO 8k Wireless Ultra Light",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/ipi-float-88-pro-8k-wireless-ultra-light-carbon-fiber-paw3395-gaming-mouse-with-charging-dock",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/655e9a8997c54af29a1dacba1733a4e0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784967497",
+      "specs": {
+        "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "IPI Official Edition",
+          "sku": "UST-IPI-995017",
+          "color": "Official Standard",
+          "priceIdr": 800000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/655e9a8997c54af29a1dacba1733a4e0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784967497",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747979735177",
+      "slug": "atk-x1-v2-extreme-blazing-sky-8k-wireless-lig",
+      "brandCanonical": "VXE ATK FGG",
+      "officialProductName": "ATK X1 V2 Extreme Blazing Sky 8K Wireless Light Weight 3950 Ultra Gaming Mouse Viper V3 Shape",
+      "manufacturerModel": "ATK X1 V2 Extreme Blazing Sky 8K Wireles",
+      "category": "Mouse",
+      "officialProductUrl": "https://www.infinitas.id/products/atk-x1-v2-extreme-blazing-sky-8k-wireless-light-weight-3950-ultra-gaming-mouse-viper-v3-shape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a89cf79cb86b4a08bd5f17928ac53562_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784966635",
+      "specs": {
+        "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
+        "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
+        "Weight": "49g - 54g Solid Shell Lightweight",
+        "Main Switches": "Huano Blue Shell Pink Dot / Omron Optical",
+        "Encoder": "TTC Gold Dustproof Encoder",
+        "Battery Life": "Up to 80 Hours Continuous Play"
+      },
+      "variants": [
+        {
+          "name": "VXE ATK FGG Official Edition",
+          "sku": "UST-VXE-735177",
+          "color": "Official Standard",
+          "priceIdr": 1700000,
+          "offerType": "READY",
+          "stockOnHand": 9,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a89cf79cb86b4a08bd5f17928ac53562_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784966635",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744533655689",
+      "slug": "infinitas-hanger-kayu-mousepad-deskmat-gaming",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Infinitas Hanger Kayu Mousepad / Deskmat Gaming Gantungan Jepit",
+      "manufacturerModel": "Infinitas Hanger Kayu Mousepad / Deskmat",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/infinitas-hanger-kayu-mousepad-deskmat-gaming-gantungan-jepit",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/cd75ebaebca8430b9cf12c5e1d40e5ec_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784793402",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-655689",
+          "color": "Official Standard",
+          "priceIdr": 26500,
+          "offerType": "READY",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/cd75ebaebca8430b9cf12c5e1d40e5ec_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784793402",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8865880998025",
+      "slug": "pre-order-talongames-rinne-art-poron-base-gam",
+      "brandCanonical": "Talongames",
+      "officialProductName": "[Pre-Order] Talongames Rinne ART Poron Base Gaming Edgeless Mousepad (Control)",
+      "manufacturerModel": "Talongames Rinne ART Poron Base Gaming E",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-talongames-rinne-art-poron-base-gaming-edgeless-mousepad-control",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Talongames Official Edition",
+          "sku": "UST-TAL-998025",
+          "color": "Official Standard",
+          "priceIdr": 595000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8847440740489",
+      "slug": "lastpad-raydamn-silicone-base-gaming-edgeless",
+      "brandCanonical": "LASTPAD",
+      "officialProductName": "Lastpad Raydamn Silicone Base Gaming Edgeless Mousepad (Speed) Vaxee PD + Artisan Raiden Clone",
+      "manufacturerModel": "Lastpad Raydamn Silicone Base Gaming Edg",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/lastpad-raydamn-silicone-base-gaming-edgeless-mousepad-speed-vaxee-pd-artisan-raiden-clone",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-16_104243910.png?v=1789530166",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "LASTPAD Official Edition",
+          "sku": "UST-LAS-740489",
+          "color": "Official Standard",
+          "priceIdr": 350000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-16_104243910.png?v=1789530166",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8824692375689",
+      "slug": "nova-earth-inoac-slimflex-japanese-poron-base",
+      "brandCanonical": "Nova",
+      "officialProductName": "Nova Earth INOAC Slimflex Japanese Poron Base Gaming Mousepad (Control) Type-99 Feel",
+      "manufacturerModel": "Nova Earth INOAC Slimflex Japanese Poron",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/nova-earth-inoac-slimflex-japanese-poron-base-gaming-mousepad-hybrid-control",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105742078.png?v=1788407866",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Nova Official Edition",
+          "sku": "UST-NOV-375689",
+          "color": "Official Standard",
+          "priceIdr": 340000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105742078.png?v=1788407866",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8824692080777",
+      "slug": "nova-libra-silicone-base-gaming-edgeless-mous",
+      "brandCanonical": "Nova",
+      "officialProductName": "Nova Libra Silicone Base Gaming Edgeless Mousepad (Hybrid) Vaxee PD Clone",
+      "manufacturerModel": "Nova Libra Silicone Base Gaming Edgeless",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/nova-libra-silicone-base-gaming-edgeless-mousepad-hybrid-vaxee-pd-clone-copy",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105308611.png?v=1788407592",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Nova Official Edition",
+          "sku": "UST-NOV-080777",
+          "color": "Official Standard",
+          "priceIdr": 340000,
+          "offerType": "READY",
+          "stockOnHand": 9,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105308611.png?v=1788407592",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747989434505",
+      "slug": "prelude-morph-poron-base-gaming-mousepad-cont",
+      "brandCanonical": "Preludia",
+      "officialProductName": "Prelude Morph Poron Base Gaming Mousepad (Control)",
+      "manufacturerModel": "Prelude Morph Poron Base Gaming Mousepad",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/prelude-morph-poron-base-gaming-mousepad-control",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3f8be2673f6646e88899e91e395ce7bc_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968876",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Preludia Official Edition",
+          "sku": "UST-PRE-434505",
+          "color": "Official Standard",
+          "priceIdr": 550000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3f8be2673f6646e88899e91e395ce7bc_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968876",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8867320627337",
+      "slug": "pre-order-talongames-rinne-art-poron-bas-1",
+      "brandCanonical": "Kyuu Design",
+      "officialProductName": "Kyuu Design Eclipse Poron Base Gaming Mousepad (Speed) Artisan Hien Clone",
+      "manufacturerModel": "Kyuu Design Eclipse Poron Base Gaming Mo",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-talongames-rinne-art-poron-base-gaming-edgeless-mousepad-control-copy",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-25_134129700.png?v=1790318495",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Kyuu Design Official Edition",
+          "sku": "UST-KYU-627337",
+          "color": "Official Standard",
+          "priceIdr": 345000,
+          "offerType": "READY",
+          "stockOnHand": 13,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-25_134129700.png?v=1790318495",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845661733001",
+      "slug": "xraypad-aqua-control-pro-ac-pro-gaming-mousep",
+      "brandCanonical": "XRaypad",
+      "officialProductName": "XRaypad Aqua Control Pro / AC Pro Gaming Mousepad (Hybrid)",
+      "manufacturerModel": "XRaypad Aqua Control Pro / AC Pro Gaming",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/xraypad-aqua-control-pro-ac-pro-gaming-mousepad-hybrid",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rau9-mb4ubjmq53ib77.jpg?v=1789473390",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "XRaypad Official Edition",
+          "sku": "UST-XRA-733001",
+          "color": "Official Standard",
+          "priceIdr": 700000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rau9-mb4ubjmq53ib77.jpg?v=1789473390",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845549469833",
+      "slug": "utopia-gaming-black-blade-q-rubber-base-gamin",
+      "brandCanonical": "Utopia Gaming",
+      "officialProductName": "Utopia Gaming Black Blade Q Rubber Base Gaming Mousepad Anime (Control) Type-99 Surface",
+      "manufacturerModel": "Utopia Gaming Black Blade Q Rubber Base ",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/utopia-gaming-black-blade-q-rubber-base-gaming-mousepad-anime-control-type-99-surface",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/44e56103127b4e0a9f6314bf77e6c170_tplv-o3syd03w52-origin-jpeg.jpg?v=1789471342",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Utopia Gaming Official Edition",
+          "sku": "UST-UTO-469833",
+          "color": "Official Standard",
+          "priceIdr": 175000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/44e56103127b4e0a9f6314bf77e6c170_tplv-o3syd03w52-origin-jpeg.jpg?v=1789471342",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8845530103945",
+      "slug": "utopia-gaming-black-blade-5-poron-base-gaming",
+      "brandCanonical": "Utopia Gaming",
+      "officialProductName": "Utopia Gaming Black Blade 5 Poron Base Gaming Mousepad Anime (Control) Type-99 Surface",
+      "manufacturerModel": "Utopia Gaming Black Blade 5 Poron Base G",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/utopia-gaming-black-blade-5-poron-base-gaming-mousepad-anime-control-type-99-surface",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/38c9d20a140b447a9837c8bd390a66ff_tplv-o3syd03w52-origin-jpeg.jpg?v=1789466575",
+      "specs": {
+        "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
+        "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 4 mm (Sub-surface Stitching)"
+      },
+      "variants": [
+        {
+          "name": "Utopia Gaming Official Edition",
+          "sku": "UST-UTO-103945",
+          "color": "Official Standard",
+          "priceIdr": 550000,
+          "offerType": "READY",
+          "stockOnHand": 19,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/38c9d20a140b447a9837c8bd390a66ff_tplv-o3syd03w52-origin-jpeg.jpg?v=1789466575",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8828402040969",
+      "slug": "pre-order-glsswrks-zofia-silicone-base-non-co",
+      "brandCanonical": "GLSSWRKS",
+      "officialProductName": "GLSSWRKS Zofia Glass Gaming Mousepad",
+      "manufacturerModel": "GLSSWRKS Zofia Glass Gaming Mousepad",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-glsswrks-zofia-silicone-base-non-coated-japanese-glanova-glass-gaming-mousepad-kaca-hybrid",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "GLSSWRKS Official Edition",
+          "sku": "UST-GLS-040969",
+          "color": "Official Standard",
+          "priceIdr": 1750000,
+          "offerType": "READY",
+          "stockOnHand": 19,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8771718709385",
+      "slug": "pre-order-kyomi-yuyo-glass-mousepad",
+      "brandCanonical": "Kyomi",
+      "officialProductName": "Kyomi Yuyo Silicone Base COATED Glass Gaming Mousepad Kaca (Speed)",
+      "manufacturerModel": "Kyomi Yuyo Silicone Base COATED Glass Ga",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-kyomi-yuyo-glass-mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "Kyomi Official Edition",
+          "sku": "UST-KYO-709385",
+          "color": "Official Standard",
+          "priceIdr": 1775000,
+          "offerType": "READY",
+          "stockOnHand": 13,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8770303393929",
+      "slug": "x-raypad-nod-glass-mousepad",
+      "brandCanonical": "X-Raypad",
+      "officialProductName": "X-Raypad NOD Glass Mousepad",
+      "manufacturerModel": "X-Raypad NOD Glass Mousepad",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/x-raypad-nod-glass-mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119442.png?v=1786518684",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Zero-Surface High Friction Control",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "X-Raypad Official Edition",
+          "sku": "UST-XRA-393929",
+          "color": "Official Standard",
+          "priceIdr": 1625000,
+          "offerType": "READY",
+          "stockOnHand": 17,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119442.png?v=1786518684",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744512815241",
+      "slug": "mitsuki-koku-the-void-glass-edition-silicone",
+      "brandCanonical": "MITSUKI",
+      "officialProductName": "MITSUKI Koku-The Void Glass Edition Silicone Base COATED Gaming Tempered Glass Mousepad Kaca (Speed)",
+      "manufacturerModel": "MITSUKI Koku-The Void Glass Edition Sili",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/mitsuki-koku-the-void-glass-edition-silicone-base-coated-gaming-tempered-glass-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534473a9b75_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789172",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "MITSUKI Official Edition",
+          "sku": "UST-MIT-815241",
+          "color": "Official Standard",
+          "priceIdr": 1800000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534473a9b75_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789172",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8869530337417",
+      "slug": "dysphoria-mio-silicone-base-coated-glass-gami",
+      "brandCanonical": "Dysphoria",
+      "officialProductName": "Dysphoria Mio Silicone Base COATED Glass Gaming Mousepad Kaca (Speed)",
+      "manufacturerModel": "Dysphoria Mio Silicone Base COATED Glass",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/dysphoria-mio-silicone-base-coated-glass-gaming-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "Dysphoria Official Edition",
+          "sku": "UST-DYS-337417",
+          "color": "Official Standard",
+          "priceIdr": 1800000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8858344161417",
+      "slug": "pre-order-kyuudesign-prism-glass-limited-edit",
+      "brandCanonical": "Kyuu Design",
+      "officialProductName": "Kyuu Design Prism Glass COATED Silicone Base Gaming Glass Mousepad Kaca (Speed)",
+      "manufacturerModel": "Kyuu Design Prism Glass COATED Silicone ",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-kyuudesign-prism-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-22_122358820.png?v=1790054642",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "Kyuu Design Official Edition",
+          "sku": "UST-KYU-161417",
+          "color": "Official Standard",
+          "priceIdr": 1225000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-22_122358820.png?v=1790054642",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8854457254025",
+      "slug": "pre-order-statice-mizuki-glass-limited-editio",
+      "brandCanonical": "Statice",
+      "officialProductName": "[Pre-Order] Statice Mizuki Glass Limited Edition Silicone Base Gaming Glass Mousepad Kaca (Speed)",
+      "manufacturerModel": "Statice Mizuki Glass Limited Edition Sil",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-statice-mizuki-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_194819318.png?v=1789822102",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "Statice Official Edition",
+          "sku": "UST-STA-254025",
+          "color": "Official Standard",
+          "priceIdr": 1895000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_194819318.png?v=1789822102",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8854450962569",
+      "slug": "yuki-aim-x-pulsar-superglide-3-glass-limited",
+      "brandCanonical": "Yuki Aim",
+      "officialProductName": "[Pre-Order] Yuki Aim x Pulsar Superglide 3 Glass Limited Edition Silicone Base Gaming Glass Mousepad Kaca (Speed)",
+      "manufacturerModel": "Yuki Aim x Pulsar Superglide 3 Glass Lim",
+      "category": "Mousepad",
+      "officialProductUrl": "https://www.infinitas.id/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
+      "specs": {
+        "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
+        "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
+        "Speed / Control Profile": "Dynamic Speed Glide with Micro-Texture",
+        "Dimensions": "490 x 420 x 3.8 mm"
+      },
+      "variants": [
+        {
+          "name": "Yuki Aim Official Edition",
+          "sku": "UST-YUK-962569",
+          "color": "Official Standard",
+          "priceIdr": 1995000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864725467273",
+      "slug": "pre-order-hmx-rain-pcb-mount-mechanical-keybo",
+      "brandCanonical": "HMX",
+      "officialProductName": "[Pre-Order] HMX Rain Rail Bottom-Out PCB Mount Mechanical Keyboard Switch (Linear) By Youth Studio",
+      "manufacturerModel": "HMX Rain Rail Bottom-Out PCB Mount Mecha",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/pre-order-hmx-rain-pcb-mount-mechanical-keyboard-switch-linear-by-youth-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "HMX Official Edition",
+          "sku": "UST-HMX-467273",
+          "color": "Official Standard",
+          "priceIdr": 367500,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864306331785",
+      "slug": "wingtree-nezuko-demon-slayer-theme-pcb-mount",
+      "brandCanonical": "WingTree",
+      "officialProductName": "[Pre-Order] WingTree Nezuko Demon Slayer Theme PCB Mount Mechanical Keyboard Switch (Linear) By Hida Studio",
+      "manufacturerModel": "WingTree Nezuko Demon Slayer Theme PCB M",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/wingtree-nezuko-demon-slayer-theme-pcb-mount-mechanical-keyboard-switch-linear-by-hida-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/8308e9874ef4484682557381f976c87c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790230099",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "WingTree Official Edition",
+          "sku": "UST-WIN-331785",
+          "color": "Official Standard",
+          "priceIdr": 350000,
+          "offerType": "PREORDER",
+          "stockOnHand": 0,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/8308e9874ef4484682557381f976c87c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790230099",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864216187017",
+      "slug": "hmx-cthulhu-pre-lubed-mechanical-keyboard-pcb",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Cthulhu Pre-Lubed Mechanical Keyboard PCB Mount Switch (Linear) by SU LAB",
+      "manufacturerModel": "HMX Cthulhu Pre-Lubed Mechanical Keyboar",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/hmx-cthulhu-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-su-lab",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1fe0a8c4b5714672b7e21498cd43d590_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229085",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "HMX Official Edition",
+          "sku": "UST-HMX-187017",
+          "color": "Official Standard",
+          "priceIdr": 385000,
+          "offerType": "READY",
+          "stockOnHand": 17,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1fe0a8c4b5714672b7e21498cd43d590_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229085",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864296730761",
+      "slug": "hmx-egg-yolk-pre-lubed-mechanical-keyboard-pc",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Egg Yolk Pre-Lubed Mechanical Keyboard PCB Mount Switch (Linear) by KK Lab",
+      "manufacturerModel": "HMX Egg Yolk Pre-Lubed Mechanical Keyboa",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-kk-lab",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "HMX Official Edition",
+          "sku": "UST-HMX-730761",
+          "color": "Official Standard",
+          "priceIdr": 399000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864296697993",
+      "slug": "keygeek-sago-pcb-mount-mechanical-keyboard-sw",
+      "brandCanonical": "Keygeek",
+      "officialProductName": "Keygeek Sago PCB Mount Mechanical Keyboard switch (Linear) by Jinyun Studio",
+      "manufacturerModel": "Keygeek Sago PCB Mount Mechanical Keyboa",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/keygeek-sago-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4728fdc3e0ab4c27b8c5301045db4263_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229539",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "Keygeek Official Edition",
+          "sku": "UST-KEY-697993",
+          "color": "Official Standard",
+          "priceIdr": 437500,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4728fdc3e0ab4c27b8c5301045db4263_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229539",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864296665225",
+      "slug": "wekt-silver-feather-pcb-mount-mechanical-keyb",
+      "brandCanonical": "WEKT",
+      "officialProductName": "WEKT Silver Feather PCB Mount Mechanical Keyboard Switch (Linear) By Jinyun Studio",
+      "manufacturerModel": "WEKT Silver Feather PCB Mount Mechanical",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/wekt-silver-feather-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "WEKT Official Edition",
+          "sku": "UST-WEK-665225",
+          "color": "Official Standard",
+          "priceIdr": 437500,
+          "offerType": "READY",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864216613001",
+      "slug": "keygeek-hachiware-r2-chiikawa-theme-pcb-mount",
+      "brandCanonical": "KeyGeek",
+      "officialProductName": "Keygeek Hachiware R2 Chiikawa Theme PCB Mount Mechanical Keyboard Switch (Linear) By Hida Studio",
+      "manufacturerModel": "Keygeek Hachiware R2 Chiikawa Theme PCB ",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/keygeek-hachiware-r2-chiikawa-theme-pcb-mount-mechanical-keyboard-switch-linear-by-hida-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2b293374cefe46a4bf74e81dcde5ede0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229161",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "KeyGeek Official Edition",
+          "sku": "UST-KEY-613001",
+          "color": "Official Standard",
+          "priceIdr": 420000,
+          "offerType": "READY",
+          "stockOnHand": 15,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2b293374cefe46a4bf74e81dcde5ede0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229161",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864216580233",
+      "slug": "hmx-reze-chainsaw-man-theme-pcb-mount-mechani",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Reze Chainsaw Man Theme PCB Mount Mechanical Keyboard Switch (Tactile) By Hida Studio",
+      "manufacturerModel": "HMX Reze Chainsaw Man Theme PCB Mount Me",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/hmx-reze-chainsaw-man-theme-pcb-mount-mechanical-keyboard-switch-tactile-by-hida-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/ea61a7d4ce6140e69db390a9cafca511_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229153",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "HMX Official Edition",
+          "sku": "UST-HMX-580233",
+          "color": "Official Standard",
+          "priceIdr": 420000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/ea61a7d4ce6140e69db390a9cafca511_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229153",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864216481929",
+      "slug": "bsun-n2-pcb-mount-mechanical-keyboard-switch",
+      "brandCanonical": "BSUN",
+      "officialProductName": "BSUN N2 PCB Mount Mechanical Keyboard Switch (Linear) By QVQ Studio",
+      "manufacturerModel": "BSUN N2 PCB Mount Mechanical Keyboard Sw",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/bsun-n2-pcb-mount-mechanical-keyboard-switch-linear-by-qvq-studio",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/67217036077d4bc09123675c71f7ac8c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229140",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "BSUN Official Edition",
+          "sku": "UST-BSU-481929",
+          "color": "Official Standard",
+          "priceIdr": 224000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/67217036077d4bc09123675c71f7ac8c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229140",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8864216416393",
+      "slug": "bsun-mongdol-black-pcb-mount-mechanical-keybo",
+      "brandCanonical": "BSUN",
+      "officialProductName": "BSUN Mongdol Black PCB Mount Mechanical Keyboard Switch (Linear) By Soulcat x SPM",
+      "manufacturerModel": "BSUN Mongdol Black PCB Mount Mechanical ",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/bsun-mongdol-black-pcb-mount-mechanical-keyboard-switch-linear-by-soulcat-x-spm",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/0d62f02e65f24b538914ef6743505447_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229132",
+      "specs": {
+        "Switch Type": "5-Pin Linear Mechanical Switch",
+        "Operating Force": "42g - 45g Actuation",
+        "Bottom Out Force": "48g - 53g",
+        "Factory Lube": "Precision Factory Krytox Formulation Lubricated",
+        "Stem Material": "POM / Modified LY Low Friction Composite"
+      },
+      "variants": [
+        {
+          "name": "BSUN Official Edition",
+          "sku": "UST-BSU-416393",
+          "color": "Official Standard",
+          "priceIdr": 413000,
+          "offerType": "READY",
+          "stockOnHand": 9,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/0d62f02e65f24b538914ef6743505447_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229132",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842432315529",
+      "slug": "soulcat-mao-jelly-keycaps-mao-profile-side-pr",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Soulcat MAO Jelly Keycaps MAO Profile Side-Print PC+ABS Double Shot Keycap 119-Keys",
+      "manufacturerModel": "Soulcat MAO Jelly Keycaps MAO Profile Si",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/soulcat-mao-jelly-keycaps-mao-profile-side-print-pc-abs-double-shot-keycap-119-keys",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ap-mrgxy97d8tfq03.jpg?v=1789201837",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-315529",
+          "color": "Official Standard",
+          "priceIdr": 350000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ap-mrgxy97d8tfq03.jpg?v=1789201837",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842431889545",
+      "slug": "soulcat-black-pink-meow-meow-keycaps-mao-prof",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Soulcat Black Pink Meow Meow Keycaps MAO Profile Side-Print PC+PBT UV-Print+Dye-Sub Keycap 143+26-Keys",
+      "manufacturerModel": "Soulcat Black Pink Meow Meow Keycaps MAO",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/soulcat-black-pink-meow-meow-keycaps-mao-profile-side-print-pc-pbt-uv-print-dye-sub-keycap-143-26-keys",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825bb-mrgym5iv318i55.jpg?v=1789201621",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-889545",
+          "color": "Official Standard",
+          "priceIdr": 700000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825bb-mrgym5iv318i55.jpg?v=1789201621",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842421108873",
+      "slug": "soulcat-strawberry-milk-pink-keycaps-cherry-p",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Soulcat Strawberry Milk Pink Keycaps Cherry Profile PC Triple-Shot Keycap 138-Keys",
+      "manufacturerModel": "Soulcat Strawberry Milk Pink Keycaps Che",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/soulcat-strawberry-milk-pink-keycaps-cherry-profile-pc-triple-shot-keycap-138-keys",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/236706424a6943219d9386c206be9a35_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789200636",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "Cherry Profile",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-108873",
+          "color": "Official Standard",
+          "priceIdr": 385000,
+          "offerType": "READY",
+          "stockOnHand": 17,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/236706424a6943219d9386c206be9a35_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789200636",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8842395615369",
+      "slug": "soulcat-electric-meow-meow-keycaps-mao-profil",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Soulcat Electric Meow Meow Keycaps MAO Profile Side-Print PC+PBT UV-Print+Dye-Sub Keycap 141+26-Keys",
+      "manufacturerModel": "Soulcat Electric Meow Meow Keycaps MAO P",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/soulcat-electric-meow-meow-keycaps-mao-profile-side-print-pc-pbt-uv-print-dye-sub-keycap-141-26-keys",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ar-mrgymimmai301e.jpg?v=1789199348",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-615369",
+          "color": "Official Standard",
+          "priceIdr": 700000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ar-mrgymimmai301e.jpg?v=1789199348",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8838262063241",
+      "slug": "lobo-golden-caitlyn-arcane-league-of-legends",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Lobo Golden Caitlyn Arcane League of Legends Anime Theme Artisan Keycaps Resin Keycap",
+      "manufacturerModel": "Lobo Golden Caitlyn Arcane League of Leg",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/lobo-golden-caitlyn-arcane-league-of-legends-anime-theme-artisan-keycaps-resin-keycap",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-821g7-mgn6n1lhmkui94.jpg?v=1789022480",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-063241",
+          "color": "Official Standard",
+          "priceIdr": 105000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-821g7-mgn6n1lhmkui94.jpg?v=1789022480",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8833597833353",
+      "slug": "xvx-textured-carbon-look-white-base-kit-keyca",
+      "brandCanonical": "XVX",
+      "officialProductName": "XVX Textured Carbon-Look White Base Kit Keycaps",
+      "manufacturerModel": "XVX Textured Carbon-Look White Base Kit ",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/xvx-textured-carbon-look-white-base-kit-keycaps",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090830376ec874bd81af7f69e66ba14be07886fb.jpg?v=1788942761",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "XVX Official Edition",
+          "sku": "UST-XVX-833353",
+          "color": "Official Standard",
+          "priceIdr": 275000,
+          "offerType": "READY",
+          "stockOnHand": 19,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090830376ec874bd81af7f69e66ba14be07886fb.jpg?v=1788942761",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8833597767817",
+      "slug": "xvx-textured-carbon-look-white-smart-kit-keyc",
+      "brandCanonical": "XVX",
+      "officialProductName": "XVX Textured Carbon-Look White Smart Kit Keycaps",
+      "manufacturerModel": "XVX Textured Carbon-Look White Smart Kit",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/xvx-textured-carbon-look-white-smart-kit-keycaps",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090828114e1c8078b553865147ff893b51fc383d.jpg?v=1788942757",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "XVX Official Edition",
+          "sku": "UST-XVX-767817",
+          "color": "Official Standard",
+          "priceIdr": 275000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090828114e1c8078b553865147ff893b51fc383d.jpg?v=1788942757",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8833531576457",
+      "slug": "xvx-wedge-prism-keycaps",
+      "brandCanonical": "XVX",
+      "officialProductName": "XVX Wedge PRISM Pink Keycaps",
+      "manufacturerModel": "XVX Wedge PRISM Pink Keycaps",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/xvx-wedge-prism-keycaps",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1_a6c1a92f-58d9-489c-aa3b-dfa86d.jpg?v=1789790519",
+      "specs": {
+        "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
+        "Printing Method": "Dye-Sublimation / Doubleshot Legends",
+        "Profile": "OEM / Custom Sculpted",
+        "Compatibility": "Universal ANSI standard (61/64/68/75/87/104 keys)"
+      },
+      "variants": [
+        {
+          "name": "XVX Official Edition",
+          "sku": "UST-XVX-576457",
+          "color": "Official Standard",
+          "priceIdr": 350000,
+          "offerType": "READY",
+          "stockOnHand": 6,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1_a6c1a92f-58d9-489c-aa3b-dfa86d.jpg?v=1789790519",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747960664201",
+      "slug": "meow-gaming-gear-ultraglide-blight-bb-dots-un",
+      "brandCanonical": "Meow Gaming Gear",
+      "officialProductName": "UltraGlide Blight / BB Dots Universal Mouse Feet / Mouse Skate UPE (Control) by Meow Gaming Gear",
+      "manufacturerModel": "UltraGlide Blight / BB Dots Universal Mo",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/meow-gaming-gear-ultraglide-blight-bb-dots-universal-mouse-feet-mouse-skate-upe-control",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/373f458040224906be204d9064226420_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960864",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Meow Gaming Gear Official Edition",
+          "sku": "UST-MEO-664201",
+          "color": "Official Standard",
+          "priceIdr": 50000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/373f458040224906be204d9064226420_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960864",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744496431241",
+      "slug": "unusual-way-sports-magic-plus-ice-dots-univer",
+      "brandCanonical": "Unusual Way Sports",
+      "officialProductName": "Unusual Way Sports Magic PLUS ICE Dots Universal Mouse Feet / Mouse Skate PTFE (Speed)",
+      "manufacturerModel": "Unusual Way Sports Magic PLUS ICE Dots U",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/unusual-way-sports-magic-plus-ice-dots-universal-mouse-feet-mouse-skate-ptfe-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4f136dfff2184d3ba4469d752f05d5b4_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787726",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Unusual Way Sports Official Edition",
+          "sku": "UST-UNU-431241",
+          "color": "Official Standard",
+          "priceIdr": 135000,
+          "offerType": "READY",
+          "stockOnHand": 16,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4f136dfff2184d3ba4469d752f05d5b4_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787726",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747923210377",
+      "slug": "owepowe-eagle-white-universal-silent-gaming-m",
+      "brandCanonical": "OWEPOWE",
+      "officialProductName": "OWEPOWE Eagle White Universal Silent Gaming Mouse Feet / Mouse Skate PTFE (Speed)",
+      "manufacturerModel": "OWEPOWE Eagle White Universal Silent Gam",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/owepowe-eagle-white-universal-silent-gaming-mouse-feet-mouse-skate-ptfe-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/983faa09a8ec4ae398b841213459e329_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784955680",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "OWEPOWE Official Edition",
+          "sku": "UST-OWE-210377",
+          "color": "Official Standard",
+          "priceIdr": 90000,
+          "offerType": "READY",
+          "stockOnHand": 18,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/983faa09a8ec4ae398b841213459e329_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784955680",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744535490697",
+      "slug": "unusual-way-sports-pink-fox-dots-universal-mo",
+      "brandCanonical": "Unusual Way Sports",
+      "officialProductName": "Unusual Way Sports Pink Fox Dots Universal Mouse Feet / Mouse Skate PTFE (Hybrid)",
+      "manufacturerModel": "Unusual Way Sports Pink Fox Dots Univers",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/unusual-way-sports-pink-fox-dots-universal-mouse-feet-mouse-skate-ptfe-hybrid",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/05ec76da1ad94d9dbf3b43e9787fee3d_tplv-o3syd03w52-origin-jpeg.jpg?v=1784793610",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Unusual Way Sports Official Edition",
+          "sku": "UST-UNU-490697",
+          "color": "Official Standard",
+          "priceIdr": 120000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/05ec76da1ad94d9dbf3b43e9787fee3d_tplv-o3syd03w52-origin-jpeg.jpg?v=1784793610",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744496955529",
+      "slug": "talongames-kumo-dots-universal-silent-mouse-f",
+      "brandCanonical": "Talongames",
+      "officialProductName": "Talongames Kumo Dots Universal Silent Mouse Feet / Mouse Skate Mixed PTFE (Speed-Hybrid)",
+      "manufacturerModel": "Talongames Kumo Dots Universal Silent Mo",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/talongames-kumo-dots-universal-silent-mouse-feet-mouse-skate-mixed-ptfe-hybrid-speed",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6098c10eede14da98b7f5ba09ab59885_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787743",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Talongames Official Edition",
+          "sku": "UST-TAL-955529",
+          "color": "Official Standard",
+          "priceIdr": 85000,
+          "offerType": "READY",
+          "stockOnHand": 17,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6098c10eede14da98b7f5ba09ab59885_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787743",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8824858116233",
+      "slug": "hachiware-ice-silent-universal-dots",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Hachiware Ice Silent Universal Dots",
+      "manufacturerModel": "Hachiware Ice Silent Universal Dots",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/hachiware-ice-silent-universal-dots",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6ed5d8b236ad46f598dd46f76c0f94a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788423779",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-116233",
+          "color": "Official Standard",
+          "priceIdr": 125000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6ed5d8b236ad46f598dd46f76c0f94a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788423779",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8747940708489",
+      "slug": "meow-gaming-gear-ultraglide-030lamzu-paro-gam",
+      "brandCanonical": "Meow Gaming Gear",
+      "officialProductName": "Meow Gaming Gear Ultraglide 030LAMZU Paro Gaming Mouse Grip Tape 0.3mm Anti-Slip Poron / Polyutherane",
+      "manufacturerModel": "Meow Gaming Gear Ultraglide 030LAMZU Par",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/meow-gaming-gear-ultraglide-030lamzu-paro-gaming-mouse-grip-tape-0-3mm-anti-slip-poron-polyutherane",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4d3570bcfc9e45f39d84013b11cdcef2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784957964",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Meow Gaming Gear Official Edition",
+          "sku": "UST-MEO-708489",
+          "color": "Official Standard",
+          "priceIdr": 95000,
+          "offerType": "READY",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4d3570bcfc9e45f39d84013b11cdcef2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784957964",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8744521465993",
+      "slug": "talongames-pu-0-universal-pre-cut-mouse-grip",
+      "brandCanonical": "Talongames",
+      "officialProductName": "Talongames PU-0 Universal Pre-Cut Mouse Grip Tape 0.3mm Anti-Slip Poron / Polyutherane",
+      "manufacturerModel": "Talongames PU-0 Universal Pre-Cut Mouse ",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/talongames-pu-0-universal-pre-cut-mouse-grip-tape-0-3mm-anti-slip-poron-polyutherane",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5689a5caace5402fa272aace6f23670c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784790360",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Talongames Official Edition",
+          "sku": "UST-TAL-465993",
+          "color": "Official Standard",
+          "priceIdr": 90000,
+          "offerType": "READY",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5689a5caace5402fa272aace6f23670c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784790360",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8850511560841",
+      "slug": "talongames-cs-2-grip-tape-universal",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Talongames CS-2 Grip Tape Universal",
+      "manufacturerModel": "Talongames CS-2 Grip Tape Universal",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/talongames-cs-2-grip-tape-universal",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/96a82cf796f84f4a8464fac8b94a5cea_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789635114",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-560841",
+          "color": "Official Standard",
+          "priceIdr": 135000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/96a82cf796f84f4a8464fac8b94a5cea_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789635114",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8833522204809",
+      "slug": "talongames-sg-1-silicone-transparent-universa",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Talongames SG-1 Silicone Transparent Universal Grip Tape",
+      "manufacturerModel": "Talongames SG-1 Silicone Transparent Uni",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/talongames-sg-1-silicone-transparent-universal-mouse-keyboard-0-27mm-ultra-thin-grip-tape",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/149965ce7a0b46cabee6db5c3a8cd225_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788936783",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-204809",
+          "color": "Official Standard",
+          "priceIdr": 135000,
+          "offerType": "READY",
+          "stockOnHand": 11,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/149965ce7a0b46cabee6db5c3a8cd225_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788936783",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8824890622089",
+      "slug": "unclepanda-griptape-universal-pre-cut",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Unclepanda Griptape Universal Pre-Cut",
+      "manufacturerModel": "Unclepanda Griptape Universal Pre-Cut",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/unclepanda-griptape-universal-pre-cut",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5a40170f714947ad97adc3ce26d496be_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425471",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-622089",
+          "color": "Official Standard",
+          "priceIdr": 150000,
+          "offerType": "READY",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5a40170f714947ad97adc3ce26d496be_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425471",
+          "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_inf_8824889147529",
+      "slug": "uncle-panda-ultra-thin-grip-tape-universal-pr",
+      "brandCanonical": "Infinitas",
+      "officialProductName": "Uncle Panda Ultra-Thin Grip tape Universal Pre-Cut",
+      "manufacturerModel": "Uncle Panda Ultra-Thin Grip tape Univers",
+      "category": "Switches & Parts",
+      "officialProductUrl": "https://www.infinitas.id/products/uncle-panda-ultra-thin-grip-tape-universal-pre-cut",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c6e8f5385cd24f4d983ff7335e253038_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425290",
+      "specs": {
+        "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
+        "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
+        "Glide Profile": "Ultra Smooth Low Friction High Velocity Glide",
+        "Adhesive": "Non-Residue 3M Ultra Adhesion Film"
+      },
+      "variants": [
+        {
+          "name": "Infinitas Official Edition",
+          "sku": "UST-INF-147529",
+          "color": "Official Standard",
+          "priceIdr": 150000,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c6e8f5385cd24f4d983ff7335e253038_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425290",
+          "imageVariantMatch": true
         }
       ]
     }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Keyboard,
@@ -9,7 +9,6 @@ import {
   Sliders,
   Headphones,
   RotateCcw,
-  ChevronDown,
   Search,
   X,
   ShieldCheck,
@@ -17,6 +16,8 @@ import {
   Truck,
   Sparkles,
   Check,
+  Tag,
+  ChevronDown,
 } from "lucide-react";
 
 interface CategoryItem {
@@ -51,6 +52,7 @@ const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>
   audio: Headphones,
 };
 
+// ponytail: integrated scrollable brand list without unstyled native popovers. Upgrade to virtualized list if brands > 200.
 export function ShopSidebar({
   allCategories,
   allBrands,
@@ -62,19 +64,8 @@ export function ShopSidebar({
 }: ShopSidebarProps) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState(searchQuery);
-  const [brandOpen, setBrandOpen] = useState(false);
   const [brandSearch, setBrandSearch] = useState("");
-  const brandRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (brandRef.current && !brandRef.current.contains(event.target as Node)) {
-        setBrandOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const [isBrandExpanded, setIsBrandExpanded] = useState(true);
 
   const updateFilters = (updates: {
     category?: string;
@@ -112,6 +103,7 @@ export function ShopSidebar({
 
   const resetAll = () => {
     setSearchTerm("");
+    setBrandSearch("");
     router.push("/shop");
   };
 
@@ -119,7 +111,6 @@ export function ShopSidebar({
     currentCategory || currentBrand || currentOffer || searchQuery
   );
 
-  const activeBrandObj = allBrands.find((b) => b.slug === currentBrand);
   const filteredBrands = allBrands.filter((b) =>
     b.name.toLowerCase().includes(brandSearch.toLowerCase())
   );
@@ -245,12 +236,17 @@ export function ShopSidebar({
         </div>
       </div>
 
-      {/* 3. Custom Brand Selection Dropdown (Zero Native OS Quirks) */}
-      <div ref={brandRef} className="relative">
-        <div className="flex items-center justify-between mb-2">
-          <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
-            Brand
-          </label>
+      {/* 3. SCROLLABLE BRAND SELECTOR (Fully Scrollable, Clean UI, Non-Clipping) */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => setIsBrandExpanded(!isBrandExpanded)}
+            className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 uppercase tracking-wider hover:text-blue-600 transition-colors"
+          >
+            <span>Brand ({allBrands.length})</span>
+            <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${isBrandExpanded ? "rotate-180" : ""}`} />
+          </button>
           {currentBrand && (
             <button
               type="button"
@@ -262,72 +258,43 @@ export function ShopSidebar({
           )}
         </div>
 
-        {/* Custom Trigger Button */}
-        <button
-          type="button"
-          onClick={() => setBrandOpen(!brandOpen)}
-          className={`w-full flex items-center justify-between bg-slate-50 border rounded-xl px-3.5 py-2.5 text-xs font-medium transition-all text-left ${
-            brandOpen
-              ? "border-blue-600 ring-2 ring-blue-500/20 bg-white"
-              : currentBrand
-              ? "border-blue-300 bg-blue-50/40 text-blue-900"
-              : "border-slate-200 text-slate-800 hover:bg-slate-100"
-          }`}
-        >
-          <div className="flex items-center gap-2 truncate">
-            {activeBrandObj ? (
-              <>
-                <span className="font-semibold text-blue-600 truncate">{activeBrandObj.name}</span>
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-700">
-                  {activeBrandObj.count}
-                </span>
-              </>
-            ) : (
-              <span className="text-slate-700">Semua Brand ({allBrands.length})</span>
-            )}
-          </div>
-          <ChevronDown
-            className={`w-4 h-4 text-slate-400 transition-transform duration-200 shrink-0 ${
-              brandOpen ? "rotate-180 text-blue-600" : ""
-            }`}
-          />
-        </button>
-
-        {/* Custom Popover Dropdown Panel */}
-        {brandOpen && (
-          <div className="absolute top-full left-0 right-0 mt-1.5 bg-white border border-slate-200 rounded-xl shadow-xl z-50 overflow-hidden divide-y divide-slate-100">
-            {/* Quick search input */}
-            <div className="p-2 bg-slate-50">
-              <div className="relative">
-                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
-                  type="text"
-                  value={brandSearch}
-                  onChange={(e) => setBrandSearch(e.target.value)}
-                  placeholder="Cari brand..."
-                  className="w-full pl-8 pr-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  autoFocus
-                />
-              </div>
+        {isBrandExpanded && (
+          <div className="space-y-2 pt-1">
+            {/* Quick search input for brands */}
+            <div className="relative">
+              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                type="text"
+                value={brandSearch}
+                onChange={(e) => setBrandSearch(e.target.value)}
+                placeholder="Cari dari 60+ brand..."
+                className="w-full pl-8 pr-7 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all"
+              />
+              {brandSearch && (
+                <button
+                  type="button"
+                  onClick={() => setBrandSearch("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              )}
             </div>
 
-            {/* Scrollable Brand List */}
-            <div className="max-h-56 overflow-y-auto py-1 space-y-0.5">
+            {/* Scrollable Brand List with visible custom scrollbar */}
+            <div className="max-h-56 overflow-y-auto space-y-1 pr-1.5 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100 hover:scrollbar-thumb-slate-400">
+              {/* All Brands button */}
               <button
                 type="button"
-                onClick={() => {
-                  updateFilters({ brand: "" });
-                  setBrandOpen(false);
-                  setBrandSearch("");
-                }}
-                className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left ${
+                onClick={() => updateFilters({ brand: "" })}
+                className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition-colors text-left ${
                   !currentBrand
                     ? "bg-blue-50 text-blue-700 font-semibold"
-                    : "text-slate-700 hover:bg-slate-50"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  {!currentBrand && <Check className="w-3.5 h-3.5 text-blue-600" />}
+                  {!currentBrand && <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />}
                   <span>Semua Brand</span>
                 </div>
                 <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500">
@@ -335,37 +302,35 @@ export function ShopSidebar({
                 </span>
               </button>
 
+              {/* Filtered Brands */}
               {filteredBrands.length === 0 ? (
-                <div className="px-3 py-4 text-center text-xs text-slate-400">
-                  Brand tidak ditemukan
+                <div className="px-2 py-3 text-center text-xs text-slate-400">
+                  Tidak ada brand yang cocok
                 </div>
               ) : (
-                filteredBrands.map((b) => (
-                  <button
-                    key={b.slug}
-                    type="button"
-                    onClick={() => {
-                      updateFilters({ brand: b.slug });
-                      setBrandOpen(false);
-                      setBrandSearch("");
-                    }}
-                    className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left ${
-                      currentBrand === b.slug
-                        ? "bg-blue-50 text-blue-700 font-semibold"
-                        : "text-slate-700 hover:bg-slate-50"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2 truncate">
-                      {currentBrand === b.slug && (
-                        <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      )}
-                      <span className="truncate">{b.name}</span>
-                    </div>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500 shrink-0 ml-2">
-                      {b.count}
-                    </span>
-                  </button>
-                ))
+                filteredBrands.map((b) => {
+                  const isActive = currentBrand === b.slug;
+                  return (
+                    <button
+                      key={b.slug}
+                      type="button"
+                      onClick={() => updateFilters({ brand: b.slug })}
+                      className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs transition-colors text-left ${
+                        isActive
+                          ? "bg-blue-50 text-blue-700 font-semibold border border-blue-200/60"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 truncate">
+                        {isActive && <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />}
+                        <span className="truncate">{b.name}</span>
+                      </div>
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500 shrink-0 ml-1">
+                        {b.count}
+                      </span>
+                    </button>
+                  );
+                })
               )}
             </div>
           </div>

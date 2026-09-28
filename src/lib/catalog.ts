@@ -26,11 +26,14 @@ export function seedCatalogIfEmpty() {
     const brdStmt = tx.prepare("INSERT OR IGNORE INTO brands (id, name, slug, country, official_url) VALUES (?, ?, ?, ?, ?)");
     const brandMap = new Map<string, string>();
 
+    brdStmt.run("brd_other", "Other Brands", "other", "Official Distributor", null);
+    brandMap.set("other", "brd_other");
+
     for (const bName of uniqueBrands) {
-      const bSlug = bName.toLowerCase().replace(/[^a-z0-9]/g, "-");
+      const bSlug = (bName || "Other").toLowerCase().replace(/[^a-z0-9]/g, "-");
       const bId = `brd_${bSlug}`;
       brdStmt.run(bId, bName, bSlug, "Official Distributor", null);
-      brandMap.set(bName.toLowerCase(), bId);
+      brandMap.set((bName || "").toLowerCase(), bId);
     }
 
     // 3. Seed Products, Variants, Stock, Offers, and Batches
@@ -55,14 +58,23 @@ export function seedCatalogIfEmpty() {
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
+    const seenProdIds = new Set<string>();
+    const seenSkus = new Set<string>();
+
     for (const item of catalogResearch.items as any[]) {
-      const brandId = brandMap.get(item.brandCanonical.toLowerCase()) || "brd_other";
+      let prodId = item.id;
+      if (seenProdIds.has(prodId)) {
+        prodId = `${item.id}_${item.slug.slice(0, 15)}`;
+      }
+      seenProdIds.add(prodId);
+
+      const brandId = brandMap.get((item.brandCanonical || "").toLowerCase()) || "brd_other";
       const catSlug = item.category.toLowerCase().replace(/[^a-z0-9]/g, "-");
       const matchedCat = categories.find((c) => c.name.toLowerCase() === item.category.toLowerCase() || c.slug === catSlug);
       const catId = matchedCat?.id || "cat_kbd";
 
       prodStmt.run(
-        item.id,
+        prodId,
         item.slug,
         item.officialProductName,
         brandId,
@@ -76,11 +88,17 @@ export function seedCatalogIfEmpty() {
       );
 
       for (const v of item.variants as any[]) {
-        const variantId = `var_${v.sku.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
+        let vSku = v.sku;
+        if (seenSkus.has(vSku)) {
+          vSku = `${v.sku}-${prodId.replace("prod_", "").slice(0, 12)}`;
+        }
+        seenSkus.add(vSku);
+
+        const variantId = `var_${prodId.replace("prod_", "")}_${vSku.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
         varStmt.run(
           variantId,
-          item.id,
-          v.sku,
+          prodId,
+          vSku,
           v.name,
           item.manufacturerPartNumber || null,
           JSON.stringify({ color: v.color, layout: v.layout, switch: v.switchType }),
