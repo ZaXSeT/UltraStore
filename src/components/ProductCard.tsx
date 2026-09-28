@@ -46,24 +46,24 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product Details */}
-      <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white group-hover:bg-[#FAFBFD] transition-colors duration-300">
+      <div className="p-2.5 sm:p-5 flex flex-col justify-between flex-1 bg-white group-hover:bg-[#FAFBFD] transition-colors duration-300">
         <div>
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors">
+          <div className="flex items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-1.5">
+            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors truncate">
               {brandLabel(product.brand.slug, product.brand.name, locale)}
             </span>
-            <span className="font-mono text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded">
+            <span className="font-mono text-[8px] sm:text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-1 sm:px-2 py-0.5 rounded-none shrink-0">
               {categoryLabel(product.category.slug, product.category.name, locale)}
             </span>
           </div>
 
-          <h3 className="font-bold text-sm sm:text-base text-neutral-950 group-hover:text-[#0E52FF] transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
+          <h3 className="font-bold text-xs sm:text-base text-neutral-950 group-hover:text-[#0E52FF] transition-colors line-clamp-2 leading-tight sm:leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
             {product.name}
           </h3>
 
           {/* Variant attributes teaser */}
           {primaryVariant && (
-            <p className="text-xs text-neutral-500 mt-1.5 line-clamp-1 font-normal">
+            <p className="text-[10px] sm:text-xs text-neutral-500 mt-1 sm:mt-1.5 line-clamp-1 font-normal">
               {Object.entries(primaryVariant.attributes)
                 .map(([_, v]) => `${v}`)
                 .join(" · ")}
@@ -72,19 +72,19 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Price & Action Button */}
-        <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-end justify-between gap-1.5">
-          <div className="min-w-0 pr-1">
-            <span className="font-mono text-[9px] uppercase tracking-wider text-neutral-400 block leading-none mb-1">
+        <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3.5 border-t border-neutral-100 flex items-end justify-between gap-1">
+          <div className="min-w-0 pr-0.5">
+            <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider text-neutral-400 block leading-none mb-0.5 sm:mb-1">
               {isPreorder ? t("Mulai dari", "From") : t("Harga", "Price")}
             </span>
-            <div className="text-xs sm:text-sm font-extrabold text-neutral-950 font-tabular tracking-tight truncate">
+            <div className="text-[11px] sm:text-sm font-extrabold text-neutral-950 font-tabular tracking-tight truncate">
               {formatIdr(minPrice)}
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-1 px-2.5 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm shadow-blue-500/20">
+          <div className="inline-flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2.5 py-1 sm:py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm shadow-blue-500/20">
             <span>{t("Lihat", "View")}</span>
-            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>
       </div>

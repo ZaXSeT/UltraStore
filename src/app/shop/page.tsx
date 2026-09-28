@@ -33,15 +33,15 @@ export default async function ShopPage({
   const activeBrandObj = allBrands.find((b) => b.slug === brand);
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 space-y-6">
+    <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 py-5 sm:py-8 space-y-4 sm:space-y-6">
       {/* Swiss Editorial Header Section */}
-      <div className="border-b border-neutral-200/90 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div className="space-y-2">
+      <div className="border-b border-neutral-200/90 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4">
+        <div className="space-y-1.5 sm:space-y-2">
           <div className="inline-flex items-center gap-2 border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-[#111215]">
             <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
             <span>{t("PILIHAN ULTRASTORE · JAKARTA", "CURATED IN JAKARTA · GAMING GEAR")}</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
+          <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
             {t("Katalog Periferal", "Gaming Gear Catalog")}
           </h1>
           <p className="text-xs sm:text-sm text-neutral-500 max-w-3xl font-mono leading-relaxed">
@@ -50,9 +50,9 @@ export default async function ShopPage({
         </div>
 
         <div className="flex flex-wrap md:flex-col md:items-end gap-2 text-xs font-mono text-neutral-500 shrink-0">
-          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-white px-3 py-1.5 text-xs text-[#111215]">
+          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-white px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs text-[#111215]">
             <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="font-bold uppercase tracking-wider text-[11px]">{t("Garansi Resmi 1 Tahun", "Official 1-Year Warranty")}</span>
+            <span className="font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">{t("Garansi Resmi 1 Tahun", "Official 1-Year Warranty")}</span>
           </div>
           <span className="text-[10px] uppercase tracking-wider text-neutral-400">
             {t("Dikirim dari Jakarta", "Ships from Jakarta")}
@@ -61,7 +61,7 @@ export default async function ShopPage({
       </div>
 
       {/* 2-Column Full-Width Layout: Left Sticky Sidebar + Right Product Grid */}
-      <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-8">
+      <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
         {/* Left Column: Sticky Sidebar on Desktop / Drawer Collapsible on Mobile */}
         <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-28 self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
           <ShopSidebar
@@ -192,7 +192,7 @@ export default async function ShopPage({
               </Link>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1920px]:grid-cols-6 3xl:grid-cols-6 gap-5 xl:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1920px]:grid-cols-6 3xl:grid-cols-6 gap-3 sm:gap-5 xl:gap-6">
               {products.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
