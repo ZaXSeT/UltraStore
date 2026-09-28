@@ -41,6 +41,8 @@ export default function AdminPage() {
   });
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState<any>(null);
   const [newProduct, setNewProduct] = useState({
@@ -819,7 +821,7 @@ export default function AdminPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#E2E5EB]">
-                    {products.map((p) => (
+                    {products.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((p) => (
                       <tr key={p.id} className="hover:bg-[#F9FAFC] transition-colors">
                         <td className="py-3 px-4">
                           <span
@@ -890,6 +892,50 @@ export default function AdminPage() {
                   </tbody>
                 </table>
               </div>
+
+              {/* Swiss Industrial Pagination Controls */}
+              {products.length > itemsPerPage && (
+                <div className="flex items-center justify-between border-t border-[#E2E5EB] pt-4 font-mono text-xs">
+                  <div className="text-[#6E7382]">
+                    SHOWING {(currentPage - 1) * itemsPerPage + 1} -{" "}
+                    {Math.min(currentPage * itemsPerPage, products.length)} OF {products.length} ITEMS
+                  </div>
+
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                      disabled={currentPage === 1}
+                      className="px-3 py-1.5 border border-[#E2E5EB] bg-white hover:bg-neutral-100 disabled:opacity-40 uppercase"
+                    >
+                      PREV
+                    </button>
+
+                    {Array.from({ length: Math.ceil(products.length / itemsPerPage) }).map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrentPage(i + 1)}
+                        className={`w-8 h-8 flex items-center justify-center border transition-colors ${
+                          currentPage === i + 1
+                            ? "border-[#111215] bg-[#111215] text-white font-bold"
+                            : "border-[#E2E5EB] bg-white hover:bg-neutral-100 text-[#111215]"
+                        }`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+
+                    <button
+                      onClick={() =>
+                        setCurrentPage((p) => Math.min(Math.ceil(products.length / itemsPerPage), p + 1))
+                      }
+                      disabled={currentPage === Math.ceil(products.length / itemsPerPage)}
+                      className="px-3 py-1.5 border border-[#E2E5EB] bg-white hover:bg-neutral-100 disabled:opacity-40 uppercase"
+                    >
+                      NEXT
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </main>

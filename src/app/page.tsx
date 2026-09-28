@@ -138,12 +138,12 @@ export default function HomePage() {
               </div>
 
               <div className="relative my-auto py-2">
-                <div className="relative aspect-square max-w-[420px] mx-auto overflow-hidden rounded-2xl border border-neutral-200 shadow-md">
+                <div className="relative aspect-square max-w-[420px] mx-auto overflow-hidden border border-neutral-200">
                   <Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 420px"
+                    unoptimized
                     className="object-cover"
                     priority
                   />
@@ -200,8 +200,8 @@ export default function HomePage() {
                     src={cat.image}
                     alt={cat.title}
                     fill
+                    unoptimized
                     className="object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   />
                 </div>
               </div>
