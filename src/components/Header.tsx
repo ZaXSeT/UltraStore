@@ -44,24 +44,11 @@ export function Header() {
 
       {/* Main Navigation Bar (Full Width Edge-to-Edge) */}
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-18 py-3.5 flex items-center justify-between">
-        {/* Brand Logo & Wordmark */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-[#090D16] text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-[#2563EB] transition-colors">
-            <span>U</span>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#2563EB] transition-colors">
-                UltraStore
-              </span>
-              <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
-                Official
-              </span>
-            </div>
-            <span className="text-[11px] text-slate-500 font-medium">
-              Hardware &amp; Peripheral Enthusiast
-            </span>
-          </div>
+        {/* Brand Logo - Pure typography ala infinitas.id */}
+        <Link href="/" className="flex items-center group">
+          <span className="text-2xl font-black tracking-[-0.05em] uppercase text-slate-900 group-hover:text-blue-600 transition-colors">
+            ULTRASTORE
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}

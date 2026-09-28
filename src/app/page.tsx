@@ -23,35 +23,35 @@ export default function HomePage() {
       subtitle: "8K Hall Effect & Custom Kits",
       href: "/shop?category=keyboard",
       count: products.filter((p) => p.category.slug === "keyboard").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=1200",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg",
     },
     {
       title: "Gaming Mice",
       subtitle: "Ultralight Magnesium & Optical",
       href: "/shop?category=mouse",
       count: products.filter((p) => p.category.slug === "mouse").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=1200",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg",
     },
     {
       title: "Precision Glasspads",
       subtitle: "Tempered Glass & Poron Cloth",
       href: "/shop?category=mousepad",
       count: products.filter((p) => p.category.slug === "mousepad").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=1200",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
     },
     {
       title: "Artisan Switches",
       subtitle: "Linear, Tactile & HE Magnetic",
       href: "/shop?category=switches-parts",
       count: products.filter((p) => p.category.slug === "switches-parts").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=1200",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1727168051",
     },
     {
       title: "Pre-Order Drops",
       subtitle: "Batch Terjadwal Pabrikan",
       href: "/shop?offer=PREORDER",
       count: preorderBatches.length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=1200",
+      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg",
     },
   ];
 
@@ -131,7 +131,7 @@ export default function HomePage() {
             <div className="relative lg:col-span-5 h-72 sm:h-96 lg:h-full min-h-[320px] flex items-center justify-center p-6 overflow-hidden">
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=1200"
+                  src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207"
                   alt="GLSSWRKS Zofia Art Edition Glasspad"
                   fill
                   priority
