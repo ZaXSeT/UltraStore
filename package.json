@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -e \"if(process.env.VERCEL||process.env.NETLIFY){const fs=require('fs');fs.mkdirSync('/tmp',{recursive:true});if(fs.existsSync('./data/ultrastore.db'))fs.copyFileSync('./data/ultrastore.db','/tmp/ultrastore.db');}\" && next build",
     "start": "next start",
     "lint": "tsc --noEmit",
     "test": "node --test src/**/*.test.mjs src/**/*.test.ts",

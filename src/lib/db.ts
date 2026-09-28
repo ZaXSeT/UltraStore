@@ -14,7 +14,7 @@ export function getDb(): DatabaseSync {
   // If write fails, fallback to copying SQLite to /tmp so app can read and write in serverless.
   let dbPath = process.env.DATABASE_PATH || defaultPath;
 
-  if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.VERCEL) {
     const tmpDbPath = path.join("/tmp", "ultrastore.db");
     if (!fs.existsSync(tmpDbPath)) {
       if (fs.existsSync(defaultPath)) {
@@ -31,11 +31,15 @@ export function getDb(): DatabaseSync {
   const db = new DatabaseSync(dbPath);
 
   // Performance & Concurrency settings
-  db.exec(`
-    PRAGMA journal_mode = WAL;
-    PRAGMA synchronous = NORMAL;
-    PRAGMA foreign_keys = ON;
-  `);
+  try {
+    db.exec(`
+      PRAGMA journal_mode = WAL;
+      PRAGMA synchronous = NORMAL;
+      PRAGMA foreign_keys = ON;
+    `);
+  } catch {
+    // Some serverless environments restrict PRAGMA WAL on /tmp
+  }
 
   initSchema(db);
   dbInstance = db;
