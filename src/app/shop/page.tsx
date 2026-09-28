@@ -1,8 +1,8 @@
-import { getAllProducts, getBrands } from "../../lib/catalog";
+import { getAllProducts, getBrands, getCategories } from "../../lib/catalog";
 import { ProductCard } from "../../components/ProductCard";
-import { ShopFilters } from "../../components/ShopFilters";
+import { ShopSidebar } from "../../components/ShopSidebar";
 import Link from "next/link";
-import { Filter, Search, RotateCcw, X } from "lucide-react";
+import { Filter, RotateCcw, X } from "lucide-react";
 
 export default async function ShopPage({
   searchParams,
@@ -12,6 +12,7 @@ export default async function ShopPage({
   const { category, brand, offer, q } = await searchParams;
   let products = getAllProducts(category, offer, brand);
   const allBrands = getBrands();
+  const allCategories = getCategories();
 
   if (q) {
     const query = q.toLowerCase();
@@ -23,111 +24,159 @@ export default async function ShopPage({
     );
   }
 
+  // Find active category & brand metadata
+  const activeCategoryObj = allCategories.find((c) => c.slug === category);
+  const activeBrandObj = allBrands.find((b) => b.slug === brand);
+
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 space-y-6">
-      {/* Top Header & Search Bar */}
-      <div className="border-b border-slate-200/90 pb-6 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      {/* Top Banner / Editorial Header */}
+      <div className="border-b border-[#D9DDD5] pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-[11px] font-mono font-bold text-teal-700 tracking-wider shadow-sm mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
-            <span>VERIFIED ENTHUSIAST ARCHIVE</span>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E4ECE6] border border-[#184E46]/30 text-[10px] font-mono font-bold text-[#184E46] tracking-wider mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#184E46]"></span>
+            <span>VERIFIED HARDWARE ARCHIVE // JAKARTA HUB</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-mono uppercase">
-            Precision Gear Collection
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#202724] font-mono uppercase">
+            Katalog Hardware Presisi
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1 font-mono">
-            Katalog hardware enthusiast terkurasi: WLMouse, ATK/VXE, Lamzu, GLSSWRKS, X-Raypad, Wooting, dan lainnya.
+          <p className="text-xs sm:text-sm text-[#59635E] mt-1 font-mono">
+            Peripheral teknis terkurasi: keyboard Hall Effect, mouse ultralight, precision glasspads, switch enthusiast.
           </p>
         </div>
 
-        {/* Search Bar */}
-        <form method="GET" action="/shop" className="relative w-full lg:w-96">
-          {category && <input type="hidden" name="category" value={category} />}
-          {brand && <input type="hidden" name="brand" value={brand} />}
-          {offer && <input type="hidden" name="offer" value={offer} />}
-          <div className="relative flex items-center">
-            <Search className="w-4 h-4 text-slate-400 absolute left-4 pointer-events-none" />
-            <input
-              type="text"
-              name="q"
-              defaultValue={q || ""}
-              placeholder="Cari model, switch, atau brand..."
-              className="w-full bg-white border border-slate-300/80 rounded-2xl pl-11 pr-24 py-3 text-xs font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-600 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all"
-            />
-            {q ? (
+        <div className="text-xs font-mono text-[#59635E] text-left md:text-right space-y-0.5">
+          <div className="text-[11px] uppercase tracking-wider text-[#202724] font-bold">
+            GARANSI RESMI DISTRIBUTOR
+          </div>
+          <div className="text-[11px] text-[#184E46]">
+            100% PRODUK ASLI · NON-AI CATALOG
+          </div>
+        </div>
+      </div>
+
+      {/* 2-Column Layout: Left Sticky Sidebar + Right Product Grid */}
+      <div className="flex flex-col lg:flex-row items-start gap-8">
+        {/* Left Column: Sticky Sidebar (Fixed on scroll, does not scroll away with catalog) */}
+        <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-28 self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+          <ShopSidebar
+            allCategories={allCategories}
+            allBrands={allBrands}
+            currentCategory={category}
+            currentBrand={brand}
+            currentOffer={offer}
+            searchQuery={q}
+            totalProducts={products.length}
+          />
+        </aside>
+
+        {/* Right Column: Catalog Grid & Active Filter Spec Bar */}
+        <main className="flex-1 min-w-0 space-y-5">
+          {/* Active Filter Chips & Summary Telemetry Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono text-[#59635E] border-b border-[#D9DDD5] pb-3 gap-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="flex items-center gap-1.5 font-bold text-[#202724]">
+                <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
+                <span>{products.length} GEAR TERSEDIA</span>
+              </span>
+
+              {/* Active Category Chip */}
+              {activeCategoryObj && (
+                <Link
+                  href={`/shop?${new URLSearchParams({
+                    ...(brand ? { brand } : {}),
+                    ...(offer ? { offer } : {}),
+                    ...(q ? { q } : {}),
+                  }).toString()}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white border border-[#202724] text-[#202724] hover:bg-[#F4F1EA] transition-colors shadow-[1px_1px_0px_#202724]"
+                >
+                  <span>Kategori: {activeCategoryObj.name}</span>
+                  <X className="w-3 h-3 text-[#A84329]" />
+                </Link>
+              )}
+
+              {/* Active Brand Chip */}
+              {activeBrandObj && (
+                <Link
+                  href={`/shop?${new URLSearchParams({
+                    ...(category ? { category } : {}),
+                    ...(offer ? { offer } : {}),
+                    ...(q ? { q } : {}),
+                  }).toString()}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white border border-[#202724] text-[#202724] hover:bg-[#F4F1EA] transition-colors shadow-[1px_1px_0px_#202724]"
+                >
+                  <span>Brand: {activeBrandObj.name}</span>
+                  <X className="w-3 h-3 text-[#A84329]" />
+                </Link>
+              )}
+
+              {/* Active Offer Chip */}
+              {offer && (
+                <Link
+                  href={`/shop?${new URLSearchParams({
+                    ...(category ? { category } : {}),
+                    ...(brand ? { brand } : {}),
+                    ...(q ? { q } : {}),
+                  }).toString()}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white border border-[#202724] text-[#202724] hover:bg-[#F4F1EA] transition-colors shadow-[1px_1px_0px_#202724]"
+                >
+                  <span>Status: {offer === "READY" ? "Ready Stock" : "Pre-Order"}</span>
+                  <X className="w-3 h-3 text-[#A84329]" />
+                </Link>
+              )}
+
+              {/* Active Search Query Chip */}
+              {q && (
+                <Link
+                  href={`/shop?${new URLSearchParams({
+                    ...(category ? { category } : {}),
+                    ...(brand ? { brand } : {}),
+                    ...(offer ? { offer } : {}),
+                  }).toString()}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#F4E5DC] border border-[#A84329] text-[#A84329] hover:bg-[#F4E5DC]/80 transition-colors"
+                >
+                  <span>Cari: "{q}"</span>
+                  <X className="w-3 h-3 text-[#A84329]" />
+                </Link>
+              )}
+            </div>
+
+            <span className="text-[10px] text-[#59635E] uppercase tracking-wider">
+              SORT: TERAKREDITASI DISTRIBUTOR
+            </span>
+          </div>
+
+          {/* Product Grid */}
+          {products.length === 0 ? (
+            <div className="bg-white border border-[#D9DDD5] rounded-md p-10 text-center space-y-4 max-w-md mx-auto my-8">
+              <div className="w-10 h-10 rounded border border-[#D9DDD5] bg-[#F4F1EA] flex items-center justify-center mx-auto text-[#59635E]">
+                <Filter className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-[#202724] font-mono uppercase">
+                  Tidak Ada Peripheral Sesuai Filter
+                </h3>
+                <p className="text-xs text-[#59635E] mt-1 font-mono leading-relaxed">
+                  Kombinasi kategori atau filter brand saat ini tidak memiliki stok aktif. Silakan reset filter pencarian di sidebar kiri.
+                </p>
+              </div>
               <Link
-                href={`/shop?${new URLSearchParams({
-                  ...(category ? { category } : {}),
-                  ...(brand ? { brand } : {}),
-                  ...(offer ? { offer } : {}),
-                }).toString()}`}
-                className="absolute right-3 px-2 py-1 rounded-lg text-[10px] font-mono text-slate-500 hover:text-slate-900 hover:bg-slate-100 flex items-center gap-1 transition-colors"
+                href="/shop"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#202724] text-white text-xs font-bold font-mono rounded shadow-[2px_2px_0px_#184E46] hover:bg-[#184E46] transition-colors"
               >
-                <X className="w-3 h-3" />
-                <span>Hapus</span>
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Reset Semua Filter</span>
               </Link>
-            ) : (
-              <button
-                type="submit"
-                className="absolute right-2.5 px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[11px] font-mono font-bold hover:bg-teal-600 transition-colors shadow-sm"
-              >
-                Cari
-              </button>
-            )}
-          </div>
-        </form>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6">
+              {products.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          )}
+        </main>
       </div>
-
-      {/* Left-Aligned Clean Filter Bar with Dropdown Brand Selector */}
-      <ShopFilters
-        allBrands={allBrands}
-        currentCategory={category}
-        currentBrand={brand}
-        currentOffer={offer}
-        searchQuery={q}
-        totalProducts={products.length}
-      />
-
-      {/* Meta Count Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono text-slate-500 border-b border-slate-200/80 pb-3 gap-2">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-teal-500"></span>
-          <span>MENAMPILKAN {products.length} GEAR TERVERIFIKASI</span>
-        </div>
-        <span className="text-[11px] text-slate-400">
-          GARANSI RESMI ULTRASTORE · PENGIRIMAN DARI HUB JAKARTA
-        </span>
-      </div>
-
-      {/* Product Grid (Full Width Responsive Grid) */}
-      {products.length === 0 ? (
-        <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center space-y-4 shadow-sm max-w-lg mx-auto">
-          <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
-            <Filter className="w-6 h-6" />
-          </div>
-          <div>
-            <h3 className="text-base font-bold text-slate-900 font-mono uppercase">
-              Tidak Ada Gear Yang Sesuai Filter
-            </h3>
-            <p className="text-xs text-slate-500 mt-1 font-mono leading-relaxed">
-              Kombinasi kategori atau filter brand saat ini belum memiliki stok yang cocok. Silakan atur ulang filter pencarian kamu.
-            </p>
-          </div>
-          <Link
-            href="/shop"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-950 text-white text-xs font-bold font-mono rounded-xl shadow-sm hover:bg-teal-600 transition-colors"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset Semua Filter</span>
-          </Link>
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 sm:gap-6">
-          {products.map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
