@@ -39,7 +39,7 @@ export default function HomePage() {
   }));
 
   return (
-    <div className="w-full pb-12 sm:pb-16">
+    <div className="w-full space-y-12 sm:space-y-14">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
       <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">

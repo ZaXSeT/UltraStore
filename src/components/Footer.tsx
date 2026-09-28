@@ -20,8 +20,8 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="border-t border-neutral-200/90 bg-white text-neutral-500 font-mono text-xs w-full mt-0">
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-neutral-200/90 bg-white text-neutral-500 font-mono text-xs w-full mt-12 sm:mt-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <span className="font-bold text-[#111215] tracking-tight text-sm uppercase">{footer.brandTitle}</span>
           <span className="text-neutral-300">/</span>
