@@ -358,24 +358,24 @@ export default function AdminPage() {
                 onClick={() => setActiveTab("showcase")}
                 className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
                   activeTab === "showcase"
-                    ? "border-[#111215] bg-[#111215] text-white"
-                    : "border-transparent text-[#6E7382] hover:text-[#111215] hover:border-[#E2E5EB]"
+                    ? "border-[#0E52FF] bg-[#0E52FF] text-white shadow-sm shadow-blue-500/20"
+                    : "border-transparent text-[#6E7382] hover:text-[#0E52FF] hover:border-[#E2E5EB]"
                 }`}
               >
                 <span>01. Storefront Showcase</span>
-                <span className="text-[10px] opacity-60">CMS</span>
+                <span className="text-[10px] opacity-80">CMS</span>
               </button>
 
               <button
                 onClick={() => setActiveTab("inventory")}
                 className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
                   activeTab === "inventory"
-                    ? "border-[#111215] bg-[#111215] text-white"
-                    : "border-transparent text-[#6E7382] hover:text-[#111215] hover:border-[#E2E5EB]"
+                    ? "border-[#0E52FF] bg-[#0E52FF] text-white shadow-sm shadow-blue-500/20"
+                    : "border-transparent text-[#6E7382] hover:text-[#0E52FF] hover:border-[#E2E5EB]"
                 }`}
               >
                 <span>02. Catalog Directory</span>
-                <span className="text-[10px] opacity-60">{products.length} ITEMS</span>
+                <span className="text-[10px] opacity-80">{products.length} ITEMS</span>
               </button>
             </nav>
           </div>
