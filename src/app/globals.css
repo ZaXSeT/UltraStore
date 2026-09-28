@@ -48,6 +48,32 @@ body {
   background: #CBD5E1;
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+/* Logo Metallic Shimmer Animation */
+@keyframes logoSheen {
+  0% {
+    background-position: 250% 0;
+  }
+  100% {
+    background-position: -250% 0;
+  }
+}
+
+.logo-shimmer {
+  display: inline-block;
+  background: linear-gradient(
+    115deg,
+    #0A2540 0%,
+    #0E52FF 20%,
+    #38BDF8 38%,
+    #FFFFFF 50%,
+    #38BDF8 62%,
+    #0E52FF 80%,
+    #0A2540 100%
+  ) !important;
+  background-size: 250% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  animation: logoSheen 3.5s ease-in-out infinite alternate !important;
 }

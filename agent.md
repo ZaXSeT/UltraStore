@@ -69,4 +69,6 @@ Dokumen ini adalah single source of truth untuk progress, konfigurasi arsitektur
 - `b0763a9`: Menghapus semua sudut rounded pada PDP (spesifikasi, box contents, panel pembelian).
 - `56a5098`: Mengganti highlight brand selector di sidebar katalog menjadi flat tabular Swiss black dengan square marker Electric Blue.
 - `b324518`: Menghapus kartu jaminan generik di footer sidebar katalog dan memperbaiki author commit ke `ZaXSeT <zackyxie123@gmail.com>`.
-- `Current`: Menambahkan tombol Save independen di setiap seksi form admin (`Save Strip`, `Save Hero`, `Save Categories`), merapatkan gap atas hero di beranda, dan mengubah tombol `Live Storefront` ke Electric Blue.
+- `3bd48f4`: Mengubah tombol Detail di seluruh card produk menjadi sharp Swiss Cobalt Electric Blue.
+- `ad3bb6a`: Mengkalibrasi jarak vertikal footer dan zero-gap hero atas.
+- `Current`: Menambahkan animasi metallic shimmer mengkilat (`logo-shimmer`) pada logo ULTRASTORE di navbar dengan gradien deep cobalt ke cyan/white gleam.
