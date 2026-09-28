@@ -8,11 +8,26 @@ export function getDb(): DatabaseSync {
   if (dbInstance) return dbInstance;
 
   const dbDir = path.resolve(process.cwd(), "data");
-  if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir, { recursive: true });
+  const defaultPath = path.join(dbDir, "ultrastore.db");
+
+  // In read-only serverless lambdas (like Netlify/AWS Lambda), /var/task is read-only.
+  // If write fails, fallback to copying SQLite to /tmp so app can read and write in serverless.
+  let dbPath = process.env.DATABASE_PATH || defaultPath;
+
+  if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    const tmpDbPath = path.join("/tmp", "ultrastore.db");
+    if (!fs.existsSync(tmpDbPath)) {
+      if (fs.existsSync(defaultPath)) {
+        fs.copyFileSync(defaultPath, tmpDbPath);
+      }
+    }
+    dbPath = tmpDbPath;
+  } else {
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
+    }
   }
 
-  const dbPath = process.env.DATABASE_PATH || path.join(dbDir, "ultrastore.db");
   const db = new DatabaseSync(dbPath);
 
   // Performance & Concurrency settings
