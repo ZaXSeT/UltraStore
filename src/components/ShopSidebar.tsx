@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "../context/LanguageContext";
 import {
   Keyboard,
   Mouse,
@@ -64,6 +65,7 @@ export function ShopSidebar({
   searchQuery = "",
   totalProducts,
 }: ShopSidebarProps) {
+  const { t } = useLanguage();
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [brandSearch, setBrandSearch] = useState("");
@@ -129,7 +131,7 @@ export function ShopSidebar({
             htmlFor="sidebar-search"
             className="text-xs font-semibold text-slate-700 uppercase tracking-wider"
           >
-            Pencarian
+            {t("Pencarian", "Search")}
           </label>
           {searchQuery && (
             <button
@@ -138,7 +140,7 @@ export function ShopSidebar({
               className="text-xs font-medium text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors"
             >
               <X className="w-3.5 h-3.5" />
-              <span>Hapus</span>
+              <span>{t("Hapus", "Clear")}</span>
             </button>
           )}
         </div>
@@ -149,7 +151,7 @@ export function ShopSidebar({
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Cari model, switch, brand..."
+            placeholder={t("Cari model, switch, merek...", "Search models, switches, brands...")}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-8 py-2.5 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
           />
           {searchTerm && (
@@ -168,7 +170,7 @@ export function ShopSidebar({
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase font-bold tracking-[0.16em] text-neutral-500">
-            GEAR SPECIALIZATION
+            {t("KATEGORI PRODUK", "PRODUCT CATEGORIES")}
           </span>
           {currentCategory && (
             <button
@@ -176,7 +178,7 @@ export function ShopSidebar({
               onClick={() => updateFilters({ category: "", surface: "" })}
               className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
             >
-              ALL
+              {t("SEMUA", "ALL")}
             </button>
           )}
         </div>
@@ -192,7 +194,7 @@ export function ShopSidebar({
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
-            <span className="uppercase tracking-wider">All Categories</span>
+            <span className="uppercase tracking-wider">{t("Semua Kategori", "All Categories")}</span>
             <span className="text-[10px] opacity-60 font-tabular">{totalProducts}</span>
           </button>
 
@@ -228,7 +230,7 @@ export function ShopSidebar({
                     >
                       <div className="flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 bg-[#0E52FF]" />
-                        <span>Glasspad (Kaca)</span>
+                        <span>{t("Glasspad (Kaca)", "Glasspad")}</span>
                       </div>
                       <span className="text-[10px] opacity-60">16</span>
                     </button>
@@ -244,7 +246,7 @@ export function ShopSidebar({
                     >
                       <div className="flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 bg-neutral-400" />
-                        <span>Cloth / Poron Base</span>
+                        <span>{t("Alas Kain / Poron", "Cloth / Poron Base")}</span>
                       </div>
                       <span className="text-[10px] opacity-60">14</span>
                     </button>
@@ -264,7 +266,7 @@ export function ShopSidebar({
             onClick={() => setIsBrandExpanded(!isBrandExpanded)}
             className="flex items-center gap-1.5 font-mono text-[10px] uppercase font-bold tracking-[0.16em] text-neutral-500 hover:text-[#111215] transition-colors"
           >
-            <span>BRAND DIRECTORY ({allBrands.length})</span>
+            <span>{t("DAFTAR MEREK", "BRANDS")} ({allBrands.length})</span>
             <ChevronDown className={`w-3.5 h-3.5 text-neutral-400 transition-transform duration-200 ${isBrandExpanded ? "rotate-180" : ""}`} />
           </button>
           {currentBrand && (
@@ -273,7 +275,7 @@ export function ShopSidebar({
               onClick={() => updateFilters({ brand: "" })}
               className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
             >
-              CLEAR
+              {t("HAPUS", "CLEAR")}
             </button>
           )}
         </div>
@@ -287,7 +289,7 @@ export function ShopSidebar({
                 type="text"
                 value={brandSearch}
                 onChange={(e) => setBrandSearch(e.target.value)}
-                placeholder={`Search ${allBrands.length} brands...`}
+                placeholder={t(`Cari ${allBrands.length} merek...`, `Search ${allBrands.length} brands...`)}
                 className="w-full pl-8 pr-7 py-2 bg-neutral-50 border border-neutral-200 text-xs font-mono placeholder-neutral-400 focus:outline-none focus:border-[#111215] focus:bg-white transition-all"
               />
               {brandSearch && (
@@ -315,7 +317,7 @@ export function ShopSidebar({
               >
                 <div className="flex items-center gap-2">
                   {!currentBrand && <span className="w-1.5 h-1.5 bg-[#0E52FF]" />}
-                  <span className="uppercase tracking-wider">All Brands</span>
+                  <span className="uppercase tracking-wider">{t("Semua Merek", "All Brands")}</span>
                 </div>
                 <span className="text-[10px] opacity-60 font-tabular font-mono">
                   {allBrands.length}
@@ -325,7 +327,7 @@ export function ShopSidebar({
               {/* Filtered Brands */}
               {filteredBrands.length === 0 ? (
                 <div className="px-3 py-3 text-center text-xs font-mono text-neutral-400">
-                  No matching brand
+                  {t("Merek tidak ditemukan", "No matching brands")}
                 </div>
               ) : (
                 filteredBrands.map((b) => {
@@ -361,7 +363,7 @@ export function ShopSidebar({
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase font-bold tracking-[0.16em] text-neutral-500">
-            DISPATCH AVAILABILITY
+            {t("KETERSEDIAAN", "AVAILABILITY")}
           </span>
           {currentOffer && (
             <button
@@ -369,7 +371,7 @@ export function ShopSidebar({
               onClick={() => updateFilters({ offer: "" })}
               className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
             >
-              CLEAR
+              {t("HAPUS", "CLEAR")}
             </button>
           )}
         </div>
@@ -384,7 +386,7 @@ export function ShopSidebar({
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
-            <span className="uppercase tracking-wider">All Stock Types</span>
+            <span className="uppercase tracking-wider">{t("Semua Status", "All Availability")}</span>
             <span className="text-[10px] opacity-60">READY + PO</span>
           </button>
 
@@ -399,9 +401,9 @@ export function ShopSidebar({
           >
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-emerald-500" />
-              <span className="uppercase tracking-wider">Ready Physical Stock</span>
+              <span className="uppercase tracking-wider">{t("Stok Tersedia", "In Stock")}</span>
             </div>
-            <span className="text-[10px] opacity-60">24H DISPATCH</span>
+            <span className="text-[10px] opacity-60">{t("SIAP KIRIM", "READY TO SHIP")}</span>
           </button>
 
           <button
@@ -415,9 +417,9 @@ export function ShopSidebar({
           >
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-[#0E52FF]" />
-              <span className="uppercase tracking-wider">Scheduled Pre-Order</span>
+              <span className="uppercase tracking-wider">{t("Pre-Order", "Pre-Order")}</span>
             </div>
-            <span className="text-[10px] opacity-60">BATCH RUN</span>
+            <span className="text-[10px] opacity-60">{t("PER BATCH", "BY BATCH")}</span>
           </button>
         </div>
       </div>
@@ -431,7 +433,7 @@ export function ShopSidebar({
             className="w-full flex items-center justify-center gap-2 px-3 py-2 border border-neutral-300 hover:border-[#111215] bg-neutral-100 hover:bg-neutral-200 text-[#111215] text-xs font-mono font-bold uppercase transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset All Filters</span>
+            <span>{t("Atur Ulang Filter", "Clear Filters")}</span>
           </button>
         </div>
       )}

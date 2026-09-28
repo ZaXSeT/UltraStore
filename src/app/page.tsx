@@ -3,6 +3,9 @@ import Image from "next/image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
 import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
+import { getServerLocale } from "../lib/server-locale";
+import { copy } from "../lib/locale";
+import { localizeHero, localizeSections } from "../lib/localized-cms";
 import {
   getSiteSetting,
   DEFAULT_HERO_CONFIG,
@@ -15,13 +18,15 @@ import {
 
 export const dynamic = "force-dynamic";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getServerLocale();
+  const t = (id: string, en: string) => copy(locale, id, en);
   const products = getAllProducts();
   const brands = getBrands();
 
-  const hero = getSiteSetting<HeroConfig>("hero_config", DEFAULT_HERO_CONFIG);
+  const hero = localizeHero(getSiteSetting<HeroConfig>("hero_config", DEFAULT_HERO_CONFIG), locale);
   const macroCategoriesConfig = getSiteSetting<MacroCategoryConfig[]>("categories_config", DEFAULT_CATEGORIES_CONFIG);
-  const sections = getSiteSetting<SectionHeadersConfig>("section_headers_config", DEFAULT_SECTION_HEADERS_CONFIG);
+  const sections = localizeSections(getSiteSetting<SectionHeadersConfig>("section_headers_config", DEFAULT_SECTION_HEADERS_CONFIG), locale);
 
   const readyProducts = products
     .filter((p) => p.offers.some((o) => o.offerType === "READY"))
@@ -71,9 +76,9 @@ export default function HomePage() {
           {/* Subtle Technical Grid Blueprint Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[580px] lg:min-h-[640px] items-stretch">
-            {/* Left Editorial Copy (7 cols) */}
-            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[640px] lg:min-h-[720px] items-stretch">
+            {/* Left Editorial Copy (6 cols) */}
+            <div className="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-3 py-1 rounded-md border border-neutral-200">
                   {hero.badgeText}
@@ -83,30 +88,30 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-neutral-950 leading-[0.98] uppercase">
+              <div className="space-y-5">
+                <h1 className="text-5xl sm:text-7xl lg:text-8xl 2xl:text-9xl font-black tracking-[-0.05em] text-neutral-950 leading-[0.92] uppercase">
                   {hero.titleLine1}<br />
-                  <span className="text-neutral-400 font-light">{hero.titleAccent}</span> {hero.titleLine2}
+                  <span className="text-[#0E52FF] font-black">{hero.titleAccent}</span> {hero.titleLine2}
                 </h1>
-                <p className="text-sm sm:text-base text-neutral-600 max-w-xl font-normal leading-relaxed">
+                <p className="text-base sm:text-lg text-neutral-600 max-w-xl font-normal leading-relaxed">
                   {hero.description}
                 </p>
               </div>
 
               {/* Technical Spec Matrix */}
-              <div className="grid grid-cols-3 gap-6 pt-4 border-t border-neutral-100 max-w-lg">
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-neutral-100 max-w-lg">
                 <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Dimensi</span>
-                  <span className="font-bold text-xs sm:text-sm text-neutral-900">{hero.dimensions}</span>
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Dimensi", "Dimensions")}</span>
+                  <span className="font-bold text-sm sm:text-base text-neutral-900">{hero.dimensions}</span>
                 </div>
                 <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Tebal</span>
-                  <span className="font-bold text-xs sm:text-sm text-neutral-900">{hero.thickness}</span>
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketebalan", "Thickness")}</span>
+                  <span className="font-bold text-sm sm:text-base text-neutral-900">{hero.thickness}</span>
                 </div>
                 <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Ketersediaan</span>
-                  <span className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketersediaan", "Availability")}</span>
+                  <span className="inline-flex items-center gap-1.5 font-bold text-sm sm:text-base text-emerald-800 font-mono">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600" />
                     {hero.availability}
                   </span>
                 </div>
@@ -116,7 +121,7 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <Link
                   href={hero.ctaLink}
-                  className="px-8 py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center gap-2 group shadow-sm"
+                  className="px-9 py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-2 group shadow-md shadow-blue-500/10"
                 >
                   <span>{hero.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -124,22 +129,22 @@ export default function HomePage() {
 
                 <Link
                   href={hero.secondaryCtaLink}
-                  className="px-7 py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 shadow-xs"
+                  className="px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 shadow-xs"
                 >
                   {hero.secondaryCtaText}
                 </Link>
               </div>
             </div>
 
-            {/* Right Hero Stage (5 cols) - Flush to Top */}
-            <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-              <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pb-2">
-                <span>{hero.subBadgeTopLeft}</span>
-                <span>{hero.subBadgeTopRight}</span>
+            {/* Right Hero Stage (6 cols) - Dominant Master Artwork Viewport */}
+            <div className="lg:col-span-6 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-4 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden">
+              <div className="flex items-center justify-between font-mono text-xs text-neutral-400 pb-3">
+                <span className="font-bold text-neutral-600 uppercase">{hero.subBadgeTopLeft}</span>
+                <span className="font-bold text-neutral-600 uppercase">{hero.subBadgeTopRight}</span>
               </div>
 
               <div className="relative w-full flex-1 flex items-center justify-center py-2">
-                <div className="relative aspect-square w-full max-w-[440px] overflow-hidden border border-neutral-200 bg-white">
+                <div className="relative aspect-square w-full max-w-[560px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-white shadow-lg">
                   <Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
@@ -191,7 +196,7 @@ export default function HomePage() {
                   {cat.index}
                 </span>
                 <span className="font-mono text-[11px] font-semibold text-neutral-500 bg-neutral-100 px-2 py-0.5 rounded">
-                  {cat.count} ITEMS
+                  {cat.count} {t("PRODUK", "ITEMS")}
                 </span>
               </div>
 

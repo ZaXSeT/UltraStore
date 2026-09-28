@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ProductDetailClient } from "../../../components/ProductDetailClient";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { getServerLocale } from "../../../lib/server-locale";
+import { copy } from "../../../lib/locale";
 
 export default async function ProductPage({
   params,
@@ -10,6 +12,8 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const locale = await getServerLocale();
+  const t = (id: string, en: string) => copy(locale, id, en);
   const product = getProductBySlug(slug);
 
   if (!product) {
@@ -20,9 +24,9 @@ export default async function ProductPage({
     <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-8 space-y-6">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-xs font-mono text-slate-500">
-        <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
+        <Link href="/" className="hover:text-slate-900 transition-colors">{t("Beranda", "Home")}</Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link href="/shop" className="hover:text-slate-900 transition-colors">Katalog</Link>
+        <Link href="/shop" className="hover:text-slate-900 transition-colors">{t("Katalog", "Shop")}</Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <Link href={`/shop?category=${product.category.slug}`} className="hover:text-slate-900 transition-colors">
           {product.category.name}

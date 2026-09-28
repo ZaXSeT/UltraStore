@@ -5,8 +5,11 @@ import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowLeft, CheckCircle2, ShieldCheck, CreditCard, Lock } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "../../context/LanguageContext";
+import { formatRupiah } from "../../lib/locale";
 
 function CheckoutContent() {
+  const { locale, t } = useLanguage();
   const router = useRouter();
   const searchParams = useSearchParams();
   const targetGroupKey = searchParams.get("group") || "READY";
@@ -31,26 +34,20 @@ function CheckoutContent() {
   const [paymentData, setPaymentData] = useState<any | null>(null);
   const [isSimulatingPayment, setIsSimulatingPayment] = useState(false);
 
-  const formatIdr = (val: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0,
-    }).format(val);
-  };
+  const formatIdr = (val: number) => formatRupiah(val, locale);
 
   if (!currentGroup || currentGroup.items.length === 0) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-20 text-center space-y-4 font-mono">
-        <h2 className="text-xl font-black uppercase tracking-tight text-[#111215]">No Active Order Group Selected</h2>
+        <h2 className="text-xl font-black uppercase tracking-tight text-[#111215]">{t("Tidak Ada Kelompok Pesanan", "No Order Group Selected")}</h2>
         <p className="text-xs text-neutral-500">
-          Return to cart to select the inventory group you wish to authorize.
+          {t("Pilih kelompok produk dari keranjang untuk melanjutkan pembayaran.", "Choose a group from your cart to continue to checkout.")}
         </p>
         <Link
           href="/shop"
           className="inline-block px-6 py-3 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
         >
-          Return to Directory
+          {t("Kembali ke Katalog", "Back to Shop")}
         </Link>
       </div>
     );
@@ -79,7 +76,7 @@ function CheckoutContent() {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Gagal membuat pesanan");
+        throw new Error(t("Gagal membuat pesanan. Silakan coba lagi.", "We couldn't place your order. Please try again."));
       }
 
       // Remove checked out items from cart
@@ -109,7 +106,7 @@ function CheckoutContent() {
         }),
       });
 
-      if (!res.ok) throw new Error("Gagal simulasi webhook bayar");
+      if (!res.ok) throw new Error(t("Simulasi pembayaran gagal.", "Payment simulation failed."));
 
       router.push(
         `/orders/${paymentData.reference}?token=${paymentData.guestAccessToken}`
@@ -129,15 +126,15 @@ function CheckoutContent() {
         className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-neutral-500 hover:text-[#111215] transition-colors"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Back to Directory</span>
+        <span>{t("Kembali ke Katalog", "Back to Shop")}</span>
       </Link>
 
       <div className="border-b border-neutral-200/90 pb-4">
         <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-400">
-          SECURE DISPATCH TRANSACTION
+          {t("PEMBAYARAN PESANAN", "SECURE CHECKOUT")}
         </span>
         <h1 className="text-3xl font-black uppercase tracking-tight text-[#111215] mt-1">
-          Checkout Group: {currentGroup.offerType === "READY" ? "Ready Physical Stock" : "Scheduled Pre-Order"}
+          {t("Checkout", "Checkout")}: {currentGroup.offerType === "READY" ? t("Stok Tersedia", "In-Stock Items") : "Pre-Order"}
         </h1>
       </div>
 
@@ -156,34 +153,34 @@ function CheckoutContent() {
             </div>
             <div>
               <span className="font-mono text-xs text-emerald-700 font-bold uppercase tracking-wider">
-                Invoice Generated · 30-Minute Atomic Lock
+                {t("Tagihan Dibuat · Batas Pembayaran 30 Menit", "Invoice Ready · 30-Minute Payment Window")}
               </span>
               <h2 className="text-xl font-bold font-mono text-[#111215] mt-0.5">
-                Reference: {paymentData.reference}
+                {t("Referensi", "Reference")}: {paymentData.reference}
               </h2>
             </div>
           </div>
 
           <div className="bg-neutral-50 p-6 border border-neutral-200 space-y-3 font-mono text-xs">
             <div className="flex justify-between border-b border-neutral-200 pb-2">
-              <span className="text-neutral-500 uppercase">Payment Method</span>
+              <span className="text-neutral-500 uppercase">{t("Metode Pembayaran", "Payment Method")}</span>
               <span className="font-bold text-[#111215]">BCA Virtual Account (Sandbox)</span>
             </div>
             <div className="flex justify-between border-b border-neutral-200 pb-2">
-              <span className="text-neutral-500 uppercase">VA Account Number</span>
+              <span className="text-neutral-500 uppercase">{t("Nomor Virtual Account", "Virtual Account Number")}</span>
               <span className="font-bold text-base text-[#0E52FF] font-tabular tracking-wider">
                 88019283746152
               </span>
             </div>
             <div className="flex justify-between border-b border-neutral-200 pb-2">
-              <span className="text-neutral-500 uppercase">Total Amount</span>
+              <span className="text-neutral-500 uppercase">{t("Total Pembayaran", "Amount Due")}</span>
               <span className="font-bold text-[#111215] font-tabular text-sm">
                 {formatIdr(paymentData.totalAmount)}
               </span>
             </div>
             <div className="flex justify-between text-neutral-500">
-              <span className="uppercase">Lock Validity</span>
-              <span className="font-medium text-neutral-700">30 Minutes (Automatic release on expiry)</span>
+              <span className="uppercase">{t("Batas Waktu", "Payment Window")}</span>
+              <span className="font-medium text-neutral-700">{t("30 menit (otomatis berakhir)", "30 minutes (expires automatically)")}</span>
             </div>
           </div>
 
@@ -196,12 +193,12 @@ function CheckoutContent() {
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>
-                {isSimulatingPayment ? "Processing Webhook..." : "Simulate Payment Success (Sandbox)"}
+                {isSimulatingPayment ? t("Memproses pembayaran...", "Processing payment...") : t("Simulasikan Pembayaran Berhasil (Sandbox)", "Simulate Successful Payment (Sandbox)")}
               </span>
             </button>
 
             <span className="font-mono text-[11px] text-neutral-500">
-              Server-side verified transaction. Allocates reserved physical stock.
+              {t("Simulasi ini mengonfirmasi pesanan dan mengalokasikan stok yang dipesan.", "This simulation confirms the order and allocates reserved stock.")}
             </span>
           </div>
         </div>
@@ -212,12 +209,12 @@ function CheckoutContent() {
           {/* Shipping Form (7 cols) */}
           <div className="lg:col-span-7 bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-6">
             <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#111215] border-b border-neutral-100 pb-3">
-              Domestic Shipping Destination
+              {t("Alamat Pengiriman", "Shipping Address")}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Recipient Name</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Nama Penerima", "Recipient Name")}</label>
                 <input
                   type="text"
                   required
@@ -228,7 +225,7 @@ function CheckoutContent() {
               </div>
 
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Phone Number / WhatsApp</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Nomor Telepon / WhatsApp", "Phone / WhatsApp")}</label>
                 <input
                   type="text"
                   required
@@ -239,7 +236,7 @@ function CheckoutContent() {
               </div>
 
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Province</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Provinsi", "Province")}</label>
                 <input
                   type="text"
                   required
@@ -250,7 +247,7 @@ function CheckoutContent() {
               </div>
 
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">City / Regency</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Kota / Kabupaten", "City / Regency")}</label>
                 <input
                   type="text"
                   required
@@ -261,7 +258,7 @@ function CheckoutContent() {
               </div>
 
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">District (Kecamatan)</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Kecamatan", "District")}</label>
                 <input
                   type="text"
                   required
@@ -272,7 +269,7 @@ function CheckoutContent() {
               </div>
 
               <div>
-                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Postal Code</label>
+                <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Kode Pos", "Postal Code")}</label>
                 <input
                   type="text"
                   required
@@ -284,7 +281,7 @@ function CheckoutContent() {
             </div>
 
             <div className="font-mono text-xs">
-              <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Street Address</label>
+              <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Alamat Lengkap", "Street Address")}</label>
               <textarea
                 rows={3}
                 required
@@ -295,7 +292,7 @@ function CheckoutContent() {
             </div>
 
             <div className="font-mono text-xs">
-              <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">Delivery Instructions (Optional)</label>
+              <label className="block text-neutral-600 mb-1.5 uppercase font-bold text-[10px]">{t("Catatan Pengiriman (Opsional)", "Delivery Notes (Optional)")}</label>
               <input
                 type="text"
                 value={formData.notes}
@@ -308,7 +305,7 @@ function CheckoutContent() {
           {/* Summary Column (5 cols) */}
           <div className="lg:col-span-5 bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-6 self-start">
             <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#111215] border-b border-neutral-100 pb-3">
-              Payment Ledger Summary
+              {t("Ringkasan Pembayaran", "Order Summary")}
             </h2>
 
             <div className="space-y-3 divide-y divide-neutral-100 font-mono">
@@ -327,15 +324,15 @@ function CheckoutContent() {
 
             <div className="bg-neutral-50 p-4 border border-neutral-200/90 space-y-2 font-mono text-xs">
               <div className="flex justify-between text-neutral-500 uppercase">
-                <span>Subtotal Items</span>
+                <span>{t("Subtotal Produk", "Items Subtotal")}</span>
                 <span className="text-[#111215] font-bold font-tabular">{formatIdr(currentGroup.subtotal)}</span>
               </div>
               <div className="flex justify-between text-neutral-500 uppercase">
-                <span>Direct Freight</span>
+                <span>{t("Ongkos Kirim", "Shipping")}</span>
                 <span className="text-[#111215] font-bold font-tabular">{formatIdr(currentGroup.shippingFee)}</span>
               </div>
               <div className="flex justify-between text-sm font-black text-[#111215] pt-2 border-t border-neutral-200 font-tabular uppercase">
-                <span>Total Due</span>
+                <span>{t("Total Pembayaran", "Total Due")}</span>
                 <span>{formatIdr(currentGroup.total)}</span>
               </div>
             </div>
@@ -346,13 +343,13 @@ function CheckoutContent() {
               className="w-full py-3.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-md shadow-blue-500/20 transition-all disabled:opacity-50"
             >
               {isSubmitting
-                ? "Allocating Lock & Generating Invoice..."
-                : `Authorize Payment · ${currentGroup.offerType === "PREORDER" ? "Pre-Order" : "Ready Stock"}`}
+                ? t("Membuat Tagihan...", "Creating Invoice...")
+                : `${t("Lanjutkan Pembayaran", "Continue to Payment")} · ${currentGroup.offerType === "PREORDER" ? "Pre-Order" : t("Stok Tersedia", "In Stock")}`}
             </button>
 
             <div className="font-mono text-[11px] text-neutral-400 space-y-1">
-              <p>• 30-minute atomic inventory lock upon invoice generation.</p>
-              <p>• Server-side verified via official payment gateway.</p>
+              <p>• {t("Stok dicadangkan selama 30 menit setelah tagihan dibuat.", "Stock is reserved for 30 minutes after the invoice is created.")}</p>
+              <p>• {t("Total pesanan diperiksa oleh server.", "Your order total is verified by the server.")}</p>
             </div>
           </div>
         </form>
@@ -362,8 +359,9 @@ function CheckoutContent() {
 }
 
 export default function CheckoutPage() {
+  const { t } = useLanguage();
   return (
-    <Suspense fallback={<div className="text-center text-xs py-20 text-slate-500">Memuat sesi checkout...</div>}>
+    <Suspense fallback={<div className="text-center text-xs py-20 text-slate-500">{t("Memuat checkout...", "Loading checkout...")}</div>}>
       <CheckoutContent />
     </Suspense>
   );

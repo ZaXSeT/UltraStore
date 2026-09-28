@@ -5,8 +5,11 @@ import { ProductImage } from "./ProductImage";
 import { X, Trash2, ArrowRight, ShoppingBag, Minus, Plus, Truck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { formatRupiah } from "../lib/locale";
 
 export function CartDrawer() {
+  const { locale, t } = useLanguage();
   const router = useRouter();
   const {
     items,
@@ -41,12 +44,7 @@ export function CartDrawer() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [isCartOpen, closeCart]);
 
-  const formatIdr = (val: number) =>
-    new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0,
-    }).format(val);
+  const formatIdr = (val: number) => formatRupiah(val, locale);
 
   const handleCheckoutGroup = (groupKey: string) => {
     closeCart();
@@ -79,15 +77,16 @@ export function CartDrawer() {
             </div>
             <div>
               <h2 className="text-sm font-bold text-slate-900">
-                Keranjang Belanja
+                {t("Keranjang Belanja", "Shopping Cart")}
               </h2>
               <span className="text-xs text-slate-500 font-medium">
-                {totalItemCount} item · {groups.length} kelompok pengiriman
+                {totalItemCount} {t("produk", "items")} · {groups.length} {t("kelompok pengiriman", "shipping groups")}
               </span>
             </div>
           </div>
 
           <button
+            aria-label={t("Tutup keranjang", "Close cart")}
             onClick={closeCart}
             className="w-9 h-9 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
           >
@@ -103,10 +102,10 @@ export function CartDrawer() {
                 <ShoppingBag className="w-8 h-8" />
               </div>
               <h3 className="text-base font-bold text-slate-900">
-                Keranjang Masih Kosong
+                {t("Keranjang Masih Kosong", "Your Cart Is Empty")}
               </h3>
               <p className="text-xs text-slate-500 mt-1 max-w-xs leading-relaxed">
-                Belum ada gear yang ditambahkan. Jelajahi katalog untuk menemukan peripheral impian Anda.
+                {t("Belum ada produk di keranjang. Jelajahi katalog untuk menemukan perlengkapan yang Anda cari.", "Nothing in your cart yet. Browse the catalog to find gear for your setup.")}
               </p>
               <button
                 onClick={() => {
@@ -115,7 +114,7 @@ export function CartDrawer() {
                 }}
                 className="mt-5 px-5 py-2.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors"
               >
-                Jelajahi Katalog
+                {t("Jelajahi Katalog", "Browse Products")}
               </button>
             </div>
           ) : (
@@ -138,9 +137,9 @@ export function CartDrawer() {
                             isReady ? "bg-emerald-500" : "bg-blue-600"
                           }`}
                         />
-                        <span>{isReady ? "Ready Stock" : "Pre-Order"}</span>
+                        <span>{isReady ? t("Stok Tersedia", "In Stock") : "Pre-Order"}</span>
                         <span className="text-[11px] font-normal text-slate-500">
-                          ({group.batchName || "Langsung"})
+                          ({group.batchName || t("Langsung", "Ready to ship")})
                         </span>
                       </div>
                       <span className="text-[11px] font-normal text-slate-500">
@@ -218,7 +217,8 @@ export function CartDrawer() {
                           type="button"
                           onClick={() => removeItem(item.variantId, item.offerId)}
                           className="mt-1 p-1.5 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors shrink-0"
-                          title="Hapus"
+                          title={t("Hapus", "Remove")}
+                          aria-label={t("Hapus produk", "Remove item")}
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -240,7 +240,7 @@ export function CartDrawer() {
                             : "bg-blue-600 hover:bg-blue-700"
                         }`}
                       >
-                        <span>Checkout</span>
+                        <span>{t("Lanjut ke Checkout", "Checkout")}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -257,13 +257,13 @@ export function CartDrawer() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
                 <Truck className="w-3.5 h-3.5 text-blue-600" />
-                <span>Ongkos kirim dihitung per kelompok saat checkout</span>
+                <span>{t("Ongkir dihitung per kelompok saat checkout", "Shipping is calculated for each group at checkout")}</span>
               </div>
             </div>
 
             <div className="flex items-center justify-between">
               <span className="text-sm font-semibold text-slate-900">
-                Total Semua Kelompok
+                {t("Total Semua Kelompok", "Total for All Groups")}
               </span>
               <span className="text-lg font-bold text-slate-900 font-tabular tracking-tight">
                 {formatIdr(grandTotal)}
@@ -278,7 +278,7 @@ export function CartDrawer() {
               }}
               className="w-full py-3.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors shadow-sm flex items-center justify-center gap-2"
             >
-              <span>Lanjut ke Pembayaran</span>
+              <span>{t("Lanjut ke Pembayaran", "Continue to Checkout")}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

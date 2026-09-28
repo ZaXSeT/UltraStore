@@ -1,21 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import type { Product } from "../lib/types";
 import { ProductImage } from "./ProductImage";
 import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { formatRupiah } from "../lib/locale";
 
 export function ProductCard({ product }: { product: Product }) {
+  const { locale, t } = useLanguage();
   const primaryOffer = product.offers[0];
   const primaryVariant = product.variants[0];
   const isPreorder = product.offers.some((o) => o.offerType === "PREORDER");
   const minPrice = Math.min(...product.variants.map((v) => v.price));
 
-  const formatIdr = (val: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0,
-    }).format(val);
-  };
+  const formatIdr = (val: number) => formatRupiah(val, locale);
 
   return (
     <Link
@@ -40,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
               }`}
             />
             <span className="px-2 py-0.5">
-              {isPreorder ? "BATCH PO" : "IN STOCK"}
+              {isPreorder ? t("BATCH PO", "PRE-ORDER") : t("TERSEDIA", "IN STOCK")}
             </span>
           </div>
         </div>
@@ -76,7 +75,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-center justify-between gap-2">
           <div>
             <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 block leading-none mb-1">
-              {isPreorder ? "Mulai Dari" : "Harga"}
+              {isPreorder ? t("Mulai dari", "From") : t("Harga", "Price")}
             </span>
             <div className="text-sm sm:text-base font-extrabold text-neutral-950 font-tabular tracking-tight">
               {formatIdr(minPrice)}
@@ -84,7 +83,7 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
 
           <div className="inline-flex items-center gap-1 px-3 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 shadow-sm shadow-blue-500/20">
-            <span>Detail</span>
+            <span>{t("Lihat Detail", "View Details")}</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>

@@ -71,4 +71,5 @@ Dokumen ini adalah single source of truth untuk progress, konfigurasi arsitektur
 - `b324518`: Menghapus kartu jaminan generik di footer sidebar katalog dan memperbaiki author commit ke `ZaXSeT <zackyxie123@gmail.com>`.
 - `3bd48f4`: Mengubah tombol Detail di seluruh card produk menjadi sharp Swiss Cobalt Electric Blue.
 - `ad3bb6a`: Mengkalibrasi jarak vertikal footer dan zero-gap hero atas.
-- `Current`: Menambahkan animasi metallic shimmer mengkilat (`logo-shimmer`) pada logo ULTRASTORE di navbar dengan gradien deep cobalt ke cyan/white gleam.
+- `e086027`: Menambahkan animasi metallic shimmer mengkilat (`logo-shimmer`) pada logo ULTRASTORE di navbar dengan gradien deep cobalt ke cyan/white gleam.
+- `Current`: Memperbesar skala typography judul hero kiri (`text-5xl sm:text-7xl lg:text-8xl 2xl:text-9xl`) dan memperluas viewport gambar kanan menjadi `max-w-[620px]` dengan rasio grid 6:6 seimbang dan dominan.

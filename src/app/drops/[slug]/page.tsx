@@ -2,6 +2,8 @@ import { getPreorderBatchBySlug, getAllProducts } from "../../../lib/catalog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, ShieldCheck, Box, CheckCircle2, Circle } from "lucide-react";
+import { getServerLocale } from "../../../lib/server-locale";
+import { copy } from "../../../lib/locale";
 
 export default async function DropLedgerPage({
   params,
@@ -9,6 +11,8 @@ export default async function DropLedgerPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const locale = await getServerLocale();
+  const t = (id: string, en: string) => copy(locale, id, en);
   const batch = getPreorderBatchBySlug(slug);
 
   if (!batch) {
@@ -21,12 +25,12 @@ export default async function DropLedgerPage({
   );
 
   const stages = [
-    { key: "opened", label: "Pemesanan Dibuka", desc: "Batch aktif menerima pemesanan slot." },
-    { key: "closed", label: "Pemesanan Ditutup", desc: "Alokasi final dikirim ke pabrik perakitan." },
-    { key: "supplier_production", label: "Proses Pabrik/Supplier", desc: "Komponen dirakit dan diuji kualitas awal." },
-    { key: "transit", label: "Pengiriman ke Gudang", desc: "Barang dalam kargo udara/laut menuju Jakarta." },
-    { key: "qc_received", label: "Diterima & QC Gudang", desc: "Inspeksi fisik 100% kelayakan unit." },
-    { key: "shipping", label: "Pengiriman Pelanggan", desc: "Nomor resi diterbitkan dan dikirim ke alamat." },
+    { key: "opened", label: t("Pemesanan Dibuka", "Orders Open"), desc: t("Batch ini sudah menerima pesanan.", "This batch is accepting orders.") },
+    { key: "closed", label: t("Pemesanan Ditutup", "Orders Closed"), desc: t("Alokasi pesanan telah dikirim ke pemasok.", "Final order quantities have been sent to the supplier.") },
+    { key: "supplier_production", label: t("Produksi Pemasok", "Supplier Production"), desc: t("Produk sedang diproduksi dan diperiksa.", "Products are being made and checked.") },
+    { key: "transit", label: t("Dalam Pengiriman", "In Transit"), desc: t("Barang sedang menuju gudang Jakarta.", "The batch is on its way to our Jakarta warehouse.") },
+    { key: "qc_received", label: t("Pemeriksaan Gudang", "Warehouse Inspection"), desc: t("Barang diterima dan diperiksa sebelum dikirim.", "The batch has arrived and is being inspected before dispatch.") },
+    { key: "shipping", label: t("Dikirim ke Pelanggan", "Out for Delivery"), desc: t("Pesanan dikirim ke alamat pelanggan.", "Orders are being sent to customers.") },
   ];
 
   const currentStageIndex = stages.findIndex((s) => s.key === batch.currentStage);
@@ -39,7 +43,7 @@ export default async function DropLedgerPage({
         className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
-        <span>Kembali ke halaman produk</span>
+        <span>{t("Kembali ke produk", "Back to Product")}</span>
       </Link>
 
       {/* Header Drop Ledger */}
@@ -47,7 +51,7 @@ export default async function DropLedgerPage({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200/80">
-              Jadwal Pre-Order Terjadwal
+              {t("Jadwal Pre-Order", "Pre-Order Timeline")}
             </span>
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
               {batch.name}
@@ -55,7 +59,7 @@ export default async function DropLedgerPage({
           </div>
 
           <div className="text-left sm:text-right">
-            <div className="text-xs text-slate-500 font-medium">Estimasi Tiba di Gudang:</div>
+            <div className="text-xs text-slate-500 font-medium">{t("Perkiraan Tiba di Gudang", "Estimated Warehouse Arrival")}:</div>
             <div className="text-lg font-bold text-slate-900">{batch.etaRange}</div>
           </div>
         </div>
@@ -64,10 +68,10 @@ export default async function DropLedgerPage({
         <div className="space-y-2 pt-4 border-t border-slate-100">
           <div className="flex justify-between text-xs font-medium">
             <span className="text-slate-600">
-              Kuota Terpesan: {batch.quotaCommitted} / {batch.quotaTotal} Unit
+              {t("Kuota Terpesan", "Reserved Spots")}: {batch.quotaCommitted} / {batch.quotaTotal} {t("unit", "units")}
             </span>
             <span className="font-semibold text-blue-600">
-              Sisa Kuota: {batch.quotaTotal - batch.quotaCommitted} Unit
+              {t("Sisa Kuota", "Spots Left")}: {batch.quotaTotal - batch.quotaCommitted} {t("unit", "units")}
             </span>
           </div>
           <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
@@ -89,7 +93,7 @@ export default async function DropLedgerPage({
               href={`/products/${product.slug}`}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors inline-block shadow-sm"
             >
-              Pesan Slot Pre-Order Sekarang
+              {t("Pesan Pre-Order", "Reserve a Pre-Order")}
             </Link>
           </div>
         )}
@@ -99,10 +103,10 @@ export default async function DropLedgerPage({
       <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-8 shadow-sm">
         <div>
           <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-            Tahapan Eksekusi Batch
+            {t("Perjalanan Batch", "Batch Progress")}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            Status diperbarui langsung berdasarkan pencatatan fisik operator gudang &amp; supplier resmi.
+            {t("Status diperbarui berdasarkan catatan pemasok dan gudang.", "Updates reflect records from the supplier and warehouse.")}
           </p>
         </div>
 
@@ -147,11 +151,11 @@ export default async function DropLedgerPage({
                     </h3>
                     <span className="text-xs font-semibold uppercase">
                       {isCompleted ? (
-                        <span className="text-emerald-700">Selesai</span>
+                        <span className="text-emerald-700">{t("Selesai", "Complete")}</span>
                       ) : isCurrent ? (
-                        <span className="text-blue-700">Sedang Berjalan</span>
+                        <span className="text-blue-700">{t("Sedang Berjalan", "In Progress")}</span>
                       ) : (
-                        <span className="text-slate-400">Terjadwal</span>
+                        <span className="text-slate-400">{t("Terjadwal", "Upcoming")}</span>
                       )}
                     </span>
                   </div>
@@ -167,10 +171,10 @@ export default async function DropLedgerPage({
       <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
         <div>
           <h2 className="text-xl font-bold text-slate-900 tracking-tight">
-            Catatan Perubahan Faktual
+            {t("Catatan Pembaruan", "Batch Updates")}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            Audit log tercatat tanpa animasi atau progres waktu semu.
+            {t("Pembaruan dicatat saat status batch berubah.", "Updates are recorded when the batch status changes.")}
           </p>
         </div>
 
@@ -179,7 +183,7 @@ export default async function DropLedgerPage({
             <div key={i} className="py-3.5 flex flex-col sm:flex-row justify-between gap-2">
               <div className="space-y-0.5">
                 <span className="font-semibold text-slate-900">{note.note}</span>
-                <div className="text-slate-500">Pencatat: {note.actor}</div>
+                <div className="text-slate-500">{t("Dicatat oleh", "Recorded by")}: {note.actor}</div>
               </div>
               <div className="text-slate-400 shrink-0">{note.date}</div>
             </div>

@@ -7,8 +7,11 @@ import { useRouter } from "next/navigation";
 import { Check, ShieldCheck, Box, Clock, Truck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ProductImage } from "./ProductImage";
+import { useLanguage } from "../context/LanguageContext";
+import { formatRupiah } from "../lib/locale";
 
 export function ProductDetailClient({ product }: { product: Product }) {
+  const { locale, t } = useLanguage();
   const router = useRouter();
   const { addItem, openCart, closeCart } = useCart();
 
@@ -34,13 +37,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
     product.offers.find((o) => o.offerType === selectedOfferType) ||
     product.offers[0];
 
-  const formatIdr = (val: number) => {
-    return new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      maximumFractionDigits: 0,
-    }).format(val);
-  };
+  const formatIdr = (val: number) => formatRupiah(val, locale);
 
   const handleAddToCart = () => {
     addItem({
@@ -90,7 +87,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 }`}
               />
               <span className="px-3 py-1">
-                {selectedOfferType === "PREORDER" ? "DISPATCH: BATCH PO" : "DISPATCH: CENTRAL HUB (READY)"}
+                {selectedOfferType === "PREORDER" ? t("PENGIRIMAN: BATCH PRE-ORDER", "DISPATCH: PRE-ORDER BATCH") : t("PENGIRIMAN: STOK TERSEDIA", "DISPATCH: IN STOCK")}
               </span>
             </div>
           </div>
@@ -120,7 +117,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         <div className="bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-4">
           <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[#111215] border-b border-neutral-100 pb-3 flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
-            <span>Spesifikasi Terverifikasi Resmi</span>
+            <span>{t("Spesifikasi Produk", "Product Specifications")}</span>
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs">
@@ -137,7 +134,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         <div className="bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-4">
           <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[#111215] border-b border-neutral-100 pb-3 flex items-center gap-2">
             <Box className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span>Isi Dalam Kotak Kemasan</span>
+            <span>{t("Isi Kemasan", "What's in the Box")}</span>
           </h3>
           <ul className="space-y-2 font-mono text-xs text-neutral-700">
             {product.boxContents.map((item, i) => (
@@ -170,20 +167,20 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
         {/* Price Tag */}
         <div className="p-4 bg-neutral-50 border border-neutral-200/90">
-          <div className="text-[10px] font-mono uppercase font-bold text-neutral-500">Harga Final Satuan</div>
+          <div className="text-[10px] font-mono uppercase font-bold text-neutral-500">{t("Harga per Unit", "Price per Item")}</div>
           <div className="text-3xl font-black text-[#111215] font-tabular tracking-tight mt-0.5">
             {formatIdr(matchedOffer.price || selectedVariant.price)}
           </div>
           <div className="text-[10px] font-mono text-neutral-500 mt-1 flex items-center gap-1.5 uppercase">
             <Truck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span>Ongkir dihitung saat checkout · Pajak &amp; bea masuk termasuk</span>
+            <span>{t("Ongkir dihitung saat checkout · Termasuk pajak dan bea masuk", "Shipping is calculated at checkout · Taxes and duties included")}</span>
           </div>
         </div>
 
         {/* Offer Selection (Ready Stock vs Pre-order) */}
         <div className="space-y-2">
           <label className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-600 block">
-            Pilihan Ketersediaan
+            {t("Pilihan Ketersediaan", "Availability")}
           </label>
           <div className="grid grid-cols-2 gap-3">
             {distinctOfferTypes.map((offerType) => {
@@ -205,14 +202,14 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider">
-                      {isReady ? "Ready Stock" : "Pre-Order"}
+                      {isReady ? t("Stok Tersedia", "In Stock") : "Pre-Order"}
                     </span>
                     {isSelected && (
                       <span className="w-1.5 h-1.5 bg-white" />
                     )}
                   </div>
                   <div className={`text-[10px] mt-1 ${isSelected ? "text-white/80" : "text-neutral-500"}`}>
-                    {isReady ? "Kirim 1-2 hari" : targetOffer?.estimatedShipping || "Batch jadwal"}
+                    {isReady ? t("Dikirim dalam 1–2 hari kerja", "Ships in 1–2 business days") : targetOffer?.estimatedShipping || t("Jadwal batch", "Batch schedule")}
                   </div>
                 </button>
               );
@@ -226,7 +223,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 href={`/drops/${product.slug}-batch-04`}
                 className="hover:underline flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider text-[#0E52FF] font-bold"
               >
-                <span>Lihat rincian jadwal batch ini</span>
+                <span>{t("Lihat jadwal pre-order", "View pre-order timeline")}</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
@@ -237,7 +234,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {product.variants.length > 1 && (
           <div className="space-y-2">
             <label className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-600 block">
-              Pilih Varian
+              {t("Pilih Varian", "Choose a Variant")}
             </label>
             <div className="space-y-2">
               {product.variants.map((v) => {
@@ -279,7 +276,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
           {addedNotice && (
             <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs py-2.5 px-3.5 flex items-center gap-2 font-mono">
               <Check className="w-4 h-4 text-emerald-600" />
-              <span>Gear berhasil ditambahkan ke keranjang belanja.</span>
+              <span>{t("Produk ditambahkan ke keranjang.", "Added to your cart.")}</span>
             </div>
           )}
 
@@ -289,7 +286,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
               onClick={handleAddToCart}
               className="w-full py-3.5 border border-neutral-300 bg-white text-[#111215] text-xs font-mono font-bold uppercase tracking-wider hover:bg-neutral-50 transition-colors"
             >
-              + Keranjang
+              {t("+ Keranjang", "+ Add to Cart")}
             </button>
 
             <button
@@ -297,7 +294,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
               onClick={handleBuyNow}
               className="w-full py-3.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-md shadow-blue-500/20 transition-all"
             >
-              {selectedOfferType === "PREORDER" ? "Pre-Order Sekarang" : "Beli Sekarang"}
+              {selectedOfferType === "PREORDER" ? t("Pesan Sekarang", "Pre-Order Now") : t("Beli Sekarang", "Buy Now")}
             </button>
           </div>
         </div>
@@ -306,11 +303,11 @@ export function ProductDetailClient({ product }: { product: Product }) {
         <div className="border-t border-neutral-100 pt-4 space-y-2 text-xs font-mono text-neutral-500">
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="text-[11px] uppercase">Garansi resmi UltraStore 1 tahun distributor</span>
+            <span className="text-[11px] uppercase">{t("Garansi resmi UltraStore selama 1 tahun", "UltraStore official 1-year warranty")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="text-[11px] uppercase">Pemesanan mengikat kuota &amp; reservasi stok atomik</span>
+            <span className="text-[11px] uppercase">{t("Stok atau kuota dialokasikan setelah pemesanan", "Stock or batch capacity is allocated when you order")}</span>
           </div>
         </div>
       </div>

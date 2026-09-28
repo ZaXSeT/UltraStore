@@ -3,6 +3,8 @@ import { ProductCard } from "../../components/ProductCard";
 import { ShopSidebar } from "../../components/ShopSidebar";
 import Link from "next/link";
 import { Filter, RotateCcw, X, ShieldCheck, Check } from "lucide-react";
+import { getServerLocale } from "../../lib/server-locale";
+import { copy } from "../../lib/locale";
 
 export default async function ShopPage({
   searchParams,
@@ -10,6 +12,8 @@ export default async function ShopPage({
   searchParams: Promise<{ category?: string; brand?: string; offer?: string; q?: string; surface?: string }>;
 }) {
   const { category, brand, offer, q, surface } = await searchParams;
+  const locale = await getServerLocale();
+  const t = (id: string, en: string) => copy(locale, id, en);
   let products = getAllProducts(category, offer, brand, surface);
   const allBrands = getBrands();
   const allCategories = getCategories();
@@ -35,23 +39,23 @@ export default async function ShopPage({
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-[#111215]">
             <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
-            <span>OFFICIAL CENTRAL HUB · JAKARTA INVENTORY</span>
+            <span>{t("PUSAT DISTRIBUSI RESMI · STOK JAKARTA", "OFFICIAL DISTRIBUTION · JAKARTA STOCK")}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
-            Hardware Directory
+            {t("Katalog Periferal", "Gaming Gear Catalog")}
           </h1>
           <p className="text-xs sm:text-sm text-neutral-500 max-w-3xl font-mono leading-relaxed">
-            Mechanical keyboards, ultralight wireless mice, precision glasspads, and custom artisan switches with official warranty.
+            {t("Keyboard mekanis, mouse nirkabel ringan, glasspad presisi, dan switch pilihan untuk setup Anda.", "Explore mechanical keyboards, lightweight wireless mice, precision glasspads, and carefully selected switches.")}
           </p>
         </div>
 
         <div className="flex flex-wrap md:flex-col md:items-end gap-2 text-xs font-mono text-neutral-500 shrink-0">
           <div className="inline-flex items-center gap-2 border border-neutral-200 bg-white px-3 py-1.5 text-xs text-[#111215]">
             <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="font-bold uppercase tracking-wider text-[11px]">1-Year Official Warranty</span>
+            <span className="font-bold uppercase tracking-wider text-[11px]">{t("Garansi Resmi 1 Tahun", "1-Year Official Warranty")}</span>
           </div>
           <span className="text-[10px] uppercase tracking-wider text-neutral-400">
-            Direct Dispatch: 24H Turnaround
+            {t("Dikirim dari Jakarta", "Ships from Jakarta")}
           </span>
         </div>
       </div>
@@ -79,7 +83,7 @@ export default async function ShopPage({
             <div className="flex flex-wrap items-center gap-2">
               <span className="flex items-center gap-2 font-bold text-[#111215] uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
-                <span>{products.length} Items Listed</span>
+                <span>{products.length} {t("Produk", "Products")}</span>
               </span>
 
               {/* Active Category Tag */}
@@ -92,7 +96,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
                 >
-                  <span>Category: {activeCategoryObj.name}</span>
+                  <span>{t("Kategori", "Category")}: {activeCategoryObj.name}</span>
                   <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
                 </Link>
               )}
@@ -107,7 +111,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
                 >
-                  <span>Brand: {activeBrandObj.name}</span>
+                  <span>{t("Merek", "Brand")}: {activeBrandObj.name}</span>
                   <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
                 </Link>
               )}
@@ -123,7 +127,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[#0E52FF] bg-[#0E52FF]/10 text-[#0E52FF] transition-colors text-[11px] font-bold uppercase tracking-wider"
                 >
-                  <span>Offer: {offer}</span>
+                  <span>{t("Status", "Availability")}: {offer === "READY" ? t("Tersedia", "In Stock") : t("Pre-Order", "Pre-Order")}</span>
                   <X className="w-3 h-3 text-[#0E52FF] hover:text-[#111215]" />
                 </Link>
               )}
@@ -139,7 +143,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[#111215] bg-[#111215] text-white hover:bg-[#0E52FF] hover:border-[#0E52FF] transition-colors text-[11px] uppercase tracking-wider"
                 >
-                  <span>Surface: {surface === "glass" ? "Glasspad (Kaca)" : "Cloth / Poron"}</span>
+                  <span>{t("Permukaan", "Surface")}: {surface === "glass" ? t("Glasspad (Kaca)", "Glasspad") : t("Kain / Poron", "Cloth / Poron")}</span>
                   <X className="w-3 h-3 text-neutral-300 hover:text-white" />
                 </Link>
               )}
@@ -154,14 +158,14 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 transition-colors text-xs font-medium"
                 >
-                  <span>Cari: "{q}"</span>
+                  <span>{t("Pencarian", "Search")}: "{q}"</span>
                   <X className="w-3.5 h-3.5 text-blue-600" />
                 </Link>
               )}
             </div>
 
             <span className="text-xs text-slate-400 font-medium">
-              Katalog Terverifikasi UltraStore
+              {t("Pilihan UltraStore", "Selected by UltraStore")}
             </span>
           </div>
 
@@ -173,10 +177,10 @@ export default async function ShopPage({
               </div>
               <div>
                 <h3 className="text-base font-bold text-slate-900">
-                  Tidak Ada Produk Sesuai Filter
+                  {t("Produk tidak ditemukan", "No Products Found")}
                 </h3>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Kombinasi kategori atau filter brand saat ini belum memiliki produk yang cocok. Silakan atur ulang filter pencarian Anda.
+                  {t("Coba kata kunci atau filter lain untuk menemukan produk yang Anda cari.", "Try another search term or adjust your filters to find the right gear.")}
                 </p>
               </div>
               <Link
@@ -184,7 +188,7 @@ export default async function ShopPage({
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset Semua Filter</span>
+                <span>{t("Atur Ulang Filter", "Clear Filters")}</span>
               </Link>
             </div>
           ) : (

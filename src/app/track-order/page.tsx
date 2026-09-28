@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Compass, Search, ShieldCheck } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function TrackOrderPage() {
+  const { t } = useLanguage();
   const router = useRouter();
   const [reference, setReference] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -12,7 +14,7 @@ export default function TrackOrderPage() {
   const handleTrack = (e: React.FormEvent) => {
     e.preventDefault();
     if (!reference.trim()) {
-      setErrorMsg("Masukkan nomor referensi pesanan (contoh: UST-20260928-89F2)");
+      setErrorMsg(t("Masukkan nomor referensi pesanan, misalnya UST-20260928-89F2.", "Enter your order reference, for example UST-20260928-89F2."));
       return;
     }
     router.push(`/orders/${reference.trim()}`);
@@ -25,10 +27,10 @@ export default function TrackOrderPage() {
           <Compass className="w-6 h-6" />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Lacak Status Pesanan
+          {t("Lacak Pesanan", "Track Your Order")}
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto leading-relaxed">
-          Masukkan nomor referensi pesanan yang tertera pada invoice atau konfirmasi pesanan Anda.
+          {t("Masukkan nomor referensi dari tagihan atau konfirmasi pesanan Anda.", "Enter the reference number from your invoice or order confirmation.")}
         </p>
       </div>
 
@@ -36,12 +38,12 @@ export default function TrackOrderPage() {
         <form onSubmit={handleTrack} className="space-y-4">
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1.5 tracking-wide">
-              Nomor Referensi Pesanan
+              {t("Nomor Referensi Pesanan", "Order Reference")}
             </label>
             <input
               type="text"
               required
-              placeholder="Contoh: UST-20260928-89F2"
+              placeholder={t("Contoh: UST-20260928-89F2", "Example: UST-20260928-89F2")}
               value={reference}
               onChange={(e) => {
                 setReference(e.target.value);
@@ -60,17 +62,17 @@ export default function TrackOrderPage() {
             className="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm"
           >
             <Search className="w-4 h-4" />
-            <span>Cari Status Pesanan</span>
+            <span>{t("Lacak Pesanan", "Find My Order")}</span>
           </button>
         </form>
 
         <div className="border-t border-slate-100 mt-6 pt-4 text-xs text-slate-500 space-y-1">
           <div className="flex items-center gap-1.5 text-emerald-700 font-semibold">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>Privasi Data Pesanan</span>
+            <span>{t("Privasi Pesanan", "Order Privacy")}</span>
           </div>
           <p className="leading-relaxed">
-            Detail alamat dan informasi transaksi pribadi dilindungi tautan akses bertanda tangan (guest access token) untuk menjaga kerahasiaan data pembeli.
+            {t("Detail alamat dan pembayaran hanya ditampilkan melalui tautan akses pesanan yang aman.", "Your address and payment details are protected by a secure order access link.")}
           </p>
         </div>
       </div>
