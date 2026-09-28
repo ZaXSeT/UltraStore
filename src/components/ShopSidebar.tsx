@@ -424,37 +424,17 @@ export function ShopSidebar({
 
       {/* 5. Reset Filter Button */}
       {hasActiveFilters && (
-        <div className="pt-2 border-t border-slate-100">
+        <div className="pt-2 border-t border-neutral-100">
           <button
             type="button"
             onClick={resetAll}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 border border-neutral-300 hover:border-[#111215] bg-neutral-100 hover:bg-neutral-200 text-[#111215] text-xs font-mono font-bold uppercase transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset Semua Filter</span>
+            <span>Reset All Filters</span>
           </button>
         </div>
       )}
-
-      {/* 6. Authenticity Guarantee Micro-Card */}
-      <div className="pt-2 border-t border-slate-100">
-        <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 space-y-2 text-xs text-slate-600">
-          <div className="flex items-center gap-2 text-slate-900 font-semibold text-xs">
-            <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span>Garansi Resmi UltraStore</span>
-          </div>
-          <div className="space-y-1.5 text-[11px] text-slate-500">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-              <span>100% Produk Original Pabrikan</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Truck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-              <span>Dikirim Langsung dari Jakarta</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
