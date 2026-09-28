@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { CartDrawer } from "./CartDrawer";
+import { FlickeringGrid } from "./FlickeringGrid";
 
 export function StorefrontChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -26,11 +27,25 @@ export function StorefrontChrome({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <>
-      <Header />
-      <CartDrawer />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </>
+    <div className="relative min-h-screen flex flex-col bg-[#F8F9FA] text-slate-900 overflow-x-hidden">
+      {/* Universal Fixed Background Flickering Grid for all sections */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <FlickeringGrid
+          squareSize={4}
+          gridGap={6}
+          color="rgb(15, 23, 42)"
+          maxOpacity={0.08}
+          flickerChance={0.2}
+          className="w-full h-full opacity-60"
+        />
+      </div>
+
+      <div className="relative z-10 flex flex-col flex-1">
+        <Header />
+        <CartDrawer />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+    </div>
   );
 }

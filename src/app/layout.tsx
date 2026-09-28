@@ -24,7 +24,7 @@ export default async function RootLayout({
   const locale = await getServerLocale();
   return (
     <html lang={locale} className="h-full">
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased">
+      <body className="min-h-screen flex flex-col bg-[#F8F9FA] text-slate-900 antialiased">
         <LanguageProvider initialLocale={locale}>
           <CartProvider>
             <StorefrontChrome>{children}</StorefrontChrome>

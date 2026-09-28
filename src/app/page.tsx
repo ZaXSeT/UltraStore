@@ -72,12 +72,9 @@ export default async function HomePage() {
       </section>
 
       {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (FLUSH ZERO GAP TO TICKER) */}
-      <section className="w-full border-b border-neutral-200/90 bg-white m-0 p-0">
+      <section className="w-full border-b border-neutral-200/90 bg-white/60 backdrop-blur-xs m-0 p-0">
         <div className="w-full m-0 p-0">
-          <div className="relative border-none bg-white overflow-hidden m-0 p-0">
-          {/* Subtle Technical Grid Blueprint Texture */}
-          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
-
+          <div className="relative border-none bg-transparent overflow-hidden m-0 p-0">
           <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[640px] lg:min-h-[720px] items-stretch">
             {/* Left Editorial Copy (6 cols) */}
             <div className="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
