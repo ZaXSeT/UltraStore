@@ -75,29 +75,27 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Categories Navigation (Desktop) */}
-        <nav className="hidden lg:flex items-center space-x-7 text-xs font-mono font-semibold tracking-wider text-[#202724] uppercase">
-          <Link href="/shop" className="hover:text-[#184E46] transition-colors py-2 border-b-2 border-transparent hover:border-[#184E46]">
-            // SEMUA GEAR
-          </Link>
-          <Link href="/shop?category=keyboard" className="hover:text-[#184E46] transition-colors py-2 border-b-2 border-transparent hover:border-[#184E46]">
-            KEYBOARDS
-          </Link>
-          <Link href="/shop?category=mouse" className="hover:text-[#184E46] transition-colors py-2 border-b-2 border-transparent hover:border-[#184E46]">
-            MICE
-          </Link>
-          <Link href="/shop?category=mousepad" className="hover:text-[#184E46] transition-colors py-2 border-b-2 border-transparent hover:border-[#184E46]">
-            MOUSEPADS
-          </Link>
-          <Link href="/shop?category=switches-parts" className="hover:text-[#184E46] transition-colors py-2 border-b-2 border-transparent hover:border-[#184E46]">
-            SWITCHES
+        {/* Streamlined Use-Case Navigation (Desktop) */}
+        <nav className="hidden lg:flex items-center space-x-6 text-xs font-mono font-bold tracking-wider text-slate-800 uppercase">
+          <Link
+            href="/shop"
+            className="hover:text-teal-600 transition-colors py-2 border-b-2 border-transparent hover:border-teal-600 flex items-center gap-1.5"
+          >
+            <span>Katalog Gear</span>
           </Link>
           <Link
             href="/shop?offer=PREORDER"
-            className="text-[#A84329] hover:text-[#88341f] py-2 border-b-2 border-transparent hover:border-[#A84329] flex items-center gap-1.5"
+            className="text-orange-600 hover:text-orange-700 py-2 border-b-2 border-transparent hover:border-orange-600 flex items-center gap-1.5"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#A84329] animate-ping"></span>
-            PRE-ORDER BATCH
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            <span>Pre-Order Drops</span>
+          </Link>
+          <Link
+            href="/track-order"
+            className="text-slate-600 hover:text-slate-900 transition-colors py-2 border-b-2 border-transparent hover:border-slate-800 flex items-center gap-1.5"
+          >
+            <Compass className="w-3.5 h-3.5 text-teal-600" />
+            <span>Lacak Order</span>
           </Link>
         </nav>
 
@@ -130,65 +128,39 @@ export function Header() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F4F1EA] border-b-2 border-[#202724] px-4 pt-4 pb-6 space-y-4">
-          <div className="text-[11px] font-mono text-[#59635E] uppercase border-b border-[#202724]/20 pb-2">
-            // INDEX KATEGORI PERIPHERAL
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-4 shadow-lg">
+          <div className="text-[11px] font-mono text-slate-500 uppercase border-b border-slate-100 pb-2">
+            // NAVIGASI CEPAT
           </div>
-          <nav className="grid grid-cols-2 gap-2 text-xs font-mono font-bold uppercase">
+          <nav className="grid grid-cols-1 gap-2 text-xs font-mono font-bold uppercase">
             <Link
               href="/shop"
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-white border border-[#202724] hover:bg-[#184E46] hover:text-white transition-colors"
+              className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-900 hover:text-white transition-colors"
             >
-              Semua Gear
-            </Link>
-            <Link
-              href="/shop?category=keyboard"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-white border border-[#202724] hover:bg-[#184E46] hover:text-white transition-colors"
-            >
-              Keyboards
-            </Link>
-            <Link
-              href="/shop?category=mouse"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-white border border-[#202724] hover:bg-[#184E46] hover:text-white transition-colors"
-            >
-              Mice
-            </Link>
-            <Link
-              href="/shop?category=mousepad"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-white border border-[#202724] hover:bg-[#184E46] hover:text-white transition-colors"
-            >
-              Mousepads
-            </Link>
-            <Link
-              href="/shop?category=switches-parts"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-white border border-[#202724] hover:bg-[#184E46] hover:text-white transition-colors"
-            >
-              Switches & Gear
+              Katalog Gear
             </Link>
             <Link
               href="/shop?offer=PREORDER"
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2.5 rounded bg-[#F4E5DC] text-[#A84329] border border-[#A84329] hover:bg-[#A84329] hover:text-white transition-colors"
+              className="p-3 rounded-xl bg-orange-50 text-orange-700 border border-orange-200 hover:bg-orange-600 hover:text-white transition-colors flex items-center gap-2"
             >
-              Pre-Order Drop
+              <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+              <span>Pre-Order Drops</span>
             </Link>
-          </nav>
-
-          <div className="pt-2 border-t border-[#202724]/20 flex items-center justify-between text-xs font-mono">
             <Link
               href="/track-order"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[#184E46] hover:underline flex items-center gap-1 font-semibold"
+              className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-teal-600 hover:text-white transition-colors flex items-center gap-2 text-slate-700"
             >
-              <Compass className="w-3.5 h-3.5" />
-              Lacak Status Pesanan
+              <Compass className="w-4 h-4 text-teal-600" />
+              <span>Lacak Status Pesanan</span>
             </Link>
-            <span className="text-[#59635E]">v2.6 // PROD</span>
+          </nav>
+
+          <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
+            <span className="text-slate-400">UltraStore Labs</span>
+            <span className="text-teal-600 font-semibold">Ready & Pre-Order</span>
           </div>
         </div>
       )}

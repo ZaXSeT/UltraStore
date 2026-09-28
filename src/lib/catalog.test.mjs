@@ -10,7 +10,7 @@ process.env.DATABASE_PATH = testDbPath;
 
 test("Catalog seeding and product retrieval", async () => {
   // Dynamic import ts/js
-  const { seedCatalogIfEmpty, getAllProducts, getProductBySlug } = await import("./catalog.ts");
+  const { seedCatalogIfEmpty, getAllProducts, getProductBySlug, getBrands } = await import("./catalog.ts");
 
   seedCatalogIfEmpty();
 
@@ -26,6 +26,12 @@ test("Catalog seeding and product retrieval", async () => {
   assert.ok(wooting, "Wooting product must exist");
   assert.equal(wooting.brand.name, "Wooting");
   assert.ok(wooting.offers.some(o => o.offerType === "PREORDER"), "Wooting must have PREORDER offer");
+
+  // Test brand filter & dropdown data
+  const brands = getBrands();
+  assert.ok(brands.length > 0, "Brands must be populated for dropdown selector");
+  const wootingFiltered = getAllProducts(undefined, undefined, "wooting");
+  assert.equal(wootingFiltered.length, 1, "Brand filter must return products matching brand slug");
 
   // Success verified
 });
