@@ -307,7 +307,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
               className={`w-full py-3.5 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors ${
                 selectedOfferType === "PREORDER"
                   ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-slate-900 hover:bg-slate-800"
+                  : "bg-[#090D16] hover:bg-[#2563EB]"
               }`}
             >
               {selectedOfferType === "PREORDER" ? "Pre-Order Sekarang" : "Beli Sekarang"}

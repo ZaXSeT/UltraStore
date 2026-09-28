@@ -48,7 +48,7 @@ function CheckoutContent() {
         </p>
         <Link
           href="/shop"
-          className="inline-block px-5 py-2.5 bg-slate-900 text-white text-xs font-semibold rounded-xl hover:bg-slate-800 transition-colors"
+          className="inline-block px-5 py-2.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors"
         >
           Kembali ke Belanja
         </Link>
@@ -346,7 +346,7 @@ function CheckoutContent() {
               className={`w-full py-3.5 text-white text-xs font-semibold rounded-xl shadow-sm transition-colors ${
                 currentGroup.offerType === "PREORDER"
                   ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-slate-900 hover:bg-slate-800"
+                  : "bg-[#090D16] hover:bg-[#2563EB]"
               }`}
             >
               {isSubmitting

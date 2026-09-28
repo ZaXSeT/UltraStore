@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --canvas: #FAFAFA;
+  --canvas: #F8FAFC;
   --surface: #FFFFFF;
-  --ink: #0F172A;
+  --ink: #090D16;
   --muted: #64748B;
+  --brand-cobalt: #2563EB;
+  --brand-slate: #090D16;
   --brand-blue: #2563EB;
   --brand-emerald: #059669;
   --line: #E2E8F0;

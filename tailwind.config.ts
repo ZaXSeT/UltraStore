@@ -9,21 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#F4F1EA",       // Warm Ivory
-        surface: "#FFFFFF",      // Chalk
-        ink: "#202724",          // Graphite
-        muted: "#59635E",        // Slate Olive
+        cobalt: {
+          DEFAULT: "#2563EB",
+          50: "#EFF6FF",
+          100: "#DBEAFE",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
+          800: "#1E40AF",
+          900: "#1E3A8A",
+        },
+        slate: {
+          950: "#090D16",
+          deep: "#090D16",
+        },
         brand: {
-          DEFAULT: "#184E46",    // Petrol Green
-          soft: "#E4ECE6",       // Mist
+          DEFAULT: "#2563EB",
+          cobalt: "#2563EB",
+          slate: "#090D16",
+          soft: "#EFF6FF",
         },
-        accent: {
-          DEFAULT: "#A84329",    // Burnt Orange
-          soft: "#F4E5DC",       // Clay Wash
-        },
-        line: "#D9DDD5",         // Warm Grey
-        control: "#78857C",      // Mid Slate
-        error: "#A12D2D",        // Brick
+        canvas: "#F8FAFC",
+        surface: "#FFFFFF",
+        ink: "#090D16",
+        line: "#E2E8F0",
+      },
+      screens: {
+        "3xl": "1920px",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
@@ -33,7 +48,7 @@ const config: Config = {
         DEFAULT: "4px",
         md: "6px",
         lg: "8px",
-      }
+      },
     },
   },
   plugins: [],

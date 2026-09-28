@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <div className="space-y-12 sm:space-y-16 pb-20 w-full">
       {/* 1. BRAND TICKER / MARQUEE */}
-      <section className="bg-slate-900 text-slate-200 py-3 border-b border-slate-800 overflow-hidden text-xs w-full">
+      <section className="bg-[#090D16] text-slate-200 py-3 border-b border-slate-800/80 overflow-hidden text-xs w-full">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar">
           <span className="bg-emerald-500 text-slate-950 px-2.5 py-0.5 rounded font-bold uppercase text-[10px] tracking-wider shrink-0">
             Distributor Resmi
@@ -58,7 +58,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/shop?offer=READY"
-                className="px-6 py-3.5 bg-slate-900 text-white text-sm font-semibold rounded-xl hover:bg-blue-600 transition-all flex items-center gap-2 shadow-sm"
+                className="px-6 py-3.5 bg-[#090D16] text-white text-sm font-semibold rounded-xl hover:bg-[#2563EB] transition-all flex items-center gap-2 shadow-sm"
               >
                 <span>Lihat Ready Stock</span>
                 <ArrowRight className="w-4 h-4 text-slate-300" />

@@ -113,7 +113,7 @@ export function CartDrawer() {
                   closeCart();
                   router.push("/shop");
                 }}
-                className="mt-5 px-5 py-2.5 bg-slate-900 text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors"
+                className="mt-5 px-5 py-2.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors"
               >
                 Jelajahi Katalog
               </button>
@@ -236,7 +236,7 @@ export function CartDrawer() {
                         onClick={() => handleCheckoutGroup(group.groupKey)}
                         className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white rounded-xl shadow-sm transition-colors ${
                           isReady
-                            ? "bg-slate-900 hover:bg-slate-800"
+                            ? "bg-[#090D16] hover:bg-[#2563EB]"
                             : "bg-blue-600 hover:bg-blue-700"
                         }`}
                       >
@@ -276,7 +276,7 @@ export function CartDrawer() {
                 closeCart();
                 router.push(`/checkout?group=${encodeURIComponent(groups[0]?.groupKey || "READY")}`);
               }}
-              className="w-full py-3.5 bg-slate-900 text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors shadow-sm flex items-center justify-center gap-2"
             >
               <span>Lanjut ke Pembayaran</span>
               <ArrowRight className="w-4 h-4" />

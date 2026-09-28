@@ -20,7 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group block bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:border-blue-500/50 hover:shadow-[0_8px_24px_rgba(37,99,235,0.08)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
+      className="group block bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:border-blue-500/70 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* 1:1 Product Image Studio Canvas */}
       <div className="relative aspect-square w-full bg-slate-50/60 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
@@ -48,7 +48,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product Details */}
-      <div className="p-5 flex flex-col justify-between flex-1 bg-white">
+      <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white">
         <div>
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <span className="text-xs font-semibold tracking-wide text-blue-600">
