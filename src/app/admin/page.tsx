@@ -436,8 +436,8 @@ export default function AdminPage() {
                       <input
                         type="text"
                         value={hero.badgeText || ""}
-                        onChange={(e) => setHero({ ...hero, badgeText: e.target.value })}
-                        className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        onChange={(e) => setHero({ ...hero, badgeText: e.target.value.replace(/—/g, "·") })}
+                        className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
                     <div className="space-y-1">

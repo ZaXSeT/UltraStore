@@ -4,7 +4,7 @@ import { CartProvider } from "../context/CartContext";
 import { StorefrontChrome } from "../components/StorefrontChrome";
 
 export const metadata: Metadata = {
-  title: "UltraStore — Toko Peripheral & Hardware Presisi",
+  title: "UltraStore | Toko Peripheral & Hardware Presisi",
   description: "Distributor resmi hardware enthusiast: mechanical keyboard, ultralight gaming mice, precision mousepad, dan switch pilihan dengan garansi resmi.",
   icons: {
     icon: "/favicon.ico",
