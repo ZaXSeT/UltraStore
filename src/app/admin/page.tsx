@@ -482,7 +482,7 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+              <div id="section-headings" className="bg-white border border-[#E2E5EB] p-6 space-y-4">
                 <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
                   <span className="font-mono text-xs font-black uppercase text-[#111215]">Homepage Headings · ID / EN</span>
                   <button type="button" onClick={handleSaveShowcase} disabled={saving} className="px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] text-white font-mono text-[10px] uppercase font-bold disabled:opacity-50">Save Headings</button>
@@ -510,7 +510,7 @@ export default function AdminPage() {
               </div>
 
               {/* Brand Logos Marquee Manager */}
-              <div className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-4">
+              <div id="section-brand-logos" className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-4">
                 <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
                   <span className="font-mono text-xs font-black uppercase text-[#111215]">Brand Partner Logos</span>
                   <div className="flex items-center gap-2">
@@ -593,7 +593,7 @@ export default function AdminPage() {
               </div>
 
               {/* Hero Matrix Section */}
-              <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+              <div id="section-hero-stage" className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
                 <div className="xl:col-span-7 space-y-6 bg-white border border-[#E2E5EB] p-6 sm:p-8">
                   <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
                     <span className="font-mono text-xs font-black uppercase text-[#111215]">Hero Focus Product</span>
@@ -773,7 +773,7 @@ export default function AdminPage() {
               </div>
 
                 {/* 5-Slot Category Configuration Block */}
-                <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+                <div id="section-categories" className="bg-white border border-[#E2E5EB] p-6 space-y-4">
                   <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs font-black uppercase text-[#111215]">
@@ -876,7 +876,7 @@ export default function AdminPage() {
                 </div>
 
                 {/* FOOTER & STORE BRANDING CONFIG */}
-                <div className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-6">
+                <div id="section-footer" className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-6">
                   <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
                     <div>
                       <span className="font-mono text-xs font-black uppercase text-[#111215]">Global Footer &amp; Branding</span>
