@@ -2,6 +2,7 @@ import { getDb, runInTransaction } from "./db.ts";
 import type { Product, ProductVariant, Offer, PreorderBatch, StockBalance } from "./types.ts";
 import catalogResearch from "../data/catalog-research.json" with { type: "json" };
 
+// ponytail: idempotent full catalog sync from catalog-research.json. Safe cascading reseed when no orders exist.
 export function seedCatalogIfEmpty() {
   const db = getDb();
   const countRow = db.prepare("SELECT count(*) as count FROM products").get() as { count: number };
@@ -16,7 +17,7 @@ export function seedCatalogIfEmpty() {
       { id: "cat_swp", name: "Switches & Parts", slug: "switches-parts", desc: "Enthusiast switches, keycaps, modding essentials" },
       { id: "cat_aud", name: "Audio", slug: "audio", desc: "Reference open-back, studio monitor, DAC/Amp" },
     ];
-    const catStmt = tx.prepare("INSERT OR REPLACE INTO categories (id, name, slug, description) VALUES (?, ?, ?, ?)");
+    const catStmt = tx.prepare("INSERT OR IGNORE INTO categories (id, name, slug, description) VALUES (?, ?, ?, ?)");
     for (const c of categories) {
       catStmt.run(c.id, c.name, c.slug, c.desc);
     }
@@ -30,44 +31,46 @@ export function seedCatalogIfEmpty() {
     brandMap.set("other", "brd_other");
 
     for (const bName of uniqueBrands) {
-      const bSlug = (bName || "Other").toLowerCase().replace(/[^a-z0-9]/g, "-");
+      const bSlug = (bName || "Other").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       const bId = `brd_${bSlug}`;
       brdStmt.run(bId, bName, bSlug, "Official Distributor", null);
       brandMap.set((bName || "").toLowerCase(), bId);
     }
 
+    // Clean dependent catalog records safely if no customer orders exist
+    const ordersCount = (tx.prepare("SELECT count(*) as count FROM orders").get() as { count: number }).count;
+    if (ordersCount === 0) {
+      tx.exec("DELETE FROM offers;");
+      tx.exec("DELETE FROM preorder_batches;");
+      tx.exec("DELETE FROM stock_balances;");
+      tx.exec("DELETE FROM variants;");
+      tx.exec("DELETE FROM products;");
+    }
+
     // 3. Seed Products, Variants, Stock, Offers, and Batches
     const prodStmt = tx.prepare(`
-      INSERT OR REPLACE INTO products (id, slug, name, brand_id, category_id, description, specs_json, box_contents_json, warranty_info, published, primary_image)
+      INSERT INTO products (id, slug, name, brand_id, category_id, description, specs_json, box_contents_json, warranty_info, published, primary_image)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const varStmt = tx.prepare(`
-      INSERT OR REPLACE INTO variants (id, product_id, sku, name, part_number, attributes_json, price, weight_grams, media_json)
+      INSERT INTO variants (id, product_id, sku, name, part_number, attributes_json, price, weight_grams, media_json)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const stockStmt = tx.prepare(`
-      INSERT OR REPLACE INTO stock_balances (variant_id, on_hand, reserved, allocated)
+      INSERT INTO stock_balances (variant_id, on_hand, reserved, allocated)
       VALUES (?, ?, ?, ?)
     `);
     const offerStmt = tx.prepare(`
-      INSERT OR REPLACE INTO offers (id, variant_id, offer_type, price, status, batch_id, estimated_shipping)
+      INSERT INTO offers (id, variant_id, offer_type, price, status, batch_id, estimated_shipping)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
     const batchStmt = tx.prepare(`
-      INSERT OR REPLACE INTO preorder_batches (id, slug, name, variant_id, status, quota_total, quota_reserved, quota_committed, eta_range, current_stage, delayed, timeline_notes_json)
+      INSERT INTO preorder_batches (id, slug, name, variant_id, status, quota_total, quota_reserved, quota_committed, eta_range, current_stage, delayed, timeline_notes_json)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
-    const seenProdIds = new Set<string>();
-    const seenSkus = new Set<string>();
-
     for (const item of catalogResearch.items as any[]) {
-      let prodId = item.id;
-      if (seenProdIds.has(prodId)) {
-        prodId = `${item.id}_${item.slug.slice(0, 15)}`;
-      }
-      seenProdIds.add(prodId);
-
+      const prodId = item.id;
       const brandId = brandMap.get((item.brandCanonical || "").toLowerCase()) || "brd_other";
       const catSlug = item.category.toLowerCase().replace(/[^a-z0-9]/g, "-");
       const matchedCat = categories.find((c) => c.name.toLowerCase() === item.category.toLowerCase() || c.slug === catSlug);
@@ -88,17 +91,11 @@ export function seedCatalogIfEmpty() {
       );
 
       for (const v of item.variants as any[]) {
-        let vSku = v.sku;
-        if (seenSkus.has(vSku)) {
-          vSku = `${v.sku}-${prodId.replace("prod_", "").slice(0, 12)}`;
-        }
-        seenSkus.add(vSku);
-
-        const variantId = `var_${prodId.replace("prod_", "")}_${vSku.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
+        const variantId = `var_${v.sku.toLowerCase().replace(/[^a-z0-9]/g, "_")}`;
         varStmt.run(
           variantId,
           prodId,
-          vSku,
+          v.sku,
           v.name,
           item.manufacturerPartNumber || null,
           JSON.stringify({ color: v.color, layout: v.layout, switch: v.switchType }),

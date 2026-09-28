@@ -267,7 +267,7 @@ export function ShopSidebar({
                 type="text"
                 value={brandSearch}
                 onChange={(e) => setBrandSearch(e.target.value)}
-                placeholder="Cari dari 60+ brand..."
+                placeholder={`Cari dari ${allBrands.length} brand...`}
                 className="w-full pl-8 pr-7 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all"
               />
               {brandSearch && (

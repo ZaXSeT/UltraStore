@@ -24,7 +24,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Material": "CNC Magnesium Alloy Skeleton",
-        "Weight": "39 ± 1 g",
+        "Weight": "39 \u00b1 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Omron Optical Switches",
@@ -116,7 +116,7 @@
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
-        "Weight": "45 ± 1 g Solid Shell",
+        "Weight": "45 \u00b1 1 g Solid Shell",
         "Sensor": "PixArt PAW3395",
         "MCU": "Nordic 52840 (4000Hz Compatible)",
         "Shape": "Universal Claw / Fingertip Symmetrical",
@@ -174,7 +174,7 @@
           "priceIdr": 1850000,
           "offerType": "PREORDER",
           "batchId": "batch_glsswrks_akari_nov2026",
-          "estimatedShipping": "20–30 November 2026",
+          "estimatedShipping": "20\u201330 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
           "imageVariantMatch": true
@@ -239,7 +239,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Rear Aggressive High Hump for Strict Claw Grip",
-        "Weight": "51 ± 1 g",
+        "Weight": "51 \u00b1 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI / 650 IPS)",
         "Switches": "Pulsar Optical Light Switch (Zero Debounce Delay)",
         "Polling Rate": "Up to 4000Hz (Requires 4K Dongle)"
@@ -286,7 +286,7 @@
           "priceIdr": 3290000,
           "offerType": "PREORDER",
           "batchId": "batch_ws_zoom75_dec2026",
-          "estimatedShipping": "05–15 Desember 2026",
+          "estimatedShipping": "05\u201315 Desember 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
           "imageVariantMatch": true
@@ -410,7 +410,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Full Size Ergonomic Claw/Palm Shape",
-        "Weight": "65 ± 2 g",
+        "Weight": "65 \u00b1 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "4000Hz Wireless Compatible",
         "Battery": "500mAh (Up to 140 Hours Runtime at 1000Hz)"
@@ -493,7 +493,7 @@
           "priceIdr": 3499000,
           "offerType": "PREORDER",
           "batchId": "batch_wooting_60he_nov2026",
-          "estimatedShipping": "18–28 November 2026",
+          "estimatedShipping": "18\u201328 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wooting-60he-plus.png",
           "imageVariantMatch": true
@@ -586,7 +586,7 @@
       "specs": {
         "Transducer Principle": "Dynamic, Open-back",
         "Frequency Response": "6 Hz - 38,000 Hz",
-        "Impedance": "120 Ω",
+        "Impedance": "120 \u03a9",
         "Connector": "6.3 mm with 3.5 mm adapter",
         "Weight": "240 g"
       },
@@ -956,7 +956,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "ZA13 Symmetrical High Hump Ambi",
-        "Weight": "45 ± 1 g",
+        "Weight": "45 \u00b1 1 g",
         "Sensor": "PixArt PAW3950 (30,000 DPI / 750 IPS)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Optical Micro Switches (Zero Debounce)",
@@ -990,7 +990,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Zowie U2 Inspired Ergonomic Incurved Sides",
-        "Weight": "42 ± 1 g",
+        "Weight": "42 \u00b1 1 g",
         "Sensor": "PixArt PAW3950 Ultra",
         "Polling Rate": "8000 Hz Wireless Blazing Sky",
         "MCU": "Nordic 52840 High Performance",
@@ -1024,7 +1024,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Symmetrical Medium-Large Ambi",
-        "Weight": "54 ± 2 g",
+        "Weight": "54 \u00b1 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz High Speed",
         "Switches": "TTC Dustproof Gold Micro Switches"
@@ -1103,7 +1103,7 @@
           "priceIdr": 1995000,
           "offerType": "PREORDER",
           "batchId": "batch_yuki_superglide3_dec2026",
-          "estimatedShipping": "10–20 Desember 2026",
+          "estimatedShipping": "10\u201320 Desember 2026",
           "stockOnHand": 0,
           "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415&width=3840",
           "imageVariantMatch": true
@@ -2767,7 +2767,7 @@
     {
       "id": "prod_inf_8864216613001",
       "slug": "keygeek-hachiware-r2-chiikawa-theme-pcb-mount",
-      "brandCanonical": "KeyGeek",
+      "brandCanonical": "Keygeek",
       "officialProductName": "Keygeek Hachiware R2 Chiikawa Theme PCB Mount Mechanical Keyboard Switch (Linear) By Hida Studio",
       "manufacturerModel": "Keygeek Hachiware R2 Chiikawa Theme PCB ",
       "category": "Switches & Parts",
