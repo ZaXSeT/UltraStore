@@ -1,9 +1,8 @@
 import {
-  AnnouncementConfig, DEFAULT_ANNOUNCEMENT_CONFIG,
-  DEFAULT_FOOTER_CONFIG, DEFAULT_HERO_CONFIG, DEFAULT_SECTION_HEADERS_CONFIG,
-  FooterConfig, HeroConfig, SectionHeadersConfig,
-} from "./cms-types";
-import { StoreLocale } from "./locale";
+  DEFAULT_ANNOUNCEMENT_CONFIG, DEFAULT_FOOTER_CONFIG, DEFAULT_HERO_CONFIG, DEFAULT_SECTION_HEADERS_CONFIG,
+} from "./cms-types.ts";
+import type { AnnouncementConfig, FooterConfig, HeroConfig, SectionHeadersConfig } from "./cms-types.ts";
+import type { StoreLocale } from "./locale.ts";
 
 // Merchant-supplied copy stays untouched. The default editorial copy has a
 // separately written English version, so the storefront is complete in both languages.
@@ -53,7 +52,19 @@ export function localizeHero(value: HeroConfig, locale: StoreLocale) {
 }
 
 export function localizeSections(value: SectionHeadersConfig, locale: StoreLocale) {
-  return defaultsInEnglish(value, DEFAULT_SECTION_HEADERS_CONFIG, {
+  const editorial: Record<string, [string, string]> = {
+    "Direct Atelier Pre-Orders": ["Pre-Order Pilihan", "Upcoming Pre-Orders"],
+    "SCHEDULED PRODUCTION BATCHES": ["BATCH PRODUKSI TERJADWAL", "UPCOMING BATCHES"],
+    "Explore All In-Stock": ["Lihat Produk Tersedia", "Shop In-Stock Gear"],
+    "View Active Batches": ["Lihat Batch Aktif", "Explore Active Batches"],
+    "SPEC MASTER DIRECTORY": ["JELAJAHI KATEGORI", "EXPLORE CATEGORIES"],
+    "Certified Physical Inventory": ["Stok Siap Kirim", "Ready to Ship"],
+    "JAKARTA CENTRAL ATELIER � 2026": ["PILIHAN ULTRASTORE · JAKARTA", "CURATED IN JAKARTA · 2026"],
+    "READY SHIPMENT � 24H DISPATCH": ["STOK TERSEDIA · DIKIRIM DARI JAKARTA", "IN STOCK · SHIPPING FROM JAKARTA"],
+    "High-Precision Armament": ["Periferal untuk Setup Anda", "Gear for Your Setup"],
+    "EXCLUSIVE PERIPHERAL ATELIER": ["PILIHAN PERIFERAL ULTRASTORE", "CURATED GAMING GEAR"],
+  };
+  const localized = defaultsInEnglish(value, DEFAULT_SECTION_HEADERS_CONFIG, {
     tickerLabel: "AUTHORISED DISTRIBUTOR",
     categoryEyebrow: "FIND YOUR SETUP",
     categoryTitle: "Gear for Every Detail",
@@ -65,4 +76,14 @@ export function localizeSections(value: SectionHeadersConfig, locale: StoreLocal
     preorderTitle: "Pre-Order Drops",
     preorderCtaText: "Explore Pre-Orders",
   }, locale);
+  const next = { ...localized };
+  for (const key of Object.keys(DEFAULT_SECTION_HEADERS_CONFIG) as Array<keyof Omit<SectionHeadersConfig, "translations">>) {
+    const original = value[key];
+    const pair = editorial[original];
+    if (pair) next[key] = pair[locale === "en" ? 1 : 0];
+  }
+  return {
+    ...next,
+    ...Object.fromEntries(Object.entries(value.translations?.[locale] || {}).filter(([, text]) => typeof text === "string" && text.trim().length > 0)),
+  };
 }

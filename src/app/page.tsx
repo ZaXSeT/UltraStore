@@ -46,9 +46,9 @@ export default async function HomePage() {
   }));
 
   return (
-    <div className="w-full space-y-12 sm:space-y-14">
+    <div className="w-full">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
-      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight">
+      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight m-0">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -169,7 +169,7 @@ export default async function HomePage() {
     </section>
 
       {/* 3. EDITORIAL CATEGORY DIRECTORY */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-10 sm:pt-14 space-y-6">
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
           <div>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-1">

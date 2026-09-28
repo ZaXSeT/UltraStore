@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { localizeSections } from "../../lib/localized-cms";
+import { DEFAULT_SECTION_HEADERS_CONFIG } from "../../lib/cms-types";
 import {
   Save,
   CheckCircle2,
@@ -37,6 +39,7 @@ export default function AdminPage() {
   });
 
   const [categories, setCategories] = useState<any[]>([]);
+  const [sectionHeaders, setSectionHeaders] = useState<any>(DEFAULT_SECTION_HEADERS_CONFIG);
   const [announcement, setAnnouncement] = useState<any>({
     primaryText: "",
     secondaryText: "",
@@ -71,6 +74,7 @@ export default function AdminPage() {
           if (data.data.hero) setHero(data.data.hero);
           if (data.data.categories) setCategories(data.data.categories);
           if (data.data.announcement) setAnnouncement(data.data.announcement);
+          if (data.data.sectionHeaders) setSectionHeaders(data.data.sectionHeaders);
         }
       })
       .catch(console.error);
@@ -109,6 +113,11 @@ export default function AdminPage() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: "announcement_config", value: announcement }),
+        }),
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "section_headers_config", value: sectionHeaders }),
         }),
       ]);
       setSaveMessage("Storefront parameters updated live.");

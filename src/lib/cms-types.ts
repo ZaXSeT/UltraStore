@@ -41,6 +41,10 @@ export interface AnnouncementConfig {
 }
 
 export interface SectionHeadersConfig {
+  translations?: {
+    id?: Partial<Omit<SectionHeadersConfig, "translations">>;
+    en?: Partial<Omit<SectionHeadersConfig, "translations">>;
+  };
   tickerLabel: string;
   categoryEyebrow: string;
   categoryTitle: string;
