@@ -31,19 +31,18 @@ export function ProductCard({ product }: { product: Product }) {
           className="transition-transform duration-500 ease-out group-hover:scale-105"
         />
 
-        {/* Status Badge */}
-        <div className="absolute top-3.5 left-3.5">
-          {isPreorder ? (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-bold tracking-tight rounded-md bg-neutral-900 text-white shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-              PRE-ORDER
+        {/* Architectural Editorial Status Tag (Non-AI Slop, Swiss Precision Grid) */}
+        <div className="absolute top-0 left-0 z-10">
+          <div className="flex items-center font-mono text-[9px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[#111215]/20 bg-white/95 backdrop-blur-xs text-[#111215]">
+            <span
+              className={`w-1.5 h-1.5 self-stretch ${
+                isPreorder ? "bg-[#0E52FF]" : "bg-[#111215]"
+              }`}
+            />
+            <span className="px-2 py-0.5">
+              {isPreorder ? "BATCH PO" : "IN STOCK"}
             </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-bold tracking-tight rounded-md bg-white text-emerald-800 border border-emerald-300 shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              READY STOCK
-            </span>
-          )}
+          </div>
         </div>
       </div>
 

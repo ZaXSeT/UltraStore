@@ -81,19 +81,18 @@ export function ProductDetailClient({ product }: { product: Product }) {
             className="w-full h-full object-contain"
           />
 
-          {/* Offer Badge Overlay */}
-          <div className="absolute top-4 left-4">
-            {selectedOfferType === "PREORDER" ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700 border border-blue-200/80 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                Pre-Order Batch
+          {/* Offer Badge Overlay (Editorial Hairline Flush) */}
+          <div className="absolute top-0 left-0 z-10">
+            <div className="flex items-center font-mono text-[10px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[#111215]/20 bg-white/95 backdrop-blur-xs text-[#111215]">
+              <span
+                className={`w-2 h-2 self-stretch ${
+                  selectedOfferType === "PREORDER" ? "bg-[#0E52FF]" : "bg-[#111215]"
+                }`}
+              />
+              <span className="px-3 py-1">
+                {selectedOfferType === "PREORDER" ? "DISPATCH: BATCH PO" : "DISPATCH: CENTRAL HUB (READY)"}
               </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                Ready Stock
-              </span>
-            )}
+            </div>
           </div>
         </div>
 
