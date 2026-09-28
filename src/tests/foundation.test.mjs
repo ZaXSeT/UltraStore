@@ -7,7 +7,7 @@ import { DatabaseSync } from "node:sqlite";
 const schemaSqlPath = path.resolve("./src/db/schema.sql");
 const schemaSql = fs.readFileSync(schemaSqlPath, "utf-8");
 
-test("F01: Schema migration creates all 13 core tables", () => {
+test("F01: Schema migration creates all 14 core tables", () => {
   const db = new DatabaseSync(":memory:");
   db.exec("PRAGMA foreign_keys = ON;");
   db.exec(schemaSql);
@@ -31,12 +31,13 @@ test("F01: Schema migration creates all 13 core tables", () => {
     "idempotency_keys",
     "outbox_events",
     "audit_logs",
+    "site_settings",
   ];
 
   for (const expected of expectedTables) {
     assert.ok(tables.includes(expected), `Table ${expected} must exist after migration`);
   }
-  assert.equal(tables.length, 13);
+  assert.equal(tables.length, 14);
 });
 
 test("F02: Schema enforces foreign key constraint integrity", () => {

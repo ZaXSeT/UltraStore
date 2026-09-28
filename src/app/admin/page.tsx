@@ -451,6 +451,33 @@ export default function AdminPage() {
                 </div>
               </div>
 
+              <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+                <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                  <span className="font-mono text-xs font-black uppercase text-[#111215]">Homepage Headings · ID / EN</span>
+                  <button type="button" onClick={handleSaveShowcase} disabled={saving} className="px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] text-white font-mono text-[10px] uppercase font-bold disabled:opacity-50">Save Headings</button>
+                </div>
+                <p className="text-xs text-[#6E7382]">Write each heading naturally for its audience. Empty fields use the storefront defaults.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {(["id", "en"] as const).map((language) => (
+                    <div key={language} className="space-y-3">
+                      <h3 className="font-mono text-xs font-black text-[#111215]">{language === "id" ? "Bahasa Indonesia" : "English"}</h3>
+                      {(Object.keys(DEFAULT_SECTION_HEADERS_CONFIG) as Array<keyof typeof DEFAULT_SECTION_HEADERS_CONFIG>).filter((key) => key !== "translations").map((key) => (
+                        <label key={key} className="block space-y-1">
+                          <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">{key.replace(/([A-Z])/g, " $1")}</span>
+                          <input
+                            type="text"
+                            value={sectionHeaders.translations?.[language]?.[key] || ""}
+                            placeholder={String(localizeSections(sectionHeaders, language)[key] || "")}
+                            onChange={(e) => setSectionHeaders({ ...sectionHeaders, translations: { ...sectionHeaders.translations, [language]: { ...sectionHeaders.translations?.[language], [key]: e.target.value } } })}
+                            className="w-full px-3 py-1.5 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                          />
+                        </label>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Hero Matrix Section */}
               <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
                 <div className="xl:col-span-7 space-y-6 bg-white border border-[#E2E5EB] p-6 sm:p-8">

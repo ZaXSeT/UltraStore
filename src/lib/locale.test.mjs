@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { parseLocale, copy, categoryLabel, deliveryEstimate, orderStatus } from "./locale.ts";
-import { localizeAnnouncement, localizeHero } from "./localized-cms.ts";
+import { localizeAnnouncement, localizeHero, localizeSections } from "./localized-cms.ts";
 import { DEFAULT_ANNOUNCEMENT_CONFIG, DEFAULT_HERO_CONFIG } from "./cms-types.ts";
 
 test("language preference accepts only supported locales", () => {
@@ -30,5 +30,12 @@ test("merchant English copy overrides defaults while blank fields keep the autho
   const hero = localizeHero({ ...DEFAULT_HERO_CONFIG, english: { description: "Custom product story" } }, "en");
   assert.equal(hero.description, "Custom product story");
   assert.equal(hero.titleLine1, DEFAULT_HERO_CONFIG.titleLine1);
-  assert.equal(localizeHero(DEFAULT_HERO_CONFIG, "id").description, DEFAULT_HERO_CONFIG.description);
+  assert.match(localizeHero(DEFAULT_HERO_CONFIG, "id").description, /Gesekan yang konsisten/);
+});
+
+test("custom homepage headings stay natural in both languages", () => {
+  const source = { tickerLabel: "EXCLUSIVE PERIPHERAL ATELIER", categoryTitle: "High-Precision Armament" };
+  assert.equal(localizeSections(source, "id").categoryTitle, "Periferal untuk Setup Anda");
+  assert.equal(localizeSections(source, "en").categoryTitle, "Gear for Your Setup");
+  assert.equal(localizeSections({ ...source, translations: { en: { categoryTitle: "Chosen by the editors" } } }, "en").categoryTitle, "Chosen by the editors");
 });

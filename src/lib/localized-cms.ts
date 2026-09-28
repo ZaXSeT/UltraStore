@@ -24,6 +24,13 @@ function withMerchantEnglish<T extends object>(value: T, english: Partial<T> | u
 }
 
 export function localizeAnnouncement(value: AnnouncementConfig, locale: StoreLocale) {
+  if (locale === "id") {
+    return {
+      ...value,
+      primaryText: value.primaryText === DEFAULT_ANNOUNCEMENT_CONFIG.primaryText ? "Distributor resmi keyboard mekanis dan mouse gaming ringan" : value.primaryText,
+      secondaryText: value.secondaryText === DEFAULT_ANNOUNCEMENT_CONFIG.secondaryText ? "Dikirim dari Jakarta" : value.secondaryText,
+    };
+  }
   const localized = defaultsInEnglish(value, DEFAULT_ANNOUNCEMENT_CONFIG, {
     badge: "OFFICIAL DISTRIBUTOR",
     primaryText: "Mechanical keyboards and lightweight gaming mice, selected with care",
@@ -34,6 +41,10 @@ export function localizeAnnouncement(value: AnnouncementConfig, locale: StoreLoc
 }
 
 export function localizeFooter(value: FooterConfig, locale: StoreLocale) {
+  if (locale === "id") return {
+    ...value,
+    brandTagline: value.brandTagline === DEFAULT_FOOTER_CONFIG.brandTagline ? "Periferal dan Hardware Presisi" : value.brandTagline,
+  };
   return defaultsInEnglish(value, DEFAULT_FOOTER_CONFIG, {
     brandTagline: "Precision Gaming Gear",
     copyrightText: "© 2026 UltraStore. All rights reserved.",
@@ -41,6 +52,12 @@ export function localizeFooter(value: FooterConfig, locale: StoreLocale) {
 }
 
 export function localizeHero(value: HeroConfig, locale: StoreLocale) {
+  if (locale === "id") return {
+    ...value,
+    description: value.description === DEFAULT_HERO_CONFIG.description
+      ? "Glasspad aluminosilikat bertekstur mikro dengan alas silikon cetak. Gesekan yang konsisten ke segala arah memberi kontrol bidikan yang presisi."
+      : value.description,
+  };
   const localized = defaultsInEnglish(value, DEFAULT_HERO_CONFIG, {
     badgeText: "SPECIAL EDITION · 2026",
     description: "A micro-etched aluminosilicate glass surface with a molded silicone base. Consistent glide in every direction for precise, competitive aim.",
@@ -52,6 +69,18 @@ export function localizeHero(value: HeroConfig, locale: StoreLocale) {
 }
 
 export function localizeSections(value: SectionHeadersConfig, locale: StoreLocale) {
+  const indonesianDefaults: Partial<SectionHeadersConfig> = {
+    tickerLabel: "DISTRIBUTOR RESMI",
+    categoryEyebrow: "JELAJAHI KATEGORI",
+    categoryTitle: "Periferal untuk Setiap Setup",
+    categoryTagline: "PILIHAN ULTRASTORE · JAKARTA",
+    readyEyebrow: "STOK TERSEDIA · JAKARTA",
+    readyTitle: "Siap Dikirim",
+    readyCtaText: "Lihat Produk Tersedia",
+    preorderEyebrow: "BATCH MENDATANG",
+    preorderTitle: "Rilis Pre-Order",
+    preorderCtaText: "Jelajahi Pre-Order",
+  };
   const editorial: Record<string, [string, string]> = {
     "Direct Atelier Pre-Orders": ["Pre-Order Pilihan", "Upcoming Pre-Orders"],
     "SCHEDULED PRODUCTION BATCHES": ["BATCH PRODUKSI TERJADWAL", "UPCOMING BATCHES"],
@@ -81,6 +110,7 @@ export function localizeSections(value: SectionHeadersConfig, locale: StoreLocal
     const original = value[key];
     const pair = editorial[original];
     if (pair) next[key] = pair[locale === "en" ? 1 : 0];
+    else if (locale === "id" && original === DEFAULT_SECTION_HEADERS_CONFIG[key]) next[key] = indonesianDefaults[key] || original;
   }
   return {
     ...next,

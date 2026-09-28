@@ -191,12 +191,12 @@ export function ShopSidebar({
             onClick={() => updateFilters({ category: "", surface: "" })}
             className={`w-full flex items-center justify-between px-3.5 py-2 text-xs font-mono transition-colors text-left ${
               !currentCategory
-                ? "bg-[#111215] text-white font-bold"
+                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <span className="uppercase tracking-wider">{t("Semua Kategori", "All Categories")}</span>
-            <span className="text-[10px] opacity-60 font-tabular">{totalProducts}</span>
+            <span className="text-[10px] opacity-75 font-tabular">{totalProducts}</span>
           </button>
 
           {/* Individual Categories from DB */}
@@ -209,12 +209,12 @@ export function ShopSidebar({
                   onClick={() => updateFilters({ category: c.slug, surface: "" })}
                   className={`w-full flex items-center justify-between px-3.5 py-2 text-xs font-mono transition-colors text-left ${
                     isActive
-                      ? "bg-[#111215] text-white font-bold"
+                      ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                       : "text-neutral-700 hover:bg-neutral-50"
                   }`}
                 >
                   <span className="uppercase tracking-wider truncate">{categoryLabel(c.slug, c.name, locale)}</span>
-                  <span className="text-[10px] opacity-60 font-tabular">{c.count}</span>
+                  <span className="text-[10px] opacity-75 font-tabular">{c.count}</span>
                 </button>
 
                 {/* Sub-Filter Khusus Mousepad: Glass vs Non-Glass (Cloth/Poron) */}
@@ -306,21 +306,21 @@ export function ShopSidebar({
 
             {/* Scrollable Brand List with visible custom scrollbar */}
             <div className="max-h-56 overflow-y-auto border border-neutral-200 divide-y divide-neutral-200 bg-white scrollbar-thin scrollbar-thumb-neutral-300 scrollbar-track-neutral-100">
-              {/* All Brands button */}
+              {/* All Brands Item */}
               <button
                 type="button"
                 onClick={() => updateFilters({ brand: "" })}
                 className={`w-full flex items-center justify-between px-3 py-2 text-xs font-mono transition-colors text-left ${
                   !currentBrand
-                    ? "bg-[#111215] text-white font-bold"
+                    ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                     : "text-neutral-700 hover:bg-neutral-50"
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  {!currentBrand && <span className="w-1.5 h-1.5 bg-[#0E52FF]" />}
+                  {!currentBrand && <span className="w-1.5 h-1.5 bg-white" />}
                   <span className="uppercase tracking-wider">{t("Semua Merek", "All Brands")}</span>
                 </div>
-                <span className="text-[10px] opacity-60 font-tabular font-mono">
+                <span className="text-[10px] opacity-75 font-tabular font-mono">
                   {allBrands.length}
                 </span>
               </button>
@@ -340,12 +340,12 @@ export function ShopSidebar({
                       onClick={() => updateFilters({ brand: b.slug })}
                       className={`w-full flex items-center justify-between px-3 py-2 text-xs font-mono transition-colors text-left ${
                         isActive
-                          ? "bg-[#111215] text-white font-bold"
+                          ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                           : "text-neutral-700 hover:bg-neutral-50"
                       }`}
                     >
                       <div className="flex items-center gap-2 truncate">
-                        {isActive && <span className="w-1.5 h-1.5 bg-[#0E52FF]" />}
+                        {isActive && <span className="w-1.5 h-1.5 bg-white" />}
                         <span className="truncate uppercase tracking-wider">{b.name}</span>
                       </div>
                       <span className={`text-[10px] font-mono font-tabular shrink-0 ml-1 ${isActive ? "opacity-75" : "text-neutral-400"}`}>
@@ -383,12 +383,12 @@ export function ShopSidebar({
             onClick={() => updateFilters({ offer: "" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               !currentOffer
-                ? "bg-[#111215] text-white font-bold"
+                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <span className="uppercase tracking-wider">{t("Semua Status", "All Availability")}</span>
-            <span className="text-[10px] opacity-60">READY + PO</span>
+            <span className="text-[10px] opacity-75">READY + PO</span>
           </button>
 
           <button
@@ -396,15 +396,15 @@ export function ShopSidebar({
             onClick={() => updateFilters({ offer: "READY" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               currentOffer === "READY"
-                ? "bg-[#111215] text-white font-bold"
+                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-emerald-500" />
+              <span className={`w-1.5 h-1.5 ${currentOffer === "READY" ? "bg-white" : "bg-emerald-500"}`} />
               <span className="uppercase tracking-wider">{t("Stok Tersedia", "In Stock")}</span>
             </div>
-            <span className="text-[10px] opacity-60">{t("SIAP KIRIM", "READY TO SHIP")}</span>
+            <span className="text-[10px] opacity-75">{t("SIAP KIRIM", "READY TO SHIP")}</span>
           </button>
 
           <button
@@ -412,15 +412,15 @@ export function ShopSidebar({
             onClick={() => updateFilters({ offer: "PREORDER" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               currentOffer === "PREORDER"
-                ? "bg-[#111215] text-white font-bold"
+                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-[#0E52FF]" />
+              <span className={`w-1.5 h-1.5 ${currentOffer === "PREORDER" ? "bg-white" : "bg-[#0E52FF]"}`} />
               <span className="uppercase tracking-wider">{t("Pre-Order", "Pre-Order")}</span>
             </div>
-            <span className="text-[10px] opacity-60">{t("PER BATCH", "BY BATCH")}</span>
+            <span className="text-[10px] opacity-75">{t("PER BATCH", "BY BATCH")}</span>
           </button>
         </div>
       </div>
