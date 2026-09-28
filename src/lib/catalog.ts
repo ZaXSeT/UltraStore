@@ -202,6 +202,7 @@ export function getAllProducts(
       brand: { id: r.brand_id, name: r.brand_name, slug: r.brand_slug, country: r.brand_country, officialUrl: r.brand_url },
       category: { id: r.category_id, name: r.cat_name, slug: r.cat_slug, description: r.cat_desc },
       description: r.description,
+      descriptionEn: r.description_en || "",
       specs: JSON.parse(r.specs_json),
       boxContents: JSON.parse(r.box_contents_json),
       warrantyInfo: r.warranty_info,
@@ -273,6 +274,7 @@ export function getProductBySlug(slug: string): Product | null {
     brand: { id: r.brand_id, name: r.brand_name, slug: r.brand_slug, country: r.brand_country, officialUrl: r.brand_url },
     category: { id: r.category_id, name: r.cat_name, slug: r.cat_slug, description: r.cat_desc },
     description: r.description,
+    descriptionEn: r.description_en || "",
     specs: JSON.parse(r.specs_json),
     boxContents: JSON.parse(r.box_contents_json),
     warrantyInfo: r.warranty_info,
@@ -340,4 +342,3 @@ export function getCategories(): { id: string; name: string; slug: string; descr
     count: Number(r.count),
   }));
 }
-

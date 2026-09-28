@@ -72,19 +72,19 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Price & Action Button */}
-        <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-center justify-between gap-2">
-          <div>
-            <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 block leading-none mb-1">
+        <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-end justify-between gap-1.5">
+          <div className="min-w-0 pr-1">
+            <span className="font-mono text-[9px] uppercase tracking-wider text-neutral-400 block leading-none mb-1">
               {isPreorder ? t("Mulai dari", "From") : t("Harga", "Price")}
             </span>
-            <div className="text-sm sm:text-base font-extrabold text-neutral-950 font-tabular tracking-tight">
+            <div className="text-xs sm:text-sm font-extrabold text-neutral-950 font-tabular tracking-tight truncate">
               {formatIdr(minPrice)}
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-1 px-3 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 shadow-sm shadow-blue-500/20">
-            <span>{t("Lihat Detail", "View Details")}</span>
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <div className="inline-flex items-center gap-1 px-2.5 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm shadow-blue-500/20">
+            <span>{t("Detail", "Detail")}</span>
+            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>
       </div>

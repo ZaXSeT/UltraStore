@@ -26,6 +26,10 @@ db.exec(`
 `);
 
 db.exec(schemaSql);
+const productColumns = db.prepare("PRAGMA table_info(products)").all();
+if (!productColumns.some((column) => column.name === "description_en")) {
+  db.exec("ALTER TABLE products ADD COLUMN description_en TEXT NOT NULL DEFAULT ''");
+}
 
 // Verify tables created
 const tables = db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name").all();

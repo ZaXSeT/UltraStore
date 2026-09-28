@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS products (
   brand_id TEXT NOT NULL REFERENCES brands(id) ON DELETE RESTRICT,
   category_id TEXT NOT NULL REFERENCES categories(id) ON DELETE RESTRICT,
   description TEXT NOT NULL,
+  description_en TEXT NOT NULL DEFAULT '',
   specs_json TEXT NOT NULL DEFAULT '{}',
   box_contents_json TEXT NOT NULL DEFAULT '[]',
   warranty_info TEXT NOT NULL,

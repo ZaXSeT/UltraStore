@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, ShieldCheck, Box, CheckCircle2, Circle } from "lucide-react";
 import { getServerLocale } from "../../../lib/server-locale";
-import { copy } from "../../../lib/locale";
+import { copy, deliveryEstimate } from "../../../lib/locale";
 
 export default async function DropLedgerPage({
   params,
@@ -54,13 +54,13 @@ export default async function DropLedgerPage({
               {t("Jadwal Pre-Order", "Pre-Order Timeline")}
             </span>
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
-              {batch.name}
+              {locale === "en" ? batch.name.replace("Batch Rilisan", "Release Batch") : batch.name}
             </h1>
           </div>
 
           <div className="text-left sm:text-right">
             <div className="text-xs text-slate-500 font-medium">{t("Perkiraan Tiba di Gudang", "Estimated Warehouse Arrival")}:</div>
-            <div className="text-lg font-bold text-slate-900">{batch.etaRange}</div>
+            <div className="text-lg font-bold text-slate-900">{deliveryEstimate(batch.etaRange, locale)}</div>
           </div>
         </div>
 
@@ -182,7 +182,10 @@ export default async function DropLedgerPage({
           {batch.timelineNotes.map((note, i) => (
             <div key={i} className="py-3.5 flex flex-col sm:flex-row justify-between gap-2">
               <div className="space-y-0.5">
-                <span className="font-semibold text-slate-900">{note.note}</span>
+                <span className="font-semibold text-slate-900">{locale === "en" ? ({
+                  "Batch dibuka untuk 50 slot produksi.": "This batch opened with 50 production spots.",
+                  "Konfirmasi slot awal masuk pabrik perakitan.": "The first production spots have been confirmed with the factory.",
+                } as Record<string, string>)[note.note] || note.note : note.note}</span>
                 <div className="text-slate-500">{t("Dicatat oleh", "Recorded by")}: {note.actor}</div>
               </div>
               <div className="text-slate-400 shrink-0">{note.date}</div>

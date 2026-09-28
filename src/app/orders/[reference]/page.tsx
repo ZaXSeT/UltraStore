@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2, Clock, Truck, ShieldCheck, ArrowLeft } from "lucide-react";
 import { getServerLocale } from "../../../lib/server-locale";
-import { copy, formatRupiah } from "../../../lib/locale";
+import { copy, formatRupiah, orderStatus } from "../../../lib/locale";
 
 export default async function OrderDetailPage({
   params,
@@ -84,7 +84,7 @@ export default async function OrderDetailPage({
         <div className="bg-white border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t("Status Pembayaran", "Payment Status")}</span>
           <div className="text-sm font-bold text-emerald-600 uppercase">
-            {order.status}
+            {orderStatus(order.status, locale)}
           </div>
           <p className="text-xs text-slate-500">{isConfirmed ? t("Dibayar melalui Virtual Account", "Paid by Virtual Account") : t("Pembayaran belum diterima", "Payment pending")}</p>
         </div>
@@ -93,7 +93,7 @@ export default async function OrderDetailPage({
         <div className="bg-white border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t("Status Pengiriman", "Fulfillment Status")}</span>
           <div className="text-sm font-bold text-slate-900 uppercase">
-            {order.fulfillment_status}
+            {orderStatus(order.fulfillment_status, locale)}
           </div>
           <p className="text-xs text-slate-500">
             {order.offer_type === "READY"

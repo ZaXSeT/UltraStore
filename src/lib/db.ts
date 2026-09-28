@@ -53,6 +53,10 @@ function initSchema(db: DatabaseSync) {
     const sql = fs.readFileSync(schemaPath, "utf-8");
     db.exec(sql);
   }
+  const productColumns = db.prepare("PRAGMA table_info(products)").all() as Array<{ name: string }>;
+  if (!productColumns.some((column) => column.name === "description_en")) {
+    db.exec("ALTER TABLE products ADD COLUMN description_en TEXT NOT NULL DEFAULT ''");
+  }
 }
 
 // Transaction helper for safe atomic operations

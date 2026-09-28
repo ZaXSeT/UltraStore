@@ -782,6 +782,16 @@ export default function AdminPage() {
 
                   <form onSubmit={handleUpdateProductFull} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <label className="block space-y-1">
+                        <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Product Description (ID)</span>
+                        <textarea rows={3} value={editingProduct.description || ""} onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })} className="w-full px-3 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]" />
+                      </label>
+                      <label className="block space-y-1">
+                        <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Product Description (EN)</span>
+                        <textarea rows={3} value={editingProduct.description_en || ""} onChange={(e) => setEditingProduct({ ...editingProduct, description_en: e.target.value })} className="w-full px-3 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]" />
+                      </label>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
                         <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
                           Product Designation

@@ -134,7 +134,7 @@ export async function PATCH(req: Request) {
   try {
     const db = getDb();
     const body = await req.json();
-    const { id, name, description, primary_image, published } = body;
+    const { id, name, description, description_en, primary_image, published } = body;
 
     if (!id) {
       return NextResponse.json({ success: false, error: "Product ID required" }, { status: 400 });
@@ -150,6 +150,10 @@ export async function PATCH(req: Request) {
     if (description !== undefined) {
       updates.push("description = ?");
       params.push(description);
+    }
+    if (description_en !== undefined) {
+      updates.push("description_en = ?");
+      params.push(description_en);
     }
     if (primary_image !== undefined) {
       updates.push("primary_image = ?");

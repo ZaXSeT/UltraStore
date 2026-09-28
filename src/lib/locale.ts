@@ -30,3 +30,43 @@ export function categoryLabel(slug: string, original: string, locale: StoreLocal
   const pair = labels[slug];
   return pair ? pair[locale === "en" ? 1 : 0] : original;
 }
+
+export function deliveryEstimate(value: string | null | undefined, locale: StoreLocale): string {
+  if (!value) return "";
+  if (locale === "id") return value;
+  if (value === "1-2 hari kerja") return "1–2 business days";
+  const months: Record<string, string> = {
+    Januari: "January", Februari: "February", Maret: "March", Mei: "May",
+    Juni: "June", Juli: "July", Agustus: "August", Oktober: "October",
+    Desember: "December",
+  };
+  return value.replace(/Januari|Februari|Maret|Mei|Juni|Juli|Agustus|Oktober|Desember/g, (month) => months[month]);
+}
+
+export function orderStatus(value: string, locale: StoreLocale): string {
+  const labels: Record<string, [string, string]> = {
+    pending_payment: ["Menunggu Pembayaran", "Awaiting Payment"],
+    confirmed: ["Dikonfirmasi", "Confirmed"],
+    on_hold: ["Ditunda", "On Hold"],
+    cancelled: ["Dibatalkan", "Cancelled"],
+    completed: ["Selesai", "Completed"],
+    unallocated: ["Belum Dialokasikan", "Not Allocated"],
+    waiting_supplier: ["Menunggu Pemasok", "Awaiting Supplier"],
+    received_qc: ["Pemeriksaan Gudang", "Warehouse Inspection"],
+    ready_to_ship: ["Siap Dikirim", "Ready to Ship"],
+    shipped: ["Dikirim", "Shipped"],
+    delivered: ["Terkirim", "Delivered"],
+    returned: ["Dikembalikan", "Returned"],
+  };
+  return labels[value]?.[locale === "en" ? 1 : 0] || value;
+}
+
+export function boxItem(value: string, locale: StoreLocale): string {
+  if (locale === "id") return value.replace(/^1x /, "1 × ");
+  const known: Record<string, string> = {
+    "1x Kabel USB-C Braided": "1 × Braided USB-C cable",
+    "1x Quick Start Guide & Manual Garansi": "1 × Quick-start guide and warranty booklet",
+    "1x Manual & Warranty": "1 × Manual and warranty booklet",
+  };
+  return known[value] || value.replace(/^1x /, "1 × ");
+}

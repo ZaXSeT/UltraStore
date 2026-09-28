@@ -31,7 +31,7 @@ export function localizeAnnouncement(value: AnnouncementConfig, locale: StoreLoc
     secondaryText: "Ships from Jakarta",
     trackLinkText: "Track Order",
   }, locale);
-  return withMerchantEnglish(localized, value.english, locale);
+  return withMerchantEnglish<AnnouncementConfig>(localized, value.english, locale);
 }
 
 export function localizeFooter(value: FooterConfig, locale: StoreLocale) {
@@ -49,7 +49,7 @@ export function localizeHero(value: HeroConfig, locale: StoreLocale) {
     ctaText: "Shop This Product",
     secondaryCtaText: "Explore All Gear",
   }, locale);
-  return withMerchantEnglish(localized, value.english, locale);
+  return withMerchantEnglish<HeroConfig>(localized, value.english, locale);
 }
 
 export function localizeSections(value: SectionHeadersConfig, locale: StoreLocale) {

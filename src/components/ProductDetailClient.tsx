@@ -8,7 +8,7 @@ import { Check, ShieldCheck, Box, Clock, Truck, ArrowRight } from "lucide-react"
 import Link from "next/link";
 import { ProductImage } from "./ProductImage";
 import { useLanguage } from "../context/LanguageContext";
-import { formatRupiah } from "../lib/locale";
+import { boxItem, deliveryEstimate, formatRupiah } from "../lib/locale";
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const { locale, t } = useLanguage();
@@ -140,7 +140,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             {product.boxContents.map((item, i) => (
               <li key={i} className="flex items-center gap-2">
                 <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>{item}</span>
+                <span>{boxItem(item, locale)}</span>
               </li>
             ))}
           </ul>
@@ -161,7 +161,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             {product.name}
           </h1>
           <p className="text-xs font-mono text-neutral-500 mt-2 leading-relaxed">
-            {product.description}
+            {locale === "en" ? product.descriptionEn?.trim() || `${product.name} by ${product.brand.name}. Explore the specifications and choose the variant that suits your setup.` : product.description}
           </p>
         </div>
 
@@ -209,7 +209,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     )}
                   </div>
                   <div className={`text-[10px] mt-1 ${isSelected ? "text-white/80" : "text-neutral-500"}`}>
-                    {isReady ? t("Dikirim dalam 1–2 hari kerja", "Ships in 1–2 business days") : targetOffer?.estimatedShipping || t("Jadwal batch", "Batch schedule")}
+                    {isReady ? t("Dikirim dalam 1–2 hari kerja", "Ships in 1–2 business days") : deliveryEstimate(targetOffer?.estimatedShipping, locale) || t("Jadwal batch", "Batch schedule")}
                   </div>
                 </button>
               );

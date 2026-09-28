@@ -74,3 +74,4 @@ Dokumen ini adalah single source of truth untuk progress, konfigurasi arsitektur
 - `e086027`: Menambahkan animasi metallic shimmer mengkilat (`logo-shimmer`) pada logo ULTRASTORE di navbar dengan gradien deep cobalt ke cyan/white gleam.
 - `a7125bb`: Memperbesar skala typography judul hero kiri (`text-5xl sm:text-7xl lg:text-8xl 2xl:text-9xl`) dan memperluas viewport gambar kanan menjadi `max-w-[620px]` dengan rasio grid 6:6 seimbang dan dominan.
 - `Current`: Memperbaiki animasi logo ULTRASTORE: warna dasar tetap Deep Obsidian `#0F172A` pekat dengan kilatan sinar cahaya putih/cobalt yang bergerak menyapu huruf dari kiri ke kanan secara halus (`-200%` ke `200%`).
+- `Current-2`: Memperbaiki bug tombol `VIEW DETAIL` yang terpotong di tepi kartu produk: menyederhanakan label menjadi `DETAIL ↗` dengan `whitespace-nowrap`, `shrink-0`, padding `px-2.5 py-1.5`, dan layout `items-end` yang sejajar rapi dengan harga tanpa menabrak batas kartu.
