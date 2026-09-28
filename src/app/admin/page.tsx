@@ -3,7 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { localizeSections } from "../../lib/localized-cms";
-import { DEFAULT_SECTION_HEADERS_CONFIG, DEFAULT_BRAND_LOGOS_CONFIG } from "../../lib/cms-types";
+import {
+  DEFAULT_SECTION_HEADERS_CONFIG,
+  DEFAULT_BRAND_LOGOS_CONFIG,
+  DEFAULT_FOOTER_CONFIG,
+  FooterConfig,
+} from "../../lib/cms-types";
 import {
   Save,
   CheckCircle2,
@@ -45,6 +50,7 @@ export default function AdminPage() {
     secondaryText: "",
   });
   const [brandLogos, setBrandLogos] = useState<any[]>(DEFAULT_BRAND_LOGOS_CONFIG);
+  const [footer, setFooter] = useState<FooterConfig>(DEFAULT_FOOTER_CONFIG);
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -77,6 +83,7 @@ export default function AdminPage() {
           if (data.data.announcement) setAnnouncement(data.data.announcement);
           if (data.data.sectionHeaders) setSectionHeaders(data.data.sectionHeaders);
           if (data.data.brandLogos) setBrandLogos(data.data.brandLogos);
+          if (data.data.footer) setFooter(data.data.footer);
         }
       })
       .catch(console.error);
@@ -125,6 +132,11 @@ export default function AdminPage() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: "brand_logos_config", value: brandLogos }),
+        }),
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "footer_config", value: footer }),
         }),
       ]);
       setSaveMessage("Storefront parameters updated live.");
@@ -366,6 +378,18 @@ export default function AdminPage() {
                 <span className="text-[10px] opacity-80">CMS</span>
               </button>
 
+              {/* Quick Jump Links inside Showcase */}
+              {activeTab === "showcase" && (
+                <div className="pl-4 pr-1 py-1.5 space-y-1 border-l-2 border-[#0E52FF]/30 ml-2">
+                  <a href="#section-top-strip" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 01. Top Strip Notification</a>
+                  <a href="#section-headings" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 02. Homepage Headings (ID/EN)</a>
+                  <a href="#section-brand-logos" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 03. Brand Partner Logos</a>
+                  <a href="#section-hero-stage" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 04. Hero Focus Product</a>
+                  <a href="#section-categories" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 05. Category Directory Matrix</a>
+                  <a href="#section-footer" className="block text-[10px] text-[#6E7382] hover:text-[#0E52FF] truncate">↳ 06. Global Footer &amp; Branding</a>
+                </div>
+              )}
+
               <button
                 onClick={() => setActiveTab("inventory")}
                 className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
@@ -412,7 +436,7 @@ export default function AdminPage() {
               </div>
 
               {/* Announcement Strip */}
-              <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+              <div id="section-top-strip" className="bg-white border border-[#E2E5EB] p-6 space-y-4">
                 <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-xs font-black uppercase text-[#111215]">Top Notification Strip</span>
@@ -848,6 +872,60 @@ export default function AdminPage() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                {/* FOOTER & STORE BRANDING CONFIG */}
+                <div className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-6">
+                  <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
+                    <div>
+                      <span className="font-mono text-xs font-black uppercase text-[#111215]">Global Footer &amp; Branding</span>
+                      <p className="text-[11px] font-mono text-[#6E7382]">Atur teks hak cipta, judul merek, dan tagline footer</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleSaveShowcase}
+                      disabled={saving}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-[10px] uppercase font-bold tracking-wider transition-all disabled:opacity-50 shadow-sm"
+                    >
+                      <Save className="w-3 h-3" />
+                      <span>Save Footer</span>
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <label className="block space-y-1">
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Brand Title</span>
+                      <input
+                        type="text"
+                        value={footer.brandTitle || ""}
+                        onChange={(e) => setFooter({ ...footer, brandTitle: e.target.value })}
+                        placeholder="ULTRASTORE"
+                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                      />
+                    </label>
+
+                    <label className="block space-y-1">
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Brand Tagline</span>
+                      <input
+                        type="text"
+                        value={footer.brandTagline || ""}
+                        onChange={(e) => setFooter({ ...footer, brandTagline: e.target.value })}
+                        placeholder="Enthusiast Peripherals"
+                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                      />
+                    </label>
+
+                    <label className="block space-y-1">
+                      <span className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Copyright Notice</span>
+                      <input
+                        type="text"
+                        value={footer.copyrightText || ""}
+                        onChange={(e) => setFooter({ ...footer, copyrightText: e.target.value })}
+                        placeholder="© 2026 ULTRASTORE JAKARTA"
+                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                      />
+                    </label>
                   </div>
                 </div>
             </div>

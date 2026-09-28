@@ -101,13 +101,12 @@ export function Header() {
             <button
               type="button"
               onClick={openCart}
-              className="relative inline-flex items-center gap-2 px-2.5 sm:px-4 py-2 border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all shadow-sm"
+              className="relative inline-flex items-center justify-center p-2.5 border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white transition-all shadow-sm"
               aria-label={t("Buka keranjang belanja", "Open shopping cart")}
             >
-              <ShoppingBag className="w-3.5 h-3.5 text-white/80" />
-              <span className="hidden sm:inline">{t("Keranjang", "Cart")}</span>
+              <ShoppingBag className="w-4 h-4 text-white" />
               {mounted && totalItemCount > 0 && (
-                <span className="ml-1 px-1.5 py-0.2 bg-white text-[#0E52FF] text-[10px] font-bold font-mono">
+                <span className="absolute -top-1.5 -right-1.5 px-1.5 py-0.5 bg-white text-[#0E52FF] text-[10px] font-bold font-mono border border-[#0E52FF] shadow-xs">
                   {totalItemCount}
                 </span>
               )}
