@@ -31,11 +31,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
       {/* Top Notification Strip (Full Width) */}
-      <div className="bg-[#090D16] text-slate-300 text-xs py-2 border-b border-slate-800/80">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-            <span className="font-medium text-slate-200">
+      <div className="bg-[#090D16] text-slate-300 text-xs py-2 border-b border-slate-800/80 overflow-hidden">
+        <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 truncate text-[11px] sm:text-xs">
+            <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+            <span className="font-medium text-slate-200 truncate">
               {notice.primaryText}
             </span>
             {notice.secondaryText && (
@@ -48,10 +48,10 @@ export function Header() {
             )}
           </div>
 
-          <div className="flex items-center gap-4 text-slate-300">
+          <div className="flex items-center gap-3 text-slate-300 shrink-0 text-[11px] sm:text-xs">
             <Link
               href="/track-order"
-              className="hover:text-blue-400 transition-colors flex items-center gap-1.5 font-medium"
+              className="hover:text-blue-400 transition-colors flex items-center gap-1.5 font-medium whitespace-nowrap"
             >
               <Compass className="w-3.5 h-3.5 text-blue-500" />
               <span>{notice.trackLinkText}</span>
@@ -61,10 +61,10 @@ export function Header() {
       </div>
 
       {/* Main Navigation Bar (Full Width Edge-to-Edge) */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-18 py-3.5 flex items-center justify-between">
+      <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 h-16 sm:h-18 py-2.5 sm:py-3.5 flex items-center justify-between gap-2">
         {/* Brand Logo - Pure typography ala infinitas.id with Metallic Sheen */}
-        <Link href="/" aria-label="UltraStore" className="flex items-center group">
-          <span className="text-xl sm:text-2xl font-black tracking-[-0.04em] uppercase logo-shimmer select-none drop-shadow-xs" data-text="ULTRASTORE">
+        <Link href="/" aria-label="UltraStore" className="flex items-center group shrink-0">
+          <span className="text-lg sm:text-2xl font-black tracking-[-0.04em] uppercase logo-shimmer select-none drop-shadow-xs" data-text="ULTRASTORE">
             ULTRASTORE
           </span>
         </Link>
@@ -94,12 +94,12 @@ export function Header() {
 
           {/* Header Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <div className="inline-flex h-[42px] border border-slate-200 bg-white text-xs font-bold" role="group" aria-label={t("Pilihan bahasa", "Language preference")}>
+            <div className="inline-flex h-[38px] sm:h-[42px] border border-slate-200 bg-white text-[11px] sm:text-xs font-bold" role="group" aria-label={t("Pilihan bahasa", "Language preference")}>
               <button
                 type="button"
                 onClick={() => setLocale("id")}
                 aria-pressed={locale === "id"}
-                className={`h-full px-3 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
+                className={`h-full px-2.5 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
                   locale === "id" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"
                 }`}
               >
@@ -109,7 +109,7 @@ export function Header() {
                 type="button"
                 onClick={() => setLocale("en")}
                 aria-pressed={locale === "en"}
-                className={`h-full px-3 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
+                className={`h-full px-2.5 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
                   locale === "en" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"
                 }`}
               >
@@ -119,7 +119,7 @@ export function Header() {
             <button
               type="button"
               onClick={openCart}
-              className="relative inline-flex items-center justify-center w-[42px] h-[42px] border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white transition-all shadow-sm shrink-0"
+              className="relative inline-flex items-center justify-center w-[38px] h-[38px] sm:w-[42px] sm:h-[42px] border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white transition-all shadow-sm shrink-0"
               aria-label={t("Buka keranjang belanja", "Open shopping cart")}
             >
               <ShoppingBag className="w-4 h-4 text-white" />
@@ -134,10 +134,10 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none"
+            className="md:hidden flex items-center justify-center w-[38px] h-[38px] border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none shrink-0"
             aria-label={t("Buka menu", "Open menu")}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
       </div>
@@ -148,32 +148,29 @@ export function Header() {
           <Link
             href="/shop"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-blue-50 hover:text-[#2563EB] transition-colors"
+            className="flex items-center justify-between p-3 border border-slate-200 bg-slate-50 text-slate-900 font-mono text-xs uppercase font-bold hover:bg-[#0E52FF] hover:text-white transition-colors"
           >
             <span>{t("Semua Produk", "Shop All")}</span>
-            <ArrowRight className="w-4 h-4 text-slate-400" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/shop?offer=PREORDER"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-blue-50 hover:text-[#2563EB] transition-colors"
+            className="flex items-center justify-between p-3 border border-slate-200 bg-slate-50 text-slate-900 font-mono text-xs uppercase font-bold hover:bg-[#0E52FF] hover:text-white transition-colors"
           >
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#2563EB]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#0E52FF]"></span>
               <span>{t("Rilis Pre-Order", "Pre-Order Drops")}</span>
             </div>
-            <ArrowRight className="w-4 h-4 text-slate-400" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/track-order"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-blue-50 hover:text-[#2563EB] transition-colors"
+            className="flex items-center justify-between p-3 border border-slate-200 bg-slate-50 text-slate-900 font-mono text-xs uppercase font-bold hover:bg-[#0E52FF] hover:text-white transition-colors"
           >
-            <div className="flex items-center gap-2">
-              <Compass className="w-4 h-4 text-[#2563EB]" />
-              <span>{t("Lacak Pesanan", "Track Order")}</span>
-            </div>
-            <ArrowRight className="w-4 h-4 text-slate-400" />
+            <span>{t("Lacak Pesanan", "Track Order")}</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       )}

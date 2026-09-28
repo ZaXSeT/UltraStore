@@ -52,16 +52,16 @@ export default async function HomePage() {
   return (
     <div className="w-full">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
-      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight m-0">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-6 overflow-hidden">
+      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight m-0 overflow-hidden">
+        <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-4 sm:gap-6 overflow-hidden">
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-mono uppercase text-[11px] font-bold text-neutral-900 tracking-wider">
+            <span className="font-mono uppercase text-[10px] sm:text-[11px] font-bold text-neutral-900 tracking-wider whitespace-nowrap">
               {sections.tickerLabel}
             </span>
           </div>
 
-          <div className="flex items-center gap-6 whitespace-nowrap overflow-x-auto no-scrollbar py-0.5 text-neutral-500 font-medium">
+          <div className="flex items-center gap-4 sm:gap-6 whitespace-nowrap overflow-x-auto no-scrollbar py-0.5 text-neutral-500 font-medium text-[11px] sm:text-xs">
             {brands.map((b) => (
               <Link
                 key={b.slug}
@@ -76,44 +76,44 @@ export default async function HomePage() {
       </section>
 
       {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (FLUSH ZERO GAP TO TICKER) */}
-      <section className="w-full border-b border-neutral-200/90 bg-white/60 backdrop-blur-xs m-0 p-0">
+      <section className="w-full border-b border-neutral-200/90 bg-white/60 backdrop-blur-xs m-0 p-0 overflow-hidden">
         <div className="w-full m-0 p-0">
           <div className="relative border-none bg-transparent overflow-hidden m-0 p-0">
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[640px] lg:min-h-[720px] items-stretch">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-0 lg:min-h-[720px] items-stretch">
             {/* Left Editorial Copy (6 cols) */}
-            <div className="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-3 py-1 rounded-md border border-neutral-200">
+            <div className="lg:col-span-6 px-4 py-6 sm:p-10 lg:p-16 flex flex-col justify-between z-10 space-y-6 sm:space-y-8 w-full max-w-full overflow-hidden box-border">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-2.5 sm:px-3 py-1 border border-neutral-200">
                   {hero.badgeText}
                 </span>
-                <span className="font-mono text-xs text-neutral-400">
+                <span className="font-mono text-[10px] sm:text-xs text-neutral-400">
                   {hero.tagline}
                 </span>
               </div>
 
-              <div className="space-y-5">
-                <h1 className="text-5xl sm:text-7xl lg:text-8xl 2xl:text-9xl font-black tracking-[-0.05em] text-neutral-950 leading-[0.92] uppercase">
+              <div className="space-y-3 sm:space-y-5 w-full max-w-full">
+                <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black tracking-[-0.04em] sm:tracking-[-0.05em] text-neutral-950 leading-[0.95] sm:leading-[0.92] uppercase break-words">
                   {hero.titleLine1}<br />
                   <span className="text-[#0E52FF] font-black">{hero.titleAccent}</span> {hero.titleLine2}
                 </h1>
-                <p className="text-base sm:text-lg text-neutral-600 max-w-xl font-normal leading-relaxed">
+                <p className="text-xs sm:text-lg text-neutral-600 w-full max-w-[330px] sm:max-w-xl font-normal leading-relaxed break-normal text-left">
                   {hero.description}
                 </p>
               </div>
 
               {/* Technical Spec Matrix */}
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-neutral-100 max-w-lg">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 pt-4 sm:pt-6 border-t border-neutral-100 max-w-lg">
                 <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Dimensi", "Dimensions")}</span>
-                  <span className="font-bold text-sm sm:text-base text-neutral-900">{hero.dimensions}</span>
+                  <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Dimensi", "Dimensions")}</span>
+                  <span className="font-bold text-xs sm:text-base text-neutral-900">{hero.dimensions}</span>
                 </div>
                 <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketebalan", "Thickness")}</span>
-                  <span className="font-bold text-sm sm:text-base text-neutral-900">{hero.thickness}</span>
+                  <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketebalan", "Thickness")}</span>
+                  <span className="font-bold text-xs sm:text-base text-neutral-900">{hero.thickness}</span>
                 </div>
-                <div>
-                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketersediaan", "Availability")}</span>
-                  <span className="inline-flex items-center gap-1.5 font-bold text-sm sm:text-base text-emerald-800 font-mono">
+                <div className="col-span-2 sm:col-span-1">
+                  <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketersediaan", "Availability")}</span>
+                  <span className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-base text-emerald-800 font-mono">
                     <span className="w-2 h-2 rounded-full bg-emerald-600" />
                     {hero.availability}
                   </span>
@@ -121,10 +121,10 @@ export default async function HomePage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-2 sm:pt-4">
                 <Link
                   href={hero.ctaLink}
-                  className="px-9 py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-2 group shadow-md shadow-blue-500/10"
+                  className="w-full sm:w-auto px-6 sm:px-9 py-3.5 sm:py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 group shadow-md shadow-blue-500/10"
                 >
                   <span>{hero.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -132,7 +132,7 @@ export default async function HomePage() {
 
                 <Link
                   href={hero.secondaryCtaLink}
-                  className="px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 shadow-xs"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 text-center shadow-xs"
                 >
                   {hero.secondaryCtaText}
                 </Link>
@@ -140,14 +140,14 @@ export default async function HomePage() {
             </div>
 
             {/* Right Hero Stage (6 cols) - Dominant Master Artwork Viewport */}
-            <div className="lg:col-span-6 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-4 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden">
-              <div className="flex items-center justify-between font-mono text-xs text-neutral-400 pb-3">
-                <span className="font-bold text-neutral-600 uppercase">{hero.subBadgeTopLeft}</span>
-                <span className="font-bold text-neutral-600 uppercase">{hero.subBadgeTopRight}</span>
+            <div className="lg:col-span-6 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-3 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden">
+              <div className="flex items-center justify-between font-mono text-[10px] sm:text-xs text-neutral-400 pb-3 gap-2 px-1">
+                <span className="font-bold text-neutral-600 uppercase truncate">{hero.subBadgeTopLeft}</span>
+                <span className="font-bold text-neutral-600 uppercase truncate">{hero.subBadgeTopRight}</span>
               </div>
 
-              <div className="relative w-full flex-1 flex items-center justify-center py-2">
-                <div className="relative aspect-square w-full max-w-[560px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-white shadow-lg">
+              <div className="relative w-full flex-1 flex items-center justify-center py-2 sm:py-4">
+                <div className="relative aspect-square w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-white shadow-lg">
                   <Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
@@ -159,9 +159,9 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pt-2 border-t border-neutral-200/60">
-                <span>{hero.subBadgeBottomLeft}</span>
-                <span>{hero.subBadgeBottomRight}</span>
+              <div className="flex items-center justify-between font-mono text-[9px] sm:text-[11px] text-neutral-400 pt-2 border-t border-neutral-200/60 gap-2 px-1">
+                <span className="truncate">{hero.subBadgeBottomLeft}</span>
+                <span className="truncate">{hero.subBadgeBottomRight}</span>
               </div>
             </div>
           </div>

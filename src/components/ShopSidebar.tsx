@@ -20,6 +20,7 @@ import {
   Check,
   Tag,
   ChevronDown,
+  Filter,
 } from "lucide-react";
 
 interface CategoryItem {
@@ -59,11 +60,11 @@ const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>
 export function ShopSidebar({
   allCategories,
   allBrands,
-  currentCategory = "",
-  currentBrand = "",
-  currentOffer = "",
-  currentSurface = "",
-  searchQuery = "",
+  currentCategory,
+  currentBrand,
+  currentOffer,
+  currentSurface,
+  searchQuery,
   totalProducts,
 }: ShopSidebarProps) {
   const { locale, t } = useLanguage();
@@ -71,6 +72,7 @@ export function ShopSidebar({
   const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [brandSearch, setBrandSearch] = useState("");
   const [isBrandExpanded, setIsBrandExpanded] = useState(true);
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
   const updateFilters = (updates: {
     category?: string;
@@ -124,7 +126,28 @@ export function ShopSidebar({
   );
 
   return (
-    <div className="w-full bg-white border border-neutral-200/90 p-5 space-y-6">
+    <>
+      {/* Mobile Filter Toggle Drawer Trigger Button */}
+      <div className="lg:hidden w-full mb-3">
+        <button
+          type="button"
+          onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+          className="w-full flex items-center justify-between px-4 py-3 bg-white border-2 border-neutral-900 text-neutral-900 font-mono text-xs font-bold uppercase tracking-wider shadow-sm active:bg-neutral-50"
+        >
+          <div className="flex items-center gap-2">
+            <Filter className="w-4 h-4 text-[#0E52FF]" />
+            <span>{t("Filter & Pencarian", "Filters & Search")}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 bg-[#0E52FF] text-white text-[10px]">
+              {totalProducts} {t("ITEM", "ITEMS")}
+            </span>
+            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileFilterOpen ? "rotate-180" : ""}`} />
+          </div>
+        </button>
+      </div>
+
+      <div className={`w-full bg-white border border-neutral-200/90 p-4 sm:p-5 space-y-6 ${mobileFilterOpen ? "block" : "hidden lg:block"}`}>
       {/* 1. Hardware Search */}
       <div>
         <div className="flex items-center justify-between mb-2">
@@ -153,7 +176,7 @@ export function ShopSidebar({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={t("Cari model, switch, merek...", "Search models, switches, brands...")}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-8 py-2.5 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+            className="w-full bg-slate-50 border border-slate-200 pl-9 pr-8 py-2.5 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#0E52FF] transition-all"
           />
           {searchTerm && (
             <button
@@ -438,6 +461,7 @@ export function ShopSidebar({
           </button>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }
