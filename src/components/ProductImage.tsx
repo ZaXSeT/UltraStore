@@ -103,14 +103,7 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
   };
 
   if (!src || error) {
-    return (
-      <div className={`w-full h-full flex flex-col items-center justify-center p-3 select-none bg-slate-50/50 ${className}`}>
-        {renderFallback()}
-        <span className="text-xs text-slate-500 font-medium tracking-wide mt-2 text-center line-clamp-1">
-          {alt}
-        </span>
-      </div>
-    );
+    return <div className={`w-full h-full bg-neutral-100 ${className}`} />;
   }
 
   return (

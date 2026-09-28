@@ -3,7 +3,7 @@ import { S3Client, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand } fr
 const accountId = process.env.R2_ACCOUNT_ID || "e9f6cff37d5d30f39a1865ce7c3d765e";
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
 const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
-const bucketName = process.env.R2_BUCKET_NAME || "ultrastore-assets";
+const bucketName = process.env.R2_BUCKET_NAME || "ultrastore";
 const publicUrl = (process.env.R2_PUBLIC_URL || "").replace(/\/$/, "");
 
 // ponytail: single R2 S3 client instance. Upgrade to multi-bucket routing if storage spans regions.
@@ -48,10 +48,9 @@ export async function uploadImageToR2(
   const cleanKey = key.replace(/^\/+/, "");
   
   if (!r2Client) {
-    // If R2 credentials not configured, fallback to public URL or local path
     return {
       success: false,
-      url: publicUrl ? `${publicUrl}/${cleanKey}` : `/images/products/${cleanKey}`,
+      url: "",
       error: "R2 credentials not configured in environment.",
     };
   }
@@ -72,7 +71,7 @@ export async function uploadImageToR2(
       })
     );
 
-    const fileUrl = publicUrl ? `${publicUrl}/${cleanKey}` : `https://${bucketName}.${accountId}.r2.cloudflarestorage.com/${cleanKey}`;
+    const fileUrl = publicUrl ? `${publicUrl}/${cleanKey}` : "";
     return { success: true, url: fileUrl };
   } catch (err: any) {
     return {
@@ -86,5 +85,5 @@ export async function uploadImageToR2(
 export function getR2ImageUrl(key: string): string {
   const cleanKey = key.replace(/^\/+/, "");
   if (publicUrl) return `${publicUrl}/${cleanKey}`;
-  return `/images/products/${cleanKey}`;
+  return "";
 }
