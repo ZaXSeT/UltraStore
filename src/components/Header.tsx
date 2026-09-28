@@ -93,15 +93,33 @@ export function Header() {
         </nav>
 
           {/* Header Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-3">
-            <div className="inline-flex border border-slate-200 bg-white text-[11px] font-bold" role="group" aria-label={t("Pilihan bahasa", "Language preference")}>
-              <button type="button" onClick={() => setLocale("id")} aria-pressed={locale === "id"} className={`px-2 sm:px-2.5 py-2 transition-colors ${locale === "id" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"}`}>ID</button>
-              <button type="button" onClick={() => setLocale("en")} aria-pressed={locale === "en"} className={`px-2 sm:px-2.5 py-2 transition-colors ${locale === "en" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"}`}>EN</button>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="inline-flex h-[42px] border border-slate-200 bg-white text-xs font-bold" role="group" aria-label={t("Pilihan bahasa", "Language preference")}>
+              <button
+                type="button"
+                onClick={() => setLocale("id")}
+                aria-pressed={locale === "id"}
+                className={`h-full px-3 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
+                  locale === "id" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                ID
+              </button>
+              <button
+                type="button"
+                onClick={() => setLocale("en")}
+                aria-pressed={locale === "en"}
+                className={`h-full px-3 sm:px-3.5 flex items-center justify-center transition-colors font-mono font-bold ${
+                  locale === "en" ? "bg-[#0E52FF] text-white" : "text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                EN
+              </button>
             </div>
             <button
               type="button"
               onClick={openCart}
-              className="relative inline-flex items-center justify-center p-2.5 border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white transition-all shadow-sm"
+              className="relative inline-flex items-center justify-center w-[42px] h-[42px] border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white transition-all shadow-sm shrink-0"
               aria-label={t("Buka keranjang belanja", "Open shopping cart")}
             >
               <ShoppingBag className="w-4 h-4 text-white" />
