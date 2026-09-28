@@ -4,14 +4,24 @@ import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import { ShoppingBag, Menu, X, Compass, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { AnnouncementConfig, DEFAULT_ANNOUNCEMENT_CONFIG } from "../lib/cms-types";
 
 export function Header() {
   const { totalItemCount, openCart } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [announcement, setAnnouncement] = useState<AnnouncementConfig>(DEFAULT_ANNOUNCEMENT_CONFIG);
 
   useEffect(() => {
     setMounted(true);
+    fetch("/api/admin/settings?key=announcement")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.data) {
+          setAnnouncement(data.data);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   return (
@@ -22,12 +32,16 @@ export function Header() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-blue-500"></span>
             <span className="font-medium text-slate-200">
-              Distributor Resmi Mechanical Keyboards &amp; Ultralight Mice
+              {announcement.primaryText}
             </span>
-            <span className="hidden md:inline text-slate-500">·</span>
-            <span className="hidden md:inline text-slate-400">
-              Pengiriman Cepat dari Hub Jakarta
-            </span>
+            {announcement.secondaryText && (
+              <>
+                <span className="hidden md:inline text-slate-500">·</span>
+                <span className="hidden md:inline text-slate-400">
+                  {announcement.secondaryText}
+                </span>
+              </>
+            )}
           </div>
 
           <div className="flex items-center gap-4 text-slate-300">
@@ -36,7 +50,7 @@ export function Header() {
               className="hover:text-blue-400 transition-colors flex items-center gap-1.5 font-medium"
             >
               <Compass className="w-3.5 h-3.5 text-blue-500" />
-              <span>Lacak Pesanan</span>
+              <span>{announcement.trackLinkText}</span>
             </Link>
           </div>
         </div>

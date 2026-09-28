@@ -3,7 +3,17 @@ import Image from "next/image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
 import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
-import { getSiteSetting, DEFAULT_HERO_CONFIG, DEFAULT_CATEGORIES_CONFIG, HeroConfig, MacroCategoryConfig } from "../lib/cms";
+import {
+  getSiteSetting,
+  DEFAULT_HERO_CONFIG,
+  DEFAULT_CATEGORIES_CONFIG,
+  DEFAULT_SECTION_HEADERS_CONFIG,
+  HeroConfig,
+  MacroCategoryConfig,
+  SectionHeadersConfig,
+} from "../lib/cms";
+
+export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const products = getAllProducts();
@@ -11,6 +21,7 @@ export default function HomePage() {
 
   const hero = getSiteSetting<HeroConfig>("hero_config", DEFAULT_HERO_CONFIG);
   const macroCategoriesConfig = getSiteSetting<MacroCategoryConfig[]>("categories_config", DEFAULT_CATEGORIES_CONFIG);
+  const sections = getSiteSetting<SectionHeadersConfig>("section_headers_config", DEFAULT_SECTION_HEADERS_CONFIG);
 
   const readyProducts = products
     .filter((p) => p.offers.some((o) => o.offerType === "READY"))
@@ -35,7 +46,7 @@ export default function HomePage() {
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span className="font-mono uppercase text-[11px] font-bold text-neutral-900 tracking-wider">
-              AUTHORISED DISTRIBUTOR
+              {sections.tickerLabel}
             </span>
           </div>
 
@@ -153,14 +164,14 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
           <div>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-1">
-              ARSITEKTUR PERIFERAL
+              {sections.categoryEyebrow}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
-              5 Spesialisasi Gear Presisi
+              {sections.categoryTitle}
             </h2>
           </div>
           <span className="font-mono text-xs text-neutral-400">
-            DISTRIBUSI JAKARTA HUB 2026
+            {sections.categoryTagline}
           </span>
         </div>
 
@@ -218,17 +229,17 @@ export default function HomePage() {
           <div>
             <div className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>SIAP KIRIM · JAKARTA CENTRAL HUB</span>
+              <span>{sections.readyEyebrow}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
-              Ready Stock Terverifikasi
+              {sections.readyTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=READY"
             className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
           >
-            <span>Semua Ready Stock</span>
+            <span>{sections.readyCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -246,17 +257,17 @@ export default function HomePage() {
           <div>
             <div className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500 mb-1 flex items-center gap-2">
               <Disc3 className="w-3.5 h-3.5 text-[#0E52FF]" />
-              <span>BATCH RESMI TERJADWAL</span>
+              <span>{sections.preorderEyebrow}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
-              Pre-Order Drops
+              {sections.preorderTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=PREORDER"
             className="font-mono text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1.5 transition-colors uppercase tracking-wider"
           >
-            <span>Semua Batch Pre-Order</span>
+            <span>{sections.preorderCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
-  Sparkles,
-  Layers,
-  Package,
   Save,
   CheckCircle2,
   Search,
@@ -15,7 +12,7 @@ import {
 } from "lucide-react";
 
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState<"cms" | "categories" | "products">("cms");
+  const [activeTab, setActiveTab] = useState<"showcase" | "inventory">("showcase");
   const [saving, setSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState<string | null>(null);
 
@@ -35,6 +32,10 @@ export default function AdminPage() {
   });
 
   const [categories, setCategories] = useState<any[]>([]);
+  const [announcement, setAnnouncement] = useState<any>({
+    primaryText: "",
+    secondaryText: "",
+  });
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
 
@@ -43,8 +44,9 @@ export default function AdminPage() {
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.data) {
-          setHero(data.data.hero || {});
-          setCategories(data.data.categories || []);
+          if (data.data.hero) setHero(data.data.hero);
+          if (data.data.categories) setCategories(data.data.categories);
+          if (data.data.announcement) setAnnouncement(data.data.announcement);
         }
       })
       .catch(console.error);
@@ -63,45 +65,32 @@ export default function AdminPage() {
       .catch(console.error);
   };
 
-  const handleSaveHero = async (e: React.FormEvent) => {
+  const handleSaveShowcase = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
     setSaveMessage(null);
     try {
-      const res = await fetch("/api/admin/settings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key: "hero_config", value: hero }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSaveMessage("Hero Configuration tersimpan live!");
-        setTimeout(() => setSaveMessage(null), 3000);
-      }
+      await Promise.all([
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "hero_config", value: hero }),
+        }),
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "categories_config", value: categories }),
+        }),
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "announcement_config", value: announcement }),
+        }),
+      ]);
+      setSaveMessage("Storefront parameters updated live.");
+      setTimeout(() => setSaveMessage(null), 3500);
     } catch {
-      setSaveMessage("Gagal menyimpan Hero Configuration.");
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleSaveCategories = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSaving(true);
-    setSaveMessage(null);
-    try {
-      const res = await fetch("/api/admin/settings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key: "categories_config", value: categories }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSaveMessage("Kategori Showcase tersimpan live!");
-        setTimeout(() => setSaveMessage(null), 3000);
-      }
-    } catch {
-      setSaveMessage("Gagal menyimpan Kategori.");
+      setSaveMessage("Failed saving showcase.");
     } finally {
       setSaving(false);
     }
@@ -178,47 +167,35 @@ export default function AdminPage() {
           <div className="space-y-8">
             <div className="space-y-1">
               <span className="font-mono text-[10px] uppercase tracking-widest text-[#8F94A3] block">
-                CONSOLE DISPATCH
+                CONTROL INTERFACE
               </span>
               <h2 className="text-xl font-black uppercase tracking-tight text-[#111215]">
-                Content &amp; Assets
+                Direct Dispatch
               </h2>
             </div>
 
             <nav className="flex flex-col space-y-1 font-mono text-xs uppercase font-bold tracking-wider">
               <button
-                onClick={() => setActiveTab("cms")}
+                onClick={() => setActiveTab("showcase")}
                 className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
-                  activeTab === "cms"
+                  activeTab === "showcase"
                     ? "border-[#111215] bg-[#111215] text-white"
                     : "border-transparent text-[#6E7382] hover:text-[#111215] hover:border-[#E2E5EB]"
                 }`}
               >
-                <span>01. Hero Matrix</span>
+                <span>01. Storefront Showcase</span>
                 <span className="text-[10px] opacity-60">CMS</span>
               </button>
 
               <button
-                onClick={() => setActiveTab("categories")}
+                onClick={() => setActiveTab("inventory")}
                 className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
-                  activeTab === "categories"
+                  activeTab === "inventory"
                     ? "border-[#111215] bg-[#111215] text-white"
                     : "border-transparent text-[#6E7382] hover:text-[#111215] hover:border-[#E2E5EB]"
                 }`}
               >
-                <span>02. 5-Slot Category</span>
-                <span className="text-[10px] opacity-60">GRID</span>
-              </button>
-
-              <button
-                onClick={() => setActiveTab("products")}
-                className={`w-full flex items-center justify-between px-4 py-3.5 border transition-all text-left ${
-                  activeTab === "products"
-                    ? "border-[#111215] bg-[#111215] text-white"
-                    : "border-transparent text-[#6E7382] hover:text-[#111215] hover:border-[#E2E5EB]"
-                }`}
-              >
-                <span>03. Master Catalog</span>
+                <span>02. Catalog Directory</span>
                 <span className="text-[10px] opacity-60">{products.length} ITEMS</span>
               </button>
             </nav>
@@ -232,38 +209,67 @@ export default function AdminPage() {
 
         {/* Right Active Workspace */}
         <main className="flex-1 p-6 sm:p-10 lg:p-12 overflow-y-auto">
-          {/* TAB 1: HERO STAGE CMS */}
-          {activeTab === "cms" && (
-            <div className="max-w-6xl space-y-8">
+          {/* TAB 1: SHOWCASE CMS */}
+          {activeTab === "showcase" && (
+            <div className="max-w-6xl space-y-10">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E5EB] pb-6">
                 <div>
                   <div className="font-mono text-xs uppercase tracking-widest text-[#0E52FF] font-bold mb-1">
-                    PRIMARY STAGE CONFIG
+                    PRIMARY STAGE &amp; NAVIGATION
                   </div>
                   <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
-                    Hero Showcase Parameters
+                    Editorial Showcase Setup
                   </h1>
                 </div>
 
                 <button
-                  onClick={handleSaveHero}
+                  onClick={handleSaveShowcase}
                   disabled={saving}
                   className="px-8 py-3.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 flex items-center gap-2 self-start sm:self-auto"
                 >
                   <Save className="w-4 h-4" />
-                  <span>{saving ? "SAVING..." : "COMMIT TO DATABASE"}</span>
+                  <span>{saving ? "SAVING..." : "COMMIT TO LIVE STORE"}</span>
                 </button>
               </div>
 
-              {/* Split Editor: Inputs on left, Realtime 1:1 Framing on right */}
+              {/* Announcement Strip */}
+              <div className="bg-white border border-[#E2E5EB] p-6 space-y-4">
+                <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                  <span className="font-mono text-xs font-black uppercase text-[#111215]">Top Notification Strip</span>
+                  <span className="font-mono text-[10px] text-[#8F94A3]">HEADER BAR</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Primary Message</label>
+                    <input
+                      type="text"
+                      value={announcement.primaryText || ""}
+                      onChange={(e) => setAnnouncement({ ...announcement, primaryText: e.target.value })}
+                      className="w-full px-3.5 py-2 font-sans text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Secondary Detail</label>
+                    <input
+                      type="text"
+                      value={announcement.secondaryText || ""}
+                      onChange={(e) => setAnnouncement({ ...announcement, secondaryText: e.target.value })}
+                      className="w-full px-3.5 py-2 font-sans text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Hero Matrix Section */}
               <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
-                {/* Form Fields (7 cols) */}
                 <div className="xl:col-span-7 space-y-6 bg-white border border-[#E2E5EB] p-6 sm:p-8">
+                  <div className="border-b border-[#E2E5EB] pb-3">
+                    <span className="font-mono text-xs font-black uppercase text-[#111215]">Hero Focus Product</span>
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Badge Tag (Top)
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Badge Tag</label>
                       <input
                         type="text"
                         value={hero.badgeText || ""}
@@ -271,11 +277,8 @@ export default function AdminPage() {
                         className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
-
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Index / Series Code
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Index No.</label>
                       <input
                         type="text"
                         value={hero.tagline || ""}
@@ -287,9 +290,7 @@ export default function AdminPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Brand Line 1
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Brand Title</label>
                       <input
                         type="text"
                         value={hero.titleLine1 || ""}
@@ -297,11 +298,8 @@ export default function AdminPage() {
                         className="w-full px-3.5 py-2.5 font-sans font-bold text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
-
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Model Highlight (Accent)
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Accent Name</label>
                       <input
                         type="text"
                         value={hero.titleAccent || ""}
@@ -309,11 +307,8 @@ export default function AdminPage() {
                         className="w-full px-3.5 py-2.5 font-sans font-bold text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
-
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Suffix Line 2
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Suffix</label>
                       <input
                         type="text"
                         value={hero.titleLine2 || ""}
@@ -324,9 +319,7 @@ export default function AdminPage() {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                      Editorial Synopsis
-                    </label>
+                    <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Editorial Synopsis</label>
                     <textarea
                       rows={3}
                       value={hero.description || ""}
@@ -337,9 +330,7 @@ export default function AdminPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Dimensions
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Dimensions</label>
                       <input
                         type="text"
                         value={hero.dimensions || ""}
@@ -347,11 +338,8 @@ export default function AdminPage() {
                         className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
-
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Thickness / Cut
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Thickness</label>
                       <input
                         type="text"
                         value={hero.thickness || ""}
@@ -359,11 +347,8 @@ export default function AdminPage() {
                         className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                       />
                     </div>
-
                     <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Status
-                      </label>
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Availability</label>
                       <input
                         type="text"
                         value={hero.availability || ""}
@@ -384,32 +369,6 @@ export default function AdminPage() {
                       className="w-full px-3.5 py-2.5 font-mono text-[11px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
                     />
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        Primary CTA Label
-                      </label>
-                      <input
-                        type="text"
-                        value={hero.ctaText || ""}
-                        onChange={(e) => setHero({ ...hero, ctaText: e.target.value })}
-                        className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
-                        CTA Target URL
-                      </label>
-                      <input
-                        type="text"
-                        value={hero.ctaLink || ""}
-                        onChange={(e) => setHero({ ...hero, ctaLink: e.target.value })}
-                        className="w-full px-3.5 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Live Architectural Preview Card (5 cols) */}
@@ -421,7 +380,7 @@ export default function AdminPage() {
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   </div>
 
-                  <div className="relative aspect-square w-full max-w-[340px] mx-auto border border-[#E2E5EB] overflow-hidden bg-[#F8F9FA] shadow-xs">
+                  <div className="relative aspect-square w-full max-w-[320px] mx-auto border border-[#E2E5EB] overflow-hidden bg-[#F8F9FA] shadow-xs">
                     {hero.imageUrl ? (
                       <Image
                         src={hero.imageUrl}
@@ -446,104 +405,70 @@ export default function AdminPage() {
                       <span>AVAILABILITY:</span>
                       <span className="font-bold text-emerald-700">{hero.availability}</span>
                     </div>
-                    <div className="flex justify-between text-[#6E7382]">
-                      <span>DIMENSIONS:</span>
-                      <span className="font-bold text-[#111215]">{hero.dimensions}</span>
-                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
 
-          {/* TAB 2: CATEGORY SHOWCASES */}
-          {activeTab === "categories" && (
-            <div className="max-w-6xl space-y-8">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E5EB] pb-6">
-                <div>
-                  <div className="font-mono text-xs uppercase tracking-widest text-[#0E52FF] font-bold mb-1">
-                    INDEX ARCHITECTURE
-                  </div>
-                  <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
-                    5-Slot Category Directory
-                  </h1>
+              {/* 5-Slot Category Directory Grid */}
+              <div className="space-y-4">
+                <div className="border-b border-[#E2E5EB] pb-2">
+                  <span className="font-mono text-xs font-black uppercase text-[#111215]">5-Slot Homepage Directory</span>
                 </div>
-
-                <button
-                  onClick={handleSaveCategories}
-                  disabled={saving}
-                  className="px-8 py-3.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 flex items-center gap-2"
-                >
-                  <Save className="w-4 h-4" />
-                  <span>{saving ? "SAVING..." : "COMMIT CATEGORIES"}</span>
-                </button>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {categories.map((cat, idx) => (
-                  <div key={idx} className="bg-white border border-[#E2E5EB] p-6 space-y-4">
-                    <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-3">
-                      <span className="font-mono text-xs font-black text-[#111215]">SLOT 0{idx + 1}</span>
-                      <span className="font-mono text-[10px] uppercase px-2 py-0.5 bg-[#F6F7F9] border border-[#E2E5EB] text-[#6E7382]">
-                        {cat.index}
-                      </span>
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Category Title</label>
-                      <input
-                        type="text"
-                        value={cat.title || ""}
-                        onChange={(e) => {
-                          const updated = [...categories];
-                          updated[idx].title = e.target.value;
-                          setCategories(updated);
-                        }}
-                        className="w-full px-3.5 py-2 font-bold text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Technical Teaser</label>
-                      <input
-                        type="text"
-                        value={cat.spec || ""}
-                        onChange={(e) => {
-                          const updated = [...categories];
-                          updated[idx].spec = e.target.value;
-                          setCategories(updated);
-                        }}
-                        className="w-full px-3.5 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Showcase Image URL</label>
-                      <input
-                        type="text"
-                        value={cat.image || ""}
-                        onChange={(e) => {
-                          const updated = [...categories];
-                          updated[idx].image = e.target.value;
-                          setCategories(updated);
-                        }}
-                        className="w-full px-3.5 py-2 font-mono text-[11px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
-                    </div>
-
-                    {cat.image && (
-                      <div className="relative aspect-video w-full border border-[#E2E5EB] overflow-hidden bg-[#F8F9FA] mt-2">
-                        <Image src={cat.image} alt={cat.title} fill unoptimized className="object-cover" />
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {categories.map((cat, idx) => (
+                    <div key={idx} className="bg-white border border-[#E2E5EB] p-5 space-y-3">
+                      <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                        <span className="font-mono text-xs font-black text-[#111215]">SLOT 0{idx + 1}</span>
+                        <span className="font-mono text-[10px] uppercase text-[#6E7382]">{cat.index}</span>
                       </div>
-                    )}
-                  </div>
-                ))}
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Title</label>
+                        <input
+                          type="text"
+                          value={cat.title || ""}
+                          onChange={(e) => {
+                            const updated = [...categories];
+                            updated[idx].title = e.target.value;
+                            setCategories(updated);
+                          }}
+                          className="w-full px-3 py-1.5 font-bold text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Spec Teaser</label>
+                        <input
+                          type="text"
+                          value={cat.spec || ""}
+                          onChange={(e) => {
+                            const updated = [...categories];
+                            updated[idx].spec = e.target.value;
+                            setCategories(updated);
+                          }}
+                          className="w-full px-3 py-1.5 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Image URL</label>
+                        <input
+                          type="text"
+                          value={cat.image || ""}
+                          onChange={(e) => {
+                            const updated = [...categories];
+                            updated[idx].image = e.target.value;
+                            setCategories(updated);
+                          }}
+                          className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
 
-          {/* TAB 3: PRODUCT DIRECTORY */}
-          {activeTab === "products" && (
+          {/* TAB 2: INVENTORY & CATALOG */}
+          {activeTab === "inventory" && (
             <div className="max-w-6xl space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E2E5EB] pb-6">
                 <div>
