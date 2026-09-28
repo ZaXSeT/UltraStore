@@ -9,6 +9,8 @@ import {
   Eye,
   EyeOff,
   ArrowUpRight,
+  Plus,
+  Trash2,
 } from "lucide-react";
 
 export default function AdminPage() {
@@ -38,6 +40,15 @@ export default function AdminPage() {
   });
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    category_id: "cat_pad",
+    price: 1750000,
+    stock: 10,
+    primary_image: "",
+    is_preorder: false,
+  });
 
   useEffect(() => {
     fetch("/api/admin/settings")
@@ -94,6 +105,63 @@ export default function AdminPage() {
     } finally {
       setSaving(false);
     }
+  };
+
+  const handleCreateProduct = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newProduct.name) return;
+    try {
+      const res = await fetch("/api/admin/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newProduct),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setShowAddModal(false);
+        setNewProduct({
+          name: "",
+          category_id: "cat_pad",
+          price: 1750000,
+          stock: 10,
+          primary_image: "",
+          is_preorder: false,
+        });
+        loadProducts(productSearch);
+        setSaveMessage("Product added to catalog.");
+        setTimeout(() => setSaveMessage(null), 3000);
+      }
+    } catch {
+      setSaveMessage("Failed creating product.");
+    }
+  };
+
+  const handleDeleteProduct = async (id: string) => {
+    if (!confirm("Delete product permanently from catalog?")) return;
+    try {
+      const res = await fetch(`/api/admin/products?id=${encodeURIComponent(id)}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success) {
+        setProducts((prev) => prev.filter((p) => p.id !== id));
+        setSaveMessage("Product removed from catalog.");
+        setTimeout(() => setSaveMessage(null), 3000);
+      }
+    } catch {
+      setSaveMessage("Failed deleting product.");
+    }
+  };
+
+  const handleUpdateStock = async (id: string, newStock: number) => {
+    await fetch("/api/admin/products", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, stock: newStock }),
+    });
+    setProducts((prev) =>
+      prev.map((p) => (p.id === id ? { ...p, total_stock: newStock } : p))
+    );
   };
 
   const togglePublishProduct = async (id: string, currentPublished: number) => {
@@ -476,24 +544,154 @@ export default function AdminPage() {
                     INVENTORY MASTER
                   </div>
                   <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
-                    Catalog Visibility &amp; Assets
+                    Catalog Directory &amp; Stocks
                   </h1>
                 </div>
 
-                <div className="relative w-full sm:w-80">
-                  <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#8F94A3]" />
-                  <input
-                    type="text"
-                    placeholder="Search brand, model, SKU..."
-                    value={productSearch}
-                    onChange={(e) => {
-                      setProductSearch(e.target.value);
-                      loadProducts(e.target.value);
-                    }}
-                    className="w-full pl-10 pr-4 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
-                  />
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setShowAddModal(true)}
+                    className="flex items-center gap-2 px-4 py-2.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    <span>Add Product</span>
+                  </button>
+
+                  <div className="relative w-full sm:w-72">
+                    <Search className="w-4 h-4 absolute left-3.5 top-3 text-[#8F94A3]" />
+                    <input
+                      type="text"
+                      placeholder="Search catalog..."
+                      value={productSearch}
+                      onChange={(e) => {
+                        setProductSearch(e.target.value);
+                        loadProducts(e.target.value);
+                      }}
+                      className="w-full pl-10 pr-4 py-2.5 font-mono text-xs border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                    />
+                  </div>
                 </div>
               </div>
+
+              {/* Add Product Modal Overlay */}
+              {showAddModal && (
+                <div className="bg-white border-2 border-[#111215] p-6 space-y-4 shadow-xl">
+                  <div className="flex items-center justify-between border-b border-[#E2E5EB] pb-2">
+                    <span className="font-mono text-xs font-black uppercase text-[#111215]">
+                      Create New Catalog Product
+                    </span>
+                    <button
+                      onClick={() => setShowAddModal(false)}
+                      className="text-xs font-mono text-[#8F94A3] hover:text-[#111215]"
+                    >
+                      [CLOSE]
+                    </button>
+                  </div>
+
+                  <form onSubmit={handleCreateProduct} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Product Name
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={newProduct.name}
+                          onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+                          className="w-full px-3 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Category
+                        </label>
+                        <select
+                          value={newProduct.category_id}
+                          onChange={(e) => setNewProduct({ ...newProduct, category_id: e.target.value })}
+                          className="w-full px-3 py-2 text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        >
+                          <option value="cat_pad">Mousepad</option>
+                          <option value="cat_mou">Mouse</option>
+                          <option value="cat_kbd">Keyboard</option>
+                          <option value="cat_swp">Switches &amp; Parts</option>
+                          <option value="cat_aud">Audio</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Base Price (IDR)
+                        </label>
+                        <input
+                          type="number"
+                          value={newProduct.price}
+                          onChange={(e) => setNewProduct({ ...newProduct, price: Number(e.target.value) })}
+                          className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Initial Stock
+                        </label>
+                        <input
+                          type="number"
+                          value={newProduct.stock}
+                          onChange={(e) => setNewProduct({ ...newProduct, stock: Number(e.target.value) })}
+                          className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                      </div>
+
+                      <div className="space-y-1">
+                        <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                          Pre-Order Status
+                        </label>
+                        <label className="flex items-center gap-2 pt-2 text-xs font-mono">
+                          <input
+                            type="checkbox"
+                            checked={newProduct.is_preorder}
+                            onChange={(e) => setNewProduct({ ...newProduct, is_preorder: e.target.checked })}
+                          />
+                          <span>Pre-Order Batch</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
+                        Cloudflare R2 or CDN Image Path
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="/api/r2/products/example.webp or CDN URL"
+                        value={newProduct.primary_image}
+                        onChange={(e) => setNewProduct({ ...newProduct, primary_image: e.target.value })}
+                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                      />
+                    </div>
+
+                    <div className="flex justify-end gap-3 pt-2 border-t border-[#E2E5EB]">
+                      <button
+                        type="button"
+                        onClick={() => setShowAddModal(false)}
+                        className="px-4 py-2 border border-[#E2E5EB] text-xs font-mono uppercase"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        className="px-6 py-2 bg-[#111215] text-white text-xs font-mono font-bold uppercase hover:bg-[#0E52FF] transition-colors"
+                      >
+                        Save Product
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
 
               <div className="bg-white border border-[#E2E5EB] overflow-x-auto">
                 <table className="w-full text-left font-mono text-xs">
@@ -502,9 +700,10 @@ export default function AdminPage() {
                       <th className="py-3 px-4">State</th>
                       <th className="py-3 px-4">Designation</th>
                       <th className="py-3 px-4">Category</th>
-                      <th className="py-3 px-4">Master Media Path</th>
+                      <th className="py-3 px-4">Stock Physical</th>
+                      <th className="py-3 px-4">Media Path (R2)</th>
                       <th className="py-3 px-4 text-right">Floor Price</th>
-                      <th className="py-3 px-4 text-center">Toggle</th>
+                      <th className="py-3 px-4 text-center">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#E2E5EB]">
@@ -526,6 +725,14 @@ export default function AdminPage() {
                           <div className="font-mono text-[10px] font-normal text-[#8F94A3]">{p.brand_name}</div>
                         </td>
                         <td className="py-3 px-4 text-[#6E7382] uppercase text-[11px]">{p.category_name}</td>
+                        <td className="py-3 px-4 w-28">
+                          <input
+                            type="number"
+                            defaultValue={p.total_stock ?? 0}
+                            onBlur={(e) => handleUpdateStock(p.id, Number(e.target.value))}
+                            className="w-20 px-2 py-1 text-xs border border-[#E2E5EB] bg-white font-mono font-bold text-center focus:outline-none focus:border-[#111215]"
+                          />
+                        </td>
                         <td className="py-3 px-4 max-w-xs">
                           <input
                             type="text"
@@ -538,17 +745,26 @@ export default function AdminPage() {
                           {p.min_price ? `Rp ${p.min_price.toLocaleString("id-ID")}` : "-"}
                         </td>
                         <td className="py-3 px-4 text-center">
-                          <button
-                            onClick={() => togglePublishProduct(p.id, p.published)}
-                            className="p-1.5 border border-[#E2E5EB] hover:border-[#111215] transition-colors"
-                            title={p.published === 1 ? "Hide from Storefront" : "Publish to Storefront"}
-                          >
-                            {p.published === 1 ? (
-                              <Eye className="w-3.5 h-3.5 text-emerald-700" />
-                            ) : (
-                              <EyeOff className="w-3.5 h-3.5 text-[#8F94A3]" />
-                            )}
-                          </button>
+                          <div className="flex items-center justify-center gap-1.5">
+                            <button
+                              onClick={() => togglePublishProduct(p.id, p.published)}
+                              className="p-1.5 border border-[#E2E5EB] hover:border-[#111215] transition-colors"
+                              title={p.published === 1 ? "Hide from Storefront" : "Publish to Storefront"}
+                            >
+                              {p.published === 1 ? (
+                                <Eye className="w-3.5 h-3.5 text-emerald-700" />
+                              ) : (
+                                <EyeOff className="w-3.5 h-3.5 text-[#8F94A3]" />
+                              )}
+                            </button>
+                            <button
+                              onClick={() => handleDeleteProduct(p.id)}
+                              className="p-1.5 border border-[#E2E5EB] hover:border-red-600 text-neutral-400 hover:text-red-600 transition-colors"
+                              title="Delete Product"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}

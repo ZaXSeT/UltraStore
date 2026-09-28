@@ -20,7 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group block bg-white border border-neutral-200/90 rounded-2xl overflow-hidden hover:border-neutral-950 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
+      className="group block bg-white border border-neutral-200/90 overflow-hidden hover:border-neutral-950 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* 1:1 Product Image Studio Canvas */}
       <div className="relative aspect-square w-full bg-neutral-100 flex items-center justify-center border-b border-neutral-100 overflow-hidden">
