@@ -88,22 +88,22 @@ export function Header() {
           </Link>
         </nav>
 
-        {/* Header Actions */}
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={openCart}
-            className="relative inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#090D16] hover:bg-[#2563EB] text-white text-sm font-medium transition-all shadow-sm"
-            aria-label="Buka Keranjang Belanja"
-          >
-            <ShoppingBag className="w-4 h-4 text-slate-300" />
-            <span className="hidden sm:inline">Keranjang</span>
-            {mounted && totalItemCount > 0 && (
-              <span className="ml-1 px-2 py-0.5 text-xs font-bold rounded-full bg-[#2563EB] text-white">
-                {totalItemCount}
-              </span>
-            )}
-          </button>
+          {/* Header Actions */}
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={openCart}
+              className="relative inline-flex items-center gap-2 px-4 py-2 border border-[#0E52FF] bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs uppercase font-bold tracking-wider transition-all shadow-sm"
+              aria-label="Buka Keranjang Belanja"
+            >
+              <ShoppingBag className="w-3.5 h-3.5 text-white/80" />
+              <span className="hidden sm:inline">Keranjang</span>
+              {mounted && totalItemCount > 0 && (
+                <span className="ml-1 px-1.5 py-0.2 bg-white text-[#0E52FF] text-[10px] font-bold font-mono">
+                  {totalItemCount}
+                </span>
+              )}
+            </button>
 
           {/* Mobile Menu Button */}
           <button
