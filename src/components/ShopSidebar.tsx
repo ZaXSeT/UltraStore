@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Keyboard,
@@ -16,6 +16,7 @@ import {
   CheckCircle,
   Truck,
   Sparkles,
+  Check,
 } from "lucide-react";
 
 interface CategoryItem {
@@ -61,6 +62,19 @@ export function ShopSidebar({
 }: ShopSidebarProps) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState(searchQuery);
+  const [brandOpen, setBrandOpen] = useState(false);
+  const [brandSearch, setBrandSearch] = useState("");
+  const brandRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (brandRef.current && !brandRef.current.contains(event.target as Node)) {
+        setBrandOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const updateFilters = (updates: {
     category?: string;
@@ -103,6 +117,11 @@ export function ShopSidebar({
 
   const hasActiveFilters = Boolean(
     currentCategory || currentBrand || currentOffer || searchQuery
+  );
+
+  const activeBrandObj = allBrands.find((b) => b.slug === currentBrand);
+  const filteredBrands = allBrands.filter((b) =>
+    b.name.toLowerCase().includes(brandSearch.toLowerCase())
   );
 
   return (
@@ -226,13 +245,10 @@ export function ShopSidebar({
         </div>
       </div>
 
-      {/* 3. Brand Selection Dropdown */}
-      <div>
+      {/* 3. Custom Brand Selection Dropdown (Zero Native OS Quirks) */}
+      <div ref={brandRef} className="relative">
         <div className="flex items-center justify-between mb-2">
-          <label
-            htmlFor="sidebar-brand-select"
-            className="text-xs font-semibold text-slate-700 uppercase tracking-wider"
-          >
+          <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
             Brand
           </label>
           {currentBrand && (
@@ -245,22 +261,115 @@ export function ShopSidebar({
             </button>
           )}
         </div>
-        <div className="relative">
-          <select
-            id="sidebar-brand-select"
-            value={currentBrand}
-            onChange={(e) => updateFilters({ brand: e.target.value })}
-            className="w-full appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3.5 pr-8 py-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 cursor-pointer shadow-sm transition-all"
-          >
-            <option value="">Semua Brand ({allBrands.length})</option>
-            {allBrands.map((b) => (
-              <option key={b.slug} value={b.slug}>
-                {b.name} ({b.count})
-              </option>
-            ))}
-          </select>
-          <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-        </div>
+
+        {/* Custom Trigger Button */}
+        <button
+          type="button"
+          onClick={() => setBrandOpen(!brandOpen)}
+          className={`w-full flex items-center justify-between bg-slate-50 border rounded-xl px-3.5 py-2.5 text-xs font-medium transition-all text-left ${
+            brandOpen
+              ? "border-blue-600 ring-2 ring-blue-500/20 bg-white"
+              : currentBrand
+              ? "border-blue-300 bg-blue-50/40 text-blue-900"
+              : "border-slate-200 text-slate-800 hover:bg-slate-100"
+          }`}
+        >
+          <div className="flex items-center gap-2 truncate">
+            {activeBrandObj ? (
+              <>
+                <span className="font-semibold text-blue-600 truncate">{activeBrandObj.name}</span>
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-700">
+                  {activeBrandObj.count}
+                </span>
+              </>
+            ) : (
+              <span className="text-slate-700">Semua Brand ({allBrands.length})</span>
+            )}
+          </div>
+          <ChevronDown
+            className={`w-4 h-4 text-slate-400 transition-transform duration-200 shrink-0 ${
+              brandOpen ? "rotate-180 text-blue-600" : ""
+            }`}
+          />
+        </button>
+
+        {/* Custom Popover Dropdown Panel */}
+        {brandOpen && (
+          <div className="absolute top-full left-0 right-0 mt-1.5 bg-white border border-slate-200 rounded-xl shadow-xl z-50 overflow-hidden divide-y divide-slate-100">
+            {/* Quick search input */}
+            <div className="p-2 bg-slate-50">
+              <div className="relative">
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="text"
+                  value={brandSearch}
+                  onChange={(e) => setBrandSearch(e.target.value)}
+                  placeholder="Cari brand..."
+                  className="w-full pl-8 pr-2.5 py-1.5 bg-white border border-slate-200 rounded-lg text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  autoFocus
+                />
+              </div>
+            </div>
+
+            {/* Scrollable Brand List */}
+            <div className="max-h-56 overflow-y-auto py-1 space-y-0.5">
+              <button
+                type="button"
+                onClick={() => {
+                  updateFilters({ brand: "" });
+                  setBrandOpen(false);
+                  setBrandSearch("");
+                }}
+                className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left ${
+                  !currentBrand
+                    ? "bg-blue-50 text-blue-700 font-semibold"
+                    : "text-slate-700 hover:bg-slate-50"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  {!currentBrand && <Check className="w-3.5 h-3.5 text-blue-600" />}
+                  <span>Semua Brand</span>
+                </div>
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                  {allBrands.length}
+                </span>
+              </button>
+
+              {filteredBrands.length === 0 ? (
+                <div className="px-3 py-4 text-center text-xs text-slate-400">
+                  Brand tidak ditemukan
+                </div>
+              ) : (
+                filteredBrands.map((b) => (
+                  <button
+                    key={b.slug}
+                    type="button"
+                    onClick={() => {
+                      updateFilters({ brand: b.slug });
+                      setBrandOpen(false);
+                      setBrandSearch("");
+                    }}
+                    className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left ${
+                      currentBrand === b.slug
+                        ? "bg-blue-50 text-blue-700 font-semibold"
+                        : "text-slate-700 hover:bg-slate-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      {currentBrand === b.slug && (
+                        <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      )}
+                      <span className="truncate">{b.name}</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500 shrink-0 ml-2">
+                      {b.count}
+                    </span>
+                  </button>
+                ))
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 4. Stock & Pre-order Status */}
