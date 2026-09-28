@@ -7,6 +7,7 @@ import {
   DEFAULT_ANNOUNCEMENT_CONFIG,
   DEFAULT_SECTION_HEADERS_CONFIG,
   DEFAULT_FOOTER_CONFIG,
+  DEFAULT_BRAND_LOGOS_CONFIG,
 } from "@/lib/cms";
 
 export async function GET(req: Request) {
@@ -38,15 +39,21 @@ export async function GET(req: Request) {
     return NextResponse.json({ success: true, data });
   }
 
+  if (key === "brand_logos") {
+    const data = getSiteSetting("brand_logos_config", DEFAULT_BRAND_LOGOS_CONFIG);
+    return NextResponse.json({ success: true, data });
+  }
+
   const hero = getSiteSetting("hero_config", DEFAULT_HERO_CONFIG);
   const categories = getSiteSetting("categories_config", DEFAULT_CATEGORIES_CONFIG);
   const announcement = getSiteSetting("announcement_config", DEFAULT_ANNOUNCEMENT_CONFIG);
   const sectionHeaders = getSiteSetting("section_headers_config", DEFAULT_SECTION_HEADERS_CONFIG);
   const footer = getSiteSetting("footer_config", DEFAULT_FOOTER_CONFIG);
+  const brandLogos = getSiteSetting("brand_logos_config", DEFAULT_BRAND_LOGOS_CONFIG);
 
   return NextResponse.json({
     success: true,
-    data: { hero, categories, announcement, sectionHeaders, footer },
+    data: { hero, categories, announcement, sectionHeaders, footer, brandLogos },
   });
 }
 

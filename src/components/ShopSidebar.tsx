@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "../context/LanguageContext";
-import { categoryLabel } from "../lib/locale";
+import { brandLabel, categoryLabel } from "../lib/locale";
 import {
   Keyboard,
   Mouse,
@@ -346,7 +346,7 @@ export function ShopSidebar({
                     >
                       <div className="flex items-center gap-2 truncate">
                         {isActive && <span className="w-1.5 h-1.5 bg-white" />}
-                        <span className="truncate uppercase tracking-wider">{b.name}</span>
+                        <span className="truncate uppercase tracking-wider">{brandLabel(b.slug, b.name, locale)}</span>
                       </div>
                       <span className={`text-[10px] font-mono font-tabular shrink-0 ml-1 ${isActive ? "opacity-75" : "text-neutral-400"}`}>
                         {b.count}

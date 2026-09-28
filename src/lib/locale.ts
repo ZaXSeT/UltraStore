@@ -31,6 +31,21 @@ export function categoryLabel(slug: string, original: string, locale: StoreLocal
   return pair ? pair[locale === "en" ? 1 : 0] : original;
 }
 
+export function brandLabel(slug: string, original: string, locale: StoreLocale): string {
+  return slug === "other" ? copy(locale, "Merek Lainnya", "Other Brands") : original;
+}
+
+export function categorySpec(value: string, locale: StoreLocale): string {
+  if (locale === "en") return value;
+  const indonesian: Record<string, string> = {
+    "8K HE & Custom Gasket": "Hall Effect 8K & Gasket Kustom",
+    "Aluminosilicate Micro-Etch": "Kaca Aluminosilikat Bertekstur Mikro",
+    "Magnetic HE & Custom Linear": "Switch Magnetik HE & Linear Kustom",
+    "Verified Manufacturer Batches": "Batch Pabrikan Terverifikasi",
+  };
+  return indonesian[value] || value;
+}
+
 export function deliveryEstimate(value: string | null | undefined, locale: StoreLocale): string {
   if (!value) return "";
   if (locale === "id") return value;

@@ -54,7 +54,7 @@ export default async function DropLedgerPage({
               {t("Jadwal Pre-Order", "Pre-Order Timeline")}
             </span>
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
-              {locale === "en" ? batch.name.replace("Batch Rilisan", "Release Batch") : batch.name}
+              {locale === "en" ? batch.name.replace("Batch Rilisan", "Batch") : batch.name}
             </h1>
           </div>
 
@@ -93,7 +93,7 @@ export default async function DropLedgerPage({
               href={`/products/${product.slug}`}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors inline-block shadow-sm"
             >
-              {t("Pesan Pre-Order", "Reserve a Pre-Order")}
+              {t("Pesan Pre-Order", "Pre-Order Now")}
             </Link>
           </div>
         )}

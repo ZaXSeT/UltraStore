@@ -4,7 +4,7 @@ import { ShopSidebar } from "../../components/ShopSidebar";
 import Link from "next/link";
 import { Filter, RotateCcw, X, ShieldCheck, Check } from "lucide-react";
 import { getServerLocale } from "../../lib/server-locale";
-import { categoryLabel, copy } from "../../lib/locale";
+import { brandLabel, categoryLabel, copy } from "../../lib/locale";
 
 export default async function ShopPage({
   searchParams,
@@ -39,7 +39,7 @@ export default async function ShopPage({
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-[#111215]">
             <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
-            <span>{t("PUSAT DISTRIBUSI RESMI · STOK JAKARTA", "OFFICIAL DISTRIBUTION · JAKARTA STOCK")}</span>
+            <span>{t("PILIHAN ULTRASTORE · JAKARTA", "CURATED IN JAKARTA · GAMING GEAR")}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
             {t("Katalog Periferal", "Gaming Gear Catalog")}
@@ -52,7 +52,7 @@ export default async function ShopPage({
         <div className="flex flex-wrap md:flex-col md:items-end gap-2 text-xs font-mono text-neutral-500 shrink-0">
           <div className="inline-flex items-center gap-2 border border-neutral-200 bg-white px-3 py-1.5 text-xs text-[#111215]">
             <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="font-bold uppercase tracking-wider text-[11px]">{t("Garansi Resmi 1 Tahun", "1-Year Official Warranty")}</span>
+            <span className="font-bold uppercase tracking-wider text-[11px]">{t("Garansi Resmi 1 Tahun", "Official 1-Year Warranty")}</span>
           </div>
           <span className="text-[10px] uppercase tracking-wider text-neutral-400">
             {t("Dikirim dari Jakarta", "Ships from Jakarta")}
@@ -111,7 +111,7 @@ export default async function ShopPage({
                   }).toString()}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
                 >
-                  <span>{t("Merek", "Brand")}: {activeBrandObj.name}</span>
+                  <span>{t("Merek", "Brand")}: {brandLabel(activeBrandObj.slug, activeBrandObj.name, locale)}</span>
                   <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
                 </Link>
               )}

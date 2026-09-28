@@ -48,37 +48,62 @@ body {
   background: #CBD5E1;
   border-radius: 3px;
 }
-/* Logo Metallic Shimmer Animation (Left to Right Light Beam Sweep) */
+/* A light sweep over the logo, without changing its base color. */
 @keyframes logoShineSweep {
+  from {
+    background-position: 165% 0;
+  }
+  to {
+    background-position: -65% 0;
+  }
+}
+
+/* Infinite Marquee Animation (Smooth Leftward Scroll) */
+@keyframes marqueeLeft {
   0% {
-    background-position: -200% 0;
+    transform: translateX(0%);
   }
   100% {
-    background-position: 200% 0;
+    transform: translateX(-33.333333%);
   }
+}
+
+.animate-marquee {
+  animation: marqueeLeft 30s linear infinite;
 }
 
 .logo-shimmer {
+  position: relative;
   display: inline-block;
   font-weight: 900;
-  background: linear-gradient(
-    115deg,
-    #0F172A 0%,
-    #0F172A 30%,
-    #0E52FF 42%,
-    #FFFFFF 50%,
-    #38BDF8 58%,
-    #0F172A 70%,
-    #0F172A 100%
-  ) !important;
-  background-size: 200% auto !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: transparent !important;
-  animation: logoShineSweep 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+  color: var(--brand-cobalt);
 }
 
-.logo-shimmer:hover {
-  animation-duration: 1.2s !important;
+.logo-shimmer::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 42%,
+    rgb(255 255 255 / 15%) 46%,
+    rgb(255 255 255 / 95%) 50%,
+    rgb(164 210 255 / 55%) 53%,
+    transparent 58%
+  );
+  background-size: 160% 100%;
+  background-position: 165% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  pointer-events: none;
+  animation: logoShineSweep 2.3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-shimmer::after {
+    animation: none;
+    opacity: 0;
+  }
 }

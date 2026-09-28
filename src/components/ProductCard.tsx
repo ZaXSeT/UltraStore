@@ -5,7 +5,7 @@ import type { Product } from "../lib/types";
 import { ProductImage } from "./ProductImage";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import { categoryLabel, formatRupiah } from "../lib/locale";
+import { brandLabel, categoryLabel, formatRupiah } from "../lib/locale";
 
 export function ProductCard({ product }: { product: Product }) {
   const { locale, t } = useLanguage();
@@ -50,7 +50,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div>
           <div className="flex items-center justify-between gap-2 mb-1.5">
             <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors">
-              {product.brand.name}
+              {brandLabel(product.brand.slug, product.brand.name, locale)}
             </span>
             <span className="font-mono text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded">
               {categoryLabel(product.category.slug, product.category.name, locale)}
@@ -83,7 +83,7 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
 
           <div className="inline-flex items-center gap-1 px-2.5 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm shadow-blue-500/20">
-            <span>{t("Detail", "Detail")}</span>
+            <span>{t("Lihat", "View")}</span>
             <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>

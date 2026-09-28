@@ -139,7 +139,7 @@ export function CartDrawer() {
                         />
                         <span>{isReady ? t("Stok Tersedia", "In Stock") : "Pre-Order"}</span>
                         <span className="text-[11px] font-normal text-slate-500">
-                          ({group.batchName ? group.batchName.replace("Batch Rilisan", t("Batch Rilisan", "Release Batch")) : t("Langsung", "Ready to ship")})
+                          ({group.batchName ? group.batchName.replace("Batch Rilisan", t("Batch Rilisan", "Batch")) : t("Langsung", "Ready to ship")})
                         </span>
                       </div>
                       <span className="text-[11px] font-normal text-slate-500">

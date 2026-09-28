@@ -63,8 +63,8 @@ export function Header() {
       {/* Main Navigation Bar (Full Width Edge-to-Edge) */}
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 h-18 py-3.5 flex items-center justify-between">
         {/* Brand Logo - Pure typography ala infinitas.id with Metallic Sheen */}
-        <Link href="/" className="flex items-center group">
-          <span className="text-xl sm:text-2xl font-black tracking-[-0.04em] uppercase logo-shimmer select-none drop-shadow-xs">
+        <Link href="/" aria-label="UltraStore" className="flex items-center group">
+          <span className="text-xl sm:text-2xl font-black tracking-[-0.04em] uppercase logo-shimmer select-none drop-shadow-xs" data-text="ULTRASTORE">
             ULTRASTORE
           </span>
         </Link>

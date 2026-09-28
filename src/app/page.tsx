@@ -4,17 +4,20 @@ import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
 import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
 import { getServerLocale } from "../lib/server-locale";
-import { copy } from "../lib/locale";
+import { brandLabel, categorySpec, copy } from "../lib/locale";
 import { localizeHero, localizeSections } from "../lib/localized-cms";
 import {
   getSiteSetting,
   DEFAULT_HERO_CONFIG,
   DEFAULT_CATEGORIES_CONFIG,
   DEFAULT_SECTION_HEADERS_CONFIG,
+  DEFAULT_BRAND_LOGOS_CONFIG,
   HeroConfig,
   MacroCategoryConfig,
   SectionHeadersConfig,
+  BrandLogoConfig,
 } from "../lib/cms";
+import { BrandMarquee } from "../components/BrandMarquee";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +30,7 @@ export default async function HomePage() {
   const hero = localizeHero(getSiteSetting<HeroConfig>("hero_config", DEFAULT_HERO_CONFIG), locale);
   const macroCategoriesConfig = getSiteSetting<MacroCategoryConfig[]>("categories_config", DEFAULT_CATEGORIES_CONFIG);
   const sections = localizeSections(getSiteSetting<SectionHeadersConfig>("section_headers_config", DEFAULT_SECTION_HEADERS_CONFIG), locale);
+  const brandLogos = getSiteSetting<BrandLogoConfig[]>("brand_logos_config", DEFAULT_BRAND_LOGOS_CONFIG);
 
   const readyProducts = products
     .filter((p) => p.offers.some((o) => o.offerType === "READY"))
@@ -39,7 +43,7 @@ export default async function HomePage() {
   const macroCategories = macroCategoriesConfig.map((cat) => ({
     ...cat,
     title: locale === "en" ? cat.titleEn || cat.title : cat.title === "Keyboards" ? "Keyboard" : cat.title === "Gaming Mice" ? "Mouse Gaming" : cat.title === "Precision Glasspads" ? "Glasspad Presisi" : cat.title === "Artisan Switches" ? "Switch Pilihan" : cat.title === "Pre-Order Drops" ? "Rilis Pre-Order" : cat.title,
-    spec: locale === "en" ? cat.specEn || cat.spec : cat.spec === "Verified Manufacturer Batches" ? "Batch Pabrikan Terverifikasi" : cat.spec,
+    spec: locale === "en" ? cat.specEn || cat.spec : categorySpec(cat.spec, locale),
     count: cat.href.includes("offer=PREORDER")
       ? preorderBatches.length
       : products.filter((p) => p.category.slug === cat.href.replace("/shop?category=", "")).length,
@@ -64,7 +68,7 @@ export default async function HomePage() {
                 href={`/shop?brand=${b.slug}`}
                 className="hover:text-neutral-950 transition-colors shrink-0"
               >
-                {b.name}
+                {brandLabel(b.slug, b.name, locale)}
               </Link>
             ))}
           </div>
@@ -165,6 +169,9 @@ export default async function HomePage() {
       </div>
     </section>
 
+      {/* 2.5 AUTHENTIC BRAND PARTNER LOGOS MARQUEE (INFINITE LEFTWARD TICKER) */}
+      <BrandMarquee brands={brandLogos} />
+
       {/* 3. EDITORIAL CATEGORY DIRECTORY */}
       <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-200 pb-4">
@@ -187,7 +194,7 @@ export default async function HomePage() {
             <Link
               key={cat.title}
               href={cat.href}
-              className="group relative bg-white border border-neutral-200/80 rounded-2xl p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between h-[360px] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]"
+              className="group relative bg-white border border-neutral-200/80 rounded-2xl p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between min-h-[360px] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]"
             >
               {/* Card Header: Index & Product Count */}
               <div className="flex items-baseline justify-between border-b border-neutral-100 pb-3">
@@ -207,7 +214,7 @@ export default async function HomePage() {
                     alt={cat.title}
                     fill
                     unoptimized
-                    className="object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 </div>
               </div>
@@ -230,7 +237,7 @@ export default async function HomePage() {
       </section>
 
       {/* 4. READY STOCK CATALOG GRID */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
         <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
           <div>
             <div className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1 flex items-center gap-2">
@@ -258,7 +265,7 @@ export default async function HomePage() {
       </section>
 
       {/* 5. PRE-ORDER DROPS */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6">
+      <section className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16 space-y-6">
         <div className="flex items-end justify-between border-b border-neutral-200 pb-4">
           <div>
             <div className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500 mb-1 flex items-center gap-2">

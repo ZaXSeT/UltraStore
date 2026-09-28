@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { localizeSections } from "../../lib/localized-cms";
-import { DEFAULT_SECTION_HEADERS_CONFIG } from "../../lib/cms-types";
+import { DEFAULT_SECTION_HEADERS_CONFIG, DEFAULT_BRAND_LOGOS_CONFIG } from "../../lib/cms-types";
 import {
   Save,
   CheckCircle2,
@@ -44,6 +44,7 @@ export default function AdminPage() {
     primaryText: "",
     secondaryText: "",
   });
+  const [brandLogos, setBrandLogos] = useState<any[]>(DEFAULT_BRAND_LOGOS_CONFIG);
   const [products, setProducts] = useState<any[]>([]);
   const [productSearch, setProductSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -75,6 +76,7 @@ export default function AdminPage() {
           if (data.data.categories) setCategories(data.data.categories);
           if (data.data.announcement) setAnnouncement(data.data.announcement);
           if (data.data.sectionHeaders) setSectionHeaders(data.data.sectionHeaders);
+          if (data.data.brandLogos) setBrandLogos(data.data.brandLogos);
         }
       })
       .catch(console.error);
@@ -118,6 +120,11 @@ export default function AdminPage() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: "section_headers_config", value: sectionHeaders }),
+        }),
+        fetch("/api/admin/settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "brand_logos_config", value: brandLogos }),
         }),
       ]);
       setSaveMessage("Storefront parameters updated live.");
@@ -473,6 +480,89 @@ export default function AdminPage() {
                           />
                         </label>
                       ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Brand Logos Marquee Manager */}
+              <div className="bg-white border border-[#E2E5EB] p-6 sm:p-8 space-y-4">
+                <div className="border-b border-[#E2E5EB] pb-3 flex items-center justify-between">
+                  <span className="font-mono text-xs font-black uppercase text-[#111215]">Brand Partner Logos</span>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const id = `brand-${Date.now()}`;
+                        setBrandLogos([...brandLogos, { id, name: "NEW BRAND", href: "/shop", active: true }]);
+                      }}
+                      className="flex items-center gap-1 px-2.5 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] text-white font-mono text-[10px] uppercase font-bold"
+                    >
+                      <Plus className="w-3 h-3" />
+                      <span>Add Brand</span>
+                    </button>
+                    <button type="button" onClick={handleSaveShowcase} disabled={saving} className="flex items-center gap-1 px-2.5 py-1.5 bg-[#0E52FF] hover:bg-[#0040E0] text-white font-mono text-[10px] uppercase font-bold disabled:opacity-50">
+                      <Save className="w-3 h-3" />
+                      <span>Save Brands</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {brandLogos.map((brand, idx) => (
+                    <div key={brand.id} className={`border p-3 space-y-2 ${brand.active ? "border-[#0E52FF]/30 bg-[#0E52FF]/5" : "border-[#E2E5EB] bg-[#FDFDFE] opacity-50"}`}>
+                      <div className="flex items-center justify-between gap-2">
+                        <input
+                          type="text"
+                          value={brand.name}
+                          onChange={(e) => {
+                            const updated = [...brandLogos];
+                            updated[idx] = { ...brand, name: e.target.value };
+                            setBrandLogos(updated);
+                          }}
+                          className="flex-1 px-2 py-1 font-mono text-xs font-black uppercase border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const updated = [...brandLogos];
+                            updated[idx] = { ...brand, active: !brand.active };
+                            setBrandLogos(updated);
+                          }}
+                          title={brand.active ? "Active" : "Hidden"}
+                          className="shrink-0"
+                        >
+                          {brand.active ? <Eye className="w-3.5 h-3.5 text-[#0E52FF]" /> : <EyeOff className="w-3.5 h-3.5 text-[#6E7382]" />}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setBrandLogos(brandLogos.filter((_, i) => i !== idx))}
+                          className="shrink-0"
+                        >
+                          <Trash2 className="w-3.5 h-3.5 text-red-500 hover:text-red-700" />
+                        </button>
+                      </div>
+                      <input
+                        type="text"
+                        value={brand.href || ""}
+                        onChange={(e) => {
+                          const updated = [...brandLogos];
+                          updated[idx] = { ...brand, href: e.target.value };
+                          setBrandLogos(updated);
+                        }}
+                        placeholder="/shop?brand=..."
+                        className="w-full px-2 py-1 font-mono text-[10px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215] text-[#6E7382]"
+                      />
+                      <input
+                        type="text"
+                        value={brand.logoUrl || ""}
+                        onChange={(e) => {
+                          const updated = [...brandLogos];
+                          updated[idx] = { ...brand, logoUrl: e.target.value };
+                          setBrandLogos(updated);
+                        }}
+                        placeholder="Logo image URL (optional, uses text if empty)"
+                        className="w-full px-2 py-1 font-mono text-[10px] border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215] text-[#6E7382]"
+                      />
                     </div>
                   ))}
                 </div>

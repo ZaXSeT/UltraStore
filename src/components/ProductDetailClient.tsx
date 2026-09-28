@@ -8,7 +8,7 @@ import { Check, ShieldCheck, Box, Clock, Truck, ArrowRight } from "lucide-react"
 import Link from "next/link";
 import { ProductImage } from "./ProductImage";
 import { useLanguage } from "../context/LanguageContext";
-import { boxItem, deliveryEstimate, formatRupiah } from "../lib/locale";
+import { boxItem, brandLabel, deliveryEstimate, formatRupiah } from "../lib/locale";
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const { locale, t } = useLanguage();
@@ -152,7 +152,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Brand & Title */}
         <div>
           <div className="text-xs font-mono font-bold tracking-wider mb-2 flex items-center justify-between">
-            <span className="text-[#0E52FF] uppercase">{product.brand.name}</span>
+            <span className="text-[#0E52FF] uppercase">{brandLabel(product.brand.slug, product.brand.name, locale)}</span>
             <span className="text-[10px] bg-neutral-100 border border-neutral-200 text-neutral-600 px-2 py-0.5 font-mono uppercase">
               SKU: {selectedVariant.sku}
             </span>
