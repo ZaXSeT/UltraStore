@@ -24,7 +24,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Material": "CNC Magnesium Alloy Skeleton",
-        "Weight": "39 ± 1 g",
+        "Weight": "39 \u00b1 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Omron Optical Switches",
@@ -116,7 +116,7 @@
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
-        "Weight": "45 ± 1 g Solid Shell",
+        "Weight": "45 \u00b1 1 g Solid Shell",
         "Sensor": "PixArt PAW3395",
         "MCU": "Nordic 52840 (4000Hz Compatible)",
         "Shape": "Universal Claw / Fingertip Symmetrical",
@@ -174,7 +174,7 @@
           "priceIdr": 1850000,
           "offerType": "PREORDER",
           "batchId": "batch_glsswrks_akari_nov2026",
-          "estimatedShipping": "20–30 November 2026",
+          "estimatedShipping": "20\u201330 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
           "imageVariantMatch": true
@@ -239,7 +239,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Rear Aggressive High Hump for Strict Claw Grip",
-        "Weight": "51 ± 1 g",
+        "Weight": "51 \u00b1 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI / 650 IPS)",
         "Switches": "Pulsar Optical Light Switch (Zero Debounce Delay)",
         "Polling Rate": "Up to 4000Hz (Requires 4K Dongle)"
@@ -286,7 +286,7 @@
           "priceIdr": 3290000,
           "offerType": "PREORDER",
           "batchId": "batch_ws_zoom75_dec2026",
-          "estimatedShipping": "05–15 Desember 2026",
+          "estimatedShipping": "05\u201315 Desember 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
           "imageVariantMatch": true
@@ -410,7 +410,7 @@
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Full Size Ergonomic Claw/Palm Shape",
-        "Weight": "65 ± 2 g",
+        "Weight": "65 \u00b1 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "4000Hz Wireless Compatible",
         "Battery": "500mAh (Up to 140 Hours Runtime at 1000Hz)"
@@ -493,7 +493,7 @@
           "priceIdr": 3499000,
           "offerType": "PREORDER",
           "batchId": "batch_wooting_60he_nov2026",
-          "estimatedShipping": "18–28 November 2026",
+          "estimatedShipping": "18\u201328 November 2026",
           "stockOnHand": 0,
           "imageUrl": "/images/products/wooting-60he-plus.png",
           "imageVariantMatch": true
@@ -586,7 +586,7 @@
       "specs": {
         "Transducer Principle": "Dynamic, Open-back",
         "Frequency Response": "6 Hz - 38,000 Hz",
-        "Impedance": "120 Ω",
+        "Impedance": "120 \u03a9",
         "Connector": "6.3 mm with 3.5 mm adapter",
         "Weight": "240 g"
       },
@@ -600,6 +600,344 @@
           "stockOnHand": 7,
           "imageUrl": "/images/products/sennheiser-hd-560s.jpg",
           "imageVariantMatch": true
+        }
+      ]
+    },
+    {
+      "id": "prod_everglide_ae68_pro",
+      "slug": "everglide-ae68-pro-8k-he",
+      "brandCanonical": "Everglide",
+      "officialProductName": "Everglide AE68 PRO 8K Hall Effect 65% Magnetic Keyboard",
+      "manufacturerModel": "AE68 PRO 8K",
+      "category": "Keyboard",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840",
+      "specs": {
+        "Layout": "65% Compact 68 Keys",
+        "Polling Rate": "8000 Hz / 0.09ms Latency",
+        "Switches": "Everglide Magnetic Hall Effect (0.001mm RT)",
+        "MCU": "480 MHz High-Speed ARM MCU",
+        "Chassis": "CNC Aluminum Plate & Sound Dampening Poron"
+      },
+      "variants": [
+        {
+          "name": "Standard Black / 8K Polling",
+          "sku": "UST-EVG-AE68-BLK",
+          "color": "Black",
+          "priceIdr": 750000,
+          "offerType": "PREORDER",
+          "stockOnHand": 15,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_everglide_ae64_pro",
+      "slug": "everglide-ae64-pro-8k-aluminum",
+      "brandCanonical": "Everglide",
+      "officialProductName": "Everglide AE64 PRO 8K Hall Effect 65% Aluminum Magnetic Keyboard",
+      "manufacturerModel": "AE64 PRO 8K",
+      "category": "Keyboard",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242858.png?v=1790228574&width=3840",
+      "specs": {
+        "Layout": "64 Keys Aluminum Chassis",
+        "Polling Rate": "8000 Hz",
+        "Rapid Trigger": "0.001mm RT",
+        "MCU": "480 MHz",
+        "Case": "Full CNC Anodized Aluminum"
+      },
+      "variants": [
+        {
+          "name": "Anodized Silver / Rapid Trigger",
+          "sku": "UST-EVG-AE64-SLV",
+          "color": "Silver",
+          "priceIdr": 1200000,
+          "offerType": "PREORDER",
+          "stockOnHand": 10,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242858.png?v=1790228574&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_zirnex_hiper60m",
+      "slug": "zirnex-hiper-60m-8k-he",
+      "brandCanonical": "Zirnex",
+      "officialProductName": "Zirnex Hiper 60-M 8K Hall Effect 60% Aluminum Gaming Keyboard",
+      "manufacturerModel": "Hiper 60-M",
+      "category": "Keyboard",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqom965q0e.jpg?v=1790226462&width=3840",
+      "specs": {
+        "Layout": "60% ANSI Standard",
+        "Polling Rate": "8000 Hz",
+        "Rapid Trigger": "SOCD Compatible / 0.005mm RT",
+        "Case": "Heavy CNC Aluminum Case"
+      },
+      "variants": [
+        {
+          "name": "Midnight Black CNC",
+          "sku": "UST-ZRN-H60M-BLK",
+          "color": "Midnight Black",
+          "priceIdr": 1700000,
+          "offerType": "READY",
+          "stockOnHand": 5,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqom965q0e.jpg?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_mchose_g3_ultra",
+      "slug": "mchose-g3-ultra-8k-wireless",
+      "brandCanonical": "MCHOSE",
+      "officialProductName": "MCHOSE G3 Ultra 8K Wireless Ultra Light Weight Gaming Mouse",
+      "manufacturerModel": "G3 Ultra 8K",
+      "category": "Mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=3840",
+      "specs": {
+        "Sensor": "PixArt PAW3395 (26,000 DPI)",
+        "Polling Rate": "True 8000 Hz Wireless",
+        "Shape": "G305 Inspired Classic Egg Shape",
+        "Weight": "59g Balanced"
+      },
+      "variants": [
+        {
+          "name": "Matte White / 8K Receiver",
+          "sku": "UST-MCH-G3U-WHT",
+          "color": "Matte White",
+          "priceIdr": 690800,
+          "offerType": "READY",
+          "stockOnHand": 12,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_darmoshark_m3_micro",
+      "slug": "darmoshark-m3-micro-pro-cigar-8k",
+      "brandCanonical": "Darmoshark",
+      "officialProductName": "Darmoshark M3 Micro Pro Cigar 8K Wireless Ultra Light Mouse",
+      "manufacturerModel": "M3 Micro Pro",
+      "category": "Mouse",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkb9j8y23.jpg?v=1790226462&width=3840",
+      "specs": {
+        "Sensor": "PixArt PAW3395",
+        "Polling Rate": "8000 Hz Wireless",
+        "Grip Style": "Fingertip Ambidextrous",
+        "Weight": "38g Ultralight"
+      },
+      "variants": [
+        {
+          "name": "Matte Black",
+          "sku": "UST-DAR-M3M-BLK",
+          "color": "Matte Black",
+          "priceIdr": 902500,
+          "offerType": "READY",
+          "stockOnHand": 7,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkb9j8y23.jpg?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_glsswrks_zofia",
+      "slug": "glsswrks-zofia-tempered-glass",
+      "brandCanonical": "GLSSWRKS",
+      "officialProductName": "GLSSWRKS Zofia Premium Tempered Glass Gaming Mousepad",
+      "manufacturerModel": "Zofia",
+      "category": "Mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=3840",
+      "specs": {
+        "Surface": "Etched Tempered Glass (Speed / Smooth Micro-Texture)",
+        "Base": "Full Silicone Anti-Slip Base",
+        "Dimensions": "490 x 420 x 3.8 mm",
+        "Edges": "CNC Rounded Beveled Edges"
+      },
+      "variants": [
+        {
+          "name": "Zofia Art Edition (490x420mm)",
+          "sku": "UST-GLS-ZOF-ART",
+          "color": "Monochrome Artwork",
+          "priceIdr": 1750000,
+          "offerType": "PREORDER",
+          "stockOnHand": 8,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_kyomi_yuyo",
+      "slug": "kyomi-yuyo-glass-mousepad",
+      "brandCanonical": "Kyomi",
+      "officialProductName": "Kyomi Yuyo Silicone Base Coated Glass Gaming Mousepad",
+      "manufacturerModel": "Yuyo Glass",
+      "category": "Mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1790226462&width=3840",
+      "specs": {
+        "Surface": "High Performance Coated Glass (Speed-Control)",
+        "Base": "Custom Molded Silicone Base",
+        "Size": "500 x 400 mm"
+      },
+      "variants": [
+        {
+          "name": "Yuyo Limited Edition",
+          "sku": "UST-KYO-YUY-LTD",
+          "color": "Art Glass",
+          "priceIdr": 1775000,
+          "offerType": "PREORDER",
+          "stockOnHand": 6,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_xraypad_nod_glass",
+      "slug": "xraypad-nod-glass-mousepad",
+      "brandCanonical": "X-Raypad",
+      "officialProductName": "X-Raypad NOD Glass Gaming Mousepad Kaca",
+      "manufacturerModel": "NOD Glass",
+      "category": "Mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119441.png?v=1790226462&width=3840",
+      "specs": {
+        "Material": "Aluminosilicate Tempered Glass",
+        "Glide": "Ultra Smooth Speed Glide",
+        "Base": "Full Grip Silicone",
+        "Dimensions": "490 x 420 mm"
+      },
+      "variants": [
+        {
+          "name": "Glossy Midnight (490x420mm)",
+          "sku": "UST-XRP-NOD-GLS",
+          "color": "Midnight Black",
+          "priceIdr": 1625000,
+          "offerType": "PREORDER",
+          "stockOnHand": 5,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119441.png?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_mitsuki_koku",
+      "slug": "mitsuki-koku-the-void-glass",
+      "brandCanonical": "MITSUKI",
+      "officialProductName": "MITSUKI Koku-The Void Glass Edition Gaming Mousepad",
+      "manufacturerModel": "Koku-The Void",
+      "category": "Mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534438fa454_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840",
+      "specs": {
+        "Surface": "Japanese Chemical Etched Glass",
+        "Speed": "Super Low Friction Speed-Hybrid",
+        "Size": "500 x 400 x 4 mm"
+      },
+      "variants": [
+        {
+          "name": "The Void Glass Black",
+          "sku": "UST-MTK-KOK-BLK",
+          "color": "Void Black",
+          "priceIdr": 1800000,
+          "offerType": "READY",
+          "stockOnHand": 4,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534438fa454_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_talongames_rinne_art",
+      "slug": "talongames-rinne-art-poron",
+      "brandCanonical": "Talongames",
+      "officialProductName": "Talongames Rinne ART Poron Base Edgeless Mousepad (Control)",
+      "manufacturerModel": "Rinne ART",
+      "category": "Mousepad",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960&width=3840",
+      "specs": {
+        "Base": "Japanese Inoue Poron 4mm (Soft)",
+        "Surface": "Tight Control Weave Fabric",
+        "Edges": "Sub-Surface Flush Edgeless",
+        "Size": "490 x 420 x 4 mm"
+      },
+      "variants": [
+        {
+          "name": "Rinne Art Edition / Poron Base",
+          "sku": "UST-TLG-RIN-POR",
+          "color": "Rinne Art",
+          "priceIdr": 565250,
+          "offerType": "PREORDER",
+          "stockOnHand": 14,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_hmx_rain_linear",
+      "slug": "hmx-rain-rail-pcb-switch",
+      "brandCanonical": "HMX",
+      "officialProductName": "HMX Rain Rail Bottom-Out PCB Mount Switch (Pack of 90)",
+      "manufacturerModel": "Rain Rail Linear",
+      "category": "Switches & Parts",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840",
+      "specs": {
+        "Type": "5-Pin PCB Mount Linear Switch",
+        "Stem": "LY Low Friction Stem",
+        "Top Housing": "PA12 Nylon",
+        "Bottom Housing": "Modified P4 Composite",
+        "Spring": "22mm Single Stage (45g Actuation, 53g Bottom Out)"
+      },
+      "variants": [
+        {
+          "name": "Box of 90 Pre-Lubed Switches",
+          "sku": "UST-HMX-RAIN-90",
+          "color": "Sky Blue Stem",
+          "priceIdr": 450000,
+          "offerType": "PREORDER",
+          "stockOnHand": 20,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_keygeek_sago_switch",
+      "slug": "keygeek-sago-pcb-switch",
+      "brandCanonical": "Keygeek",
+      "officialProductName": "Keygeek Sago PCB Mount Mechanical Switch by Jinyun Studio",
+      "manufacturerModel": "Sago Linear",
+      "category": "Switches & Parts",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840",
+      "specs": {
+        "Type": "Linear Switch Factory Lubed",
+        "Actuation": "42g",
+        "Bottom Out": "48g",
+        "Mount": "5-pin PCB Mount"
+      },
+      "variants": [
+        {
+          "name": "Pack of 70 Switches",
+          "sku": "UST-KYG-SAG-70",
+          "color": "Sago White",
+          "priceIdr": 437500,
+          "offerType": "READY",
+          "stockOnHand": 15,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840"
+        }
+      ]
+    },
+    {
+      "id": "prod_talongames_glass_feet",
+      "slug": "talongames-glass-ultra-mouse-feet",
+      "brandCanonical": "Talongames",
+      "officialProductName": "TALONGAMES Glass ULTRA Precision Curved Edge Glass Mouse Feet",
+      "manufacturerModel": "Glass ULTRA",
+      "category": "Switches & Parts",
+      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=3840",
+      "specs": {
+        "Material": "Aluminosilicate Hardened Glass (0.8mm)",
+        "Edges": "2.5D Polished Rounded Curved Edges",
+        "Compatibility": "Universal & Specific GPX/Deathadder Shapes"
+      },
+      "variants": [
+        {
+          "name": "Logitech G PRO X Superlight 2 Fit",
+          "sku": "UST-TLG-GLS-GPX2",
+          "color": "Polished Glass",
+          "priceIdr": 1700000,
+          "offerType": "READY",
+          "stockOnHand": 25,
+          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=3840"
         }
       ]
     }
