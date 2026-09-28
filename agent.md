@@ -13,8 +13,7 @@ Dokumen ini adalah single source of truth untuk progress, konfigurasi arsitektur
   - Admin Console: `http://admin.localhost:3000` (subdomain rewrite via `src/middleware.ts`)
 - **Cloudflare R2 Bucket**: `ultrastore`
   - Account ID: `e9f6cff37d5d30f39a1865ce7c3d765e`
-  - Access Key ID: `b741bf9cf99ebc693bde29efc570fe02`
-  - Secret Access Key: `e4e3b6bfc50f2a619f17431722490bb8d9f2ad4f21e4f4172fe5879fe217ea38`
+  - Kredensial: `R2_ACCESS_KEY_ID` dan `R2_SECRET_ACCESS_KEY` di environment lokal/deployment, jangan simpan nilainya di repository.
   - Endpoint: `https://e9f6cff37d5d30f39a1865ce7c3d765e.r2.cloudflarestorage.com`
   - Public Dev URL (jika tidak diblokir ISP): `https://pub-e9f6cff37d5d30f39a1865ce7c3d765e.r2.dev`
 
@@ -90,3 +89,4 @@ Dokumen ini adalah single source of truth untuk progress, konfigurasi arsitektur
   - Memperbaiki Katalog `/shop` mobile: sidebar filter desktop yang panjang diubah menjadi drawer collapsible modal yang rapi via tombol trigger `Filter & Pencarian`, katalog 114 produk langsung terlihat di viewport utama.
 - `Current-13`: Mengubah layout grid kartu produk di katalog `/shop` mobile dari 1 kolom besar yang boros ruang menjadi **2 Kolom Sejajar (2-column side-by-side grid)** dengan tipografi dan padding yang disesuaikan presisi, melipatgandakan densitas informasi dan memungkinkan pengguna melihat 4+ kartu produk sekaligus tanpa perlu scroll jauh.
 - `Current-14`: Mengoptimalkan Section Direktori Kategori Beranda (`Jelajahi Kategori`) serta Section Showcase Produk Beranda (`Stok Tersedia` & `Pre-Order Drops`) untuk mobile: mengubah layout dari 1 kartu vertikal raksasa yang boros ruang layar menjadi **2 Kolom Sejajar Kompak (2-column compact grid)** dengan aspect ratio 1:1, badge jumlah produk yang akurat dinamis per kategori, padding proporsional (`p-3 sm:p-5`), dan sudut siku 90° Swiss clean.
+- `Current-15`: Audit R2 2026-09-28: 114 URL produk dalam SQLite memakai `/api/r2/...`; objek sampel produk, hero, dan logo ada di bucket. `R2_PUBLIC_URL` lokal masih `/api/r2`, sedangkan URL publik `r2.dev` yang tercatat di atas merespons HTTP 401. URL gambar lama kini otomatis memakai domain publik ketika `R2_PUBLIC_URL` diatur ke URL yang dapat diakses. Upload admin kini mengembalikan string URL dan gagal dengan jelas saat upload R2 gagal. Aktifkan akses publik R2 dan atur domain tersebut pada environment lokal serta deployment untuk menghilangkan localhost dari request gambar.

@@ -47,11 +47,17 @@ export async function POST(req: Request) {
     const uniqueSuffix = crypto.randomBytes(8).toString("hex");
     const uniqueKey = `products/asset_${Date.now()}_${uniqueSuffix}.webp`;
 
-    const r2Url = await uploadImageToR2(uniqueKey, processedBuffer, "image/webp");
+    const upload = await uploadImageToR2(uniqueKey, processedBuffer, "image/webp");
+    if (!upload.success) {
+      return NextResponse.json(
+        { success: false, error: upload.error || "Failed to upload image to R2" },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
-      url: r2Url,
+      url: upload.url,
       key: uniqueKey,
     });
   } catch (err: any) {

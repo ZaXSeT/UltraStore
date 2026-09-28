@@ -1,10 +1,10 @@
 import { S3Client, PutObjectCommand, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3";
+import { r2ImageUrl } from "./image-url.ts";
 
 const accountId = process.env.R2_ACCOUNT_ID || "e9f6cff37d5d30f39a1865ce7c3d765e";
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
 const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
-const bucketName = process.env.R2_BUCKET_NAME || "ultrastore";
-const publicUrl = (process.env.R2_PUBLIC_URL || "").replace(/\/$/, "");
+export const r2BucketName = process.env.R2_BUCKET_NAME || "ultrastore";
 
 // ponytail: single R2 S3 client instance. Upgrade to multi-bucket routing if storage spans regions.
 export const r2Client = (accountId && accessKeyId && secretAccessKey)
@@ -28,7 +28,7 @@ export async function deleteImageFromR2(keyOrUrl: string): Promise<boolean> {
     }
     await r2Client.send(
       new DeleteObjectCommand({
-        Bucket: bucketName,
+        Bucket: r2BucketName,
         Key: key,
       })
     );
@@ -63,7 +63,7 @@ export async function uploadImageToR2(
 
     await r2Client.send(
       new PutObjectCommand({
-        Bucket: bucketName,
+        Bucket: r2BucketName,
         Key: cleanKey,
         Body: body,
         ContentType: contentType,
@@ -71,7 +71,7 @@ export async function uploadImageToR2(
       })
     );
 
-    const fileUrl = publicUrl ? `${publicUrl}/${cleanKey}` : "";
+    const fileUrl = getR2ImageUrl(cleanKey);
     return { success: true, url: fileUrl };
   } catch (err: any) {
     return {
@@ -83,7 +83,5 @@ export async function uploadImageToR2(
 }
 
 export function getR2ImageUrl(key: string): string {
-  const cleanKey = key.replace(/^\/+/, "");
-  if (publicUrl) return `${publicUrl}/${cleanKey}`;
-  return "";
+  return r2ImageUrl(key);
 }

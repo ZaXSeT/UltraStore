@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
+import { resolveR2ImageUrl } from "@/lib/image-url";
 
 export async function GET(req: Request) {
   try {
@@ -34,7 +35,13 @@ export async function GET(req: Request) {
       ? db.prepare(query).all(`%${search}%`, `%${search}%`)
       : db.prepare(query).all();
 
-    return NextResponse.json({ success: true, products });
+    return NextResponse.json({
+      success: true,
+      products: products.map((product: any) => ({
+        ...product,
+        primary_image: resolveR2ImageUrl(product.primary_image),
+      })),
+    });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err?.message || "Failed to fetch products" }, { status: 500 });
   }
@@ -57,7 +64,7 @@ export async function POST(req: Request) {
     const category = category_id || "cat_pad";
     const priceIdr = Number(price) || 1500000;
     const stockQty = Number(stock) || 10;
-    const imgUrl = primary_image || "";
+    const imgUrl = resolveR2ImageUrl(primary_image || "");
 
     db.prepare(`
       INSERT INTO products (id, slug, name, brand_id, category_id, description, specs_json, box_contents_json, warranty_info, published, primary_image)
@@ -157,7 +164,7 @@ export async function PATCH(req: Request) {
     }
     if (primary_image !== undefined) {
       updates.push("primary_image = ?");
-      params.push(primary_image);
+      params.push(resolveR2ImageUrl(primary_image));
     }
     if (published !== undefined) {
       updates.push("published = ?");

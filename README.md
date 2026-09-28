@@ -41,6 +41,12 @@ npm run dev
 
 Buka `http://localhost:3000` pada browser Anda.
 
+### URL gambar Cloudflare R2
+
+Upload admin dan aset katalog disimpan di bucket R2. Atur `R2_PUBLIC_URL` di `.env.local` dan environment deployment ke domain publik bucket yang aktif, misalnya custom domain R2. Pastikan `https://domain-publik/products/wlmouse-beast-x-magnesium.webp` mengembalikan gambar sebelum mengganti nilainya. URL lama `/api/r2/...` pada katalog dan CMS otomatis ditampilkan memakai domain publik tersebut tanpa perlu menghapus data produk. Bila domain publik belum aktif, aplikasi memakai `/api/r2/...` untuk membaca objek yang sama dari R2 melalui server.
+
+Setelah mengubah `.env.local`, mulai ulang server development. Konfigurasi environment deployment perlu diperbarui secara terpisah.
+
 ---
 
 ## 🎨 Design System: Precision Workshop

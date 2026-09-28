@@ -18,13 +18,13 @@
       "manufacturerPartNumber": "WLM-BX-BLK",
       "category": "Mouse",
       "officialProductUrl": "https://www.wlmouse.com/products/beastx",
-      "sourceImageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
+      "sourceImageUrl": "/api/r2/products/wlmouse-beast-x-magnesium.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Material": "CNC Magnesium Alloy Skeleton",
-        "Weight": "39 \u00b1 1 g",
+        "Weight": "39 ± 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Omron Optical Switches",
@@ -39,7 +39,7 @@
           "priceIdr": 2150000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
+          "imageUrl": "/api/r2/products/wlmouse-beast-x-magnesium.webp",
           "imageVariantMatch": true
         },
         {
@@ -49,7 +49,7 @@
           "priceIdr": 2250000,
           "offerType": "READY",
           "stockOnHand": 4,
-          "imageUrl": "/images/products/wlmouse-beast-x-magnesium.jpg",
+          "imageUrl": "/api/r2/products/wlmouse-beast-x-magnesium.webp",
           "imageVariantMatch": true
         }
       ]
@@ -63,7 +63,7 @@
       "manufacturerPartNumber": "ATK-68-PRO",
       "category": "Keyboard",
       "officialProductUrl": "https://www.atk.pro/products/atk68",
-      "sourceImageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
+      "sourceImageUrl": "/api/r2/products/vxe-atk68-magnetic-he.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -85,7 +85,7 @@
           "priceIdr": 1690000,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
+          "imageUrl": "/api/r2/products/vxe-atk68-magnetic-he.webp",
           "imageVariantMatch": true
         },
         {
@@ -97,7 +97,7 @@
           "priceIdr": 1690000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "/images/products/vxe-atk68-magnetic-he.jpg",
+          "imageUrl": "/api/r2/products/vxe-atk68-magnetic-he.webp",
           "imageVariantMatch": true
         }
       ]
@@ -111,12 +111,12 @@
       "manufacturerPartNumber": "LMZ-MY-4K-BLK",
       "category": "Mouse",
       "officialProductUrl": "https://lamzu.com/products/lamzu-maya",
-      "sourceImageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
+      "sourceImageUrl": "/api/r2/products/lamzu-maya-4k-wireless.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
-        "Weight": "45 \u00b1 1 g Solid Shell",
+        "Weight": "45 ± 1 g Solid Shell",
         "Sensor": "PixArt PAW3395",
         "MCU": "Nordic 52840 (4000Hz Compatible)",
         "Shape": "Universal Claw / Fingertip Symmetrical",
@@ -131,7 +131,7 @@
           "priceIdr": 1580000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
+          "imageUrl": "/api/r2/products/lamzu-maya-4k-wireless.webp",
           "imageVariantMatch": true
         },
         {
@@ -141,7 +141,7 @@
           "priceIdr": 1620000,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "/images/products/lamzu-maya-4k-wireless.webp",
+          "imageUrl": "/api/r2/products/lamzu-maya-4k-wireless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -155,7 +155,7 @@
       "manufacturerPartNumber": "GLS-AKR-4942",
       "category": "Mousepad",
       "officialProductUrl": "https://glsswrks.gg/products/akari",
-      "sourceImageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
+      "sourceImageUrl": "/api/r2/products/glsswrks-akari-glass-pad.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -174,9 +174,9 @@
           "priceIdr": 1850000,
           "offerType": "PREORDER",
           "batchId": "batch_glsswrks_akari_nov2026",
-          "estimatedShipping": "20\u201330 November 2026",
+          "estimatedShipping": "20–30 November 2026",
           "stockOnHand": 0,
-          "imageUrl": "/images/products/glsswrks-akari-glass-pad.jpg",
+          "imageUrl": "/api/r2/products/glsswrks-akari-glass-pad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -190,7 +190,7 @@
       "manufacturerPartNumber": "XRP-AC2-SKR-XXL",
       "category": "Mousepad",
       "officialProductUrl": "https://shop.x-raypad.com/shop/aqua-control-ii-sakura-gaming-mouse-pad/",
-      "sourceImageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
+      "sourceImageUrl": "/api/r2/products/x-raypad-aqua-control-2-sakura.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -209,7 +209,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 25,
-          "imageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
+          "imageUrl": "/api/r2/products/x-raypad-aqua-control-2-sakura.webp",
           "imageVariantMatch": true
         },
         {
@@ -219,7 +219,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "/images/products/x-raypad-aqua-control-2-sakura.webp",
+          "imageUrl": "/api/r2/products/x-raypad-aqua-control-2-sakura.webp",
           "imageVariantMatch": true
         }
       ]
@@ -233,13 +233,13 @@
       "manufacturerPartNumber": "PX2H11",
       "category": "Mouse",
       "officialProductUrl": "https://www.pulsar.gg/products/x2h-wireless-mouse",
-      "sourceImageUrl": "/images/products/pulsar-x2h-high-hump-wireless.png",
+      "sourceImageUrl": "/api/r2/products/pulsar-x2h-high-hump-wireless.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Rear Aggressive High Hump for Strict Claw Grip",
-        "Weight": "51 \u00b1 1 g",
+        "Weight": "51 ± 1 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI / 650 IPS)",
         "Switches": "Pulsar Optical Light Switch (Zero Debounce Delay)",
         "Polling Rate": "Up to 4000Hz (Requires 4K Dongle)"
@@ -252,7 +252,7 @@
           "priceIdr": 1540000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "/images/products/pulsar-x2h-high-hump-wireless.png",
+          "imageUrl": "/api/r2/products/pulsar-x2h-high-hump-wireless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -266,7 +266,7 @@
       "manufacturerPartNumber": "WS-ZM75-SE",
       "category": "Keyboard",
       "officialProductUrl": "https://meletrix.com/collections/zoom75",
-      "sourceImageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
+      "sourceImageUrl": "/api/r2/products/wuque-studio-zoom75-tkl.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -286,9 +286,9 @@
           "priceIdr": 3290000,
           "offerType": "PREORDER",
           "batchId": "batch_ws_zoom75_dec2026",
-          "estimatedShipping": "05\u201315 Desember 2026",
+          "estimatedShipping": "05–15 Desember 2026",
           "stockOnHand": 0,
-          "imageUrl": "/images/products/wuque-studio-zoom75-tkl.jpg",
+          "imageUrl": "/api/r2/products/wuque-studio-zoom75-tkl.webp",
           "imageVariantMatch": true
         }
       ]
@@ -302,7 +302,7 @@
       "manufacturerPartNumber": "HMX-XIN-90P",
       "category": "Switches & Parts",
       "officialProductUrl": "https://unikeyboards.com/products/hmx-xinhai-linear-switch",
-      "sourceImageUrl": "/images/products/hmx-xinhai-linear-switch.jpg",
+      "sourceImageUrl": "/api/r2/products/hmx-xinhai-linear-switch.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -323,7 +323,7 @@
           "priceIdr": 485000,
           "offerType": "READY",
           "stockOnHand": 30,
-          "imageUrl": "/images/products/hmx-xinhai-linear-switch.jpg",
+          "imageUrl": "/api/r2/products/hmx-xinhai-linear-switch.webp",
           "imageVariantMatch": true
         }
       ]
@@ -337,7 +337,7 @@
       "manufacturerPartNumber": "PDS-FA-4942",
       "category": "Mousepad",
       "officialProductUrl": "https://padsmith.com/products/first-attack",
-      "sourceImageUrl": "/images/products/padsmith-first-attack-mousepad.png",
+      "sourceImageUrl": "/api/r2/products/padsmith-first-attack-mousepad.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -356,7 +356,7 @@
           "priceIdr": 690000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "/images/products/padsmith-first-attack-mousepad.png",
+          "imageUrl": "/api/r2/products/padsmith-first-attack-mousepad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -370,7 +370,7 @@
       "manufacturerPartNumber": "SYO-O3C-CNC",
       "category": "Keyboard",
       "officialProductUrl": "https://sayodevice.com/products/o3c",
-      "sourceImageUrl": "/images/products/sayodevice-o3c-rapid-trigger-keypad.png",
+      "sourceImageUrl": "/api/r2/products/sayodevice-o3c-rapid-trigger-keypad.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -390,7 +390,7 @@
           "priceIdr": 490000,
           "offerType": "READY",
           "stockOnHand": 22,
-          "imageUrl": "/images/products/sayodevice-o3c-rapid-trigger-keypad.png",
+          "imageUrl": "/api/r2/products/sayodevice-o3c-rapid-trigger-keypad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -404,13 +404,13 @@
       "manufacturerPartNumber": "DAR-M3P-4K",
       "category": "Mouse",
       "officialProductUrl": "https://darmoshark.cn/products/m3-pro-4k",
-      "sourceImageUrl": "/images/products/darmoshark-m3-pro-4k.png",
+      "sourceImageUrl": "/api/r2/products/darmoshark-m3-pro-4k.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Full Size Ergonomic Claw/Palm Shape",
-        "Weight": "65 \u00b1 2 g",
+        "Weight": "65 ± 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "4000Hz Wireless Compatible",
         "Battery": "500mAh (Up to 140 Hours Runtime at 1000Hz)"
@@ -423,7 +423,7 @@
           "priceIdr": 790000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "/images/products/darmoshark-m3-pro-4k.png",
+          "imageUrl": "/api/r2/products/darmoshark-m3-pro-4k.webp",
           "imageVariantMatch": true
         }
       ]
@@ -437,7 +437,7 @@
       "manufacturerPartNumber": "UWS-UPD-V2",
       "category": "Mousepad",
       "officialProductUrl": "https://unusualwaysports.com",
-      "sourceImageUrl": "/images/products/unusual-way-sports-glass-blend.jpg",
+      "sourceImageUrl": "/api/r2/products/unusual-way-sports-glass-blend.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -455,7 +455,7 @@
           "priceIdr": 380000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "/images/products/unusual-way-sports-glass-blend.jpg",
+          "imageUrl": "/api/r2/products/unusual-way-sports-glass-blend.webp",
           "imageVariantMatch": true
         }
       ]
@@ -469,7 +469,7 @@
       "manufacturerPartNumber": "WK3-US1-L60-001",
       "category": "Keyboard",
       "officialProductUrl": "https://wooting.io/wooting-60he",
-      "sourceImageUrl": "/images/products/wooting-60he-plus.png",
+      "sourceImageUrl": "/api/r2/products/wooting-60he-plus.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -493,9 +493,9 @@
           "priceIdr": 3499000,
           "offerType": "PREORDER",
           "batchId": "batch_wooting_60he_nov2026",
-          "estimatedShipping": "18\u201328 November 2026",
+          "estimatedShipping": "18–28 November 2026",
           "stockOnHand": 0,
-          "imageUrl": "/images/products/wooting-60he-plus.png",
+          "imageUrl": "/api/r2/products/wooting-60he-plus.webp",
           "imageVariantMatch": true
         }
       ]
@@ -509,7 +509,7 @@
       "manufacturerPartNumber": "V1M-D1",
       "category": "Keyboard",
       "officialProductUrl": "https://www.keychron.com/products/keychron-v1-max-qmk-via-wireless-custom-mechanical-keyboard",
-      "sourceImageUrl": "/images/products/keychron-v1-max.jpg",
+      "sourceImageUrl": "/api/r2/products/keychron-v1-max.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -531,7 +531,7 @@
           "priceIdr": 1549000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "/images/products/keychron-v1-max.jpg",
+          "imageUrl": "/api/r2/products/keychron-v1-max.webp",
           "imageVariantMatch": true
         }
       ]
@@ -545,7 +545,7 @@
       "manufacturerPartNumber": "FX-ZR-SF-XL-B",
       "category": "Mousepad",
       "officialProductUrl": "https://www.artisan-jp.com/fx-zero-eng.html",
-      "sourceImageUrl": "/images/products/artisan-ninja-fx-zero.jpg",
+      "sourceImageUrl": "/api/r2/products/artisan-ninja-fx-zero.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -565,7 +565,7 @@
           "priceIdr": 890000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "/images/products/artisan-ninja-fx-zero.jpg",
+          "imageUrl": "/api/r2/products/artisan-ninja-fx-zero.webp",
           "imageVariantMatch": true
         }
       ]
@@ -579,14 +579,14 @@
       "manufacturerPartNumber": "509144",
       "category": "Audio",
       "officialProductUrl": "https://www.sennheiser-hearing.com/en-US/p/hd-560s/",
-      "sourceImageUrl": "/images/products/sennheiser-hd-560s.jpg",
+      "sourceImageUrl": "/api/r2/products/sennheiser-hd-560s.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Transducer Principle": "Dynamic, Open-back",
         "Frequency Response": "6 Hz - 38,000 Hz",
-        "Impedance": "120 \u03a9",
+        "Impedance": "120 Ω",
         "Connector": "6.3 mm with 3.5 mm adapter",
         "Weight": "240 g"
       },
@@ -598,7 +598,7 @@
           "priceIdr": 3199000,
           "offerType": "READY",
           "stockOnHand": 7,
-          "imageUrl": "/images/products/sennheiser-hd-560s.jpg",
+          "imageUrl": "/api/r2/products/sennheiser-hd-560s.webp",
           "imageVariantMatch": true
         }
       ]
@@ -610,7 +610,7 @@
       "officialProductName": "Everglide AE68 PRO 8K Hall Effect 65% Magnetic Keyboard",
       "manufacturerModel": "AE68 PRO 8K",
       "category": "Keyboard",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/everglide-ae68-pro-8k-he.webp",
       "specs": {
         "Layout": "65% Compact 68 Keys",
         "Polling Rate": "8000 Hz / 0.09ms Latency",
@@ -626,7 +626,7 @@
           "priceIdr": 750000,
           "offerType": "PREORDER",
           "stockOnHand": 15,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee844081c7f5_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/everglide-ae68-pro-8k-he.webp"
         }
       ]
     },
@@ -637,7 +637,7 @@
       "officialProductName": "Everglide AE64 PRO 8K Hall Effect 65% Aluminum Magnetic Keyboard",
       "manufacturerModel": "AE64 PRO 8K",
       "category": "Keyboard",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242858.png?v=1790228574&width=3840",
+      "sourceImageUrl": "/api/r2/products/everglide-ae64-pro-8k-aluminum.webp",
       "specs": {
         "Layout": "64 Keys Aluminum Chassis",
         "Polling Rate": "8000 Hz",
@@ -653,7 +653,7 @@
           "priceIdr": 1200000,
           "offerType": "PREORDER",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242858.png?v=1790228574&width=3840"
+          "imageUrl": "/api/r2/products/everglide-ae64-pro-8k-aluminum.webp"
         }
       ]
     },
@@ -664,7 +664,7 @@
       "officialProductName": "Zirnex Hiper 60-M 8K Hall Effect 60% Aluminum Gaming Keyboard",
       "manufacturerModel": "Hiper 60-M",
       "category": "Keyboard",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqom965q0e.jpg?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/zirnex-hiper-60m-8k-he.webp",
       "specs": {
         "Layout": "60% ANSI Standard",
         "Polling Rate": "8000 Hz",
@@ -679,7 +679,7 @@
           "priceIdr": 1700000,
           "offerType": "READY",
           "stockOnHand": 5,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqom965q0e.jpg?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/zirnex-hiper-60m-8k-he.webp"
         }
       ]
     },
@@ -690,7 +690,7 @@
       "officialProductName": "MCHOSE G3 Ultra 8K Wireless Ultra Light Weight Gaming Mouse",
       "manufacturerModel": "G3 Ultra 8K",
       "category": "Mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/mchose-g3-ultra-8k-wireless.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "True 8000 Hz Wireless",
@@ -705,7 +705,7 @@
           "priceIdr": 690800,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156lnc0h339.jpg?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/mchose-g3-ultra-8k-wireless.webp"
         }
       ]
     },
@@ -716,7 +716,7 @@
       "officialProductName": "Darmoshark M3 Micro Pro Cigar 8K Wireless Ultra Light Mouse",
       "manufacturerModel": "M3 Micro Pro",
       "category": "Mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkb9j8y23.jpg?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/darmoshark-m3-micro-pro-cigar-8k.webp",
       "specs": {
         "Sensor": "PixArt PAW3395",
         "Polling Rate": "8000 Hz Wireless",
@@ -731,7 +731,7 @@
           "priceIdr": 902500,
           "offerType": "READY",
           "stockOnHand": 7,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkb9j8y23.jpg?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/darmoshark-m3-micro-pro-cigar-8k.webp"
         }
       ]
     },
@@ -742,7 +742,7 @@
       "officialProductName": "GLSSWRKS Zofia Premium Tempered Glass Gaming Mousepad",
       "manufacturerModel": "Zofia",
       "category": "Mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/glsswrks-zofia-tempered-glass.webp",
       "specs": {
         "Surface": "Etched Tempered Glass (Speed / Smooth Micro-Texture)",
         "Base": "Full Silicone Anti-Slip Base",
@@ -757,7 +757,7 @@
           "priceIdr": 1750000,
           "offerType": "PREORDER",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924269.png?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/glsswrks-zofia-tempered-glass.webp"
         }
       ]
     },
@@ -768,7 +768,7 @@
       "officialProductName": "Kyomi Yuyo Silicone Base Coated Glass Gaming Mousepad",
       "manufacturerModel": "Yuyo Glass",
       "category": "Mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/kyomi-yuyo-glass-mousepad.webp",
       "specs": {
         "Surface": "High Performance Coated Glass (Speed-Control)",
         "Base": "Custom Molded Silicone Base",
@@ -782,7 +782,7 @@
           "priceIdr": 1775000,
           "offerType": "PREORDER",
           "stockOnHand": 6,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/kyomi-yuyo-glass-mousepad.webp"
         }
       ]
     },
@@ -793,7 +793,7 @@
       "officialProductName": "X-Raypad NOD Glass Gaming Mousepad Kaca",
       "manufacturerModel": "NOD Glass",
       "category": "Mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119441.png?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/xraypad-nod-glass-mousepad.webp",
       "specs": {
         "Material": "Aluminosilicate Tempered Glass",
         "Glide": "Ultra Smooth Speed Glide",
@@ -808,7 +808,7 @@
           "priceIdr": 1625000,
           "offerType": "PREORDER",
           "stockOnHand": 5,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119441.png?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/xraypad-nod-glass-mousepad.webp"
         }
       ]
     },
@@ -819,7 +819,7 @@
       "officialProductName": "MITSUKI Koku-The Void Glass Edition Gaming Mousepad",
       "manufacturerModel": "Koku-The Void",
       "category": "Mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534438fa454_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840",
+      "sourceImageUrl": "/api/r2/products/mitsuki-koku-the-void-glass.webp",
       "specs": {
         "Surface": "Japanese Chemical Etched Glass",
         "Speed": "Super Low Friction Speed-Hybrid",
@@ -833,7 +833,7 @@
           "priceIdr": 1800000,
           "offerType": "READY",
           "stockOnHand": 4,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534438fa454_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790226462&width=3840"
+          "imageUrl": "/api/r2/products/mitsuki-koku-the-void-glass.webp"
         }
       ]
     },
@@ -844,7 +844,7 @@
       "officialProductName": "Talongames Rinne ART Poron Base Edgeless Mousepad (Control)",
       "manufacturerModel": "Rinne ART",
       "category": "Mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960&width=3840",
+      "sourceImageUrl": "/api/r2/products/talongames-rinne-art-poron.webp",
       "specs": {
         "Base": "Japanese Inoue Poron 4mm (Soft)",
         "Surface": "Tight Control Weave Fabric",
@@ -859,7 +859,7 @@
           "priceIdr": 565250,
           "offerType": "PREORDER",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960&width=3840"
+          "imageUrl": "/api/r2/products/talongames-rinne-art-poron.webp"
         }
       ]
     },
@@ -870,7 +870,7 @@
       "officialProductName": "HMX Rain Rail Bottom-Out PCB Mount Switch (Pack of 90)",
       "manufacturerModel": "Rain Rail Linear",
       "category": "Switches & Parts",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840",
+      "sourceImageUrl": "/api/r2/products/hmx-rain-rail-pcb-switch.webp",
       "specs": {
         "Type": "5-Pin PCB Mount Linear Switch",
         "Stem": "LY Low Friction Stem",
@@ -886,7 +886,7 @@
           "priceIdr": 450000,
           "offerType": "PREORDER",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840"
+          "imageUrl": "/api/r2/products/hmx-rain-rail-pcb-switch.webp"
         }
       ]
     },
@@ -897,7 +897,7 @@
       "officialProductName": "Keygeek Sago PCB Mount Mechanical Switch by Jinyun Studio",
       "manufacturerModel": "Sago Linear",
       "category": "Switches & Parts",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840",
+      "sourceImageUrl": "/api/r2/products/keygeek-sago-pcb-switch.webp",
       "specs": {
         "Type": "Linear Switch Factory Lubed",
         "Actuation": "42g",
@@ -912,7 +912,7 @@
           "priceIdr": 437500,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106&width=3840"
+          "imageUrl": "/api/r2/products/keygeek-sago-pcb-switch.webp"
         }
       ]
     },
@@ -923,7 +923,7 @@
       "officialProductName": "TALONGAMES Glass ULTRA Precision Curved Edge Glass Mouse Feet",
       "manufacturerModel": "Glass ULTRA",
       "category": "Switches & Parts",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=3840",
+      "sourceImageUrl": "/api/r2/products/talongames-glass-ultra-mouse-feet.webp",
       "specs": {
         "Material": "Aluminosilicate Hardened Glass (0.8mm)",
         "Edges": "2.5D Polished Rounded Curved Edges",
@@ -937,7 +937,7 @@
           "priceIdr": 1700000,
           "offerType": "READY",
           "stockOnHand": 25,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1d78c62c931144a2ac537cc52cc4023d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790232073&width=3840"
+          "imageUrl": "/api/r2/products/talongames-glass-ultra-mouse-feet.webp"
         }
       ]
     },
@@ -950,13 +950,13 @@
       "manufacturerPartNumber": "LMZ-INCA-8K-BLK",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/lamzu-inca-8k-wireless-ultra-light-ambi-gaming-mouse-za13-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c83179c9b4cb4bbe889e3d47825eb941_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725&width=3840",
+      "sourceImageUrl": "/api/r2/products/lamzu-inca-8k-wireless-gaming-mouse.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Shape": "ZA13 Symmetrical High Hump Ambi",
-        "Weight": "45 \u00b1 1 g",
+        "Weight": "45 ± 1 g",
         "Sensor": "PixArt PAW3950 (30,000 DPI / 750 IPS)",
         "Polling Rate": "True 8000 Hz Wireless (Dongle Included)",
         "Switches": "Optical Micro Switches (Zero Debounce)",
@@ -970,7 +970,7 @@
           "priceIdr": 1879000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c83179c9b4cb4bbe889e3d47825eb941_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725&width=3840",
+          "imageUrl": "/api/r2/products/lamzu-inca-8k-wireless-gaming-mouse.webp",
           "imageVariantMatch": true
         }
       ]
@@ -984,13 +984,13 @@
       "manufacturerPartNumber": "ATK-U2V2-8K",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light-weight-paw3950-ultra-gaming-mouse-zowie-u2-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417&width=3840",
+      "sourceImageUrl": "/api/r2/products/atk-u2-v2-mini-blazing-sky-8k-wireless.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Zowie U2 Inspired Ergonomic Incurved Sides",
-        "Weight": "42 \u00b1 1 g",
+        "Weight": "42 ± 1 g",
         "Sensor": "PixArt PAW3950 Ultra",
         "Polling Rate": "8000 Hz Wireless Blazing Sky",
         "MCU": "Nordic 52840 High Performance",
@@ -1004,7 +1004,7 @@
           "priceIdr": 1325000,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417&width=3840",
+          "imageUrl": "/api/r2/products/atk-u2-v2-mini-blazing-sky-8k-wireless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1018,13 +1018,13 @@
       "manufacturerPartNumber": "DAR-M3PM-KIR",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra-light-ambi-gaming-mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313&width=3840",
+      "sourceImageUrl": "/api/r2/products/darmoshark-m3-pro-max-8k-kiran-wireless.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
       "specs": {
         "Shape": "Symmetrical Medium-Large Ambi",
-        "Weight": "54 \u00b1 2 g",
+        "Weight": "54 ± 2 g",
         "Sensor": "PixArt PAW3395 (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz High Speed",
         "Switches": "TTC Dustproof Gold Micro Switches"
@@ -1037,7 +1037,7 @@
           "priceIdr": 800000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313&width=3840",
+          "imageUrl": "/api/r2/products/darmoshark-m3-pro-max-8k-kiran-wireless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1051,7 +1051,7 @@
       "manufacturerPartNumber": "DYSP-MIO-GLS",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/dysphoria-mio-silicone-base-coated-glass-gaming-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901&width=3840",
+      "sourceImageUrl": "/api/r2/products/dysphoria-mio-silicone-base-coated-glass-mousepad.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1070,7 +1070,7 @@
           "priceIdr": 1800000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901&width=3840",
+          "imageUrl": "/api/r2/products/dysphoria-mio-silicone-base-coated-glass-mousepad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1084,7 +1084,7 @@
       "manufacturerPartNumber": "YUK-PLS-SG3",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415&width=3840",
+      "sourceImageUrl": "/api/r2/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1103,9 +1103,9 @@
           "priceIdr": 1995000,
           "offerType": "PREORDER",
           "batchId": "batch_yuki_superglide3_dec2026",
-          "estimatedShipping": "10\u201320 Desember 2026",
+          "estimatedShipping": "10–20 Desember 2026",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415&width=3840",
+          "imageUrl": "/api/r2/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1119,7 +1119,7 @@
       "manufacturerPartNumber": "EVG-SU75-HE-8K",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/everglide-su75-su-75-youth-edition-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371&width=3840",
+      "sourceImageUrl": "/api/r2/products/everglide-su75-he-8k-hall-effect-keyboard.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1141,7 +1141,7 @@
           "priceIdr": 1875000,
           "offerType": "READY",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371&width=3840",
+          "imageUrl": "/api/r2/products/everglide-su75-he-8k-hall-effect-keyboard.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1155,7 +1155,7 @@
       "manufacturerPartNumber": "HMX-EGG-YOLK-90",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-kk-lab",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546&width=3840",
+      "sourceImageUrl": "/api/r2/products/hmx-egg-yolk-linear-switch.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1175,7 +1175,7 @@
           "priceIdr": 513000,
           "offerType": "READY",
           "stockOnHand": 25,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546&width=3840",
+          "imageUrl": "/api/r2/products/hmx-egg-yolk-linear-switch.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1189,7 +1189,7 @@
       "manufacturerPartNumber": "JYN-KOI-HE-90",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/jinyun-koi-rgb-magnetic-hall-effect-pcb-mount-keyboard-magnetic-switch-linear",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/59b5896c9889497a8d5b0a5c90371bc9_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229176&width=3840",
+      "sourceImageUrl": "/api/r2/products/jinyun-koi-rgb-magnetic-hall-effect-switch.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1208,7 +1208,7 @@
           "priceIdr": 562500,
           "offerType": "READY",
           "stockOnHand": 30,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/59b5896c9889497a8d5b0a5c90371bc9_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229176&width=3840",
+          "imageUrl": "/api/r2/products/jinyun-koi-rgb-magnetic-hall-effect-switch.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1222,7 +1222,7 @@
       "manufacturerPartNumber": "WKT-SLV-FTH-90",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/wekt-silver-feather-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523&width=3840",
+      "sourceImageUrl": "/api/r2/products/wekt-silver-feather-linear-switch.webp",
       "checkedAt": "2026-09-28T06:00:00Z",
       "usagePermissionStatus": "verified",
       "reviewStatus": "approved",
@@ -1241,7 +1241,7 @@
           "priceIdr": 562500,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523&width=3840",
+          "imageUrl": "/api/r2/products/wekt-silver-feather-linear-switch.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1254,7 +1254,7 @@
       "manufacturerModel": "Everglide AE68 PRO 8K Hall Effect 65% Ma",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/everglide-ae68-pro-8k-hall-effect-65-magnetic-keyboard-rapid-trigger-0-001mm-rt-480mhz-mcu-0-09ms-latency",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
+      "sourceImageUrl": "/api/r2/products/everglide-ae68-pro-8k-hall-effect-65-magnetic.webp",
       "specs": {
         "Form Factor": "65% Compact",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1271,7 +1271,7 @@
           "priceIdr": 750000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
+          "imageUrl": "/api/r2/products/everglide-ae68-pro-8k-hall-effect-65-magnetic.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1284,7 +1284,7 @@
       "manufacturerModel": "Everglide AE64 PRO 8K Hall Effect 65% Al",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-everglide-ae64-pro-8k-hall-effect-65-aluminum-magnetic-keyboard-rapid-trigger-0-001mm-rt-480mhz-mcu-0-09ms-latency-copy",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242851.png?v=1790228567",
+      "sourceImageUrl": "/api/r2/products/pre-order-everglide-ae64-pro-8k-hall-effect-6.webp",
       "specs": {
         "Form Factor": "65% Compact",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1301,7 +1301,7 @@
           "priceIdr": 1200000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_124242851.png?v=1790228567",
+          "imageUrl": "/api/r2/products/pre-order-everglide-ae64-pro-8k-hall-effect-6.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1314,7 +1314,7 @@
       "manufacturerModel": "IPI Feng Shen Magnetic Switch Keyboard H",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/ipi-feng-shen-magnetic-switch-keyboard-hall-effect-0-001mm-precision-linear-travel-2-pin-he",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bad4e1638f8646029aa6b430fb60dd41_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790228989",
+      "sourceImageUrl": "/api/r2/products/ipi-feng-shen-magnetic-switch-keyboard-hall-e.webp",
       "specs": {
         "Form Factor": "Custom Compact Layout",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1331,7 +1331,7 @@
           "priceIdr": 7500,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bad4e1638f8646029aa6b430fb60dd41_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790228989",
+          "imageUrl": "/api/r2/products/ipi-feng-shen-magnetic-switch-keyboard-hall-e.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1344,7 +1344,7 @@
       "manufacturerModel": "Zirnex Hiper 60-M 8K Hall Effect 60% Gam",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/zirnex-hiper-60-m-8k-hall-effect-60-gaming-keyboard-rapid-trigger-socd-aluminum-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqoff7k37e.jpg?v=1789473526",
+      "sourceImageUrl": "/api/r2/products/zirnex-hiper-60-m-8k-hall-effect-60-gaming-ke.webp",
       "specs": {
         "Form Factor": "60% Layout",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1361,7 +1361,7 @@
           "priceIdr": 1700000,
           "offerType": "READY",
           "stockOnHand": 19,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raum-mb4trqoff7k37e.jpg?v=1789473526",
+          "imageUrl": "/api/r2/products/zirnex-hiper-60-m-8k-hall-effect-60-gaming-ke.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1374,7 +1374,7 @@
       "manufacturerModel": "KNS Studio Little Bay Keyboard Stand Mec",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/kns-studio-little-bay-keyboard-stand-mechanical-keyboard-display-holder",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ravr-mb4spwhwt55u96.jpg?v=1789456888",
+      "sourceImageUrl": "/api/r2/products/kns-studio-little-bay-keyboard-stand-mechanic.webp",
       "specs": {
         "Form Factor": "Custom Compact Layout",
         "Switch Technology": "Hot-swappable Custom Mechanical",
@@ -1391,7 +1391,7 @@
           "priceIdr": 125000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ravr-mb4spwhwt55u96.jpg?v=1789456888",
+          "imageUrl": "/api/r2/products/kns-studio-little-bay-keyboard-stand-mechanic.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1404,7 +1404,7 @@
       "manufacturerModel": "Infinitas Keyboard Cork mat for mechanic",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/infinitas-keyboard-cork-mat-for-mechanical-keyboard",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8259i-mr8jxn36ud4y2c.jpg?v=1789208074",
+      "sourceImageUrl": "/api/r2/products/infinitas-keyboard-cork-mat-for-mechanical-ke.webp",
       "specs": {
         "Form Factor": "Custom Compact Layout",
         "Switch Technology": "Hot-swappable Custom Mechanical",
@@ -1421,7 +1421,7 @@
           "priceIdr": 125000,
           "offerType": "READY",
           "stockOnHand": 7,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8259i-mr8jxn36ud4y2c.jpg?v=1789208074",
+          "imageUrl": "/api/r2/products/infinitas-keyboard-cork-mat-for-mechanical-ke.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1434,7 +1434,7 @@
       "manufacturerModel": "EWEADN DK63 HE 60% Wired 1K Magnetic Key",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/eweadn-dk63-he-60-wired-1k-magnetic-keyboard-rapid-trigger-0-005mm-rt-sparklink-mcu-2ms-latency",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825aa-mr8jsb4an4ed2d.jpg?v=1789205844",
+      "sourceImageUrl": "/api/r2/products/eweadn-dk63-he-60-wired-1k-magnetic-keyboard.webp",
       "specs": {
         "Form Factor": "60% Layout",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1451,7 +1451,7 @@
           "priceIdr": 455000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825aa-mr8jsb4an4ed2d.jpg?v=1789205844",
+          "imageUrl": "/api/r2/products/eweadn-dk63-he-60-wired-1k-magnetic-keyboard.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1464,7 +1464,7 @@
       "manufacturerModel": "EWEADN DK68 HE 65% Wired 1K Magnetic Key",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/eweadn-dk68-he-65-wired-1k-magnetic-keyboard-rapid-trigger-0-005mm-rt-sparklink-mcu-2ms-latency",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8258p-mr9til5nx2x028.jpg?v=1789202696",
+      "sourceImageUrl": "/api/r2/products/eweadn-dk68-he-65-wired-1k-magnetic-keyboard.webp",
       "specs": {
         "Form Factor": "65% Compact",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1481,7 +1481,7 @@
           "priceIdr": 520000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-8258p-mr9til5nx2x028.jpg?v=1789202696",
+          "imageUrl": "/api/r2/products/eweadn-dk68-he-65-wired-1k-magnetic-keyboard.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1494,7 +1494,7 @@
       "manufacturerModel": "Everglide SU75 / SU 75 Youth Edition HE ",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/everglide-su75-su-75-youth-edition-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371",
+      "sourceImageUrl": "/api/r2/products/everglide-su75-su-75-youth-edition-he-8k-hall.webp",
       "specs": {
         "Form Factor": "75% Exploded",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1511,7 +1511,7 @@
           "priceIdr": 1875000,
           "offerType": "READY",
           "stockOnHand": 17,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rasx-mb4wu400y2q8be.jpg?v=1789019371",
+          "imageUrl": "/api/r2/products/everglide-su75-su-75-youth-edition-he-8k-hall.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1524,7 +1524,7 @@
       "manufacturerModel": "XVX L75 Air Mechanical Keyboard",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/xvx-l75-air-wireless-gasket-hotswap-75-low-profile-mechanical-keyboard-bluetooth-2-4ghz-wired",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2e3895166411434b838689ab5604d688_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788763322",
+      "sourceImageUrl": "/api/r2/products/xvx-l75-air-wireless-gasket-hotswap-75-low-pr.webp",
       "specs": {
         "Form Factor": "Custom Compact Layout",
         "Switch Technology": "Hot-swappable Custom Mechanical",
@@ -1541,7 +1541,7 @@
           "priceIdr": 1750000,
           "offerType": "READY",
           "stockOnHand": 13,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2e3895166411434b838689ab5604d688_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788763322",
+          "imageUrl": "/api/r2/products/xvx-l75-air-wireless-gasket-hotswap-75-low-pr.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1554,7 +1554,7 @@
       "manufacturerModel": "Madlions FIRE68 Aluminum Hall Effect 65%",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/madlions-fire68-aluminum-hall-effect-65-keyboard-rapid-trigger-socd-dks-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/03ebbf6306784d0cb8cecf78e7182fe2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784966686",
+      "sourceImageUrl": "/api/r2/products/madlions-fire68-aluminum-hall-effect-65-keybo.webp",
       "specs": {
         "Form Factor": "65% Compact",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1571,7 +1571,7 @@
           "priceIdr": 995000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/03ebbf6306784d0cb8cecf78e7182fe2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784966686",
+          "imageUrl": "/api/r2/products/madlions-fire68-aluminum-hall-effect-65-keybo.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1584,7 +1584,7 @@
       "manufacturerModel": "Royal Kludge KZZI K-75 / K75 PRO Hotswap",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/royal-kludge-kzzi-k-75-k75-pro-hotswap-gasket-wireless-75-mechanical-keyboard",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3e573fed4795488f8185244bd658e1b8_tplv-o3syd03w52-origin-jpeg.jpg?v=1784965258",
+      "sourceImageUrl": "/api/r2/products/royal-kludge-kzzi-k-75-k75-pro-hotswap-gasket.webp",
       "specs": {
         "Form Factor": "75% Exploded",
         "Switch Technology": "Hot-swappable Custom Mechanical",
@@ -1601,7 +1601,7 @@
           "priceIdr": 1300000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3e573fed4795488f8185244bd658e1b8_tplv-o3syd03w52-origin-jpeg.jpg?v=1784965258",
+          "imageUrl": "/api/r2/products/royal-kludge-kzzi-k-75-k75-pro-hotswap-gasket.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1614,7 +1614,7 @@
       "manufacturerModel": "Lamzu JET75 HE 8K Hall Effect 75% Gaming",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/lamzu-jet75-he-8k-hall-effect-75-gaming-keyboard-aluminum-rapid-trigger-socd-dks-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/29424a46a9fb4c25be31b44d9ef8228d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960214",
+      "sourceImageUrl": "/api/r2/products/lamzu-jet75-he-8k-hall-effect-75-gaming-keybo.webp",
       "specs": {
         "Form Factor": "75% Exploded",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1631,7 +1631,7 @@
           "priceIdr": 3125000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/29424a46a9fb4c25be31b44d9ef8228d_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960214",
+          "imageUrl": "/api/r2/products/lamzu-jet75-he-8k-hall-effect-75-gaming-keybo.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1644,7 +1644,7 @@
       "manufacturerModel": "WLMouse Ying75 8K Hall Effect Carbon For",
       "category": "Keyboard",
       "officialProductUrl": "https://www.infinitas.id/products/wlmouse-ying75-8k-hall-effect-carbon-forged-75-gaming-keyboard-rapid-trigger-dks-socd-wooting",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5899ed093fa347debb8e3a78d06cb2b3_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784959422",
+      "sourceImageUrl": "/api/r2/products/wlmouse-ying75-8k-hall-effect-carbon-forged-7.webp",
       "specs": {
         "Form Factor": "75% Exploded",
         "Switch Technology": "Hall Effect Magnetic Sensing (0.01mm Rapid Trigger)",
@@ -1661,7 +1661,7 @@
           "priceIdr": 5500000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5899ed093fa347debb8e3a78d06cb2b3_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784959422",
+          "imageUrl": "/api/r2/products/wlmouse-ying75-8k-hall-effect-carbon-forged-7.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1674,7 +1674,7 @@
       "manufacturerModel": "MCHOSE G7 Wireless Ultra Light Weight PA",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/mchose-g7-wireless-ultra-light-weight-paw3311-ergonomic-gaming-mouse-g502-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ratn-mb3j55ayhrzde4.jpg?v=1789459480",
+      "sourceImageUrl": "/api/r2/products/mchose-g7-wireless-ultra-light-weight-paw3311.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
@@ -1691,7 +1691,7 @@
           "priceIdr": 330000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ratn-mb3j55ayhrzde4.jpg?v=1789459480",
+          "imageUrl": "/api/r2/products/mchose-g7-wireless-ultra-light-weight-paw3311.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1704,7 +1704,7 @@
       "manufacturerModel": "MCHOSE G3 Ultra 8K Wireless Ultra Light ",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/mchose-g3-ultra-8k-wireless-ultra-light-weight-gaming-mouse-g305-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156l3nzhf87.jpg?v=1789458932",
+      "sourceImageUrl": "/api/r2/products/mchose-g3-ultra-8k-wireless-ultra-light-weigh.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1721,7 +1721,7 @@
           "priceIdr": 690800,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra2g-mbc156l3nzhf87.jpg?v=1789458932",
+          "imageUrl": "/api/r2/products/mchose-g3-ultra-8k-wireless-ultra-light-weigh.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1734,7 +1734,7 @@
       "manufacturerModel": "MCHOSE G3 Wireless Ultra Light Weight Ga",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/mchose-g3-wireless-ultra-light-weight-gaming-mouse-g305-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra3a-mbc14w5yycgg80.jpg?v=1789458583",
+      "sourceImageUrl": "/api/r2/products/mchose-g3-wireless-ultra-light-weight-gaming.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
@@ -1751,7 +1751,7 @@
           "priceIdr": 308000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra3a-mbc14w5yycgg80.jpg?v=1789458583",
+          "imageUrl": "/api/r2/products/mchose-g3-wireless-ultra-light-weight-gaming.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1764,7 +1764,7 @@
       "manufacturerModel": "MCHOSE 4K Dongle Receiver 4000 Khz Polli",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/mchose-4k-dongle-receiver-4000-khz-polling-rate-for-mchose-gaming-mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra1r-mbdkkbq6cj2oef.jpg?v=1789458263",
+      "sourceImageUrl": "/api/r2/products/mchose-4k-dongle-receiver-4000-khz-polling-ra.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
@@ -1781,7 +1781,7 @@
           "priceIdr": 176000,
           "offerType": "READY",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7ra1r-mbdkkbq6cj2oef.jpg?v=1789458263",
+          "imageUrl": "/api/r2/products/mchose-4k-dongle-receiver-4000-khz-polling-ra.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1794,7 +1794,7 @@
       "manufacturerModel": "Darmoshark M3 Micro Pro Cigar 8k Wireles",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-micro-pro-cigar-8k-wireless-ultra-light-finger-tip-ambi-gaming-mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkalryn7a.jpg?v=1789278497",
+      "sourceImageUrl": "/api/r2/products/darmoshark-m3-micro-pro-cigar-8k-wireless-ult.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1811,7 +1811,7 @@
           "priceIdr": 902500,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rav9-ma55xzkalryn7a.jpg?v=1789278497",
+          "imageUrl": "/api/r2/products/darmoshark-m3-micro-pro-cigar-8k-wireless-ult.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1824,7 +1824,7 @@
       "manufacturerModel": "EWEADN GS02 PRO Wireless Ultra Light Erg",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/eweadn-gs02-pro-wireless-ultra-light-ergonimic-gaming-mouse-paw3311-gpx-dex-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825a8-mrcp4ghlut511a.jpg?v=1789204196",
+      "sourceImageUrl": "/api/r2/products/eweadn-gs02-pro-wireless-ultra-light-ergonimi.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
@@ -1841,7 +1841,7 @@
           "priceIdr": 199000,
           "offerType": "READY",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825a8-mrcp4ghlut511a.jpg?v=1789204196",
+          "imageUrl": "/api/r2/products/eweadn-gs02-pro-wireless-ultra-light-ergonimi.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1854,7 +1854,7 @@
       "manufacturerModel": "MCHOSE A7 Ultra 8K Wireless Ultra Light ",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/mchose-a7-ultra-8k-wireless-ultra-light-weight-gaming-mouse-gpx-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raup-mb3j60fczng699.jpg?v=1789194569",
+      "sourceImageUrl": "/api/r2/products/mchose-a7-ultra-8k-wireless-ultra-light-weigh.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1871,7 +1871,7 @@
           "priceIdr": 900000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7raup-mb3j60fczng699.jpg?v=1789194569",
+          "imageUrl": "/api/r2/products/mchose-a7-ultra-8k-wireless-ultra-light-weigh.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1884,7 +1884,7 @@
       "manufacturerModel": "Lamzu INCA 8k Wireless Ultra Light Ambi ",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/lamzu-inca-8k-wireless-ultra-light-ambi-gaming-mouse-za13-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/b3c4ff14741d47d1a5b8dec962e9115a_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725",
+      "sourceImageUrl": "/api/r2/products/lamzu-inca-8k-wireless-ultra-light-ambi-gamin.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1901,7 +1901,7 @@
           "priceIdr": 1879000,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/b3c4ff14741d47d1a5b8dec962e9115a_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968725",
+          "imageUrl": "/api/r2/products/lamzu-inca-8k-wireless-ultra-light-ambi-gamin.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1914,7 +1914,7 @@
       "manufacturerModel": "ATK U2 V2 Mini Blazing Sky 8K Wireless L",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light-weight-paw3950-ultra-gaming-mouse-zowie-u2-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
+      "sourceImageUrl": "/api/r2/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light.webp",
       "specs": {
         "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1931,7 +1931,7 @@
           "priceIdr": 1325000,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
+          "imageUrl": "/api/r2/products/atk-u2-v2-mini-blazing-sky-8k-wireless-light.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1944,7 +1944,7 @@
       "manufacturerModel": "Darmoshark M3 PRO MAX Kiran Wireless Ult",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra-light-ambi-gaming-mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313",
+      "sourceImageUrl": "/api/r2/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "1000 Hz / 4000 Hz High-Speed Wireless",
@@ -1961,7 +1961,7 @@
           "priceIdr": 800000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/bb4be75b828e4e8798eb6dde45a22097_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968313",
+          "imageUrl": "/api/r2/products/darmoshark-m3-pro-max-8k-kiran-wireless-ultra.webp",
           "imageVariantMatch": true
         }
       ]
@@ -1974,7 +1974,7 @@
       "manufacturerModel": "ATK X1 V2 Ultimate Blazing Sky 8K Wirele",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/atk-x1-v2-ultimate-blazing-sky-8k-wireless-light-weight-3950-ultra-gaming-mouse-viper-v3-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6d5f3c665f9a437ba1358a7564be5613_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968256",
+      "sourceImageUrl": "/api/r2/products/atk-x1-v2-ultimate-blazing-sky-8k-wireless-li.webp",
       "specs": {
         "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -1991,7 +1991,7 @@
           "priceIdr": 1225000,
           "offerType": "READY",
           "stockOnHand": 19,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6d5f3c665f9a437ba1358a7564be5613_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968256",
+          "imageUrl": "/api/r2/products/atk-x1-v2-ultimate-blazing-sky-8k-wireless-li.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2004,7 +2004,7 @@
       "manufacturerModel": "MOTOSPEED X6 8k Super Light Wireless Gam",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/motospeed-x6-8k-super-light-wireless-gaming-mouse",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e381c132dab44271832eb3d67c20c124_tplv-o3syd03w52-origin-jpeg.jpg?v=1784967992",
+      "sourceImageUrl": "/api/r2/products/motospeed-x6-8k-super-light-wireless-gaming-m.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -2021,7 +2021,7 @@
           "priceIdr": 675000,
           "offerType": "READY",
           "stockOnHand": 13,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e381c132dab44271832eb3d67c20c124_tplv-o3syd03w52-origin-jpeg.jpg?v=1784967992",
+          "imageUrl": "/api/r2/products/motospeed-x6-8k-super-light-wireless-gaming-m.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2034,7 +2034,7 @@
       "manufacturerModel": "IPI Float 88 PRO 8k Wireless Ultra Light",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/ipi-float-88-pro-8k-wireless-ultra-light-carbon-fiber-paw3395-gaming-mouse-with-charging-dock",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/655e9a8997c54af29a1dacba1733a4e0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784967497",
+      "sourceImageUrl": "/api/r2/products/ipi-float-88-pro-8k-wireless-ultra-light-carb.webp",
       "specs": {
         "Sensor": "PixArt PAW3395 High-Precision (26,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -2051,7 +2051,7 @@
           "priceIdr": 800000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/655e9a8997c54af29a1dacba1733a4e0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784967497",
+          "imageUrl": "/api/r2/products/ipi-float-88-pro-8k-wireless-ultra-light-carb.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2064,7 +2064,7 @@
       "manufacturerModel": "ATK X1 V2 Extreme Blazing Sky 8K Wireles",
       "category": "Mouse",
       "officialProductUrl": "https://www.infinitas.id/products/atk-x1-v2-extreme-blazing-sky-8k-wireless-light-weight-3950-ultra-gaming-mouse-viper-v3-shape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a89cf79cb86b4a08bd5f17928ac53562_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784966635",
+      "sourceImageUrl": "/api/r2/products/atk-x1-v2-extreme-blazing-sky-8k-wireless-lig.webp",
       "specs": {
         "Sensor": "PixArt PAW3950 Ultra Flagship (30,000 DPI)",
         "Polling Rate": "Up to 8000 Hz Wireless (Dongle Supported)",
@@ -2081,7 +2081,7 @@
           "priceIdr": 1700000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a89cf79cb86b4a08bd5f17928ac53562_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784966635",
+          "imageUrl": "/api/r2/products/atk-x1-v2-extreme-blazing-sky-8k-wireless-lig.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2094,7 +2094,7 @@
       "manufacturerModel": "Infinitas Hanger Kayu Mousepad / Deskmat",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/infinitas-hanger-kayu-mousepad-deskmat-gaming-gantungan-jepit",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/cd75ebaebca8430b9cf12c5e1d40e5ec_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784793402",
+      "sourceImageUrl": "/api/r2/products/infinitas-hanger-kayu-mousepad-deskmat-gaming.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2109,7 +2109,7 @@
           "priceIdr": 26500,
           "offerType": "READY",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/cd75ebaebca8430b9cf12c5e1d40e5ec_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784793402",
+          "imageUrl": "/api/r2/products/infinitas-hanger-kayu-mousepad-deskmat-gaming.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2122,7 +2122,7 @@
       "manufacturerModel": "Talongames Rinne ART Poron Base Gaming E",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-talongames-rinne-art-poron-base-gaming-edgeless-mousepad-control",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960",
+      "sourceImageUrl": "/api/r2/products/pre-order-talongames-rinne-art-poron-base-gam.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2137,7 +2137,7 @@
           "priceIdr": 595000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_221532816.png?v=1790262960",
+          "imageUrl": "/api/r2/products/pre-order-talongames-rinne-art-poron-base-gam.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2150,7 +2150,7 @@
       "manufacturerModel": "Lastpad Raydamn Silicone Base Gaming Edg",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/lastpad-raydamn-silicone-base-gaming-edgeless-mousepad-speed-vaxee-pd-artisan-raiden-clone",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-16_104243910.png?v=1789530166",
+      "sourceImageUrl": "/api/r2/products/lastpad-raydamn-silicone-base-gaming-edgeless.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2165,7 +2165,7 @@
           "priceIdr": 350000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-16_104243910.png?v=1789530166",
+          "imageUrl": "/api/r2/products/lastpad-raydamn-silicone-base-gaming-edgeless.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2178,7 +2178,7 @@
       "manufacturerModel": "Nova Earth INOAC Slimflex Japanese Poron",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/nova-earth-inoac-slimflex-japanese-poron-base-gaming-mousepad-hybrid-control",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105742078.png?v=1788407866",
+      "sourceImageUrl": "/api/r2/products/nova-earth-inoac-slimflex-japanese-poron-base.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2193,7 +2193,7 @@
           "priceIdr": 340000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105742078.png?v=1788407866",
+          "imageUrl": "/api/r2/products/nova-earth-inoac-slimflex-japanese-poron-base.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2206,7 +2206,7 @@
       "manufacturerModel": "Nova Libra Silicone Base Gaming Edgeless",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/nova-libra-silicone-base-gaming-edgeless-mousepad-hybrid-vaxee-pd-clone-copy",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105308611.png?v=1788407592",
+      "sourceImageUrl": "/api/r2/products/nova-libra-silicone-base-gaming-edgeless-mous.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2221,7 +2221,7 @@
           "priceIdr": 340000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-03_105308611.png?v=1788407592",
+          "imageUrl": "/api/r2/products/nova-libra-silicone-base-gaming-edgeless-mous.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2234,7 +2234,7 @@
       "manufacturerModel": "Prelude Morph Poron Base Gaming Mousepad",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/prelude-morph-poron-base-gaming-mousepad-control",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3f8be2673f6646e88899e91e395ce7bc_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968876",
+      "sourceImageUrl": "/api/r2/products/prelude-morph-poron-base-gaming-mousepad-cont.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2249,7 +2249,7 @@
           "priceIdr": 550000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/3f8be2673f6646e88899e91e395ce7bc_tplv-o3syd03w52-origin-jpeg.jpg?v=1784968876",
+          "imageUrl": "/api/r2/products/prelude-morph-poron-base-gaming-mousepad-cont.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2262,7 +2262,7 @@
       "manufacturerModel": "Kyuu Design Eclipse Poron Base Gaming Mo",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-talongames-rinne-art-poron-base-gaming-edgeless-mousepad-control-copy",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-25_134129700.png?v=1790318495",
+      "sourceImageUrl": "/api/r2/products/pre-order-talongames-rinne-art-poron-bas-1.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2277,7 +2277,7 @@
           "priceIdr": 345000,
           "offerType": "READY",
           "stockOnHand": 13,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-25_134129700.png?v=1790318495",
+          "imageUrl": "/api/r2/products/pre-order-talongames-rinne-art-poron-bas-1.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2290,7 +2290,7 @@
       "manufacturerModel": "XRaypad Aqua Control Pro / AC Pro Gaming",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/xraypad-aqua-control-pro-ac-pro-gaming-mousepad-hybrid",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rau9-mb4ubjmq53ib77.jpg?v=1789473390",
+      "sourceImageUrl": "/api/r2/products/xraypad-aqua-control-pro-ac-pro-gaming-mousep.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2305,7 +2305,7 @@
           "priceIdr": 700000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-7rau9-mb4ubjmq53ib77.jpg?v=1789473390",
+          "imageUrl": "/api/r2/products/xraypad-aqua-control-pro-ac-pro-gaming-mousep.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2318,7 +2318,7 @@
       "manufacturerModel": "Utopia Gaming Black Blade Q Rubber Base ",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/utopia-gaming-black-blade-q-rubber-base-gaming-mousepad-anime-control-type-99-surface",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/44e56103127b4e0a9f6314bf77e6c170_tplv-o3syd03w52-origin-jpeg.jpg?v=1789471342",
+      "sourceImageUrl": "/api/r2/products/utopia-gaming-black-blade-q-rubber-base-gamin.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2333,7 +2333,7 @@
           "priceIdr": 175000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/44e56103127b4e0a9f6314bf77e6c170_tplv-o3syd03w52-origin-jpeg.jpg?v=1789471342",
+          "imageUrl": "/api/r2/products/utopia-gaming-black-blade-q-rubber-base-gamin.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2346,7 +2346,7 @@
       "manufacturerModel": "Utopia Gaming Black Blade 5 Poron Base G",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/utopia-gaming-black-blade-5-poron-base-gaming-mousepad-anime-control-type-99-surface",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/38c9d20a140b447a9837c8bd390a66ff_tplv-o3syd03w52-origin-jpeg.jpg?v=1789466575",
+      "sourceImageUrl": "/api/r2/products/utopia-gaming-black-blade-5-poron-base-gaming.webp",
       "specs": {
         "Surface Material": "Micro-Weave Hybrid Precision Polyester Cloth",
         "Base Technology": "Custom Inoue Poron 4mm High-Density Cushion",
@@ -2361,7 +2361,7 @@
           "priceIdr": 550000,
           "offerType": "READY",
           "stockOnHand": 19,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/38c9d20a140b447a9837c8bd390a66ff_tplv-o3syd03w52-origin-jpeg.jpg?v=1789466575",
+          "imageUrl": "/api/r2/products/utopia-gaming-black-blade-5-poron-base-gaming.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2374,7 +2374,7 @@
       "manufacturerModel": "GLSSWRKS Zofia Glass Gaming Mousepad",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-glsswrks-zofia-silicone-base-non-coated-japanese-glanova-glass-gaming-mousepad-kaca-hybrid",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
+      "sourceImageUrl": "/api/r2/products/pre-order-glsswrks-zofia-silicone-base-non-co.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2389,7 +2389,7 @@
           "priceIdr": 1750000,
           "offerType": "READY",
           "stockOnHand": 19,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207",
+          "imageUrl": "/api/r2/products/pre-order-glsswrks-zofia-silicone-base-non-co.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2402,7 +2402,7 @@
       "manufacturerModel": "Kyomi Yuyo Silicone Base COATED Glass Ga",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-kyomi-yuyo-glass-mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
+      "sourceImageUrl": "/api/r2/products/pre-order-kyomi-yuyo-glass-mousepad.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2417,7 +2417,7 @@
           "priceIdr": 1775000,
           "offerType": "READY",
           "stockOnHand": 13,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
+          "imageUrl": "/api/r2/products/pre-order-kyomi-yuyo-glass-mousepad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2430,7 +2430,7 @@
       "manufacturerModel": "X-Raypad NOD Glass Mousepad",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/x-raypad-nod-glass-mousepad",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119442.png?v=1786518684",
+      "sourceImageUrl": "/api/r2/products/x-raypad-nod-glass-mousepad.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2445,7 +2445,7 @@
           "priceIdr": 1625000,
           "offerType": "READY",
           "stockOnHand": 17,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-12_141119442.png?v=1786518684",
+          "imageUrl": "/api/r2/products/x-raypad-nod-glass-mousepad.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2458,7 +2458,7 @@
       "manufacturerModel": "MITSUKI Koku-The Void Glass Edition Sili",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/mitsuki-koku-the-void-glass-edition-silicone-base-coated-gaming-tempered-glass-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534473a9b75_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789172",
+      "sourceImageUrl": "/api/r2/products/mitsuki-koku-the-void-glass-edition-silicone.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2473,7 +2473,7 @@
           "priceIdr": 1800000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/99b0342576ba4224ac257534473a9b75_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789172",
+          "imageUrl": "/api/r2/products/mitsuki-koku-the-void-glass-edition-silicone.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2486,7 +2486,7 @@
       "manufacturerModel": "Dysphoria Mio Silicone Base COATED Glass",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/dysphoria-mio-silicone-base-coated-glass-gaming-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901",
+      "sourceImageUrl": "/api/r2/products/dysphoria-mio-silicone-base-coated-glass-gami.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2501,7 +2501,7 @@
           "priceIdr": 1800000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/e766ebb0625f41df99ad89fcd73e09dc_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790394901",
+          "imageUrl": "/api/r2/products/dysphoria-mio-silicone-base-coated-glass-gami.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2514,7 +2514,7 @@
       "manufacturerModel": "Kyuu Design Prism Glass COATED Silicone ",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-kyuudesign-prism-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-22_122358820.png?v=1790054642",
+      "sourceImageUrl": "/api/r2/products/pre-order-kyuudesign-prism-glass-limited-edit.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2529,7 +2529,7 @@
           "priceIdr": 1225000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-22_122358820.png?v=1790054642",
+          "imageUrl": "/api/r2/products/pre-order-kyuudesign-prism-glass-limited-edit.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2542,7 +2542,7 @@
       "manufacturerModel": "Statice Mizuki Glass Limited Edition Sil",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-statice-mizuki-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_194819318.png?v=1789822102",
+      "sourceImageUrl": "/api/r2/products/pre-order-statice-mizuki-glass-limited-editio.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2557,7 +2557,7 @@
           "priceIdr": 1895000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_194819318.png?v=1789822102",
+          "imageUrl": "/api/r2/products/pre-order-statice-mizuki-glass-limited-editio.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2570,7 +2570,7 @@
       "manufacturerModel": "Yuki Aim x Pulsar Superglide 3 Glass Lim",
       "category": "Mousepad",
       "officialProductUrl": "https://www.infinitas.id/products/yuki-aim-x-pulsar-superglide-3-glass-limited-edition-silicone-base-gaming-glass-mousepad-kaca-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
+      "sourceImageUrl": "/api/r2/products/yuki-aim-x-pulsar-superglide-3-glass-limited.webp",
       "specs": {
         "Surface Material": "Tempered Japanese AGC Aluminosilicate Curved Edge Glass",
         "Base Technology": "Full-Coverage Anti-Slip Molded Silicone Base",
@@ -2585,7 +2585,7 @@
           "priceIdr": 1995000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
+          "imageUrl": "/api/r2/products/yuki-aim-x-pulsar-superglide-3-glass-limited.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2598,7 +2598,7 @@
       "manufacturerModel": "HMX Rain Rail Bottom-Out PCB Mount Mecha",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/pre-order-hmx-rain-pcb-mount-mechanical-keyboard-switch-linear-by-youth-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106",
+      "sourceImageUrl": "/api/r2/products/pre-order-hmx-rain-pcb-mount-mechanical-keybo.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2614,7 +2614,7 @@
           "priceIdr": 367500,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-24_155403291.png?v=1790240106",
+          "imageUrl": "/api/r2/products/pre-order-hmx-rain-pcb-mount-mechanical-keybo.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2627,7 +2627,7 @@
       "manufacturerModel": "WingTree Nezuko Demon Slayer Theme PCB M",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/wingtree-nezuko-demon-slayer-theme-pcb-mount-mechanical-keyboard-switch-linear-by-hida-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/8308e9874ef4484682557381f976c87c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790230099",
+      "sourceImageUrl": "/api/r2/products/wingtree-nezuko-demon-slayer-theme-pcb-mount.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2643,7 +2643,7 @@
           "priceIdr": 350000,
           "offerType": "PREORDER",
           "stockOnHand": 0,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/8308e9874ef4484682557381f976c87c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790230099",
+          "imageUrl": "/api/r2/products/wingtree-nezuko-demon-slayer-theme-pcb-mount.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2656,7 +2656,7 @@
       "manufacturerModel": "HMX Cthulhu Pre-Lubed Mechanical Keyboar",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/hmx-cthulhu-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-su-lab",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1fe0a8c4b5714672b7e21498cd43d590_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229085",
+      "sourceImageUrl": "/api/r2/products/hmx-cthulhu-pre-lubed-mechanical-keyboard-pcb.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2672,7 +2672,7 @@
           "priceIdr": 385000,
           "offerType": "READY",
           "stockOnHand": 17,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1fe0a8c4b5714672b7e21498cd43d590_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229085",
+          "imageUrl": "/api/r2/products/hmx-cthulhu-pre-lubed-mechanical-keyboard-pcb.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2685,7 +2685,7 @@
       "manufacturerModel": "HMX Egg Yolk Pre-Lubed Mechanical Keyboa",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pcb-mount-switch-linear-by-kk-lab",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
+      "sourceImageUrl": "/api/r2/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pc.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2701,7 +2701,7 @@
           "priceIdr": 399000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
+          "imageUrl": "/api/r2/products/hmx-egg-yolk-pre-lubed-mechanical-keyboard-pc.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2714,7 +2714,7 @@
       "manufacturerModel": "Keygeek Sago PCB Mount Mechanical Keyboa",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/keygeek-sago-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4728fdc3e0ab4c27b8c5301045db4263_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229539",
+      "sourceImageUrl": "/api/r2/products/keygeek-sago-pcb-mount-mechanical-keyboard-sw.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2730,7 +2730,7 @@
           "priceIdr": 437500,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4728fdc3e0ab4c27b8c5301045db4263_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229539",
+          "imageUrl": "/api/r2/products/keygeek-sago-pcb-mount-mechanical-keyboard-sw.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2743,7 +2743,7 @@
       "manufacturerModel": "WEKT Silver Feather PCB Mount Mechanical",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/wekt-silver-feather-pcb-mount-mechanical-keyboard-switch-linear-by-jinyun-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523",
+      "sourceImageUrl": "/api/r2/products/wekt-silver-feather-pcb-mount-mechanical-keyb.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2759,7 +2759,7 @@
           "priceIdr": 437500,
           "offerType": "READY",
           "stockOnHand": 10,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/468c6452a2a346a4ba458c044b4652a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229523",
+          "imageUrl": "/api/r2/products/wekt-silver-feather-pcb-mount-mechanical-keyb.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2772,7 +2772,7 @@
       "manufacturerModel": "Keygeek Hachiware R2 Chiikawa Theme PCB ",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/keygeek-hachiware-r2-chiikawa-theme-pcb-mount-mechanical-keyboard-switch-linear-by-hida-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2b293374cefe46a4bf74e81dcde5ede0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229161",
+      "sourceImageUrl": "/api/r2/products/keygeek-hachiware-r2-chiikawa-theme-pcb-mount.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2788,7 +2788,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 15,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/2b293374cefe46a4bf74e81dcde5ede0_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229161",
+          "imageUrl": "/api/r2/products/keygeek-hachiware-r2-chiikawa-theme-pcb-mount.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2801,7 +2801,7 @@
       "manufacturerModel": "HMX Reze Chainsaw Man Theme PCB Mount Me",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/hmx-reze-chainsaw-man-theme-pcb-mount-mechanical-keyboard-switch-tactile-by-hida-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/ea61a7d4ce6140e69db390a9cafca511_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229153",
+      "sourceImageUrl": "/api/r2/products/hmx-reze-chainsaw-man-theme-pcb-mount-mechani.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2817,7 +2817,7 @@
           "priceIdr": 420000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/ea61a7d4ce6140e69db390a9cafca511_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229153",
+          "imageUrl": "/api/r2/products/hmx-reze-chainsaw-man-theme-pcb-mount-mechani.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2830,7 +2830,7 @@
       "manufacturerModel": "BSUN N2 PCB Mount Mechanical Keyboard Sw",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/bsun-n2-pcb-mount-mechanical-keyboard-switch-linear-by-qvq-studio",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/67217036077d4bc09123675c71f7ac8c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229140",
+      "sourceImageUrl": "/api/r2/products/bsun-n2-pcb-mount-mechanical-keyboard-switch.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2846,7 +2846,7 @@
           "priceIdr": 224000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/67217036077d4bc09123675c71f7ac8c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229140",
+          "imageUrl": "/api/r2/products/bsun-n2-pcb-mount-mechanical-keyboard-switch.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2859,7 +2859,7 @@
       "manufacturerModel": "BSUN Mongdol Black PCB Mount Mechanical ",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/bsun-mongdol-black-pcb-mount-mechanical-keyboard-switch-linear-by-soulcat-x-spm",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/0d62f02e65f24b538914ef6743505447_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229132",
+      "sourceImageUrl": "/api/r2/products/bsun-mongdol-black-pcb-mount-mechanical-keybo.webp",
       "specs": {
         "Switch Type": "5-Pin Linear Mechanical Switch",
         "Operating Force": "42g - 45g Actuation",
@@ -2875,7 +2875,7 @@
           "priceIdr": 413000,
           "offerType": "READY",
           "stockOnHand": 9,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/0d62f02e65f24b538914ef6743505447_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229132",
+          "imageUrl": "/api/r2/products/bsun-mongdol-black-pcb-mount-mechanical-keybo.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2888,7 +2888,7 @@
       "manufacturerModel": "Soulcat MAO Jelly Keycaps MAO Profile Si",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/soulcat-mao-jelly-keycaps-mao-profile-side-print-pc-abs-double-shot-keycap-119-keys",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ap-mrgxy97d8tfq03.jpg?v=1789201837",
+      "sourceImageUrl": "/api/r2/products/soulcat-mao-jelly-keycaps-mao-profile-side-pr.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -2903,7 +2903,7 @@
           "priceIdr": 350000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ap-mrgxy97d8tfq03.jpg?v=1789201837",
+          "imageUrl": "/api/r2/products/soulcat-mao-jelly-keycaps-mao-profile-side-pr.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2916,7 +2916,7 @@
       "manufacturerModel": "Soulcat Black Pink Meow Meow Keycaps MAO",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/soulcat-black-pink-meow-meow-keycaps-mao-profile-side-print-pc-pbt-uv-print-dye-sub-keycap-143-26-keys",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825bb-mrgym5iv318i55.jpg?v=1789201621",
+      "sourceImageUrl": "/api/r2/products/soulcat-black-pink-meow-meow-keycaps-mao-prof.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -2931,7 +2931,7 @@
           "priceIdr": 700000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825bb-mrgym5iv318i55.jpg?v=1789201621",
+          "imageUrl": "/api/r2/products/soulcat-black-pink-meow-meow-keycaps-mao-prof.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2944,7 +2944,7 @@
       "manufacturerModel": "Soulcat Strawberry Milk Pink Keycaps Che",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/soulcat-strawberry-milk-pink-keycaps-cherry-profile-pc-triple-shot-keycap-138-keys",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/236706424a6943219d9386c206be9a35_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789200636",
+      "sourceImageUrl": "/api/r2/products/soulcat-strawberry-milk-pink-keycaps-cherry-p.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -2959,7 +2959,7 @@
           "priceIdr": 385000,
           "offerType": "READY",
           "stockOnHand": 17,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/236706424a6943219d9386c206be9a35_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789200636",
+          "imageUrl": "/api/r2/products/soulcat-strawberry-milk-pink-keycaps-cherry-p.webp",
           "imageVariantMatch": true
         }
       ]
@@ -2972,7 +2972,7 @@
       "manufacturerModel": "Soulcat Electric Meow Meow Keycaps MAO P",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/soulcat-electric-meow-meow-keycaps-mao-profile-side-print-pc-pbt-uv-print-dye-sub-keycap-141-26-keys",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ar-mrgymimmai301e.jpg?v=1789199348",
+      "sourceImageUrl": "/api/r2/products/soulcat-electric-meow-meow-keycaps-mao-profil.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -2987,7 +2987,7 @@
           "priceIdr": 700000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-825ar-mrgymimmai301e.jpg?v=1789199348",
+          "imageUrl": "/api/r2/products/soulcat-electric-meow-meow-keycaps-mao-profil.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3000,7 +3000,7 @@
       "manufacturerModel": "Lobo Golden Caitlyn Arcane League of Leg",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/lobo-golden-caitlyn-arcane-league-of-legends-anime-theme-artisan-keycaps-resin-keycap",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-821g7-mgn6n1lhmkui94.jpg?v=1789022480",
+      "sourceImageUrl": "/api/r2/products/lobo-golden-caitlyn-arcane-league-of-legends.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -3015,7 +3015,7 @@
           "priceIdr": 105000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/sg-11134201-821g7-mgn6n1lhmkui94.jpg?v=1789022480",
+          "imageUrl": "/api/r2/products/lobo-golden-caitlyn-arcane-league-of-legends.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3028,7 +3028,7 @@
       "manufacturerModel": "XVX Textured Carbon-Look White Base Kit ",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/xvx-textured-carbon-look-white-base-kit-keycaps",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090830376ec874bd81af7f69e66ba14be07886fb.jpg?v=1788942761",
+      "sourceImageUrl": "/api/r2/products/xvx-textured-carbon-look-white-base-kit-keyca.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -3043,7 +3043,7 @@
           "priceIdr": 275000,
           "offerType": "READY",
           "stockOnHand": 19,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090830376ec874bd81af7f69e66ba14be07886fb.jpg?v=1788942761",
+          "imageUrl": "/api/r2/products/xvx-textured-carbon-look-white-base-kit-keyca.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3056,7 +3056,7 @@
       "manufacturerModel": "XVX Textured Carbon-Look White Smart Kit",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/xvx-textured-carbon-look-white-smart-kit-keycaps",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090828114e1c8078b553865147ff893b51fc383d.jpg?v=1788942757",
+      "sourceImageUrl": "/api/r2/products/xvx-textured-carbon-look-white-smart-kit-keyc.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -3071,7 +3071,7 @@
           "priceIdr": 275000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/202609090828114e1c8078b553865147ff893b51fc383d.jpg?v=1788942757",
+          "imageUrl": "/api/r2/products/xvx-textured-carbon-look-white-smart-kit-keyc.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3084,7 +3084,7 @@
       "manufacturerModel": "XVX Wedge PRISM Pink Keycaps",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/xvx-wedge-prism-keycaps",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1_a6c1a92f-58d9-489c-aa3b-dfa86d.jpg?v=1789790519",
+      "sourceImageUrl": "/api/r2/products/xvx-wedge-prism-keycaps.webp",
       "specs": {
         "Material": "Thick 1.5mm PBT (Polybutylene Terephthalate)",
         "Printing Method": "Dye-Sublimation / Doubleshot Legends",
@@ -3099,7 +3099,7 @@
           "priceIdr": 350000,
           "offerType": "READY",
           "stockOnHand": 6,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/1_a6c1a92f-58d9-489c-aa3b-dfa86d.jpg?v=1789790519",
+          "imageUrl": "/api/r2/products/xvx-wedge-prism-keycaps.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3112,7 +3112,7 @@
       "manufacturerModel": "UltraGlide Blight / BB Dots Universal Mo",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/meow-gaming-gear-ultraglide-blight-bb-dots-universal-mouse-feet-mouse-skate-upe-control",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/373f458040224906be204d9064226420_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960864",
+      "sourceImageUrl": "/api/r2/products/meow-gaming-gear-ultraglide-blight-bb-dots-un.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3127,7 +3127,7 @@
           "priceIdr": 50000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/373f458040224906be204d9064226420_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784960864",
+          "imageUrl": "/api/r2/products/meow-gaming-gear-ultraglide-blight-bb-dots-un.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3140,7 +3140,7 @@
       "manufacturerModel": "Unusual Way Sports Magic PLUS ICE Dots U",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/unusual-way-sports-magic-plus-ice-dots-universal-mouse-feet-mouse-skate-ptfe-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4f136dfff2184d3ba4469d752f05d5b4_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787726",
+      "sourceImageUrl": "/api/r2/products/unusual-way-sports-magic-plus-ice-dots-univer.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3155,7 +3155,7 @@
           "priceIdr": 135000,
           "offerType": "READY",
           "stockOnHand": 16,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4f136dfff2184d3ba4469d752f05d5b4_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787726",
+          "imageUrl": "/api/r2/products/unusual-way-sports-magic-plus-ice-dots-univer.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3168,7 +3168,7 @@
       "manufacturerModel": "OWEPOWE Eagle White Universal Silent Gam",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/owepowe-eagle-white-universal-silent-gaming-mouse-feet-mouse-skate-ptfe-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/983faa09a8ec4ae398b841213459e329_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784955680",
+      "sourceImageUrl": "/api/r2/products/owepowe-eagle-white-universal-silent-gaming-m.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3183,7 +3183,7 @@
           "priceIdr": 90000,
           "offerType": "READY",
           "stockOnHand": 18,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/983faa09a8ec4ae398b841213459e329_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784955680",
+          "imageUrl": "/api/r2/products/owepowe-eagle-white-universal-silent-gaming-m.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3196,7 +3196,7 @@
       "manufacturerModel": "Unusual Way Sports Pink Fox Dots Univers",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/unusual-way-sports-pink-fox-dots-universal-mouse-feet-mouse-skate-ptfe-hybrid",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/05ec76da1ad94d9dbf3b43e9787fee3d_tplv-o3syd03w52-origin-jpeg.jpg?v=1784793610",
+      "sourceImageUrl": "/api/r2/products/unusual-way-sports-pink-fox-dots-universal-mo.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3211,7 +3211,7 @@
           "priceIdr": 120000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/05ec76da1ad94d9dbf3b43e9787fee3d_tplv-o3syd03w52-origin-jpeg.jpg?v=1784793610",
+          "imageUrl": "/api/r2/products/unusual-way-sports-pink-fox-dots-universal-mo.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3224,7 +3224,7 @@
       "manufacturerModel": "Talongames Kumo Dots Universal Silent Mo",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/talongames-kumo-dots-universal-silent-mouse-feet-mouse-skate-mixed-ptfe-hybrid-speed",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6098c10eede14da98b7f5ba09ab59885_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787743",
+      "sourceImageUrl": "/api/r2/products/talongames-kumo-dots-universal-silent-mouse-f.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3239,7 +3239,7 @@
           "priceIdr": 85000,
           "offerType": "READY",
           "stockOnHand": 17,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6098c10eede14da98b7f5ba09ab59885_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784787743",
+          "imageUrl": "/api/r2/products/talongames-kumo-dots-universal-silent-mouse-f.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3252,7 +3252,7 @@
       "manufacturerModel": "Hachiware Ice Silent Universal Dots",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/hachiware-ice-silent-universal-dots",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6ed5d8b236ad46f598dd46f76c0f94a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788423779",
+      "sourceImageUrl": "/api/r2/products/hachiware-ice-silent-universal-dots.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3267,7 +3267,7 @@
           "priceIdr": 125000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/6ed5d8b236ad46f598dd46f76c0f94a7_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788423779",
+          "imageUrl": "/api/r2/products/hachiware-ice-silent-universal-dots.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3280,7 +3280,7 @@
       "manufacturerModel": "Meow Gaming Gear Ultraglide 030LAMZU Par",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/meow-gaming-gear-ultraglide-030lamzu-paro-gaming-mouse-grip-tape-0-3mm-anti-slip-poron-polyutherane",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4d3570bcfc9e45f39d84013b11cdcef2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784957964",
+      "sourceImageUrl": "/api/r2/products/meow-gaming-gear-ultraglide-030lamzu-paro-gam.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3295,7 +3295,7 @@
           "priceIdr": 95000,
           "offerType": "READY",
           "stockOnHand": 8,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/4d3570bcfc9e45f39d84013b11cdcef2_tplv-o3syd03w52-origin-jpeg.jpg?v=1784957964",
+          "imageUrl": "/api/r2/products/meow-gaming-gear-ultraglide-030lamzu-paro-gam.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3308,7 +3308,7 @@
       "manufacturerModel": "Talongames PU-0 Universal Pre-Cut Mouse ",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/talongames-pu-0-universal-pre-cut-mouse-grip-tape-0-3mm-anti-slip-poron-polyutherane",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5689a5caace5402fa272aace6f23670c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784790360",
+      "sourceImageUrl": "/api/r2/products/talongames-pu-0-universal-pre-cut-mouse-grip.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3323,7 +3323,7 @@
           "priceIdr": 90000,
           "offerType": "READY",
           "stockOnHand": 14,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5689a5caace5402fa272aace6f23670c_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784790360",
+          "imageUrl": "/api/r2/products/talongames-pu-0-universal-pre-cut-mouse-grip.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3336,7 +3336,7 @@
       "manufacturerModel": "Talongames CS-2 Grip Tape Universal",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/talongames-cs-2-grip-tape-universal",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/96a82cf796f84f4a8464fac8b94a5cea_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789635114",
+      "sourceImageUrl": "/api/r2/products/talongames-cs-2-grip-tape-universal.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3351,7 +3351,7 @@
           "priceIdr": 135000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/96a82cf796f84f4a8464fac8b94a5cea_tplv-aphluv4xwc-origin-jpeg.jpg?v=1789635114",
+          "imageUrl": "/api/r2/products/talongames-cs-2-grip-tape-universal.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3364,7 +3364,7 @@
       "manufacturerModel": "Talongames SG-1 Silicone Transparent Uni",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/talongames-sg-1-silicone-transparent-universal-mouse-keyboard-0-27mm-ultra-thin-grip-tape",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/149965ce7a0b46cabee6db5c3a8cd225_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788936783",
+      "sourceImageUrl": "/api/r2/products/talongames-sg-1-silicone-transparent-universa.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3379,7 +3379,7 @@
           "priceIdr": 135000,
           "offerType": "READY",
           "stockOnHand": 11,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/149965ce7a0b46cabee6db5c3a8cd225_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788936783",
+          "imageUrl": "/api/r2/products/talongames-sg-1-silicone-transparent-universa.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3392,7 +3392,7 @@
       "manufacturerModel": "Unclepanda Griptape Universal Pre-Cut",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/unclepanda-griptape-universal-pre-cut",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5a40170f714947ad97adc3ce26d496be_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425471",
+      "sourceImageUrl": "/api/r2/products/unclepanda-griptape-universal-pre-cut.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3407,7 +3407,7 @@
           "priceIdr": 150000,
           "offerType": "READY",
           "stockOnHand": 20,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/5a40170f714947ad97adc3ce26d496be_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425471",
+          "imageUrl": "/api/r2/products/unclepanda-griptape-universal-pre-cut.webp",
           "imageVariantMatch": true
         }
       ]
@@ -3420,7 +3420,7 @@
       "manufacturerModel": "Uncle Panda Ultra-Thin Grip tape Univers",
       "category": "Switches & Parts",
       "officialProductUrl": "https://www.infinitas.id/products/uncle-panda-ultra-thin-grip-tape-universal-pre-cut",
-      "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c6e8f5385cd24f4d983ff7335e253038_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425290",
+      "sourceImageUrl": "/api/r2/products/uncle-panda-ultra-thin-grip-tape-universal-pr.webp",
       "specs": {
         "Material": "100% Pure Virgin Grade Curved Edge PTFE / Aluminosilicate Glass",
         "Thickness": "0.8mm - 0.9mm Custom Radius Edges",
@@ -3435,7 +3435,7 @@
           "priceIdr": 150000,
           "offerType": "READY",
           "stockOnHand": 12,
-          "imageUrl": "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/c6e8f5385cd24f4d983ff7335e253038_tplv-aphluv4xwc-origin-jpeg.jpg?v=1788425290",
+          "imageUrl": "/api/r2/products/uncle-panda-ultra-thin-grip-tape-universal-pr.webp",
           "imageVariantMatch": true
         }
       ]

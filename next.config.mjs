@@ -8,6 +8,7 @@ const nextConfig = {
       { protocol: "https", hostname: "cdn.shopify.com" },
       { protocol: "https", hostname: "*.r2.dev" },
       { protocol: "https", hostname: "*.r2.cloudflarestorage.com" },
+      { protocol: "https", hostname: "assets.ultrastore.id" },
       { protocol: "https", hostname: "*.supabase.co" },
       { protocol: "https", hostname: "images.unsplash.com" },
     ]

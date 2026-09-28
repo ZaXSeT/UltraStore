@@ -1,16 +1,6 @@
 import { NextResponse } from "next/server";
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
-
-const accountId = process.env.R2_ACCOUNT_ID || "e9f6cff37d5d30f39a1865ce7c3d765e";
-const accessKeyId = process.env.R2_ACCESS_KEY_ID || "b741bf9cf99ebc693bde29efc570fe02";
-const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY || "e4e3b6bfc50f2a619f17431722490bb8d9f2ad4f21e4f4172fe5879fe217ea38";
-const bucketName = process.env.R2_BUCKET_NAME || "ultrastore";
-
-const s3 = new S3Client({
-  region: "auto",
-  endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
-  credentials: { accessKeyId, secretAccessKey },
-});
+import { GetObjectCommand } from "@aws-sdk/client-s3";
+import { r2BucketName, r2Client } from "@/lib/r2";
 
 export async function GET(
   req: Request,
@@ -19,10 +9,14 @@ export async function GET(
   const { path: segments } = await params;
   const key = segments.join("/");
 
+  if (!r2Client) {
+    return NextResponse.json({ error: "R2 credentials not configured" }, { status: 503 });
+  }
+
   try {
-    const s3Res = await s3.send(
+    const s3Res = await r2Client.send(
       new GetObjectCommand({
-        Bucket: bucketName,
+        Bucket: r2BucketName,
         Key: key,
       })
     );

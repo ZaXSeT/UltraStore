@@ -1,6 +1,7 @@
 import { getDb, runInTransaction } from "./db.ts";
 import type { Product, ProductVariant, Offer, PreorderBatch, StockBalance } from "./types.ts";
 import catalogResearch from "../data/catalog-research.json" with { type: "json" };
+import { resolveR2ImageUrl } from "./image-url.ts";
 
 // ponytail: idempotent full catalog sync from catalog-research.json. Safe cascading reseed when no orders exist.
 export function seedCatalogIfEmpty() {
@@ -176,7 +177,10 @@ export function getAllProducts(
       attributes: JSON.parse(v.attributes_json),
       price: v.price,
       weightGrams: v.weight_grams,
-      media: JSON.parse(v.media_json),
+      media: JSON.parse(v.media_json).map((image: { url: string }) => ({
+        ...image,
+        url: resolveR2ImageUrl(image.url),
+      })),
     }));
 
     const offersRaw = db.prepare(`
@@ -209,7 +213,7 @@ export function getAllProducts(
       variants,
       offers,
       published: Boolean(r.published),
-      primaryImage: r.primary_image,
+      primaryImage: resolveR2ImageUrl(r.primary_image),
     };
   }).filter((p) => {
     if (offerFilter && offerFilter !== "ALL") {
@@ -248,7 +252,10 @@ export function getProductBySlug(slug: string): Product | null {
     attributes: JSON.parse(v.attributes_json),
     price: v.price,
     weightGrams: v.weight_grams,
-    media: JSON.parse(v.media_json),
+    media: JSON.parse(v.media_json).map((image: { url: string }) => ({
+      ...image,
+      url: resolveR2ImageUrl(image.url),
+    })),
   }));
 
   const offersRaw = db.prepare(`
@@ -281,7 +288,7 @@ export function getProductBySlug(slug: string): Product | null {
     variants,
     offers,
     published: Boolean(r.published),
-    primaryImage: r.primary_image,
+    primaryImage: resolveR2ImageUrl(r.primary_image),
   };
 }
 
