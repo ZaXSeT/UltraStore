@@ -83,7 +83,7 @@ export function ProductCard({ product }: { product: Product }) {
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-900 text-xs font-semibold group-hover:bg-neutral-950 group-hover:text-white transition-all duration-200 shrink-0">
+          <div className="inline-flex items-center gap-1 px-3 py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 shadow-sm shadow-blue-500/20">
             <span>Detail</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
