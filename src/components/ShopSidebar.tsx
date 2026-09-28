@@ -13,8 +13,9 @@ import {
   Search,
   X,
   ShieldCheck,
-  Check,
-  SlidersHorizontal,
+  CheckCircle,
+  Truck,
+  Sparkles,
 } from "lucide-react";
 
 interface CategoryItem {
@@ -60,7 +61,6 @@ export function ShopSidebar({
 }: ShopSidebarProps) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState(searchQuery);
-  const [mobileExpanded, setMobileExpanded] = useState(false);
 
   const updateFilters = (updates: {
     category?: string;
@@ -106,295 +106,261 @@ export function ShopSidebar({
   );
 
   return (
-    <div className="w-full">
-      {/* Mobile Toggle Button (Hidden on Desktop) */}
-      <div className="lg:hidden mb-4">
-        <button
-          type="button"
-          onClick={() => setMobileExpanded(!mobileExpanded)}
-          className="w-full flex items-center justify-between px-4 py-2.5 bg-white border border-[#202724] rounded text-xs font-mono font-bold text-[#202724] shadow-[2px_2px_0px_#202724] hover:bg-[#F4F1EA] transition-colors"
-        >
-          <div className="flex items-center gap-2">
-            <SlidersHorizontal className="w-3.5 h-3.5 text-[#184E46]" />
-            <span className="uppercase tracking-wider">FILTER & SPESIFIKASI</span>
-            {hasActiveFilters && (
-              <span className="w-2 h-2 rounded-full bg-[#A84329]"></span>
-            )}
-          </div>
-          <span className="text-[11px] text-[#59635E]">
-            {mobileExpanded ? "[ TUTUP - ]" : "[ FILTER + ]"}
-          </span>
-        </button>
+    <div className="w-full bg-white border border-slate-200/90 rounded-2xl p-5 shadow-sm space-y-6">
+      {/* 1. Hardware Search */}
+      <div>
+        <div className="flex items-center justify-between mb-2">
+          <label
+            htmlFor="sidebar-search"
+            className="text-xs font-semibold text-slate-700 uppercase tracking-wider"
+          >
+            Pencarian
+          </label>
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={clearSearch}
+              className="text-xs font-medium text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>Hapus</span>
+            </button>
+          )}
+        </div>
+        <form onSubmit={handleSearchSubmit} className="relative">
+          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <input
+            id="sidebar-search"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Cari model, switch, brand..."
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-8 py-2 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all"
+          />
+          {searchTerm && (
+            <button
+              type="button"
+              onClick={() => setSearchTerm("")}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+        </form>
       </div>
 
-      {/* Main Filter Sidebar Content */}
-      <div
-        className={`${
-          mobileExpanded ? "block" : "hidden"
-        } lg:block bg-white border border-[#D9DDD5] rounded-md p-4 sm:p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] space-y-5 text-xs font-mono`}
-      >
-        {/* Sidebar Header Title */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#D9DDD5]">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
-            <span className="font-bold text-[#202724] tracking-wider text-[11px] uppercase">
-              FILTER KATALOG
-            </span>
-          </div>
-          <span className="text-[10px] text-[#59635E]">
-            REV.2026
+      {/* 2. Category Navigation */}
+      <div>
+        <div className="flex items-center justify-between mb-2.5">
+          <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
+            Kategori
           </span>
-        </div>
-
-        {/* 1. Hardware Search */}
-        <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] font-bold text-[#59635E] uppercase tracking-wider">
-              // PENCARIAN
-            </span>
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={clearSearch}
-                className="text-[10px] text-[#A84329] hover:underline flex items-center gap-0.5"
-              >
-                <X className="w-3 h-3" />
-                <span>Hapus</span>
-              </button>
-            )}
-          </div>
-          <form onSubmit={handleSearchSubmit} className="relative">
-            <Search className="w-3.5 h-3.5 text-[#59635E] absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Model, switch, sensor..."
-              className="w-full bg-[#F4F1EA]/60 border border-[#D9DDD5] rounded py-1.5 pl-8 pr-7 text-xs text-[#202724] placeholder-[#59635E]/60 focus:bg-white focus:outline-none focus:border-[#184E46] focus:ring-1 focus:ring-[#184E46] transition-colors"
-            />
-            {searchTerm && (
-              <button
-                type="button"
-                onClick={() => setSearchTerm("")}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-[#59635E] hover:text-[#202724]"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            )}
-          </form>
-        </div>
-
-        {/* 2. Category Navigation */}
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-bold text-[#59635E] uppercase tracking-wider">
-              // KATEGORI PERIPHERAL
-            </span>
-            {currentCategory && (
-              <button
-                type="button"
-                onClick={() => updateFilters({ category: "" })}
-                className="text-[10px] text-[#184E46] hover:underline"
-              >
-                Lihat Semua
-              </button>
-            )}
-          </div>
-
-          <div className="space-y-1">
-            {/* All Categories Item */}
+          {currentCategory && (
             <button
               type="button"
               onClick={() => updateFilters({ category: "" })}
-              className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded text-left transition-colors border ${
+              className="text-xs font-medium text-teal-600 hover:text-teal-700"
+            >
+              Semua
+            </button>
+          )}
+        </div>
+
+        <div className="space-y-1">
+          {/* All Categories Item */}
+          <button
+            type="button"
+            onClick={() => updateFilters({ category: "" })}
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left ${
+              !currentCategory
+                ? "bg-slate-900 text-white font-semibold shadow-sm"
+                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <Sparkles className={`w-4 h-4 ${!currentCategory ? "text-teal-400" : "text-slate-400"}`} />
+              <span>Semua Kategori</span>
+            </div>
+            <span
+              className={`text-[11px] px-2 py-0.5 rounded-full font-mono ${
                 !currentCategory
-                  ? "bg-[#202724] border-[#202724] text-[#F4F1EA] font-bold"
-                  : "bg-white border-transparent text-[#202724] hover:bg-[#F4F1EA] hover:border-[#D9DDD5]"
+                  ? "bg-slate-800 text-slate-200"
+                  : "bg-slate-100 text-slate-500"
               }`}
             >
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] opacity-70">[ALL]</span>
-                <span>Semua Gear</span>
-              </div>
-              <span
-                className={`text-[10px] px-1 py-0.2 rounded-sm ${
-                  !currentCategory
-                    ? "bg-[#184E46] text-white"
-                    : "bg-[#F4F1EA] text-[#59635E] border border-[#D9DDD5]"
+              {totalProducts}
+            </span>
+          </button>
+
+          {/* Individual Categories from DB */}
+          {allCategories.map((c) => {
+            const isActive = currentCategory === c.slug;
+            const Icon = CATEGORY_ICONS[c.slug] || Sparkles;
+            return (
+              <button
+                key={c.slug}
+                type="button"
+                onClick={() => updateFilters({ category: c.slug })}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left ${
+                  isActive
+                    ? "bg-slate-900 text-white font-semibold shadow-sm"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                 }`}
               >
-                {totalProducts}
-              </span>
-            </button>
-
-            {/* List Categories */}
-            {allCategories.map((c) => {
-              const isActive = currentCategory === c.slug;
-              const Icon = CATEGORY_ICONS[c.slug] || Sliders;
-              return (
-                <button
-                  key={c.slug}
-                  type="button"
-                  onClick={() => updateFilters({ category: c.slug })}
-                  className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded text-left transition-colors border ${
+                <div className="flex items-center gap-2.5">
+                  <Icon className={`w-4 h-4 ${isActive ? "text-teal-400" : "text-slate-400"}`} />
+                  <span className="truncate">{c.name}</span>
+                </div>
+                <span
+                  className={`text-[11px] px-2 py-0.5 rounded-full font-mono ${
                     isActive
-                      ? "bg-[#202724] border-[#202724] text-[#F4F1EA] font-bold"
-                      : "bg-white border-transparent text-[#202724] hover:bg-[#F4F1EA] hover:border-[#D9DDD5]"
+                      ? "bg-slate-800 text-slate-200"
+                      : "bg-slate-100 text-slate-500"
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#184E46]" : "text-[#59635E]"}`} />
-                    <span className="truncate">{c.name}</span>
-                  </div>
-                  <span
-                    className={`text-[10px] px-1 py-0.2 rounded-sm ${
-                      isActive
-                        ? "bg-[#184E46] text-white"
-                        : "bg-[#F4F1EA] text-[#59635E] border border-[#D9DDD5]"
-                    }`}
-                  >
-                    {c.count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 3. Brand Selector */}
-        <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <label
-              htmlFor="sidebar-brand-select"
-              className="text-[10px] font-bold text-[#59635E] uppercase tracking-wider"
-            >
-              // MANUFAKTUR & BRAND
-            </label>
-            {currentBrand && (
-              <button
-                type="button"
-                onClick={() => updateFilters({ brand: "" })}
-                className="text-[10px] text-[#184E46] hover:underline"
-              >
-                Reset Brand
+                  {c.count}
+                </span>
               </button>
-            )}
-          </div>
-          <div className="relative">
-            <select
-              id="sidebar-brand-select"
-              value={currentBrand}
-              onChange={(e) => updateFilters({ brand: e.target.value })}
-              className="w-full appearance-none bg-white border border-[#D9DDD5] rounded py-1.5 pl-3 pr-8 text-xs text-[#202724] focus:outline-none focus:border-[#184E46] focus:ring-1 focus:ring-[#184E46] cursor-pointer"
-            >
-              <option value="">Semua Brand ({allBrands.length})</option>
-              {allBrands.map((b) => (
-                <option key={b.slug} value={b.slug}>
-                  {b.name} ({b.count})
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="w-3.5 h-3.5 text-[#59635E] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-          </div>
+            );
+          })}
         </div>
+      </div>
 
-        {/* 4. Fulfillment Type */}
-        <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] font-bold text-[#59635E] uppercase tracking-wider">
-              // STATUS FULFILLMENT
-            </span>
-            {currentOffer && (
-              <button
-                type="button"
-                onClick={() => updateFilters({ offer: "" })}
-                className="text-[10px] text-[#184E46] hover:underline"
-              >
-                Reset
-              </button>
-            )}
-          </div>
+      {/* 3. Brand Selection Dropdown */}
+      <div>
+        <div className="flex items-center justify-between mb-2">
+          <label
+            htmlFor="sidebar-brand-select"
+            className="text-xs font-semibold text-slate-700 uppercase tracking-wider"
+          >
+            Brand
+          </label>
+          {currentBrand && (
+            <button
+              type="button"
+              onClick={() => updateFilters({ brand: "" })}
+              className="text-xs font-medium text-teal-600 hover:text-teal-700"
+            >
+              Reset
+            </button>
+          )}
+        </div>
+        <div className="relative">
+          <select
+            id="sidebar-brand-select"
+            value={currentBrand}
+            onChange={(e) => updateFilters({ brand: e.target.value })}
+            className="w-full appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3.5 pr-8 py-2 text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 cursor-pointer shadow-sm transition-all"
+          >
+            <option value="">Semua Brand ({allBrands.length})</option>
+            {allBrands.map((b) => (
+              <option key={b.slug} value={b.slug}>
+                {b.name} ({b.count})
+              </option>
+            ))}
+          </select>
+          <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+        </div>
+      </div>
 
-          <div className="grid grid-cols-1 gap-1">
+      {/* 4. Stock & Pre-order Status */}
+      <div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
+            Ketersediaan
+          </span>
+          {currentOffer && (
             <button
               type="button"
               onClick={() => updateFilters({ offer: "" })}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded text-left border transition-colors ${
-                !currentOffer
-                  ? "bg-[#202724] border-[#202724] text-[#F4F1EA] font-bold"
-                  : "bg-white border-[#D9DDD5] text-[#202724] hover:bg-[#F4F1EA]"
-              }`}
+              className="text-xs font-medium text-teal-600 hover:text-teal-700"
             >
-              <span>Semua Status</span>
-              <span className="text-[10px] opacity-70">Ready + PO</span>
+              Semua
             </button>
-
-            <button
-              type="button"
-              onClick={() => updateFilters({ offer: "READY" })}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded text-left border transition-colors ${
-                currentOffer === "READY"
-                  ? "bg-[#E4ECE6] border-[#184E46] text-[#184E46] font-bold"
-                  : "bg-white border-[#D9DDD5] text-[#202724] hover:bg-[#F4F1EA]"
-              }`}
-            >
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#184E46]"></span>
-                <span>Ready Stock Hub</span>
-              </div>
-              <span className="text-[9px] uppercase px-1 py-0.2 rounded-sm bg-[#184E46]/10 text-[#184E46] font-bold">
-                1-2 Hari
-              </span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => updateFilters({ offer: "PREORDER" })}
-              className={`flex items-center justify-between px-2.5 py-1.5 rounded text-left border transition-colors ${
-                currentOffer === "PREORDER"
-                  ? "bg-[#F4E5DC] border-[#A84329] text-[#A84329] font-bold"
-                  : "bg-white border-[#D9DDD5] text-[#202724] hover:bg-[#F4F1EA]"
-              }`}
-            >
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#A84329]"></span>
-                <span>Pre-Order Batch</span>
-              </div>
-              <span className="text-[9px] uppercase px-1 py-0.2 rounded-sm bg-[#A84329]/10 text-[#A84329] font-bold">
-                Batch Rilisan
-              </span>
-            </button>
-          </div>
+          )}
         </div>
 
-        {/* 5. Reset Action Button */}
-        {hasActiveFilters && (
-          <div className="pt-2 border-t border-[#D9DDD5]">
-            <button
-              type="button"
-              onClick={resetAll}
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded border border-[#A84329]/40 bg-[#F4E5DC]/50 hover:bg-[#F4E5DC] text-[#A84329] text-xs font-bold transition-colors"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>RESET SEMUA FILTER</span>
-            </button>
-          </div>
-        )}
+        <div className="space-y-1.5">
+          <button
+            type="button"
+            onClick={() => updateFilters({ offer: "" })}
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left border ${
+              !currentOffer
+                ? "bg-slate-900 border-slate-900 text-white font-semibold shadow-sm"
+                : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+            }`}
+          >
+            <span>Semua Produk</span>
+            <span className="text-[11px] text-slate-400">Ready & PO</span>
+          </button>
 
-        {/* 6. Technical Spec Assurance Card */}
-        <div className="pt-2 border-t border-[#D9DDD5]">
-          <div className="bg-[#F4F1EA]/70 border border-[#D9DDD5] rounded p-2.5 space-y-1.5 text-[10px] text-[#59635E]">
-            <div className="flex items-center gap-1.5 text-[#202724] font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#184E46]" />
-              <span>SPESIFIKASI DIVERIFIKASI</span>
+          <button
+            type="button"
+            onClick={() => updateFilters({ offer: "READY" })}
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left border ${
+              currentOffer === "READY"
+                ? "bg-teal-50 border-teal-500 text-teal-900 font-semibold shadow-sm"
+                : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-teal-500"></span>
+              <span>Ready Stock Hub</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-3 h-3 text-[#184E46] shrink-0" />
-              <span>Foto peripheral riil resmi</span>
+            <span className="text-[10px] text-teal-700 bg-teal-100/80 px-2 py-0.5 rounded-full font-medium">
+              1-2 Hari
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => updateFilters({ offer: "PREORDER" })}
+            className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all text-left border ${
+              currentOffer === "PREORDER"
+                ? "bg-amber-50 border-amber-500 text-amber-900 font-semibold shadow-sm"
+                : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span>Pre-Order Batch</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Check className="w-3 h-3 text-[#184E46] shrink-0" />
-              <span>Garansi distributor Jakarta</span>
+            <span className="text-[10px] text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full font-medium">
+              Batch Terjadwal
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* 5. Reset Filter Button */}
+      {hasActiveFilters && (
+        <div className="pt-2 border-t border-slate-100">
+          <button
+            type="button"
+            onClick={resetAll}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition-colors"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Reset Semua Filter</span>
+          </button>
+        </div>
+      )}
+
+      {/* 6. Authenticity Guarantee Micro-Card */}
+      <div className="pt-2 border-t border-slate-100">
+        <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 space-y-2 text-xs text-slate-600">
+          <div className="flex items-center gap-2 text-slate-900 font-semibold text-xs">
+            <ShieldCheck className="w-4 h-4 text-teal-600" />
+            <span>Garansi Resmi UltraStore</span>
+          </div>
+          <div className="space-y-1.5 text-[11px] text-slate-500">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+              <span>100% Produk Original Pabrikan</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Truck className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+              <span>Dikirim Langsung dari Jakarta</span>
             </div>
           </div>
         </div>

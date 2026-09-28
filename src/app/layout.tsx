@@ -6,8 +6,8 @@ import { CartProvider } from "../context/CartContext";
 import { CartDrawer } from "../components/CartDrawer";
 
 export const metadata: Metadata = {
-  title: "UltraStore — Gear pilihan. Setup dengan karakter.",
-  description: "Toko peripheral presisi terkurasi untuk setup kerja dan gaming berkualias tinggi. Mendukung ready stock dan pre-order batch transparan.",
+  title: "UltraStore — Toko Peripheral & Hardware Presisi",
+  description: "Distributor resmi hardware enthusiast: mechanical keyboard, ultralight gaming mice, precision mousepad, dan switch pilihan dengan garansi resmi.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A]">
+    <html lang="id" className="h-full">
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased">
         <CartProvider>
           <Header />
           <CartDrawer />

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
-import { ShoppingBag, Menu, X, Compass } from "lucide-react";
+import { ShoppingBag, Menu, X, Compass, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function Header() {
@@ -15,101 +15,90 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F4F1EA]/95 backdrop-blur-md border-b border-[#202724]/15">
-      {/* Top Ticker / Meta Bar */}
-      <div className="bg-[#202724] text-[#F4F1EA] text-[10px] sm:text-[11px] py-1.5 px-4 font-mono overflow-hidden border-b border-black">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+      {/* Top Notification Strip */}
+      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 truncate">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#184E46] animate-pulse shrink-0"></span>
-            <span className="tracking-wider uppercase truncate">ULTRASTORE // HARDWARE ARCHIVE</span>
-            <span className="hidden sm:inline text-[#59635E]">|</span>
-            <span className="hidden md:inline text-neutral-300">AUTHORIZED ENTHUSIAST GEAR DISTRIBUTOR</span>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span className="font-medium text-slate-200">
+              Distributor Resmi Mechanical Keyboards & Ultralight Mice
+            </span>
+            <span className="hidden md:inline text-slate-500">·</span>
+            <span className="hidden md:inline text-slate-400">
+              Pengiriman Cepat dari Hub Jakarta
+            </span>
           </div>
-          <div className="flex items-center gap-3 sm:gap-4 text-[#D9DDD5] shrink-0">
-            <span className="hidden md:inline font-mono">JKT-ID // WAL-SQLITE</span>
-            <Link href="/track-order" className="hover:text-white transition-colors flex items-center gap-1">
-              <Compass className="w-3 h-3 text-[#184E46]" />
-              <span className="whitespace-nowrap">LACAK ORDER</span>
+
+          <div className="flex items-center gap-4 text-slate-300">
+            <Link
+              href="/track-order"
+              className="hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+            >
+              <Compass className="w-3.5 h-3.5 text-blue-400" />
+              <span>Lacak Pesanan</span>
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Main Header Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Creative Precision Monogram & Wordmark */}
+      {/* Main Navigation Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+        {/* Brand Logo & Wordmark */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-9 h-9 sm:w-10 sm:h-10 bg-[#202724] border border-[#202724] rounded flex items-center justify-center text-[#F4F1EA] shadow-[2px_2px_0px_#184E46] group-hover:shadow-[3px_3px_0px_#184E46] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0">
-            <svg
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 sm:w-6 sm:h-6 text-[#F4F1EA] transition-transform duration-300 group-hover:scale-105"
-            >
-              <path
-                d="M7 6V18C7 22.9706 11.0294 27 16 27C20.9706 27 25 22.9706 25 18V6H20V18C20 20.2091 18.2091 22 16 22C13.7909 22 12 20.2091 12 18V6H7Z"
-                fill="currentColor"
-              />
-              <circle cx="16" cy="14" r="2" fill="#184E46" />
-              <line x1="16" y1="9" x2="16" y2="12" stroke="#184E46" strokeWidth="1.5" />
-              <line x1="16" y1="16" x2="16" y2="19" stroke="#184E46" strokeWidth="1.5" />
-            </svg>
-            <span className="absolute -bottom-1 -right-1 text-[8px] font-mono font-bold bg-[#184E46] text-[#F4F1EA] px-1 rounded-sm leading-tight">
-              01
-            </span>
+          <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-blue-600 transition-colors">
+            <span>U</span>
           </div>
-
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl sm:text-2xl tracking-tighter text-[#202724] uppercase font-mono group-hover:text-[#184E46] transition-colors">
-                ULTRA<span className="text-[#184E46]">STORE</span>
+              <span className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+                UltraStore
               </span>
-              <span className="text-[9px] font-mono px-1 py-0.5 rounded bg-[#202724]/5 border border-[#202724]/20 text-[#202724] font-semibold">
-                LABS
+              <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                Official
               </span>
             </div>
-            <span className="hidden sm:flex text-[10px] font-mono tracking-widest text-[#59635E] uppercase -mt-1 items-center gap-1">
-              <span>PRECISION GEAR ARCHIVE</span>
-              <span className="text-[#A84329]">_</span>
+            <span className="text-[11px] text-slate-500 font-medium">
+              Hardware & Peripheral Enthusiast
             </span>
           </div>
         </Link>
 
-        {/* Streamlined Use-Case Navigation (Desktop) */}
-        <nav className="hidden lg:flex items-center space-x-6 text-xs font-mono font-bold tracking-wider text-slate-800 uppercase">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
           <Link
             href="/shop"
-            className="hover:text-teal-600 transition-colors py-2 border-b-2 border-transparent hover:border-teal-600 flex items-center gap-1.5"
+            className="hover:text-slate-900 transition-colors py-2 border-b-2 border-transparent hover:border-slate-900"
           >
-            <span>Katalog Gear</span>
+            Semua Produk
           </Link>
           <Link
             href="/shop?offer=PREORDER"
-            className="text-orange-600 hover:text-orange-700 py-2 border-b-2 border-transparent hover:border-orange-600 flex items-center gap-1.5"
+            className="hover:text-slate-900 transition-colors py-2 border-b-2 border-transparent hover:border-slate-900 flex items-center gap-2"
           >
-            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
             <span>Pre-Order Drops</span>
           </Link>
           <Link
             href="/track-order"
-            className="text-slate-600 hover:text-slate-900 transition-colors py-2 border-b-2 border-transparent hover:border-slate-800 flex items-center gap-1.5"
+            className="hover:text-slate-900 transition-colors py-2 border-b-2 border-transparent hover:border-slate-900"
           >
-            <Compass className="w-3.5 h-3.5 text-teal-600" />
-            <span>Lacak Order</span>
+            Lacak Pesanan
           </Link>
         </nav>
 
-        {/* Actions */}
-        <div className="flex items-center space-x-3 sm:space-x-4">
+        {/* Header Actions */}
+        <div className="flex items-center gap-3">
           <button
+            type="button"
             onClick={openCart}
-            className="relative px-3.5 py-2 rounded bg-[#FFFFFF] border border-[#202724] text-[#202724] hover:bg-[#184E46] hover:text-[#F4F1EA] transition-all flex items-center gap-2 font-mono text-xs font-bold shadow-[2px_2px_0px_#202724]"
-            aria-label="Keranjang"
+            className="relative inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition-all shadow-sm"
+            aria-label="Buka Keranjang Belanja"
           >
-            <ShoppingBag className="w-4 h-4" />
-            <span className="hidden sm:inline">CART</span>
+            <ShoppingBag className="w-4 h-4 text-slate-300" />
+            <span className="hidden sm:inline">Keranjang</span>
             {mounted && totalItemCount > 0 && (
-              <span className="bg-[#184E46] text-[#F4F1EA] text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+              <span className="ml-1 px-2 py-0.5 text-xs font-bold rounded-full bg-emerald-500 text-white">
                 {totalItemCount}
               </span>
             )}
@@ -117,51 +106,49 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded border border-[#202724] bg-white text-[#202724] hover:bg-[#F4F1EA] focus:outline-none"
-            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none"
+            aria-label="Buka menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-4 shadow-lg">
-          <div className="text-[11px] font-mono text-slate-500 uppercase border-b border-slate-100 pb-2">
-            // NAVIGASI CEPAT
-          </div>
-          <nav className="grid grid-cols-1 gap-2 text-xs font-mono font-bold uppercase">
-            <Link
-              href="/shop"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-900 hover:text-white transition-colors"
-            >
-              Katalog Gear
-            </Link>
-            <Link
-              href="/shop?offer=PREORDER"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-3 rounded-xl bg-orange-50 text-orange-700 border border-orange-200 hover:bg-orange-600 hover:text-white transition-colors flex items-center gap-2"
-            >
-              <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-2 shadow-lg">
+          <Link
+            href="/shop"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-slate-100 transition-colors"
+          >
+            <span>Semua Produk</span>
+            <ArrowRight className="w-4 h-4 text-slate-400" />
+          </Link>
+          <Link
+            href="/shop?offer=PREORDER"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-slate-100 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-600"></span>
               <span>Pre-Order Drops</span>
-            </Link>
-            <Link
-              href="/track-order"
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-teal-600 hover:text-white transition-colors flex items-center gap-2 text-slate-700"
-            >
-              <Compass className="w-4 h-4 text-teal-600" />
-              <span>Lacak Status Pesanan</span>
-            </Link>
-          </nav>
-
-          <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
-            <span className="text-slate-400">UltraStore Labs</span>
-            <span className="text-teal-600 font-semibold">Ready & Pre-Order</span>
-          </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-slate-400" />
+          </Link>
+          <Link
+            href="/track-order"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between p-3 rounded-xl bg-slate-50 text-slate-900 font-medium hover:bg-slate-100 transition-colors"
+          >
+            <div className="flex items-center gap-2">
+              <Compass className="w-4 h-4 text-blue-600" />
+              <span>Lacak Pesanan</span>
+            </div>
+            <ArrowRight className="w-4 h-4 text-slate-400" />
+          </Link>
         </div>
       )}
     </header>

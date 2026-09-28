@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --canvas: #F8FAFC;
+  --canvas: #FAFAFA;
   --surface: #FFFFFF;
   --ink: #0F172A;
   --muted: #64748B;
-  --brand: #0D9488;
-  --brand-soft: #F0FDFA;
-  --accent: #EA580C;
-  --accent-soft: #FFF7ED;
+  --brand-blue: #2563EB;
+  --brand-emerald: #059669;
   --line: #E2E8F0;
   --control-border: #CBD5E1;
   --error: #DC2626;
@@ -19,7 +17,7 @@
 body {
   background-color: var(--canvas);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,15 +26,13 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbar */
@@ -45,12 +41,12 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--canvas);
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--line);
+  background: #CBD5E1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--control-border);
+  background: #94A3B8;
 }
