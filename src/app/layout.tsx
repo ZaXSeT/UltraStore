@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
 import { CartProvider } from "../context/CartContext";
-import { CartDrawer } from "../components/CartDrawer";
+import { StorefrontChrome } from "../components/StorefrontChrome";
 
 export const metadata: Metadata = {
   title: "UltraStore — Toko Peripheral & Hardware Presisi",
@@ -22,10 +20,7 @@ export default function RootLayout({
     <html lang="id" className="h-full">
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased">
         <CartProvider>
-          <Header />
-          <CartDrawer />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <StorefrontChrome>{children}</StorefrontChrome>
         </CartProvider>
       </body>
     </html>
