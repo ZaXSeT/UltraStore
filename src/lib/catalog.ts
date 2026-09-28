@@ -287,7 +287,12 @@ export function getBrands(): { id: string; name: string; slug: string; count: nu
     GROUP BY b.id
     ORDER BY b.name ASC
   `).all() as any[];
-  return rows;
+  return rows.map((r) => ({
+    id: String(r.id),
+    name: String(r.name),
+    slug: String(r.slug),
+    count: Number(r.count),
+  }));
 }
 
 export function getCategories(): { id: string; name: string; slug: string; description: string; count: number }[] {
@@ -300,6 +305,12 @@ export function getCategories(): { id: string; name: string; slug: string; descr
     GROUP BY c.id
     ORDER BY c.name ASC
   `).all() as any[];
-  return rows;
+  return rows.map((r) => ({
+    id: String(r.id),
+    name: String(r.name),
+    slug: String(r.slug),
+    description: String(r.description || ""),
+    count: Number(r.count),
+  }));
 }
 
