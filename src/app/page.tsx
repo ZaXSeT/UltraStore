@@ -152,22 +152,28 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Stage (5 cols) - Bleed & Frameless Glasspad Exhibition */}
-            <div className="lg:col-span-5 bg-neutral-100/40 border-t lg:border-t-0 lg:border-l border-neutral-200/80 relative flex items-center justify-center p-6 sm:p-10 overflow-hidden group">
-              <div className="relative w-full h-[360px] sm:h-[440px] max-w-[460px] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+            {/* Right Hero Stage (5 cols) - Natural Sizing with Zero Blank Void */}
+            <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+              <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pb-2">
+                <span>COLLAB ARTWORK</span>
+                <span>ORIGINAL AUTHENTIC</span>
+              </div>
+
+              {/* Square Aspect Ratio Showcase matching 799x799 asset exactly */}
+              <div className="relative w-full aspect-square max-w-[420px] mx-auto my-4 transition-transform duration-500 ease-out hover:scale-[1.02]">
                 <Image
                   src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207"
                   alt="GLSSWRKS Zofia Art Edition Glasspad"
                   fill
                   priority
-                  className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover rounded-2xl shadow-[0_16px_36px_rgba(0,0,0,0.08)] border border-neutral-200/80"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
 
-              {/* Technical Marker Tag */}
-              <div className="absolute bottom-4 right-6 font-mono text-[10px] font-bold text-neutral-600 uppercase tracking-widest bg-white/90 px-3 py-1 rounded-md border border-neutral-200 shadow-xs backdrop-blur-xs">
-                PRECISION SPEC · MOLDED SILICONE
+              <div className="flex items-center justify-between pt-2 border-t border-neutral-200/60 font-mono text-[10px] text-neutral-500 uppercase tracking-wider">
+                <span>ALUMINOSILICATE ETCHED</span>
+                <span className="font-bold text-neutral-900">490 × 420 × 3.8 MM</span>
               </div>
             </div>
           </div>
