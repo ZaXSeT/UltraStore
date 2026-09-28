@@ -20,10 +20,10 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group block bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:border-blue-500/70 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
+      className="group block bg-white border border-neutral-200/90 rounded-2xl overflow-hidden hover:border-neutral-950 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* 1:1 Product Image Studio Canvas */}
-      <div className="relative aspect-square w-full bg-slate-50/60 flex items-center justify-center p-6 border-b border-slate-100 overflow-hidden">
+      <div className="relative aspect-square w-full bg-neutral-50/70 flex items-center justify-center p-6 border-b border-neutral-100 overflow-hidden">
         <ProductImage
           src={primaryVariant?.media[0]?.url || product.primaryImage}
           alt={product.name}
@@ -34,14 +34,14 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Status Badge */}
         <div className="absolute top-3.5 left-3.5">
           {isPreorder ? (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700 border border-blue-200/80 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-              Pre-Order
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-bold tracking-tight rounded-md bg-neutral-900 text-white shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              PRE-ORDER
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              Ready Stock
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono font-bold tracking-tight rounded-md bg-white text-emerald-800 border border-emerald-300 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              READY STOCK
             </span>
           )}
         </div>
@@ -51,21 +51,21 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white">
         <div>
           <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-xs font-semibold tracking-wide text-blue-600">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors">
               {product.brand.name}
             </span>
-            <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+            <span className="font-mono text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded">
               {product.category.name}
             </span>
           </div>
 
-          <h3 className="font-semibold text-sm sm:text-base text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
+          <h3 className="font-bold text-sm sm:text-base text-neutral-950 group-hover:text-[#0E52FF] transition-colors line-clamp-2 leading-snug min-h-[2.5rem]">
             {product.name}
           </h3>
 
           {/* Variant attributes teaser */}
           {primaryVariant && (
-            <p className="text-xs text-slate-500 mt-1.5 line-clamp-1">
+            <p className="text-xs text-neutral-500 mt-1.5 line-clamp-1 font-normal">
               {Object.entries(primaryVariant.attributes)
                 .map(([_, v]) => `${v}`)
                 .join(" · ")}
@@ -74,17 +74,17 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Price & Action Button */}
-        <div className="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between gap-2">
+        <div className="mt-4 pt-3.5 border-t border-neutral-100 flex items-center justify-between gap-2">
           <div>
-            <span className="text-[11px] font-medium text-slate-400 block leading-none mb-1">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 block leading-none mb-1">
               {isPreorder ? "Mulai Dari" : "Harga"}
             </span>
-            <div className="text-sm sm:text-base font-bold text-slate-900 font-tabular tracking-tight">
+            <div className="text-sm sm:text-base font-extrabold text-neutral-950 font-tabular tracking-tight">
               {formatIdr(minPrice)}
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all duration-200 shadow-sm shrink-0">
+          <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-900 text-xs font-semibold group-hover:bg-neutral-950 group-hover:text-white transition-all duration-200 shrink-0">
             <span>Detail</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>

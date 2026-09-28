@@ -95,40 +95,41 @@ export default function HomePage() {
           <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-[580px] lg:min-h-[640px] items-stretch">
             {/* Left Editorial Copy (7 cols) */}
             <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#0E52FF] bg-blue-50 px-2.5 py-1 rounded border border-blue-100">
-                    EDISI KHUSUS · 2026
-                  </span>
-                  <span className="text-xs font-mono text-neutral-400">
-                    NO. 001/HUB-JKT
-                  </span>
-                </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-3 py-1 rounded-md border border-neutral-200">
+                  EDISI KHUSUS · 2026
+                </span>
+                <span className="font-mono text-xs text-neutral-400">
+                  NO. 001/HUB-JKT
+                </span>
+              </div>
 
-                <div className="space-y-3">
-                  <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-neutral-950 leading-[0.98] uppercase">
-                    GLSSWRKS<br />
-                    <span className="text-neutral-400 font-light">ZOFIA</span> GLASS
-                  </h1>
-                  <p className="text-sm sm:text-base text-neutral-600 max-w-xl font-normal leading-relaxed pt-2">
-                    Permukaan kaca aluminosilikat micro-etched dengan base molded silicone murni. Gesekan seragam omnidirectional untuk aim kompetitif kelas turnamen.
-                  </p>
-                </div>
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-neutral-950 leading-[0.98] uppercase">
+                  GLSSWRKS<br />
+                  <span className="text-neutral-400 font-light">ZOFIA</span> GLASS
+                </h1>
+                <p className="text-sm sm:text-base text-neutral-600 max-w-xl font-normal leading-relaxed">
+                  Permukaan kaca aluminosilikat micro-etched dengan base molded silicone murni. Gesekan seragam omnidirectional untuk aim kompetitif kelas turnamen.
+                </p>
+              </div>
 
-                {/* Technical Spec Matrix */}
-                <div className="grid grid-cols-3 gap-4 pt-2 border-t border-neutral-100 max-w-lg">
-                  <div>
-                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Dimensi</span>
-                    <span className="font-medium text-xs sm:text-sm text-neutral-900">490 × 420 mm</span>
-                  </div>
-                  <div>
-                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Tebal</span>
-                    <span className="font-medium text-xs sm:text-sm text-neutral-900">3.8 mm CNC Bevel</span>
-                  </div>
-                  <div>
-                    <span className="block font-mono text-[10px] text-neutral-400 uppercase tracking-wider">Status</span>
-                    <span className="font-medium text-xs sm:text-sm text-emerald-600 font-mono">READY STOCK</span>
-                  </div>
+              {/* Technical Spec Matrix */}
+              <div className="grid grid-cols-3 gap-6 pt-4 border-t border-neutral-100 max-w-lg">
+                <div>
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Dimensi</span>
+                  <span className="font-bold text-xs sm:text-sm text-neutral-900">490 × 420 mm</span>
+                </div>
+                <div>
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Tebal</span>
+                  <span className="font-bold text-xs sm:text-sm text-neutral-900">3.8 mm CNC</span>
+                </div>
+                <div>
+                  <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Ketersediaan</span>
+                  <span className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 font-mono">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                    READY STOCK
+                  </span>
                 </div>
               </div>
 
@@ -144,29 +145,29 @@ export default function HomePage() {
 
                 <Link
                   href="/shop"
-                  className="px-7 py-4 bg-neutral-50 hover:bg-neutral-100 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 border border-neutral-200"
+                  className="px-7 py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 shadow-xs"
                 >
                   Jelajahi Semua Gear
                 </Link>
               </div>
             </div>
 
-            {/* Right Hero Stage (5 cols) */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-neutral-50/80 to-neutral-100/50 border-t lg:border-t-0 lg:border-l border-neutral-200/80 relative flex items-center justify-center p-8 sm:p-12 overflow-hidden group">
-              <div className="relative w-full aspect-square max-w-[420px] transition-transform duration-700 ease-out group-hover:scale-105">
+            {/* Right Hero Stage (5 cols) - Bleed & Frameless Glasspad Exhibition */}
+            <div className="lg:col-span-5 bg-neutral-100/40 border-t lg:border-t-0 lg:border-l border-neutral-200/80 relative flex items-center justify-center p-6 sm:p-10 overflow-hidden group">
+              <div className="relative w-full h-[360px] sm:h-[440px] max-w-[460px] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                 <Image
                   src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207"
                   alt="GLSSWRKS Zofia Art Edition Glasspad"
                   fill
                   priority
-                  className="object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.08)]"
+                  className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
                   sizes="(max-width: 1024px) 100vw, 42vw"
                 />
               </div>
 
               {/* Technical Marker Tag */}
-              <div className="absolute bottom-6 right-6 font-mono text-[10px] text-neutral-400 uppercase tracking-widest bg-white/80 px-2.5 py-1 rounded border border-neutral-200/60 backdrop-blur-xs">
-                SPEC · SILICONE BASE
+              <div className="absolute bottom-4 right-6 font-mono text-[10px] font-bold text-neutral-600 uppercase tracking-widest bg-white/90 px-3 py-1 rounded-md border border-neutral-200 shadow-xs backdrop-blur-xs">
+                PRECISION SPEC · MOLDED SILICONE
               </div>
             </div>
           </div>
