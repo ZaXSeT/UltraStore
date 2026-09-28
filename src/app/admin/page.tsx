@@ -53,6 +53,7 @@ export default function AdminPage() {
   const [rawFile, setRawFile] = useState<File | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [panPosition, setPanPosition] = useState({ x: 0, y: 0 });
+  const [cropTarget, setCropTarget] = useState<"hero" | "product" | { categoryIndex: number }>("hero");
   const [newProduct, setNewProduct] = useState({
     name: "",
     category_id: "cat_pad",
@@ -140,15 +141,18 @@ export default function AdminPage() {
     }
   };
 
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileSelect = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    target: "hero" | "product" | { categoryIndex: number } = "hero"
+  ) => {
     const file = e.target.files?.[0];
     if (!file) return;
     setRawFile(file);
+    setCropTarget(target);
     const reader = new FileReader();
     reader.onload = () => {
       setTempImageSrc(reader.result as string);
       setZoomLevel(1);
-      setPanPosition({ x: 0, y: 0 });
       setCropModalOpen(true);
     };
     reader.readAsDataURL(file);
@@ -166,9 +170,27 @@ export default function AdminPage() {
       });
       const data = await res.json();
       if (data.success && data.url) {
-        setHero((prev: any) => ({ ...prev, imageUrl: data.url }));
+        if (cropTarget === "hero") {
+          setHero((prev: any) => ({ ...prev, imageUrl: data.url }));
+          setSaveMessage("Hero image uploaded to R2.");
+        } else if (typeof cropTarget === "object" && "categoryIndex" in cropTarget) {
+          const idx = cropTarget.categoryIndex;
+          setCategories((prev: any) => {
+            const updated = [...prev];
+            updated[idx].image = data.url;
+            return updated;
+          });
+          setSaveMessage(`Slot 0${idx + 1} category image uploaded to R2.`);
+        } else if (cropTarget === "product") {
+          if (editingProduct) {
+            setEditingProduct((prev: any) => ({ ...prev, primary_image: data.url }));
+          } else {
+            setNewProduct((prev: any) => ({ ...prev, primary_image: data.url }));
+          }
+          setSaveMessage("Product image uploaded to R2.");
+        }
+
         setCropModalOpen(false);
-        setSaveMessage("Hero image uploaded to R2.");
         setTimeout(() => setSaveMessage(null), 3000);
       } else {
         alert(data.error || "Upload failed");
@@ -621,16 +643,28 @@ export default function AdminPage() {
                         </div>
                         <div className="space-y-1">
                           <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">Image Media (R2/CDN URL)</label>
-                          <input
-                            type="text"
-                            value={cat.image || ""}
-                            onChange={(e) => {
-                              const updated = [...categories];
-                              updated[idx].image = e.target.value;
-                              setCategories(updated);
-                            }}
-                            className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
-                          />
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              value={cat.image || ""}
+                              onChange={(e) => {
+                                const updated = [...categories];
+                                updated[idx].image = e.target.value;
+                                setCategories(updated);
+                              }}
+                              className="w-full px-3 py-1.5 font-mono text-[11px] border border-[#E2E5EB] bg-white focus:outline-none focus:border-[#111215]"
+                            />
+                            <label className="px-2.5 py-1.5 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-[10px] uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1 transition-colors shrink-0">
+                              <Upload className="w-3 h-3" />
+                              <span>Crop</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => handleFileSelect(e, { categoryIndex: idx })}
+                                className="hidden"
+                              />
+                            </label>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -724,12 +758,24 @@ export default function AdminPage() {
                       <label className="font-mono text-[10px] uppercase font-bold text-[#6E7382]">
                         Cloudflare R2 Master Asset URL
                       </label>
-                      <input
-                        type="text"
-                        value={editingProduct.primary_image || ""}
-                        onChange={(e) => setEditingProduct({ ...editingProduct, primary_image: e.target.value })}
-                        className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
-                      />
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={editingProduct.primary_image || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, primary_image: e.target.value })}
+                          className="w-full px-3 py-2 font-mono text-xs border border-[#E2E5EB] bg-[#FDFDFE] focus:outline-none focus:border-[#111215]"
+                        />
+                        <label className="px-3 py-2 bg-[#111215] hover:bg-[#0E52FF] text-white font-mono text-xs uppercase font-bold tracking-wider cursor-pointer flex items-center gap-1.5 transition-colors shrink-0">
+                          <Upload className="w-3.5 h-3.5" />
+                          <span>Crop &amp; Upload</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleFileSelect(e, "product")}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
                     </div>
 
                     <div className="flex justify-end gap-3 pt-2 border-t border-[#E2E5EB]">
