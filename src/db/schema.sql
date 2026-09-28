@@ -193,3 +193,10 @@ CREATE TABLE IF NOT EXISTS audit_logs (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_audit_entity ON audit_logs(entity_type, entity_id);
+
+-- 14. Dynamic Site CMS Settings
+CREATE TABLE IF NOT EXISTS site_settings (
+  key TEXT PRIMARY KEY,
+  value_json TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);

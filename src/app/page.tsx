@@ -3,11 +3,14 @@ import Image from "next/image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
 import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
+import { getSiteSetting, DEFAULT_HERO_CONFIG, DEFAULT_CATEGORIES_CONFIG, HeroConfig, MacroCategoryConfig } from "../lib/cms";
 
-// ponytail: static category tiles & featured collab banner. Upgrade to dynamic CMS when marketing team needs frequent banner swaps.
 export default function HomePage() {
   const products = getAllProducts();
   const brands = getBrands();
+
+  const hero = getSiteSetting<HeroConfig>("hero_config", DEFAULT_HERO_CONFIG);
+  const macroCategoriesConfig = getSiteSetting<MacroCategoryConfig[]>("categories_config", DEFAULT_CATEGORIES_CONFIG);
 
   const readyProducts = products
     .filter((p) => p.offers.some((o) => o.offerType === "READY"))
@@ -17,48 +20,12 @@ export default function HomePage() {
     .filter((p) => p.offers.some((o) => o.offerType === "PREORDER"))
     .slice(0, 8);
 
-  const macroCategories = [
-    {
-      index: "01",
-      title: "Keyboards",
-      spec: "8K HE & Custom Gasket",
-      href: "/shop?category=keyboard",
-      count: products.filter((p) => p.category.slug === "keyboard").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/d7a0e34b71cf46ef9044ee8447955120_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784789080",
-    },
-    {
-      index: "02",
-      title: "Gaming Mice",
-      spec: "Magnesium & PAW3950 8K",
-      href: "/shop?category=mouse",
-      count: products.filter((p) => p.category.slug === "mouse").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/65cb153cf5f2412d85954097a64c7f9f_tplv-aphluv4xwc-origin-jpeg.jpg?v=1784968417",
-    },
-    {
-      index: "03",
-      title: "Precision Glasspads",
-      spec: "Aluminosilicate Micro-Etch",
-      href: "/shop?category=mousepad",
-      count: products.filter((p) => p.category.slug === "mousepad").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-08-13_145621677.png?v=1786607786",
-    },
-    {
-      index: "04",
-      title: "Artisan Switches",
-      spec: "Magnetic HE & Custom Linear",
-      href: "/shop?category=switches-parts",
-      count: products.filter((p) => p.category.slug === "switches-parts").length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/a995271cced34d63be21e379f450eb8a_tplv-aphluv4xwc-origin-jpeg.jpg?v=1790229546",
-    },
-    {
-      index: "05",
-      title: "Pre-Order Drops",
-      spec: "Verified Manufacturer Batches",
-      href: "/shop?offer=PREORDER",
-      count: preorderBatches.length,
-      image: "https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-19_184652056.png?v=1789818415",
-    },
-  ];
+  const macroCategories = macroCategoriesConfig.map((cat) => ({
+    ...cat,
+    count: cat.href.includes("offer=PREORDER")
+      ? preorderBatches.length
+      : products.filter((p) => p.category.slug === cat.href.replace("/shop?category=", "")).length,
+  }));
 
   return (
     <div className="w-full space-y-16 lg:space-y-24 pb-28">
@@ -97,20 +64,20 @@ export default function HomePage() {
             <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between z-10 space-y-8">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-3 py-1 rounded-md border border-neutral-200">
-                  EDISI KHUSUS · 2026
+                  {hero.badgeText}
                 </span>
                 <span className="font-mono text-xs text-neutral-400">
-                  NO. 001/HUB-JKT
+                  {hero.tagline}
                 </span>
               </div>
 
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-neutral-950 leading-[0.98] uppercase">
-                  GLSSWRKS<br />
-                  <span className="text-neutral-400 font-light">ZOFIA</span> GLASS
+                  {hero.titleLine1}<br />
+                  <span className="text-neutral-400 font-light">{hero.titleAccent}</span> {hero.titleLine2}
                 </h1>
                 <p className="text-sm sm:text-base text-neutral-600 max-w-xl font-normal leading-relaxed">
-                  Permukaan kaca aluminosilikat micro-etched dengan base molded silicone murni. Gesekan seragam omnidirectional untuk aim kompetitif kelas turnamen.
+                  {hero.description}
                 </p>
               </div>
 
@@ -118,17 +85,17 @@ export default function HomePage() {
               <div className="grid grid-cols-3 gap-6 pt-4 border-t border-neutral-100 max-w-lg">
                 <div>
                   <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Dimensi</span>
-                  <span className="font-bold text-xs sm:text-sm text-neutral-900">490 × 420 mm</span>
+                  <span className="font-bold text-xs sm:text-sm text-neutral-900">{hero.dimensions}</span>
                 </div>
                 <div>
                   <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Tebal</span>
-                  <span className="font-bold text-xs sm:text-sm text-neutral-900">3.8 mm CNC</span>
+                  <span className="font-bold text-xs sm:text-sm text-neutral-900">{hero.thickness}</span>
                 </div>
                 <div>
                   <span className="block font-mono text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">Ketersediaan</span>
                   <span className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 font-mono">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                    READY STOCK
+                    {hero.availability}
                   </span>
                 </div>
               </div>
@@ -136,18 +103,18 @@ export default function HomePage() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <Link
-                  href="/products/glsswrks-zofia-tempered-glass"
+                  href={hero.ctaLink}
                   className="px-8 py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 flex items-center gap-2 group shadow-sm"
                 >
-                  <span>Dapatkan Sekarang</span>
+                  <span>{hero.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
-                  href="/shop"
+                  href={hero.secondaryCtaLink}
                   className="px-7 py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 shadow-xs"
                 >
-                  Jelajahi Semua Gear
+                  {hero.secondaryCtaText}
                 </Link>
               </div>
             </div>
@@ -155,25 +122,26 @@ export default function HomePage() {
             {/* Right Hero Stage (5 cols) - Natural Sizing with Zero Blank Void */}
             <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-neutral-200/80 bg-neutral-50/60 p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
               <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pb-2">
-                <span>COLLAB ARTWORK</span>
-                <span>ORIGINAL AUTHENTIC</span>
+                <span>{hero.subBadgeTopLeft}</span>
+                <span>{hero.subBadgeTopRight}</span>
               </div>
 
-              {/* Square Aspect Ratio Showcase matching 799x799 asset exactly */}
-              <div className="relative w-full aspect-square max-w-[420px] mx-auto my-4 transition-transform duration-500 ease-out hover:scale-[1.02]">
-                <Image
-                  src="https://cdn.shopify.com/s/files/1/0723/4908/9929/files/image_2026-09-04_135924266.png?v=1788505207"
-                  alt="GLSSWRKS Zofia Art Edition Glasspad"
-                  fill
-                  priority
-                  className="object-cover rounded-2xl shadow-[0_16px_36px_rgba(0,0,0,0.08)] border border-neutral-200/80"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
+              <div className="relative my-auto py-2">
+                <div className="relative aspect-square max-w-[420px] mx-auto overflow-hidden rounded-2xl border border-neutral-200 shadow-md">
+                  <Image
+                    src={hero.imageUrl}
+                    alt={hero.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
               </div>
 
-              <div className="flex items-center justify-between pt-2 border-t border-neutral-200/60 font-mono text-[10px] text-neutral-500 uppercase tracking-wider">
-                <span>ALUMINOSILICATE ETCHED</span>
-                <span className="font-bold text-neutral-900">490 × 420 × 3.8 MM</span>
+              <div className="flex items-center justify-between font-mono text-[11px] text-neutral-400 pt-2 border-t border-neutral-200/60">
+                <span>{hero.subBadgeBottomLeft}</span>
+                <span>{hero.subBadgeBottomRight}</span>
               </div>
             </div>
           </div>
