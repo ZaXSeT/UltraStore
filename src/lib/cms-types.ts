@@ -85,7 +85,7 @@ export const DEFAULT_HERO_CONFIG: HeroConfig = {
   ctaLink: "/products/glsswrks-zofia-tempered-glass",
   secondaryCtaText: "Jelajahi Semua Gear",
   secondaryCtaLink: "/shop",
-  imageUrl: "/api/r2/cms/hero-zofia.png",
+  imageUrl: "/api/r2/cms/hero-zofia.webp",
   imageAlt: "GLSSWRKS Zofia Art Edition Glasspad",
   subBadgeTopLeft: "COLLAB ARTWORK",
   subBadgeTopRight: "ORIGINAL AUTHENTIC",
@@ -113,7 +113,7 @@ export const DEFAULT_CATEGORIES_CONFIG: MacroCategoryConfig[] = [
     title: "Precision Glasspads",
     spec: "Aluminosilicate Micro-Etch",
     href: "/shop?category=mousepad",
-    image: "/api/r2/cms/category-glasspads.png",
+    image: "/api/r2/cms/category-glasspads.webp",
   },
   {
     index: "04",
@@ -127,7 +127,7 @@ export const DEFAULT_CATEGORIES_CONFIG: MacroCategoryConfig[] = [
     title: "Pre-Order Drops",
     spec: "Verified Manufacturer Batches",
     href: "/shop?offer=PREORDER",
-    image: "/api/r2/cms/category-preorder.png",
+    image: "/api/r2/cms/category-preorder.webp",
   },
 ];
 

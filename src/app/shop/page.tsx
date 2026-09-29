@@ -10,9 +10,9 @@ import { brandLabel, categoryLabel, copy } from "../../lib/locale";
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string; brand?: string; offer?: string; q?: string; surface?: string }>;
+  searchParams: Promise<{ category?: string; brand?: string; offer?: string; q?: string; surface?: string; page?: string }>;
 }) {
-  const { category, brand, offer, q, surface } = await searchParams;
+  const { category, brand, offer, q, surface, page } = await searchParams;
   const locale = await getServerLocale();
   const t = (id: string, en: string) => copy(locale, id, en);
   let products = getAllProducts(category, offer, brand, surface);
@@ -28,6 +28,25 @@ export default async function ShopPage({
         p.description.toLowerCase().includes(query)
     );
   }
+
+  const pageSize = 24;
+  const totalPages = Math.max(1, Math.ceil(products.length / pageSize));
+  const requestedPage = Number(page);
+  const currentPage = Number.isInteger(requestedPage) && requestedPage > 0
+    ? Math.min(requestedPage, totalPages)
+    : 1;
+  const visibleProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const pageHref = (targetPage: number) => {
+    const params = new URLSearchParams();
+    if (category) params.set("category", category);
+    if (brand) params.set("brand", brand);
+    if (offer) params.set("offer", offer);
+    if (q) params.set("q", q);
+    if (surface) params.set("surface", surface);
+    if (targetPage > 1) params.set("page", String(targetPage));
+    const query = params.toString();
+    return query ? `/shop?${query}` : "/shop";
+  };
 
   // Find active category & brand metadata
   const activeCategoryObj = allCategories.find((c) => c.slug === category);
@@ -194,10 +213,30 @@ export default async function ShopPage({
             </div>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1920px]:grid-cols-6 3xl:grid-cols-6 gap-3 sm:gap-5 xl:gap-6">
-              {products.map((p) => (
+              {visibleProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </div>
+          )}
+          {totalPages > 1 && (
+            <nav aria-label={t("Halaman katalog", "Catalog pages")} className="flex flex-wrap items-center justify-between gap-3 border-t border-neutral-200 pt-4 font-mono text-xs">
+              <span className="text-neutral-500">
+                {t("Menampilkan", "Showing")} {(currentPage - 1) * pageSize + 1}–{Math.min(currentPage * pageSize, products.length)} {t("dari", "of")} {products.length}
+              </span>
+              <div className="flex items-center gap-2">
+                {currentPage > 1 && (
+                  <Link href={pageHref(currentPage - 1)} className="border border-neutral-300 bg-[var(--theme-surface)] px-3 py-2 hover:border-[var(--theme-accent)]">
+                    {t("Sebelumnya", "Previous")}
+                  </Link>
+                )}
+                <span aria-current="page" className="px-2 text-[var(--theme-ink)]">{currentPage} / {totalPages}</span>
+                {currentPage < totalPages && (
+                  <Link href={pageHref(currentPage + 1)} className="border border-neutral-300 bg-[var(--theme-surface)] px-3 py-2 hover:border-[var(--theme-accent)]">
+                    {t("Berikutnya", "Next")}
+                  </Link>
+                )}
+              </div>
+            </nav>
           )}
         </main>
       </div>

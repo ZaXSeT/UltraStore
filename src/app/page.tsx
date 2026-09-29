@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { R2Image } from "../components/R2Image";
 import { getAllProducts, getBrands } from "../lib/catalog";
 import { ProductCard } from "../components/ProductCard";
 import { ArrowUpRight, ArrowRight, Disc3 } from "lucide-react";
@@ -156,11 +156,10 @@ export default async function HomePage() {
 
               <div className="relative w-full flex-1 flex items-center justify-center py-2 sm:py-4">
                 <div className="relative aspect-square w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-[var(--theme-surface)] shadow-lg">
-                  <Image
+                  <R2Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
                     fill
-                    unoptimized
                     className="object-cover"
                     priority
                   />
@@ -217,11 +216,10 @@ export default async function HomePage() {
               {/* 1:1 Studio Product Frame */}
               <div className="relative aspect-square w-full my-auto flex items-center justify-center p-2 sm:p-4">
                 <div className="relative w-full h-full">
-                  <Image
+                  <R2Image
                     src={cat.image}
                     alt={cat.title}
                     fill
-                    unoptimized
                     className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 </div>

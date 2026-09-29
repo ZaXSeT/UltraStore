@@ -166,9 +166,20 @@ export function getAllProducts(
 
   const rows = db.prepare(query).all(...params) as any[];
 
-  return rows.map((r) => {
-    const variantsRaw = db.prepare("SELECT * FROM variants WHERE product_id = ?").all(r.id) as any[];
-    const variants: ProductVariant[] = variantsRaw.map((v) => ({
+  if (rows.length === 0) return [];
+  const ids = rows.map((row) => row.id);
+  const placeholders = ids.map(() => "?").join(",");
+  const variantRows = db.prepare(`SELECT * FROM variants WHERE product_id IN (${placeholders})`).all(...ids) as any[];
+  const offerRows = db.prepare(`
+    SELECT o.*, v.product_id FROM offers o
+    JOIN variants v ON o.variant_id = v.id
+    WHERE v.product_id IN (${placeholders})
+  `).all(...ids) as any[];
+  const variantsByProduct = new Map<string, ProductVariant[]>();
+  const offersByProduct = new Map<string, Offer[]>();
+
+  for (const v of variantRows) {
+    const variant: ProductVariant = {
       id: v.id,
       productId: v.product_id,
       sku: v.sku,
@@ -181,15 +192,14 @@ export function getAllProducts(
         ...image,
         url: resolveR2ImageUrl(image.url),
       })),
-    }));
+    };
+    const group = variantsByProduct.get(v.product_id) || [];
+    group.push(variant);
+    variantsByProduct.set(v.product_id, group);
+  }
 
-    const offersRaw = db.prepare(`
-      SELECT o.* FROM offers o
-      JOIN variants v ON o.variant_id = v.id
-      WHERE v.product_id = ?
-    `).all(r.id) as any[];
-
-    const offers: Offer[] = offersRaw.map((o) => ({
+  for (const o of offerRows) {
+    const offer: Offer = {
       id: o.id,
       variantId: o.variant_id,
       offerType: o.offer_type,
@@ -197,7 +207,15 @@ export function getAllProducts(
       status: o.status,
       batchId: o.batch_id,
       estimatedShipping: o.estimated_shipping,
-    }));
+    };
+    const group = offersByProduct.get(o.product_id) || [];
+    group.push(offer);
+    offersByProduct.set(o.product_id, group);
+  }
+
+  return rows.map((r) => {
+    const variants = variantsByProduct.get(r.id) || [];
+    const offers = offersByProduct.get(r.id) || [];
 
     return {
       id: r.id,

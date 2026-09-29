@@ -73,6 +73,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         <div className="bg-[var(--theme-surface)] border border-slate-200/80 aspect-square flex items-center justify-center p-4 sm:p-6 relative overflow-hidden shadow-sm">
           <ProductImage
             src={activeImage}
+            eager
             alt={selectedVariant.name}
             category={product.category.name}
             className="w-full h-full object-contain"

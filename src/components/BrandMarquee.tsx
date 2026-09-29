@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { R2Image } from "./R2Image";
 import type { BrandLogoConfig } from "../lib/cms-types";
 
 interface BrandMarqueeProps {
@@ -34,11 +34,10 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
           >
             {b.logoUrl ? (
               <div className="relative h-7 w-28 shrink-0 flex items-center justify-center">
-                <Image
+                <R2Image
                   src={b.logoUrl}
                   alt={b.name}
                   fill
-                  unoptimized
                   className="object-contain filter grayscale opacity-80 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-200"
                 />
               </div>

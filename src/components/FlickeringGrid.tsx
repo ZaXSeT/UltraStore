@@ -121,22 +121,23 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     if (!ctx) return;
 
     let animationFrameId: number;
-    let gridParams: ReturnType<typeof setupCanvas>;
-
     const updateCanvasSize = () => {
       const newWidth = width || container.clientWidth;
       const newHeight = height || container.clientHeight;
       setCanvasSize({ width: newWidth, height: newHeight });
-      gridParams = setupCanvas(canvas, newWidth, newHeight);
+      return setupCanvas(canvas, newWidth, newHeight);
     };
 
-    updateCanvasSize();
+    let gridParams = updateCanvasSize();
 
     let lastTime = 0;
     const animate = (time: number) => {
       if (!isInView) return;
 
-      const deltaTime = (time - lastTime) / 1000;
+      animationFrameId = requestAnimationFrame(animate);
+      if (document.hidden || time - lastTime < 100) return;
+
+      const deltaTime = Math.min((time - lastTime) / 1000, 0.2);
       lastTime = time;
 
       updateSquares(gridParams.squares, deltaTime);
@@ -149,11 +150,10 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         gridParams.squares,
         gridParams.dpr,
       );
-      animationFrameId = requestAnimationFrame(animate);
     };
 
     const resizeObserver = new ResizeObserver(() => {
-      updateCanvasSize();
+      gridParams = updateCanvasSize();
     });
 
     resizeObserver.observe(container);
@@ -168,7 +168,11 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     intersectionObserver.observe(canvas);
 
     if (isInView) {
-      animationFrameId = requestAnimationFrame(animate);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        drawGrid(ctx, canvas.width, canvas.height, gridParams.cols, gridParams.rows, gridParams.squares, gridParams.dpr);
+      } else {
+        animationFrameId = requestAnimationFrame(animate);
+      }
     }
 
     return () => {

@@ -47,6 +47,8 @@ Upload admin dan aset katalog disimpan di bucket R2. Atur `R2_PUBLIC_URL` di `.e
 
 Setelah mengubah `.env.local`, mulai ulang server development. Konfigurasi environment deployment perlu diperbarui secara terpisah.
 
+Untuk deployment, hubungkan bucket R2 ke custom domain Cloudflare dan gunakan domain itu sebagai `R2_PUBLIC_URL`. URL `r2.dev` hanya untuk pengembangan; aksesnya dibatasi dan tidak memakai Cloudflare Cache. Bila URL publik gagal untuk pengunjung, komponen gambar mencoba endpoint `/api/r2/...` sebagai cadangan. Jalankan `node --env-file=.env.local scripts/audit-r2-images.mjs` untuk memeriksa semua gambar katalog dan CMS.
+
 ---
 
 ## 🎨 Design System: Precision Workshop

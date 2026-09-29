@@ -19,3 +19,16 @@ export function resolveR2ImageUrl(url: string, publicUrl = process.env.R2_PUBLIC
 
   return url;
 }
+
+// Browser fallback for public R2 URLs blocked or throttled in a visitor's region.
+export function r2ProxyFallbackUrl(url: string): string | null {
+  if (!url || url.startsWith(`${R2_PROXY_PATH}/`)) return null;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return null;
+    if (!/^\/(products|cms|brands)\//.test(parsed.pathname)) return null;
+    return `${R2_PROXY_PATH}${parsed.pathname}`;
+  } catch {
+    return null;
+  }
+}
