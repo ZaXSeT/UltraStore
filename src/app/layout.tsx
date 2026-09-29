@@ -4,6 +4,8 @@ import { CartProvider } from "../context/CartContext";
 import { StorefrontChrome } from "../components/StorefrontChrome";
 import { LanguageProvider } from "../context/LanguageContext";
 import { getServerLocale } from "../lib/server-locale";
+import { getSiteSetting } from "../lib/cms";
+import { DEFAULT_THEME_CONFIG, normalizeTheme } from "../lib/theme";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
@@ -22,9 +24,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getServerLocale();
+  const theme = normalizeTheme(getSiteSetting("theme_config", DEFAULT_THEME_CONFIG));
+  const themeStyle = {
+    "--theme-accent": theme.accent,
+    "--theme-canvas": theme.canvas,
+    "--theme-surface": theme.surface,
+    "--theme-ink": theme.ink,
+  } as React.CSSProperties;
   return (
-    <html lang={locale} className="h-full">
-      <body className="min-h-screen flex flex-col bg-[#F8F9FA] text-slate-900 antialiased">
+    <html lang={locale} className="h-full" style={themeStyle}>
+      <body className="min-h-screen flex flex-col bg-[var(--theme-canvas)] text-[var(--theme-ink)] antialiased">
         <LanguageProvider initialLocale={locale}>
           <CartProvider>
             <StorefrontChrome>{children}</StorefrontChrome>

@@ -40,27 +40,27 @@ export default async function DropLedgerPage({
       {/* Back Button */}
       <Link
         href={product ? `/products/${product.slug}` : "/shop"}
-        className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
+        className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-[var(--theme-ink)] transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>{t("Kembali ke produk", "Back to Product")}</span>
       </Link>
 
       {/* Header Drop Ledger */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200/80">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-accent)] bg-[var(--theme-accent-soft)] px-3 py-1 rounded-full border border-[var(--theme-accent-border)]">
               {t("Jadwal Pre-Order", "Pre-Order Timeline")}
             </span>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[var(--theme-ink)] tracking-tight mt-1">
               {locale === "en" ? batch.name.replace("Batch Rilisan", "Batch") : batch.name}
             </h1>
           </div>
 
           <div className="text-left sm:text-right">
             <div className="text-xs text-slate-500 font-medium">{t("Perkiraan Tiba di Gudang", "Estimated Warehouse Arrival")}:</div>
-            <div className="text-lg font-bold text-slate-900">{deliveryEstimate(batch.etaRange, locale)}</div>
+            <div className="text-lg font-bold text-[var(--theme-ink)]">{deliveryEstimate(batch.etaRange, locale)}</div>
           </div>
         </div>
 
@@ -70,13 +70,13 @@ export default async function DropLedgerPage({
             <span className="text-slate-600">
               {t("Kuota Terpesan", "Reserved Spots")}: {batch.quotaCommitted} / {batch.quotaTotal} {t("unit", "units")}
             </span>
-            <span className="font-semibold text-blue-600">
+            <span className="font-semibold text-[var(--theme-accent)]">
               {t("Sisa Kuota", "Spots Left")}: {batch.quotaTotal - batch.quotaCommitted} {t("unit", "units")}
             </span>
           </div>
           <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
             <div
-              className="h-full bg-blue-600 rounded-full transition-all"
+              className="h-full bg-[var(--theme-accent)] rounded-full transition-all"
               style={{
                 width: `${Math.min(
                   100,
@@ -91,7 +91,7 @@ export default async function DropLedgerPage({
           <div className="pt-2">
             <Link
               href={`/products/${product.slug}`}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors inline-block shadow-sm"
+              className="px-6 py-3 bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)] text-white text-xs font-semibold rounded-xl transition-colors inline-block shadow-sm"
             >
               {t("Pesan Pre-Order", "Pre-Order Now")}
             </Link>
@@ -100,9 +100,9 @@ export default async function DropLedgerPage({
       </div>
 
       {/* Drop Timeline Phases */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-8 shadow-sm">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-8 shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-xl font-bold text-[var(--theme-ink)] tracking-tight">
             {t("Perjalanan Batch", "Batch Progress")}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
@@ -120,7 +120,7 @@ export default async function DropLedgerPage({
                 key={stage.key}
                 className={`flex items-start gap-4 p-4 rounded-xl border transition-all ${
                   isCurrent
-                    ? "bg-blue-50/50 border-blue-300"
+                    ? "bg-[var(--theme-accent-soft)] border-[var(--theme-accent-border)]"
                     : isCompleted
                     ? "bg-emerald-50/40 border-emerald-200/80"
                     : "bg-slate-50 border-slate-200 opacity-60"
@@ -130,7 +130,7 @@ export default async function DropLedgerPage({
                   {isCompleted ? (
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                   ) : isCurrent ? (
-                    <Clock className="w-5 h-5 text-blue-600 animate-spin" />
+                    <Clock className="w-5 h-5 text-[var(--theme-accent)] animate-spin" />
                   ) : (
                     <Circle className="w-5 h-5 text-slate-400" />
                   )}
@@ -141,7 +141,7 @@ export default async function DropLedgerPage({
                     <h3
                       className={`text-sm font-bold ${
                         isCurrent
-                          ? "text-blue-900"
+                          ? "text-[var(--theme-accent-hover)]"
                           : isCompleted
                           ? "text-emerald-900"
                           : "text-slate-600"
@@ -153,7 +153,7 @@ export default async function DropLedgerPage({
                       {isCompleted ? (
                         <span className="text-emerald-700">{t("Selesai", "Complete")}</span>
                       ) : isCurrent ? (
-                        <span className="text-blue-700">{t("Sedang Berjalan", "In Progress")}</span>
+                        <span className="text-[var(--theme-accent)]">{t("Sedang Berjalan", "In Progress")}</span>
                       ) : (
                         <span className="text-slate-400">{t("Terjadwal", "Upcoming")}</span>
                       )}
@@ -168,9 +168,9 @@ export default async function DropLedgerPage({
       </div>
 
       {/* Timeline Audit Logs */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-10 space-y-6 shadow-sm">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-xl font-bold text-[var(--theme-ink)] tracking-tight">
             {t("Catatan Pembaruan", "Batch Updates")}
           </h2>
           <p className="text-xs text-slate-500 mt-1">
@@ -182,7 +182,7 @@ export default async function DropLedgerPage({
           {batch.timelineNotes.map((note, i) => (
             <div key={i} className="py-3.5 flex flex-col sm:flex-row justify-between gap-2">
               <div className="space-y-0.5">
-                <span className="font-semibold text-slate-900">{locale === "en" ? ({
+                <span className="font-semibold text-[var(--theme-ink)]">{locale === "en" ? ({
                   "Batch dibuka untuk 50 slot produksi.": "This batch opened with 50 production spots.",
                   "Konfirmasi slot awal masuk pabrik perakitan.": "The first production spots have been confirmed with the factory.",
                 } as Record<string, string>)[note.note] || note.note : note.note}</span>

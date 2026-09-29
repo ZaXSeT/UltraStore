@@ -57,6 +57,9 @@ function initSchema(db: DatabaseSync) {
   if (!productColumns.some((column) => column.name === "description_en")) {
     db.exec("ALTER TABLE products ADD COLUMN description_en TEXT NOT NULL DEFAULT ''");
   }
+  if (!productColumns.some((column) => column.name === "warranty_info_en")) {
+    db.exec("ALTER TABLE products ADD COLUMN warranty_info_en TEXT NOT NULL DEFAULT ''");
+  }
 }
 
 // Transaction helper for safe atomic operations

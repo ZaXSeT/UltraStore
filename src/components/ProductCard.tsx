@@ -19,10 +19,10 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative block bg-white border border-neutral-200/90 overflow-hidden hover:border-[#111215] hover:shadow-[0_16px_36px_rgba(14,82,255,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full"
+      className="group relative block bg-[var(--theme-surface)] border border-neutral-200/90 overflow-hidden hover:border-[var(--theme-ink)] hover:shadow-[0_16px_36px_rgba(14,82,255,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* 1:1 Product Image Studio Canvas with Ambient Hover Shift */}
-      <div className="relative aspect-square w-full bg-neutral-100 group-hover:bg-[#F2F5FA] flex items-center justify-center border-b border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300 overflow-hidden">
+      <div className="relative aspect-square w-full bg-neutral-100 group-hover:bg-[var(--theme-accent-soft)] flex items-center justify-center border-b border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300 overflow-hidden">
         <ProductImage
           src={primaryVariant?.media[0]?.url || product.primaryImage}
           alt={product.name}
@@ -32,10 +32,10 @@ export function ProductCard({ product }: { product: Product }) {
 
         {/* Architectural Editorial Status Tag (Non-AI Slop, Swiss Precision Grid) */}
         <div className="absolute top-0 left-0 z-10">
-          <div className="flex items-center font-mono text-[9px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[#111215]/20 bg-white/95 backdrop-blur-xs text-[#111215]">
+          <div className="flex items-center font-mono text-[9px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[var(--theme-ink-border)] bg-[var(--theme-surface-95)] backdrop-blur-xs text-[var(--theme-ink)]">
             <span
               className={`w-1.5 h-1.5 self-stretch ${
-                isPreorder ? "bg-[#0E52FF]" : "bg-[#111215]"
+                isPreorder ? "bg-[var(--theme-accent)]" : "bg-[var(--theme-ink)]"
               }`}
             />
             <span className="px-2 py-0.5">
@@ -46,10 +46,10 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product Details */}
-      <div className="p-2.5 sm:p-5 flex flex-col justify-between flex-1 bg-white group-hover:bg-[#FAFBFD] transition-colors duration-300">
+      <div className="p-2.5 sm:p-5 flex flex-col justify-between flex-1 bg-[var(--theme-surface)] group-hover:bg-[var(--theme-surface-hover)] transition-colors duration-300">
         <div>
           <div className="flex items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-1.5">
-            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-neutral-950 transition-colors truncate">
+            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider text-neutral-500 group-hover:text-[var(--theme-ink)] transition-colors truncate">
               {brandLabel(product.brand.slug, product.brand.name, locale)}
             </span>
             <span className="font-mono text-[8px] sm:text-[10px] uppercase font-semibold text-neutral-400 bg-neutral-100 px-1 sm:px-2 py-0.5 rounded-none shrink-0">
@@ -57,7 +57,7 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           </div>
 
-          <h3 className="font-bold text-xs sm:text-base text-neutral-950 group-hover:text-[#0E52FF] transition-colors line-clamp-2 leading-tight sm:leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
+          <h3 className="font-bold text-xs sm:text-base text-[var(--theme-ink)] group-hover:text-[var(--theme-accent)] transition-colors line-clamp-2 leading-tight sm:leading-snug min-h-[2rem] sm:min-h-[2.5rem]">
             {product.name}
           </h3>
 
@@ -77,12 +77,12 @@ export function ProductCard({ product }: { product: Product }) {
             <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider text-neutral-400 block leading-none mb-0.5 sm:mb-1">
               {isPreorder ? t("Mulai dari", "From") : t("Harga", "Price")}
             </span>
-            <div className="text-[11px] sm:text-sm font-extrabold text-neutral-950 font-tabular tracking-tight truncate">
+            <div className="text-[11px] sm:text-sm font-extrabold text-[var(--theme-ink)] font-tabular tracking-tight truncate">
               {formatIdr(minPrice)}
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2.5 py-1 sm:py-1.5 border border-[#0E52FF] bg-[#0E52FF] text-white text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[#0040E0] group-hover:border-[#0040E0] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm shadow-blue-500/20">
+          <div className="inline-flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2.5 py-1 sm:py-1.5 border border-[var(--theme-accent)] bg-[var(--theme-accent)] text-white text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider group-hover:bg-[var(--theme-accent-hover)] group-hover:border-[var(--theme-accent-hover)] transition-all duration-200 shrink-0 whitespace-nowrap shadow-sm">
             <span>{t("Lihat", "View")}</span>
             <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>

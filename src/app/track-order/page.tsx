@@ -23,10 +23,10 @@ export default function TrackOrderPage() {
   return (
     <div className="max-w-xl mx-auto px-4 py-16 space-y-8">
       <div className="text-center space-y-2">
-        <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
+        <div className="w-12 h-12 rounded-2xl bg-[var(--theme-accent-soft)] text-[var(--theme-accent)] flex items-center justify-center mx-auto">
           <Compass className="w-6 h-6" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[var(--theme-ink)] tracking-tight">
           {t("Lacak Pesanan", "Track Your Order")}
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto leading-relaxed">
@@ -34,7 +34,7 @@ export default function TrackOrderPage() {
         </p>
       </div>
 
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm">
         <form onSubmit={handleTrack} className="space-y-4">
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1.5 tracking-wide">
@@ -49,7 +49,7 @@ export default function TrackOrderPage() {
                 setReference(e.target.value);
                 setErrorMsg("");
               }}
-              className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600/10 focus:border-blue-600 transition-all"
+              className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-[var(--theme-ink)] placeholder-slate-400 focus:bg-[var(--theme-surface)] focus:outline-none focus:ring-2 focus:ring-[var(--theme-accent-ring)] focus:border-[var(--theme-accent)] transition-all"
             />
           </div>
 

@@ -65,18 +65,18 @@ export function CartDrawer() {
 
       {/* Drawer Panel */}
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-full sm:w-[460px] bg-white shadow-2xl transform transition-transform duration-300 ease-out flex flex-col ${
+        className={`fixed top-0 right-0 z-[70] h-full w-full sm:w-[460px] bg-[var(--theme-surface)] shadow-2xl transform transition-transform duration-300 ease-out flex flex-col ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white shrink-0">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-[var(--theme-surface)] shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center text-white">
               <ShoppingBag className="w-4 h-4 text-slate-200" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-slate-900">
+              <h2 className="text-sm font-bold text-[var(--theme-ink)]">
                 {t("Keranjang Belanja", "Shopping Cart")}
               </h2>
               <span className="text-xs text-slate-500 font-medium">
@@ -88,7 +88,7 @@ export function CartDrawer() {
           <button
             aria-label={t("Tutup keranjang", "Close cart")}
             onClick={closeCart}
-            className="w-9 h-9 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors"
+            className="w-9 h-9 rounded-xl border border-slate-200 bg-[var(--theme-surface)] hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-[var(--theme-ink)] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -101,7 +101,7 @@ export function CartDrawer() {
               <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
                 <ShoppingBag className="w-8 h-8" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-[var(--theme-ink)]">
                 {t("Keranjang Masih Kosong", "Your Cart Is Empty")}
               </h3>
               <p className="text-xs text-slate-500 mt-1 max-w-xs leading-relaxed">
@@ -112,7 +112,7 @@ export function CartDrawer() {
                   closeCart();
                   router.push("/shop");
                 }}
-                className="mt-5 px-5 py-2.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors"
+                className="mt-5 px-5 py-2.5 bg-[var(--theme-ink)] text-white text-xs font-semibold rounded-xl hover:bg-[var(--theme-accent)] transition-colors"
               >
                 {t("Jelajahi Katalog", "Browse Products")}
               </button>
@@ -128,13 +128,13 @@ export function CartDrawer() {
                       className={`px-6 py-2.5 flex items-center justify-between text-xs font-semibold ${
                         isReady
                           ? "bg-emerald-50 text-emerald-900 border-b border-emerald-100"
-                          : "bg-blue-50 text-blue-900 border-b border-blue-100"
+                          : "bg-[var(--theme-accent-soft)] text-[var(--theme-accent-hover)] border-b border-[var(--theme-accent-border)]"
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <span
                           className={`w-2 h-2 rounded-full ${
-                            isReady ? "bg-emerald-500" : "bg-blue-600"
+                            isReady ? "bg-emerald-500" : "bg-[var(--theme-accent)]"
                           }`}
                         />
                         <span>{isReady ? t("Stok Tersedia", "In Stock") : "Pre-Order"}</span>
@@ -164,7 +164,7 @@ export function CartDrawer() {
 
                         {/* Details */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-xs sm:text-sm text-slate-900 truncate leading-tight">
+                          <h4 className="font-semibold text-xs sm:text-sm text-[var(--theme-ink)] truncate leading-tight">
                             {item.productName}
                           </h4>
                           <p className="text-xs text-slate-500 truncate mt-0.5">
@@ -183,11 +183,11 @@ export function CartDrawer() {
                                     item.quantity - 1
                                   )
                                 }
-                                className="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-colors"
+                                className="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 hover:text-[var(--theme-ink)] transition-colors"
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
-                              <span className="w-8 text-center text-xs font-semibold text-slate-900 font-tabular">
+                              <span className="w-8 text-center text-xs font-semibold text-[var(--theme-ink)] font-tabular">
                                 {item.quantity}
                               </span>
                               <button
@@ -199,14 +199,14 @@ export function CartDrawer() {
                                     item.quantity + 1
                                   )
                                 }
-                                className="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-colors"
+                                className="w-7 h-7 flex items-center justify-center text-slate-600 hover:bg-slate-200 hover:text-[var(--theme-ink)] transition-colors"
                               >
                                 <Plus className="w-3 h-3" />
                               </button>
                             </div>
 
                             {/* Price */}
-                            <span className="text-xs font-bold text-slate-900 font-tabular">
+                            <span className="text-xs font-bold text-[var(--theme-ink)] font-tabular">
                               {formatIdr(item.price * item.quantity)}
                             </span>
                           </div>
@@ -229,15 +229,15 @@ export function CartDrawer() {
                     <div className="px-6 py-3 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
                       <div className="text-xs">
                         <span className="text-slate-500">Subtotal: </span>
-                        <span className="font-bold text-slate-900 font-tabular">{formatIdr(group.subtotal)}</span>
+                        <span className="font-bold text-[var(--theme-ink)] font-tabular">{formatIdr(group.subtotal)}</span>
                       </div>
                       <button
                         type="button"
                         onClick={() => handleCheckoutGroup(group.groupKey)}
                         className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white rounded-xl shadow-sm transition-colors ${
                           isReady
-                            ? "bg-[#090D16] hover:bg-[#2563EB]"
-                            : "bg-blue-600 hover:bg-blue-700"
+                            ? "bg-[var(--theme-ink)] hover:bg-[var(--theme-accent)]"
+                            : "bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)]"
                         }`}
                       >
                         <span>{t("Lanjut ke Checkout", "Checkout")}</span>
@@ -253,19 +253,19 @@ export function CartDrawer() {
 
         {/* Footer (Grand Total) */}
         {items.length > 0 && (
-          <div className="shrink-0 border-t border-slate-200 bg-white px-6 py-4 space-y-3">
+          <div className="shrink-0 border-t border-slate-200 bg-[var(--theme-surface)] px-6 py-4 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Truck className="w-3.5 h-3.5 text-blue-600" />
+                <Truck className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
                 <span>{t("Ongkir dihitung per kelompok saat checkout", "Shipping is calculated for each group at checkout")}</span>
               </div>
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-slate-900">
+              <span className="text-sm font-semibold text-[var(--theme-ink)]">
                 {t("Total Semua Kelompok", "Total for All Groups")}
               </span>
-              <span className="text-lg font-bold text-slate-900 font-tabular tracking-tight">
+              <span className="text-lg font-bold text-[var(--theme-ink)] font-tabular tracking-tight">
                 {formatIdr(grandTotal)}
               </span>
             </div>
@@ -276,7 +276,7 @@ export function CartDrawer() {
                 closeCart();
                 router.push(`/checkout?group=${encodeURIComponent(groups[0]?.groupKey || "READY")}`);
               }}
-              className="w-full py-3.5 bg-[#090D16] text-white text-xs font-semibold rounded-xl hover:bg-[#2563EB] transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[var(--theme-ink)] text-white text-xs font-semibold rounded-xl hover:bg-[var(--theme-accent)] transition-colors shadow-sm flex items-center justify-center gap-2"
             >
               <span>{t("Lanjut ke Pembayaran", "Continue to Checkout")}</span>
               <ArrowRight className="w-4 h-4" />

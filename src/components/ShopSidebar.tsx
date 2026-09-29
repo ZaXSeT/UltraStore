@@ -132,14 +132,14 @@ export function ShopSidebar({
         <button
           type="button"
           onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-          className="w-full flex items-center justify-between px-4 py-3 bg-white border-2 border-neutral-900 text-neutral-900 font-mono text-xs font-bold uppercase tracking-wider shadow-sm active:bg-neutral-50"
+          className="w-full flex items-center justify-between px-4 py-3 bg-[var(--theme-surface)] border-2 border-neutral-900 text-[var(--theme-ink)] font-mono text-xs font-bold uppercase tracking-wider shadow-sm active:bg-neutral-50"
         >
           <div className="flex items-center gap-2">
-            <Filter className="w-4 h-4 text-[#0E52FF]" />
+            <Filter className="w-4 h-4 text-[var(--theme-accent)]" />
             <span>{t("Filter & Pencarian", "Filters & Search")}</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="px-2 py-0.5 bg-[#0E52FF] text-white text-[10px]">
+            <span className="px-2 py-0.5 bg-[var(--theme-accent)] text-white text-[10px]">
               {totalProducts} {t("ITEM", "ITEMS")}
             </span>
             <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileFilterOpen ? "rotate-180" : ""}`} />
@@ -147,7 +147,7 @@ export function ShopSidebar({
         </button>
       </div>
 
-      <div className={`w-full bg-white border border-neutral-200/90 p-4 sm:p-5 space-y-6 ${mobileFilterOpen ? "block" : "hidden lg:block"}`}>
+      <div className={`w-full bg-[var(--theme-surface)] border border-neutral-200/90 p-4 sm:p-5 space-y-6 ${mobileFilterOpen ? "block" : "hidden lg:block"}`}>
       {/* 1. Hardware Search */}
       <div>
         <div className="flex items-center justify-between mb-2">
@@ -161,7 +161,7 @@ export function ShopSidebar({
             <button
               type="button"
               onClick={clearSearch}
-              className="text-xs font-medium text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors"
+              className="text-xs font-medium text-slate-500 hover:text-[var(--theme-ink)] flex items-center gap-1 transition-colors"
             >
               <X className="w-3.5 h-3.5" />
               <span>{t("Hapus", "Clear")}</span>
@@ -176,7 +176,7 @@ export function ShopSidebar({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={t("Cari model, switch, merek...", "Search models, switches, brands...")}
-            className="w-full bg-slate-50 border border-slate-200 pl-9 pr-8 py-2.5 text-xs font-medium text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#0E52FF] transition-all"
+            className="w-full bg-slate-50 border border-slate-200 pl-9 pr-8 py-2.5 text-xs font-medium text-[var(--theme-ink)] placeholder-slate-400 focus:outline-none focus:border-[var(--theme-accent)] transition-all"
           />
           {searchTerm && (
             <button
@@ -200,21 +200,21 @@ export function ShopSidebar({
             <button
               type="button"
               onClick={() => updateFilters({ category: "", surface: "" })}
-              className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
+              className="font-mono text-[10px] uppercase text-[var(--theme-accent)] hover:underline"
             >
               {t("SEMUA", "ALL")}
             </button>
           )}
         </div>
 
-        <div className="border border-neutral-200 divide-y divide-neutral-200 bg-white">
+        <div className="border border-neutral-200 divide-y divide-neutral-200 bg-[var(--theme-surface)]">
           {/* All Categories Item */}
           <button
             type="button"
             onClick={() => updateFilters({ category: "", surface: "" })}
             className={`w-full flex items-center justify-between px-3.5 py-2 text-xs font-mono transition-colors text-left ${
               !currentCategory
-                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
@@ -232,7 +232,7 @@ export function ShopSidebar({
                   onClick={() => updateFilters({ category: c.slug, surface: "" })}
                   className={`w-full flex items-center justify-between px-3.5 py-2 text-xs font-mono transition-colors text-left ${
                     isActive
-                      ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                      ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                       : "text-neutral-700 hover:bg-neutral-50"
                   }`}
                 >
@@ -248,12 +248,12 @@ export function ShopSidebar({
                       onClick={() => updateFilters({ category: "mousepad", surface: "glass" })}
                       className={`w-full flex items-center justify-between pl-6 pr-3.5 py-1.5 transition-colors text-left ${
                         currentSurface === "glass"
-                          ? "bg-neutral-200 text-neutral-950 font-bold"
+                          ? "bg-neutral-200 text-[var(--theme-ink)] font-bold"
                           : "text-neutral-600 hover:bg-neutral-100"
                       }`}
                     >
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 bg-[#0E52FF]" />
+                        <span className="w-1.5 h-1.5 bg-[var(--theme-accent)]" />
                         <span>{t("Glasspad (Kaca)", "Glasspad")}</span>
                       </div>
                       <span className="text-[10px] opacity-60">16</span>
@@ -264,7 +264,7 @@ export function ShopSidebar({
                       onClick={() => updateFilters({ category: "mousepad", surface: "cloth" })}
                       className={`w-full flex items-center justify-between pl-6 pr-3.5 py-1.5 transition-colors text-left ${
                         currentSurface === "cloth"
-                          ? "bg-neutral-200 text-neutral-950 font-bold"
+                          ? "bg-neutral-200 text-[var(--theme-ink)] font-bold"
                           : "text-neutral-600 hover:bg-neutral-100"
                       }`}
                     >
@@ -288,7 +288,7 @@ export function ShopSidebar({
           <button
             type="button"
             onClick={() => setIsBrandExpanded(!isBrandExpanded)}
-            className="flex items-center gap-1.5 font-mono text-[10px] uppercase font-bold tracking-[0.16em] text-neutral-500 hover:text-[#111215] transition-colors"
+            className="flex items-center gap-1.5 font-mono text-[10px] uppercase font-bold tracking-[0.16em] text-neutral-500 hover:text-[var(--theme-ink)] transition-colors"
           >
             <span>{t("DAFTAR MEREK", "BRANDS")} ({allBrands.length})</span>
             <ChevronDown className={`w-3.5 h-3.5 text-neutral-400 transition-transform duration-200 ${isBrandExpanded ? "rotate-180" : ""}`} />
@@ -297,7 +297,7 @@ export function ShopSidebar({
             <button
               type="button"
               onClick={() => updateFilters({ brand: "" })}
-              className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
+              className="font-mono text-[10px] uppercase text-[var(--theme-accent)] hover:underline"
             >
               {t("HAPUS", "CLEAR")}
             </button>
@@ -314,13 +314,13 @@ export function ShopSidebar({
                 value={brandSearch}
                 onChange={(e) => setBrandSearch(e.target.value)}
                 placeholder={t(`Cari ${allBrands.length} merek...`, `Search ${allBrands.length} brands...`)}
-                className="w-full pl-8 pr-7 py-2 bg-neutral-50 border border-neutral-200 text-xs font-mono placeholder-neutral-400 focus:outline-none focus:border-[#111215] focus:bg-white transition-all"
+                className="w-full pl-8 pr-7 py-2 bg-neutral-50 border border-neutral-200 text-xs font-mono placeholder-neutral-400 focus:outline-none focus:border-[var(--theme-ink)] focus:bg-[var(--theme-surface)] transition-all"
               />
               {brandSearch && (
                 <button
                   type="button"
                   onClick={() => setBrandSearch("")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[#111215] p-0.5"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[var(--theme-ink)] p-0.5"
                 >
                   <X className="w-3 h-3" />
                 </button>
@@ -328,19 +328,19 @@ export function ShopSidebar({
             </div>
 
             {/* Scrollable Brand List with visible custom scrollbar */}
-            <div className="max-h-56 overflow-y-auto border border-neutral-200 divide-y divide-neutral-200 bg-white scrollbar-thin scrollbar-thumb-neutral-300 scrollbar-track-neutral-100">
+            <div className="max-h-56 overflow-y-auto border border-neutral-200 divide-y divide-neutral-200 bg-[var(--theme-surface)] scrollbar-thin scrollbar-thumb-neutral-300 scrollbar-track-neutral-100">
               {/* All Brands Item */}
               <button
                 type="button"
                 onClick={() => updateFilters({ brand: "" })}
                 className={`w-full flex items-center justify-between px-3 py-2 text-xs font-mono transition-colors text-left ${
                   !currentBrand
-                    ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                    ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                     : "text-neutral-700 hover:bg-neutral-50"
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  {!currentBrand && <span className="w-1.5 h-1.5 bg-white" />}
+                  {!currentBrand && <span className="w-1.5 h-1.5 bg-[var(--theme-surface)]" />}
                   <span className="uppercase tracking-wider">{t("Semua Merek", "All Brands")}</span>
                 </div>
                 <span className="text-[10px] opacity-75 font-tabular font-mono">
@@ -363,12 +363,12 @@ export function ShopSidebar({
                       onClick={() => updateFilters({ brand: b.slug })}
                       className={`w-full flex items-center justify-between px-3 py-2 text-xs font-mono transition-colors text-left ${
                         isActive
-                          ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                          ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                           : "text-neutral-700 hover:bg-neutral-50"
                       }`}
                     >
                       <div className="flex items-center gap-2 truncate">
-                        {isActive && <span className="w-1.5 h-1.5 bg-white" />}
+                        {isActive && <span className="w-1.5 h-1.5 bg-[var(--theme-surface)]" />}
                         <span className="truncate uppercase tracking-wider">{brandLabel(b.slug, b.name, locale)}</span>
                       </div>
                       <span className={`text-[10px] font-mono font-tabular shrink-0 ml-1 ${isActive ? "opacity-75" : "text-neutral-400"}`}>
@@ -393,20 +393,20 @@ export function ShopSidebar({
             <button
               type="button"
               onClick={() => updateFilters({ offer: "" })}
-              className="font-mono text-[10px] uppercase text-[#0E52FF] hover:underline"
+              className="font-mono text-[10px] uppercase text-[var(--theme-accent)] hover:underline"
             >
               {t("HAPUS", "CLEAR")}
             </button>
           )}
         </div>
 
-        <div className="border border-neutral-200 divide-y divide-neutral-200 bg-white">
+        <div className="border border-neutral-200 divide-y divide-neutral-200 bg-[var(--theme-surface)]">
           <button
             type="button"
             onClick={() => updateFilters({ offer: "" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               !currentOffer
-                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
@@ -419,12 +419,12 @@ export function ShopSidebar({
             onClick={() => updateFilters({ offer: "READY" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               currentOffer === "READY"
-                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <div className="flex items-center gap-2">
-              <span className={`w-1.5 h-1.5 ${currentOffer === "READY" ? "bg-white" : "bg-emerald-500"}`} />
+              <span className={`w-1.5 h-1.5 ${currentOffer === "READY" ? "bg-[var(--theme-surface)]" : "bg-emerald-500"}`} />
               <span className="uppercase tracking-wider">{t("Stok Tersedia", "In Stock")}</span>
             </div>
             <span className="text-[10px] opacity-75">{t("SIAP KIRIM", "READY TO SHIP")}</span>
@@ -435,12 +435,12 @@ export function ShopSidebar({
             onClick={() => updateFilters({ offer: "PREORDER" })}
             className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-mono transition-colors text-left ${
               currentOffer === "PREORDER"
-                ? "bg-[#0E52FF] text-white font-bold shadow-sm shadow-blue-500/20"
+                ? "bg-[var(--theme-accent)] text-white font-bold shadow-sm"
                 : "text-neutral-700 hover:bg-neutral-50"
             }`}
           >
             <div className="flex items-center gap-2">
-              <span className={`w-1.5 h-1.5 ${currentOffer === "PREORDER" ? "bg-white" : "bg-[#0E52FF]"}`} />
+              <span className={`w-1.5 h-1.5 ${currentOffer === "PREORDER" ? "bg-[var(--theme-surface)]" : "bg-[var(--theme-accent)]"}`} />
               <span className="uppercase tracking-wider">{t("Pre-Order", "Pre-Order")}</span>
             </div>
             <span className="text-[10px] opacity-75">{t("PER BATCH", "BY BATCH")}</span>
@@ -454,7 +454,7 @@ export function ShopSidebar({
           <button
             type="button"
             onClick={resetAll}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 border border-neutral-300 hover:border-[#111215] bg-neutral-100 hover:bg-neutral-200 text-[#111215] text-xs font-mono font-bold uppercase transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 border border-neutral-300 hover:border-[var(--theme-ink)] bg-neutral-100 hover:bg-neutral-200 text-[var(--theme-ink)] text-xs font-mono font-bold uppercase transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>{t("Atur Ulang Filter", "Clear Filters")}</span>

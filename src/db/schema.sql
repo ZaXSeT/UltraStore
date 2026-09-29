@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS products (
   specs_json TEXT NOT NULL DEFAULT '{}',
   box_contents_json TEXT NOT NULL DEFAULT '[]',
   warranty_info TEXT NOT NULL,
+  warranty_info_en TEXT NOT NULL DEFAULT '',
   published INTEGER NOT NULL DEFAULT 1 CHECK (published IN (0, 1)),
   primary_image TEXT NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now')),

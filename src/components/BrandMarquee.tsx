@@ -17,7 +17,7 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
   const displayBrands = [...activeBrands, ...activeBrands, ...activeBrands];
 
   return (
-    <section className="w-full border-y border-neutral-200/90 bg-white/80 backdrop-blur-md overflow-hidden py-4 select-none relative group">
+    <section className="w-full border-y border-neutral-200/90 bg-[var(--theme-surface-80)] backdrop-blur-md overflow-hidden py-4 select-none relative group">
       {/* Subtle blueprint grid line texture */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:20px_20px] opacity-40 pointer-events-none" />
 
@@ -30,7 +30,7 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
           <Link
             key={`${b.id}-${idx}`}
             href={b.href || `/shop?brand=${b.id}`}
-            className="flex items-center justify-center px-5 py-2.5 border border-neutral-200/80 bg-white hover:border-[#0E52FF] hover:shadow-sm transition-all duration-200 shrink-0 text-neutral-800 hover:text-[#0E52FF] group/brand min-h-[46px]"
+            className="flex items-center justify-center px-5 py-2.5 border border-neutral-200/80 bg-[var(--theme-surface)] hover:border-[var(--theme-accent)] hover:shadow-sm transition-all duration-200 shrink-0 text-neutral-800 hover:text-[var(--theme-accent)] group/brand min-h-[46px]"
           >
             {b.logoUrl ? (
               <div className="relative h-7 w-28 shrink-0 flex items-center justify-center">
@@ -44,7 +44,7 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#0E52FF]" />
+                <span className="w-1.5 h-1.5 bg-[var(--theme-accent)]" />
                 <span className="font-mono text-xs font-black tracking-widest uppercase">
                   {b.name}
                 </span>

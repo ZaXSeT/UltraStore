@@ -20,7 +20,7 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
       return (
         <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 text-slate-400">
           <rect x="15" y="25" width="90" height="70" rx="6" stroke="currentColor" strokeWidth="2" strokeDasharray="4 2" />
-          <rect x="22" y="32" width="76" height="56" rx="3" fill="#2563EB" fillOpacity="0.06" />
+          <rect x="22" y="32" width="76" height="56" rx="3" fill="var(--theme-accent)" fillOpacity="0.06" />
           <circle cx="85" cy="45" r="8" stroke="currentColor" strokeWidth="1.5" />
           <path d="M25 75L45 55L65 70L80 58L95 72" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
@@ -46,7 +46,7 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
           <rect x="88" y="42" width="18" height="10" rx="1.5" fill="currentColor" fillOpacity="0.3" />
           {/* Row 3 - Spacebar */}
           <rect x="18" y="56" width="16" height="10" rx="1.5" fill="currentColor" fillOpacity="0.25" />
-          <rect x="38" y="56" width="60" height="10" rx="1.5" fill="#2563EB" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+          <rect x="38" y="56" width="60" height="10" rx="1.5" fill="var(--theme-accent)" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
           <rect x="102" y="56" width="20" height="10" rx="1.5" fill="currentColor" fillOpacity="0.25" />
         </svg>
       );
@@ -57,8 +57,8 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 text-slate-400">
           <rect x="25" y="35" width="50" height="40" rx="4" stroke="currentColor" strokeWidth="2" />
           {/* Switch Stem Cross */}
-          <rect x="44" y="18" width="12" height="25" rx="2" fill="#2563EB" fillOpacity="0.3" stroke="currentColor" strokeWidth="1" />
-          <rect x="37" y="24" width="26" height="12" rx="2" fill="#2563EB" fillOpacity="0.3" stroke="currentColor" strokeWidth="1" />
+          <rect x="44" y="18" width="12" height="25" rx="2" fill="var(--theme-accent)" fillOpacity="0.3" stroke="currentColor" strokeWidth="1" />
+          <rect x="37" y="24" width="26" height="12" rx="2" fill="var(--theme-accent)" fillOpacity="0.3" stroke="currentColor" strokeWidth="1" />
           {/* Bottom Pins */}
           <line x1="38" y1="75" x2="38" y2="88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           <line x1="62" y1="75" x2="62" y2="88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -73,9 +73,9 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
           {/* Headband */}
           <path d="M25 70C25 40 40 20 60 20C80 20 95 40 95 70" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
           {/* Left Earcup */}
-          <rect x="16" y="60" width="18" height="35" rx="9" fill="#2563EB" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="16" y="60" width="18" height="35" rx="9" fill="var(--theme-accent)" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
           {/* Right Earcup */}
-          <rect x="86" y="60" width="18" height="35" rx="9" fill="#2563EB" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
+          <rect x="86" y="60" width="18" height="35" rx="9" fill="var(--theme-accent)" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
           <circle cx="25" cy="77" r="4" fill="currentColor" fillOpacity="0.3" />
           <circle cx="95" cy="77" r="4" fill="currentColor" fillOpacity="0.3" />
         </svg>
@@ -89,7 +89,7 @@ export function ProductImage({ src, alt, category, className = "" }: ProductImag
           d="M50 15C33 15 25 32 25 58C25 84 35 105 50 105C65 105 75 84 75 58C75 32 67 15 50 15Z"
           stroke="currentColor"
           strokeWidth="2"
-          fill="#2563EB"
+          fill="var(--theme-accent)"
           fillOpacity="0.05"
         />
         {/* Split line */}

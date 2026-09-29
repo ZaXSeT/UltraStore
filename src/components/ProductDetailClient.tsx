@@ -70,7 +70,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
       {/* 1. GALLERY COLUMN (7 cols) */}
       <div className="lg:col-span-7 space-y-6">
         {/* Main Image 1:1 Aspect Ratio */}
-        <div className="bg-white border border-slate-200/80 aspect-square flex items-center justify-center p-4 sm:p-6 relative overflow-hidden shadow-sm">
+        <div className="bg-[var(--theme-surface)] border border-slate-200/80 aspect-square flex items-center justify-center p-4 sm:p-6 relative overflow-hidden shadow-sm">
           <ProductImage
             src={activeImage}
             alt={selectedVariant.name}
@@ -80,10 +80,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Offer Badge Overlay (Editorial Hairline Flush) */}
           <div className="absolute top-0 left-0 z-10">
-            <div className="flex items-center font-mono text-[10px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[#111215]/20 bg-white/95 backdrop-blur-xs text-[#111215]">
+            <div className="flex items-center font-mono text-[10px] uppercase tracking-[0.16em] font-semibold border-b border-r border-[var(--theme-ink-border)] bg-[var(--theme-surface-95)] backdrop-blur-xs text-[var(--theme-ink)]">
               <span
                 className={`w-2 h-2 self-stretch ${
-                  selectedOfferType === "PREORDER" ? "bg-[#0E52FF]" : "bg-[#111215]"
+                  selectedOfferType === "PREORDER" ? "bg-[var(--theme-accent)]" : "bg-[var(--theme-ink)]"
                 }`}
               />
               <span className="px-3 py-1">
@@ -101,9 +101,9 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 key={idx}
                 type="button"
                 onClick={() => setActiveImage(m.url)}
-                className={`w-20 h-20 bg-white border rounded-xl p-2 flex items-center justify-center transition-all ${
+                className={`w-20 h-20 bg-[var(--theme-surface)] border rounded-xl p-2 flex items-center justify-center transition-all ${
                   activeImage === m.url
-                    ? "border-blue-600 ring-2 ring-blue-500/20 shadow-sm"
+                    ? "border-[var(--theme-accent)] ring-2 ring-[var(--theme-accent-ring)] shadow-sm"
                     : "border-slate-200 hover:border-slate-300"
                 }`}
               >
@@ -114,9 +114,9 @@ export function ProductDetailClient({ product }: { product: Product }) {
         )}
 
         {/* Specifications Table */}
-        <div className="bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-4">
-          <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[#111215] border-b border-neutral-100 pb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
+        <div className="bg-[var(--theme-surface)] border border-neutral-200/90 p-6 sm:p-8 space-y-4">
+          <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[var(--theme-ink)] border-b border-neutral-100 pb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-[var(--theme-accent)]"></span>
             <span>{t("Spesifikasi Produk", "Product Specifications")}</span>
           </h3>
 
@@ -124,16 +124,16 @@ export function ProductDetailClient({ product }: { product: Product }) {
             {Object.entries(product.specs).map(([key, val]) => (
               <div key={key} className="flex justify-between border-b border-neutral-100 py-2">
                 <span className="text-neutral-500 uppercase">{key}</span>
-                <span className="text-[#111215] font-bold text-right">{val}</span>
+                <span className="text-[var(--theme-ink)] font-bold text-right">{val}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Box Contents */}
-        <div className="bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-4">
-          <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[#111215] border-b border-neutral-100 pb-3 flex items-center gap-2">
-            <Box className="w-3.5 h-3.5 text-[#0E52FF]" />
+        <div className="bg-[var(--theme-surface)] border border-neutral-200/90 p-6 sm:p-8 space-y-4">
+          <h3 className="font-bold font-mono uppercase text-xs tracking-wider text-[var(--theme-ink)] border-b border-neutral-100 pb-3 flex items-center gap-2">
+            <Box className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span>{t("Isi Kemasan", "What's in the Box")}</span>
           </h3>
           <ul className="space-y-2 font-mono text-xs text-neutral-700">
@@ -148,16 +148,16 @@ export function ProductDetailClient({ product }: { product: Product }) {
       </div>
 
       {/* 2. PURCHASE PANEL COLUMN (5 cols sticky) */}
-      <div className="lg:col-span-5 bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-6 sticky top-28">
+      <div className="lg:col-span-5 bg-[var(--theme-surface)] border border-neutral-200/90 p-6 sm:p-8 space-y-6 sticky top-28">
         {/* Brand & Title */}
         <div>
           <div className="text-xs font-mono font-bold tracking-wider mb-2 flex items-center justify-between">
-            <span className="text-[#0E52FF] uppercase">{brandLabel(product.brand.slug, product.brand.name, locale)}</span>
+            <span className="text-[var(--theme-accent)] uppercase">{brandLabel(product.brand.slug, product.brand.name, locale)}</span>
             <span className="text-[10px] bg-neutral-100 border border-neutral-200 text-neutral-600 px-2 py-0.5 font-mono uppercase">
               SKU: {selectedVariant.sku}
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#111215] uppercase tracking-tight leading-snug">
+          <h1 className="text-2xl sm:text-3xl font-black text-[var(--theme-ink)] uppercase tracking-tight leading-snug">
             {product.name}
           </h1>
           <p className="text-xs font-mono text-neutral-500 mt-2 leading-relaxed">
@@ -168,11 +168,11 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Price Tag */}
         <div className="p-4 bg-neutral-50 border border-neutral-200/90">
           <div className="text-[10px] font-mono uppercase font-bold text-neutral-500">{t("Harga per Unit", "Price per Item")}</div>
-          <div className="text-3xl font-black text-[#111215] font-tabular tracking-tight mt-0.5">
+          <div className="text-3xl font-black text-[var(--theme-ink)] font-tabular tracking-tight mt-0.5">
             {formatIdr(matchedOffer.price || selectedVariant.price)}
           </div>
           <div className="text-[10px] font-mono text-neutral-500 mt-1 flex items-center gap-1.5 uppercase">
-            <Truck className="w-3.5 h-3.5 text-[#0E52FF]" />
+            <Truck className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span>{t("Ongkir dihitung saat checkout · Termasuk pajak dan bea masuk", "Shipping is calculated at checkout · Taxes and duties included")}</span>
           </div>
         </div>
@@ -195,9 +195,9 @@ export function ProductDetailClient({ product }: { product: Product }) {
                   className={`p-3.5 text-left border transition-all font-mono ${
                     isSelected
                       ? isReady
-                        ? "border-[#111215] bg-[#111215] text-white"
-                        : "border-[#0E52FF] bg-[#0E52FF] text-white"
-                      : "border-neutral-200 bg-white hover:border-neutral-400 text-neutral-800"
+                        ? "border-[var(--theme-ink)] bg-[var(--theme-ink)] text-white"
+                        : "border-[var(--theme-accent)] bg-[var(--theme-accent)] text-white"
+                      : "border-neutral-200 bg-[var(--theme-surface)] hover:border-neutral-400 text-neutral-800"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -205,7 +205,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                       {isReady ? t("Stok Tersedia", "In Stock") : "Pre-Order"}
                     </span>
                     {isSelected && (
-                      <span className="w-1.5 h-1.5 bg-white" />
+                      <span className="w-1.5 h-1.5 bg-[var(--theme-surface)]" />
                     )}
                   </div>
                   <div className={`text-[10px] mt-1 ${isSelected ? "text-white/80" : "text-neutral-500"}`}>
@@ -221,7 +221,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <div className="text-xs pt-1">
               <Link
                 href={`/drops/${product.slug}-batch-04`}
-                className="hover:underline flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider text-[#0E52FF] font-bold"
+                className="hover:underline flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider text-[var(--theme-accent)] font-bold"
               >
                 <span>{t("Lihat jadwal pre-order", "View pre-order timeline")}</span>
                 <ArrowRight className="w-3 h-3" />
@@ -249,8 +249,8 @@ export function ProductDetailClient({ product }: { product: Product }) {
                     }}
                     className={`w-full p-3 text-left border transition-all flex items-center justify-between font-mono ${
                       isSelected
-                        ? "border-[#111215] bg-neutral-100 text-[#111215] font-bold"
-                        : "border-neutral-200 bg-white hover:border-neutral-300 text-neutral-800"
+                        ? "border-[var(--theme-ink)] bg-neutral-100 text-[var(--theme-ink)] font-bold"
+                        : "border-neutral-200 bg-[var(--theme-surface)] hover:border-neutral-300 text-neutral-800"
                     }`}
                   >
                     <div>
@@ -261,7 +261,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                           .join(" · ")}
                       </div>
                     </div>
-                    <div className="text-xs font-bold text-[#111215] font-tabular">
+                    <div className="text-xs font-bold text-[var(--theme-ink)] font-tabular">
                       {formatIdr(v.price)}
                     </div>
                   </button>
@@ -284,7 +284,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="w-full py-3.5 border border-neutral-300 bg-white text-[#111215] text-xs font-mono font-bold uppercase tracking-wider hover:bg-neutral-50 transition-colors"
+              className="w-full py-3.5 border border-neutral-300 bg-[var(--theme-surface)] text-[var(--theme-ink)] text-xs font-mono font-bold uppercase tracking-wider hover:bg-neutral-50 transition-colors"
             >
               {t("+ Keranjang", "+ Add to Cart")}
             </button>
@@ -292,7 +292,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleBuyNow}
-              className="w-full py-3.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-md shadow-blue-500/20 transition-all"
+              className="w-full py-3.5 bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)] active:scale-[0.98] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-md transition-all"
             >
               {selectedOfferType === "PREORDER" ? t("Pesan Sekarang", "Pre-Order Now") : t("Beli Sekarang", "Buy Now")}
             </button>
@@ -302,11 +302,11 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Invariant & Trust Notes */}
         <div className="border-t border-neutral-100 pt-4 space-y-2 text-xs font-mono text-neutral-500">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
-            <span className="text-[11px] uppercase">{t("Garansi resmi UltraStore selama 1 tahun", "UltraStore official 1-year warranty")}</span>
+            <ShieldCheck className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
+            <span className="text-[11px] uppercase">{locale === "en" ? product.warrantyInfoEn || t("Garansi resmi UltraStore selama 1 tahun", "UltraStore official 1-year warranty") : product.warrantyInfo || t("Garansi resmi UltraStore selama 1 tahun", "UltraStore official 1-year warranty")}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="w-3.5 h-3.5 text-[#0E52FF]" />
+            <Clock className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span className="text-[11px] uppercase">{t("Stok atau kuota dialokasikan setelah pemesanan", "Stock or batch capacity is allocated when you order")}</span>
           </div>
         </div>

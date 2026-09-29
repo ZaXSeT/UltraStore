@@ -43,18 +43,18 @@ export async function PolicyPage({ policy }: { policy: Policy }) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
-      <Link href="/" className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors">
+      <Link href="/" className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-[var(--theme-ink)] transition-colors">
         <ArrowLeft className="w-4 h-4" />
         <span>{t("Kembali ke Beranda", "Back to Home")}</span>
       </Link>
       <div className="border-b border-slate-200/80 pb-4">
-        <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 border border-blue-200/80">{t(content.label[0], content.label[1])}</span>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 mt-2">{t(content.title[0], content.title[1])}</h1>
+        <span className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-accent)] bg-[var(--theme-accent-soft)] px-2.5 py-1 border border-[var(--theme-accent-border)]">{t(content.label[0], content.label[1])}</span>
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--theme-ink)] mt-2">{t(content.title[0], content.title[1])}</h1>
       </div>
-      <div className="bg-white border border-slate-200/80 p-6 sm:p-8 space-y-6 text-sm text-slate-700 leading-relaxed shadow-sm">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 p-6 sm:p-8 space-y-6 text-sm text-slate-700 leading-relaxed shadow-sm">
         {content.sections.map(([idTitle, enTitle, idBody, enBody]) => (
           <section className="space-y-2" key={idTitle}>
-            <h2 className="text-base font-bold text-slate-900">{t(idTitle, enTitle)}</h2>
+            <h2 className="text-base font-bold text-[var(--theme-ink)]">{t(idTitle, enTitle)}</h2>
             <p>{t(idBody, enBody)}</p>
           </section>
         ))}

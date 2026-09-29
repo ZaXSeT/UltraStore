@@ -1,6 +1,7 @@
 import { getAllProducts, getBrands, getCategories } from "../../lib/catalog";
 import { ProductCard } from "../../components/ProductCard";
 import { ShopSidebar } from "../../components/ShopSidebar";
+import { StickyShopSidebar } from "../../components/StickyShopSidebar";
 import Link from "next/link";
 import { Filter, RotateCcw, X, ShieldCheck, Check } from "lucide-react";
 import { getServerLocale } from "../../lib/server-locale";
@@ -37,11 +38,11 @@ export default async function ShopPage({
       {/* Swiss Editorial Header Section */}
       <div className="border-b border-neutral-200/90 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
-          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-[#111215]">
-            <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
+          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--theme-ink)]">
+            <span className="w-1.5 h-1.5 bg-[var(--theme-accent)]"></span>
             <span>{t("PILIHAN ULTRASTORE · JAKARTA", "CURATED IN JAKARTA · GAMING GEAR")}</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[#111215]">
+          <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-[var(--theme-ink)]">
             {t("Katalog Periferal", "Gaming Gear Catalog")}
           </h1>
           <p className="text-xs sm:text-sm text-neutral-500 max-w-3xl font-mono leading-relaxed">
@@ -50,8 +51,8 @@ export default async function ShopPage({
         </div>
 
         <div className="flex flex-wrap md:flex-col md:items-end gap-2 text-xs font-mono text-neutral-500 shrink-0">
-          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-white px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs text-[#111215]">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#0E52FF]" />
+          <div className="inline-flex items-center gap-2 border border-neutral-200 bg-[var(--theme-surface)] px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs text-[var(--theme-ink)]">
+            <ShieldCheck className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
             <span className="font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">{t("Garansi Resmi 1 Tahun", "Official 1-Year Warranty")}</span>
           </div>
           <span className="text-[10px] uppercase tracking-wider text-neutral-400">
@@ -63,7 +64,7 @@ export default async function ShopPage({
       {/* 2-Column Full-Width Layout: Left Sticky Sidebar + Right Product Grid */}
       <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8">
         {/* Left Column: Sticky Sidebar on Desktop / Drawer Collapsible on Mobile */}
-        <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-28 self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+        <StickyShopSidebar>
           <ShopSidebar
             allCategories={allCategories}
             allBrands={allBrands}
@@ -74,15 +75,15 @@ export default async function ShopPage({
             searchQuery={q}
             totalProducts={products.length}
           />
-        </aside>
+        </StickyShopSidebar>
 
         {/* Right Column: Catalog Grid & Active Filter Chips */}
         <main className="flex-1 min-w-0 space-y-6">
           {/* Active Filter Chips & Summary Telemetry Bar (Swiss Architecture) */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono text-neutral-500 border-b border-neutral-200/90 pb-3 gap-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="flex items-center gap-2 font-bold text-[#111215] uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 bg-[#0E52FF]"></span>
+              <span className="flex items-center gap-2 font-bold text-[var(--theme-ink)] uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 bg-[var(--theme-accent)]"></span>
                 <span>{products.length} {t("Produk", "Products")}</span>
               </span>
 
@@ -94,10 +95,10 @@ export default async function ShopPage({
                     ...(offer ? { offer } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-[var(--theme-surface)] hover:border-[var(--theme-ink)] text-[var(--theme-ink)] transition-colors text-[11px] uppercase tracking-wider"
                 >
                   <span>{t("Kategori", "Category")}: {categoryLabel(activeCategoryObj.slug, activeCategoryObj.name, locale)}</span>
-                  <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
+                  <X className="w-3 h-3 text-neutral-400 hover:text-[var(--theme-ink)]" />
                 </Link>
               )}
 
@@ -109,10 +110,10 @@ export default async function ShopPage({
                     ...(offer ? { offer } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-white hover:border-[#111215] text-[#111215] transition-colors text-[11px] uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-neutral-300 bg-[var(--theme-surface)] hover:border-[var(--theme-ink)] text-[var(--theme-ink)] transition-colors text-[11px] uppercase tracking-wider"
                 >
                   <span>{t("Merek", "Brand")}: {brandLabel(activeBrandObj.slug, activeBrandObj.name, locale)}</span>
-                  <X className="w-3 h-3 text-neutral-400 hover:text-[#111215]" />
+                  <X className="w-3 h-3 text-neutral-400 hover:text-[var(--theme-ink)]" />
                 </Link>
               )}
 
@@ -125,10 +126,10 @@ export default async function ShopPage({
                     ...(surface ? { surface } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[#0E52FF] bg-[#0E52FF]/10 text-[#0E52FF] transition-colors text-[11px] font-bold uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[var(--theme-accent)] bg-[var(--theme-accent-soft)] text-[var(--theme-accent)] transition-colors text-[11px] font-bold uppercase tracking-wider"
                 >
                   <span>{t("Status", "Availability")}: {offer === "READY" ? t("Tersedia", "In Stock") : t("Pre-Order", "Pre-Order")}</span>
-                  <X className="w-3 h-3 text-[#0E52FF] hover:text-[#111215]" />
+                  <X className="w-3 h-3 text-[var(--theme-accent)] hover:text-[var(--theme-ink)]" />
                 </Link>
               )}
 
@@ -141,7 +142,7 @@ export default async function ShopPage({
                     ...(offer ? { offer } : {}),
                     ...(q ? { q } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[#111215] bg-[#111215] text-white hover:bg-[#0E52FF] hover:border-[#0E52FF] transition-colors text-[11px] uppercase tracking-wider"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-0.5 border border-[var(--theme-ink)] bg-[var(--theme-ink)] text-white hover:bg-[var(--theme-accent)] hover:border-[var(--theme-accent)] transition-colors text-[11px] uppercase tracking-wider"
                 >
                   <span>{t("Permukaan", "Surface")}: {surface === "glass" ? t("Glasspad (Kaca)", "Glasspad") : t("Kain / Poron", "Cloth / Poron")}</span>
                   <X className="w-3 h-3 text-neutral-300 hover:text-white" />
@@ -156,10 +157,10 @@ export default async function ShopPage({
                     ...(brand ? { brand } : {}),
                     ...(offer ? { offer } : {}),
                   }).toString()}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100 transition-colors text-xs font-medium"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--theme-accent-soft)] text-[var(--theme-accent-hover)] border border-[var(--theme-accent-border)] hover:bg-[var(--theme-accent-soft)] transition-colors text-xs font-medium"
                 >
                   <span>{t("Pencarian", "Search")}: "{q}"</span>
-                  <X className="w-3.5 h-3.5 text-blue-600" />
+                  <X className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
                 </Link>
               )}
             </div>
@@ -171,12 +172,12 @@ export default async function ShopPage({
 
           {/* Product Grid: Responsive from 2 up to 5/6 columns on ultra-wide */}
           {products.length === 0 ? (
-            <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center space-y-4 max-w-md mx-auto my-8 shadow-sm">
+            <div className="bg-[var(--theme-surface)] border border-slate-200 rounded-2xl p-12 text-center space-y-4 max-w-md mx-auto my-8 shadow-sm">
               <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
                 <Filter className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-slate-900">
+                <h3 className="text-base font-bold text-[var(--theme-ink)]">
                   {t("Produk tidak ditemukan", "No Products Found")}
                 </h3>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed">
@@ -185,7 +186,7 @@ export default async function ShopPage({
               </div>
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)] text-white text-xs font-semibold rounded-xl transition-colors shadow-sm"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>{t("Atur Ulang Filter", "Clear Filters")}</span>

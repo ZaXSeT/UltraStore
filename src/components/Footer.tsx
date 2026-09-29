@@ -24,25 +24,25 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="border-t border-neutral-200/90 bg-white text-neutral-500 font-mono text-xs w-full mt-12 sm:mt-16">
+    <footer className="border-t border-neutral-200/90 bg-[var(--theme-surface)] text-neutral-500 font-mono text-xs w-full mt-12 sm:mt-16">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="font-bold text-[#111215] tracking-tight text-sm uppercase">{displayFooter.brandTitle}</span>
+          <span className="font-bold text-[var(--theme-ink)] tracking-tight text-sm uppercase">{displayFooter.brandTitle}</span>
           <span className="text-neutral-300">/</span>
           <span className="text-[11px] uppercase text-neutral-400">{displayFooter.brandTagline}</span>
         </div>
 
         <nav className="flex flex-wrap items-center gap-6 uppercase text-[11px] tracking-wider">
-          <Link href="/shop" className="hover:text-[#111215] transition-colors">
+          <Link href="/shop" className="hover:text-[var(--theme-ink)] transition-colors">
             {t("Katalog", "Shop")}
           </Link>
-          <Link href="/shop?offer=PREORDER" className="hover:text-[#111215] transition-colors">
+          <Link href="/shop?offer=PREORDER" className="hover:text-[var(--theme-ink)] transition-colors">
             Pre-Order
           </Link>
-          <Link href="/track-order" className="hover:text-[#111215] transition-colors">
+          <Link href="/track-order" className="hover:text-[var(--theme-ink)] transition-colors">
             {t("Lacak Pesanan", "Track Order")}
           </Link>
-          <Link href="/policies/warranty" className="hover:text-[#111215] transition-colors">
+          <Link href="/policies/warranty" className="hover:text-[var(--theme-ink)] transition-colors">
             {t("Garansi", "Warranty")}
           </Link>
         </nav>

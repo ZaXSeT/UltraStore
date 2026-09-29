@@ -39,13 +39,13 @@ function CheckoutContent() {
   if (!currentGroup || currentGroup.items.length === 0) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-20 text-center space-y-4 font-mono">
-        <h2 className="text-xl font-black uppercase tracking-tight text-[#111215]">{t("Tidak Ada Kelompok Pesanan", "No Order Group Selected")}</h2>
+        <h2 className="text-xl font-black uppercase tracking-tight text-[var(--theme-ink)]">{t("Tidak Ada Kelompok Pesanan", "No Order Group Selected")}</h2>
         <p className="text-xs text-neutral-500">
           {t("Pilih kelompok produk dari keranjang untuk melanjutkan pembayaran.", "Choose a group from your cart to continue to checkout.")}
         </p>
         <Link
           href="/shop"
-          className="inline-block px-6 py-3 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+          className="inline-block px-6 py-3 bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)] active:scale-[0.98] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
         >
           {t("Kembali ke Katalog", "Back to Shop")}
         </Link>
@@ -123,7 +123,7 @@ function CheckoutContent() {
       {/* Top back */}
       <Link
         href="/shop"
-        className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-neutral-500 hover:text-[#111215] transition-colors"
+        className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-neutral-500 hover:text-[var(--theme-ink)] transition-colors"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
         <span>{t("Kembali ke Katalog", "Back to Shop")}</span>
@@ -133,7 +133,7 @@ function CheckoutContent() {
         <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-400">
           {t("PEMBAYARAN PESANAN", "SECURE CHECKOUT")}
         </span>
-        <h1 className="text-3xl font-black uppercase tracking-tight text-[#111215] mt-1">
+        <h1 className="text-3xl font-black uppercase tracking-tight text-[var(--theme-ink)] mt-1">
           {t("Checkout", "Checkout")}: {currentGroup.offerType === "READY" ? t("Stok Tersedia", "In-Stock Items") : "Pre-Order"}
         </h1>
       </div>
@@ -146,7 +146,7 @@ function CheckoutContent() {
 
       {/* Payment Active Modal / Overlay */}
       {paymentData && (
-        <div className="bg-white border-2 border-emerald-500 p-6 sm:p-10 shadow-lg space-y-6">
+        <div className="bg-[var(--theme-surface)] border-2 border-emerald-500 p-6 sm:p-10 shadow-lg space-y-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200">
               <Lock className="w-5 h-5" />
@@ -155,7 +155,7 @@ function CheckoutContent() {
               <span className="font-mono text-xs text-emerald-700 font-bold uppercase tracking-wider">
                 {t("Tagihan Dibuat · Batas Pembayaran 30 Menit", "Invoice Ready · 30-Minute Payment Window")}
               </span>
-              <h2 className="text-xl font-bold font-mono text-[#111215] mt-0.5">
+              <h2 className="text-xl font-bold font-mono text-[var(--theme-ink)] mt-0.5">
                 {t("Referensi", "Reference")}: {paymentData.reference}
               </h2>
             </div>
@@ -164,17 +164,17 @@ function CheckoutContent() {
           <div className="bg-neutral-50 p-6 border border-neutral-200 space-y-3 font-mono text-xs">
             <div className="flex justify-between border-b border-neutral-200 pb-2">
               <span className="text-neutral-500 uppercase">{t("Metode Pembayaran", "Payment Method")}</span>
-              <span className="font-bold text-[#111215]">BCA Virtual Account (Sandbox)</span>
+              <span className="font-bold text-[var(--theme-ink)]">BCA Virtual Account (Sandbox)</span>
             </div>
             <div className="flex justify-between border-b border-neutral-200 pb-2">
               <span className="text-neutral-500 uppercase">{t("Nomor Virtual Account", "Virtual Account Number")}</span>
-              <span className="font-bold text-base text-[#0E52FF] font-tabular tracking-wider">
+              <span className="font-bold text-base text-[var(--theme-accent)] font-tabular tracking-wider">
                 88019283746152
               </span>
             </div>
             <div className="flex justify-between border-b border-neutral-200 pb-2">
               <span className="text-neutral-500 uppercase">{t("Total Pembayaran", "Amount Due")}</span>
-              <span className="font-bold text-[#111215] font-tabular text-sm">
+              <span className="font-bold text-[var(--theme-ink)] font-tabular text-sm">
                 {formatIdr(paymentData.totalAmount)}
               </span>
             </div>
@@ -207,8 +207,8 @@ function CheckoutContent() {
       {!paymentData && (
         <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Shipping Form (7 cols) */}
-          <div className="lg:col-span-7 bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-6">
-            <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#111215] border-b border-neutral-100 pb-3">
+          <div className="lg:col-span-7 bg-[var(--theme-surface)] border border-neutral-200/90 p-6 sm:p-8 space-y-6">
+            <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[var(--theme-ink)] border-b border-neutral-100 pb-3">
               {t("Alamat Pengiriman", "Shipping Address")}
             </h2>
 
@@ -220,7 +220,7 @@ function CheckoutContent() {
                   required
                   value={formData.recipientName}
                   onChange={(e) => setFormData({ ...formData, recipientName: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
 
@@ -231,7 +231,7 @@ function CheckoutContent() {
                   required
                   value={formData.phoneNumber}
                   onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
 
@@ -242,7 +242,7 @@ function CheckoutContent() {
                   required
                   value={formData.province}
                   onChange={(e) => setFormData({ ...formData, province: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
 
@@ -253,7 +253,7 @@ function CheckoutContent() {
                   required
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
 
@@ -264,7 +264,7 @@ function CheckoutContent() {
                   required
                   value={formData.district}
                   onChange={(e) => setFormData({ ...formData, district: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
 
@@ -275,7 +275,7 @@ function CheckoutContent() {
                   required
                   value={formData.postalCode}
                   onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
-                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                  className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
                 />
               </div>
             </div>
@@ -287,7 +287,7 @@ function CheckoutContent() {
                 required
                 value={formData.fullAddress}
                 onChange={(e) => setFormData({ ...formData, fullAddress: e.target.value })}
-                className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
               />
             </div>
 
@@ -297,14 +297,14 @@ function CheckoutContent() {
                 type="text"
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[#111215] focus:bg-white focus:outline-none focus:border-[#111215] transition-all"
+                className="w-full p-2.5 bg-neutral-50 border border-neutral-200 text-[var(--theme-ink)] focus:bg-[var(--theme-surface)] focus:outline-none focus:border-[var(--theme-ink)] transition-all"
               />
             </div>
           </div>
 
           {/* Summary Column (5 cols) */}
-          <div className="lg:col-span-5 bg-white border border-neutral-200/90 p-6 sm:p-8 space-y-6 self-start">
-            <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#111215] border-b border-neutral-100 pb-3">
+          <div className="lg:col-span-5 bg-[var(--theme-surface)] border border-neutral-200/90 p-6 sm:p-8 space-y-6 self-start">
+            <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[var(--theme-ink)] border-b border-neutral-100 pb-3">
               {t("Ringkasan Pembayaran", "Order Summary")}
             </h2>
 
@@ -312,10 +312,10 @@ function CheckoutContent() {
               {currentGroup.items.map((item) => (
                 <div key={`${item.variantId}-${item.offerId}`} className="pt-3 first:pt-0 flex items-center justify-between text-xs">
                   <div className="truncate pr-2">
-                    <span className="font-bold uppercase text-[#111215] block truncate">{item.productName}</span>
+                    <span className="font-bold uppercase text-[var(--theme-ink)] block truncate">{item.productName}</span>
                     <span className="text-neutral-500 text-[11px] block truncate">{item.variantName} (x{item.quantity})</span>
                   </div>
-                  <div className="font-bold text-[#111215] shrink-0 font-tabular">
+                  <div className="font-bold text-[var(--theme-ink)] shrink-0 font-tabular">
                     {formatIdr(item.price * item.quantity)}
                   </div>
                 </div>
@@ -325,13 +325,13 @@ function CheckoutContent() {
             <div className="bg-neutral-50 p-4 border border-neutral-200/90 space-y-2 font-mono text-xs">
               <div className="flex justify-between text-neutral-500 uppercase">
                 <span>{t("Subtotal Produk", "Items Subtotal")}</span>
-                <span className="text-[#111215] font-bold font-tabular">{formatIdr(currentGroup.subtotal)}</span>
+                <span className="text-[var(--theme-ink)] font-bold font-tabular">{formatIdr(currentGroup.subtotal)}</span>
               </div>
               <div className="flex justify-between text-neutral-500 uppercase">
                 <span>{t("Ongkos Kirim", "Shipping")}</span>
-                <span className="text-[#111215] font-bold font-tabular">{formatIdr(currentGroup.shippingFee)}</span>
+                <span className="text-[var(--theme-ink)] font-bold font-tabular">{formatIdr(currentGroup.shippingFee)}</span>
               </div>
-              <div className="flex justify-between text-sm font-black text-[#111215] pt-2 border-t border-neutral-200 font-tabular uppercase">
+              <div className="flex justify-between text-sm font-black text-[var(--theme-ink)] pt-2 border-t border-neutral-200 font-tabular uppercase">
                 <span>{t("Total Pembayaran", "Total Due")}</span>
                 <span>{formatIdr(currentGroup.total)}</span>
               </div>
@@ -340,7 +340,7 @@ function CheckoutContent() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 bg-[#0E52FF] hover:bg-[#0040E0] active:scale-[0.98] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-md shadow-blue-500/20 transition-all disabled:opacity-50"
+              className="w-full py-3.5 bg-[var(--theme-accent)] hover:bg-[var(--theme-accent-hover)] active:scale-[0.98] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-md transition-all disabled:opacity-50"
             >
               {isSubmitting
                 ? t("Membuat Tagihan...", "Creating Invoice...")

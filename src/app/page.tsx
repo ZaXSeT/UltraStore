@@ -60,11 +60,11 @@ export default async function HomePage() {
   return (
     <div className="w-full">
       {/* 1. EDITORIAL BRAND TICKER BAR */}
-      <section className="w-full border-b border-neutral-200/80 bg-white/70 backdrop-blur-md py-2 text-xs tracking-tight m-0 overflow-hidden">
+      <section className="w-full border-b border-neutral-200/80 bg-[var(--theme-surface-70)] backdrop-blur-md py-2 text-xs tracking-tight m-0 overflow-hidden">
         <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-4 sm:gap-6 overflow-hidden">
           <div className="flex items-center gap-2 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-mono uppercase text-[10px] sm:text-[11px] font-bold text-neutral-900 tracking-wider whitespace-nowrap">
+            <span className="font-mono uppercase text-[10px] sm:text-[11px] font-bold text-[var(--theme-ink)] tracking-wider whitespace-nowrap">
               {sections.tickerLabel}
             </span>
           </div>
@@ -74,7 +74,7 @@ export default async function HomePage() {
               <Link
                 key={b.slug}
                 href={`/shop?brand=${b.slug}`}
-                className="hover:text-neutral-950 transition-colors shrink-0"
+                className="hover:text-[var(--theme-ink)] transition-colors shrink-0"
               >
                 {brandLabel(b.slug, b.name, locale)}
               </Link>
@@ -84,14 +84,14 @@ export default async function HomePage() {
       </section>
 
       {/* 2. AWWWARDS-CALIBER EDITORIAL HERO (FLUSH ZERO GAP TO TICKER) */}
-      <section className="w-full border-b border-neutral-200/90 bg-white/60 backdrop-blur-xs m-0 p-0 overflow-hidden">
+      <section className="w-full border-b border-neutral-200/90 bg-[var(--theme-surface-60)] backdrop-blur-xs m-0 p-0 overflow-hidden">
         <div className="w-full m-0 p-0">
           <div className="relative border-none bg-transparent overflow-hidden m-0 p-0">
           <div className="relative grid grid-cols-1 lg:grid-cols-12 min-h-0 lg:min-h-[720px] items-stretch">
             {/* Left Editorial Copy (6 cols) */}
             <div className="lg:col-span-6 px-4 py-6 sm:p-10 lg:p-16 flex flex-col justify-between z-10 space-y-6 sm:space-y-8 w-full max-w-full overflow-hidden box-border">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-900 bg-neutral-100 px-2.5 sm:px-3 py-1 border border-neutral-200">
+                <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--theme-ink)] bg-neutral-100 px-2.5 sm:px-3 py-1 border border-neutral-200">
                   {hero.badgeText}
                 </span>
                 <span className="font-mono text-[10px] sm:text-xs text-neutral-400">
@@ -100,9 +100,9 @@ export default async function HomePage() {
               </div>
 
               <div className="space-y-3 sm:space-y-5 w-full max-w-full">
-                <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black tracking-[-0.04em] sm:tracking-[-0.05em] text-neutral-950 leading-[0.95] sm:leading-[0.92] uppercase break-words">
+                <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black tracking-[-0.04em] sm:tracking-[-0.05em] text-[var(--theme-ink)] leading-[0.95] sm:leading-[0.92] uppercase break-words">
                   {hero.titleLine1}<br />
-                  <span className="text-[#0E52FF] font-black">{hero.titleAccent}</span> {hero.titleLine2}
+                  <span className="text-[var(--theme-accent)] font-black">{hero.titleAccent}</span> {hero.titleLine2}
                 </h1>
                 <p className="text-xs sm:text-lg text-neutral-600 w-full max-w-[330px] sm:max-w-xl font-normal leading-relaxed break-normal text-left">
                   {hero.description}
@@ -113,11 +113,11 @@ export default async function HomePage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 pt-4 sm:pt-6 border-t border-neutral-100 max-w-lg">
                 <div>
                   <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Dimensi", "Dimensions")}</span>
-                  <span className="font-bold text-xs sm:text-base text-neutral-900">{hero.dimensions}</span>
+                  <span className="font-bold text-xs sm:text-base text-[var(--theme-ink)]">{hero.dimensions}</span>
                 </div>
                 <div>
                   <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketebalan", "Thickness")}</span>
-                  <span className="font-bold text-xs sm:text-base text-neutral-900">{hero.thickness}</span>
+                  <span className="font-bold text-xs sm:text-base text-[var(--theme-ink)]">{hero.thickness}</span>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
                   <span className="block font-mono text-[10px] sm:text-[11px] text-neutral-400 uppercase tracking-wider mb-0.5">{t("Ketersediaan", "Availability")}</span>
@@ -132,7 +132,7 @@ export default async function HomePage() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-2 sm:pt-4">
                 <Link
                   href={hero.ctaLink}
-                  className="w-full sm:w-auto px-6 sm:px-9 py-3.5 sm:py-4 bg-neutral-950 hover:bg-[#0E52FF] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 group shadow-md shadow-blue-500/10"
+                  className="w-full sm:w-auto px-6 sm:px-9 py-3.5 sm:py-4 bg-neutral-950 hover:bg-[var(--theme-accent)] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 group shadow-md"
                 >
                   <span>{hero.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -140,7 +140,7 @@ export default async function HomePage() {
 
                 <Link
                   href={hero.secondaryCtaLink}
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-neutral-50 text-neutral-900 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 text-center shadow-xs"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[var(--theme-surface)] hover:bg-neutral-50 text-[var(--theme-ink)] text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 border-2 border-neutral-300 hover:border-neutral-950 text-center shadow-xs"
                 >
                   {hero.secondaryCtaText}
                 </Link>
@@ -155,7 +155,7 @@ export default async function HomePage() {
               </div>
 
               <div className="relative w-full flex-1 flex items-center justify-center py-2 sm:py-4">
-                <div className="relative aspect-square w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-white shadow-lg">
+                <div className="relative aspect-square w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[620px] overflow-hidden border-2 border-neutral-300/80 bg-[var(--theme-surface)] shadow-lg">
                   <Image
                     src={hero.imageUrl}
                     alt={hero.imageAlt}
@@ -184,10 +184,10 @@ export default async function HomePage() {
       <section className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-16 space-y-4 sm:space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 border-b border-neutral-200 pb-3 sm:pb-4">
           <div>
-            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#0E52FF] block mb-0.5 sm:mb-1">
+            <span className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--theme-accent)] block mb-0.5 sm:mb-1">
               {sections.categoryEyebrow}
             </span>
-            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-[var(--theme-ink)] uppercase">
               {sections.categoryTitle}
             </h2>
           </div>
@@ -202,11 +202,11 @@ export default async function HomePage() {
             <Link
               key={cat.title}
               href={cat.href}
-              className="group relative bg-white border border-neutral-200/90 p-3 sm:p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between min-h-[200px] sm:min-h-[360px] shadow-xs hover:shadow-md"
+              className="group relative bg-[var(--theme-surface)] border border-neutral-200/90 p-3 sm:p-5 hover:border-neutral-950 transition-all duration-300 flex flex-col justify-between min-h-[200px] sm:min-h-[360px] shadow-xs hover:shadow-md"
             >
               {/* Card Header: Index & Product Count */}
               <div className="flex items-baseline justify-between border-b border-neutral-100 pb-1.5 sm:pb-3">
-                <span className="font-mono text-[10px] sm:text-xs font-bold text-neutral-400 group-hover:text-neutral-950 transition-colors">
+                <span className="font-mono text-[10px] sm:text-xs font-bold text-neutral-400 group-hover:text-[var(--theme-ink)] transition-colors">
                   {cat.index}
                 </span>
                 <span className="font-mono text-[9px] sm:text-[11px] font-bold text-neutral-600 bg-neutral-100 px-1.5 sm:px-2 py-0.5">
@@ -230,14 +230,14 @@ export default async function HomePage() {
               {/* Card Footer: Typography & Direction Arrow */}
               <div className="border-t border-neutral-100 pt-2 sm:pt-3 flex items-end justify-between gap-1">
                 <div className="min-w-0 pr-1">
-                  <h3 className="font-extrabold text-xs sm:text-sm text-neutral-950 group-hover:text-[#0E52FF] transition-colors leading-tight truncate">
+                  <h3 className="font-extrabold text-xs sm:text-sm text-[var(--theme-ink)] group-hover:text-[var(--theme-accent)] transition-colors leading-tight truncate">
                     {cat.title}
                   </h3>
                   <p className="font-mono text-[9px] sm:text-[10px] text-neutral-400 tracking-tight mt-0.5 truncate">
                     {cat.spec}
                   </p>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-400 group-hover:text-[var(--theme-ink)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </Link>
           ))}
@@ -252,13 +252,13 @@ export default async function HomePage() {
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
               <span>{sections.readyEyebrow}</span>
             </div>
-            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-[var(--theme-ink)] uppercase">
               {sections.readyTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=READY"
-            className="font-mono text-[10px] sm:text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
+            className="font-mono text-[10px] sm:text-xs font-bold text-[var(--theme-ink)] hover:text-[var(--theme-accent)] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
           >
             <span>{sections.readyCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -277,16 +277,16 @@ export default async function HomePage() {
         <div className="flex items-end justify-between border-b border-neutral-200 pb-3 sm:pb-4">
           <div>
             <div className="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-500 mb-0.5 sm:mb-1 flex items-center gap-2">
-              <Disc3 className="w-3.5 h-3.5 text-[#0E52FF]" />
+              <Disc3 className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
               <span>{sections.preorderEyebrow}</span>
             </div>
-            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-neutral-950 uppercase">
+            <h2 className="text-xl sm:text-3xl font-black tracking-tight text-[var(--theme-ink)] uppercase">
               {sections.preorderTitle}
             </h2>
           </div>
           <Link
             href="/shop?offer=PREORDER"
-            className="font-mono text-[10px] sm:text-xs font-bold text-neutral-950 hover:text-[#0E52FF] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
+            className="font-mono text-[10px] sm:text-xs font-bold text-[var(--theme-ink)] hover:text-[var(--theme-accent)] flex items-center gap-1 sm:gap-1.5 transition-colors uppercase tracking-wider shrink-0"
           >
             <span>{sections.preorderCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />

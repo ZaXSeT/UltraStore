@@ -64,6 +64,7 @@ export interface Product {
   specs: Record<string, string>; // e.g. { "Connectivity": "Tri-mode (2.4G/BT/Type-C)", "Polling Rate": "1000Hz" }
   boxContents: string[];
   warrantyInfo: string;
+  warrantyInfoEn?: string;
   variants: ProductVariant[];
   offers: Offer[];
   published: boolean;

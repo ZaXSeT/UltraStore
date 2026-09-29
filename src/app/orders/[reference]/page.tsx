@@ -34,7 +34,7 @@ export default async function OrderDetailPage({
         <p className="text-xs text-slate-500">
           {t("Tautan ini tidak cocok dengan pesanan yang diminta.", "This access link does not match the requested order.")}
         </p>
-        <Link href="/track-order" className="text-xs text-blue-600 underline">
+        <Link href="/track-order" className="text-xs text-[var(--theme-accent)] underline">
           {t("Kembali ke pelacakan", "Back to Order Tracking")}
         </Link>
       </div>
@@ -51,14 +51,14 @@ export default async function OrderDetailPage({
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
+        className="inline-flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-[var(--theme-ink)] transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>{t("Kembali ke Beranda", "Back to Home")}</span>
       </Link>
 
       {/* Confirmation Banner */}
-      <div className="bg-white border border-emerald-200/80 p-6 sm:p-8 rounded-2xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="bg-[var(--theme-surface)] border border-emerald-200/80 p-6 sm:p-8 rounded-2xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0">
             <CheckCircle2 className="w-6 h-6" />
@@ -67,7 +67,7 @@ export default async function OrderDetailPage({
             <div className="text-xs font-bold text-emerald-700 uppercase tracking-wide">
               {isConfirmed ? t("Pembayaran Diterima · Pesanan Dikonfirmasi", "Payment Received · Order Confirmed") : t("Menunggu Pembayaran", "Awaiting Payment")}
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 mt-0.5">
+            <h1 className="text-2xl font-bold text-[var(--theme-ink)] mt-0.5">
               {t("Referensi", "Reference")}: {order.reference}
             </h1>
           </div>
@@ -81,7 +81,7 @@ export default async function OrderDetailPage({
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Status Card 1 */}
-        <div className="bg-white border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
+        <div className="bg-[var(--theme-surface)] border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t("Status Pembayaran", "Payment Status")}</span>
           <div className="text-sm font-bold text-emerald-600 uppercase">
             {orderStatus(order.status, locale)}
@@ -90,9 +90,9 @@ export default async function OrderDetailPage({
         </div>
 
         {/* Status Card 2 */}
-        <div className="bg-white border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
+        <div className="bg-[var(--theme-surface)] border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t("Status Pengiriman", "Fulfillment Status")}</span>
-          <div className="text-sm font-bold text-slate-900 uppercase">
+          <div className="text-sm font-bold text-[var(--theme-ink)] uppercase">
             {orderStatus(order.fulfillment_status, locale)}
           </div>
           <p className="text-xs text-slate-500">
@@ -103,9 +103,9 @@ export default async function OrderDetailPage({
         </div>
 
         {/* Status Card 3 */}
-        <div className="bg-white border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
+        <div className="bg-[var(--theme-surface)] border border-slate-200/80 p-5 rounded-2xl space-y-1 shadow-sm">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">{t("Jenis Pesanan", "Order Type")}</span>
-          <div className="text-sm font-bold text-blue-600 uppercase">
+          <div className="text-sm font-bold text-[var(--theme-accent)] uppercase">
             {order.offer_type === "READY" ? t("Stok Tersedia", "In Stock") : "Pre-Order"}
           </div>
           <p className="text-xs text-slate-500">
@@ -115,8 +115,8 @@ export default async function OrderDetailPage({
       </div>
 
       {/* Items & Invoice Snapshot */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
-        <h2 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <h2 className="text-lg font-bold text-[var(--theme-ink)] border-b border-slate-100 pb-3">
           {t("Rincian Pesanan", "Order Items")}
         </h2>
 
@@ -124,11 +124,11 @@ export default async function OrderDetailPage({
           {items.map((it: any, idx: number) => (
             <div key={idx} className="py-4 first:pt-0 last:pb-0 flex items-center justify-between text-xs">
               <div>
-                <span className="font-semibold text-slate-900 text-sm block">{it.productName}</span>
+                <span className="font-semibold text-[var(--theme-ink)] text-sm block">{it.productName}</span>
                 <span className="text-slate-500">{it.variantName} (SKU: {it.sku})</span>
                 <div className="text-slate-500 mt-0.5">{t("Jumlah", "Qty")}: {it.quantity} × {formatIdr(it.unitPrice)}</div>
               </div>
-              <div className="font-bold text-slate-900 text-sm font-tabular">
+              <div className="font-bold text-[var(--theme-ink)] text-sm font-tabular">
                 {formatIdr(it.totalPrice)}
               </div>
             </div>
@@ -138,13 +138,13 @@ export default async function OrderDetailPage({
         <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
           <div className="flex justify-between text-slate-500">
             <span>Subtotal:</span>
-            <span className="text-slate-900 font-bold font-tabular">{formatIdr(order.subtotal)}</span>
+            <span className="text-[var(--theme-ink)] font-bold font-tabular">{formatIdr(order.subtotal)}</span>
           </div>
           <div className="flex justify-between text-slate-500">
             <span>{t("Ongkos Kirim", "Shipping")}:</span>
-            <span className="text-slate-900 font-bold font-tabular">{formatIdr(order.shipping_fee)}</span>
+            <span className="text-[var(--theme-ink)] font-bold font-tabular">{formatIdr(order.shipping_fee)}</span>
           </div>
-          <div className="flex justify-between text-sm font-bold text-slate-900 pt-2 border-t border-slate-200 font-tabular">
+          <div className="flex justify-between text-sm font-bold text-[var(--theme-ink)] pt-2 border-t border-slate-200 font-tabular">
             <span>{t("Total Pembayaran", "Order Total")}:</span>
             <span>{formatIdr(order.total_amount)}</span>
           </div>
@@ -152,12 +152,12 @@ export default async function OrderDetailPage({
       </div>
 
       {/* Shipping Address Snapshot */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
-        <h2 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+      <div className="bg-[var(--theme-surface)] border border-slate-200/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+        <h2 className="text-lg font-bold text-[var(--theme-ink)] border-b border-slate-100 pb-3">
           {t("Alamat Pengiriman", "Shipping Address")}
         </h2>
         <div className="text-xs space-y-1 text-slate-700">
-          <div className="font-bold text-slate-900">{address.recipientName} ({address.phoneNumber})</div>
+          <div className="font-bold text-[var(--theme-ink)]">{address.recipientName} ({address.phoneNumber})</div>
           <div>{address.fullAddress}</div>
           <div>{address.district}, {address.city}, {address.province} {address.postalCode}</div>
           {address.notes && (

@@ -3,12 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --canvas: #F8F9FA;
-  --surface: #FFFFFF;
-  --ink: #111215;
+  --theme-accent: #0E52FF;
+  --theme-canvas: #F8F9FA;
+  --theme-surface: #FFFFFF;
+  --theme-ink: #111215;
+  --theme-accent-hover: color-mix(in srgb, var(--theme-accent) 82%, black);
+  --theme-accent-soft: color-mix(in srgb, var(--theme-accent) 8%, white);
+  --theme-accent-border: color-mix(in srgb, var(--theme-accent) 28%, white);
+  --theme-accent-ring: color-mix(in srgb, var(--theme-accent) 20%, transparent);
+  --theme-ink-border: color-mix(in srgb, var(--theme-ink) 20%, transparent);
+  --theme-surface-95: color-mix(in srgb, var(--theme-surface) 95%, transparent);
+  --theme-surface-70: color-mix(in srgb, var(--theme-surface) 70%, transparent);
+  --theme-surface-80: color-mix(in srgb, var(--theme-surface) 80%, transparent);
+  --theme-surface-60: color-mix(in srgb, var(--theme-surface) 60%, transparent);
+  --theme-surface-hover: color-mix(in srgb, var(--theme-surface) 96%, var(--theme-accent));
+  --canvas: var(--theme-canvas);
+  --surface: var(--theme-surface);
+  --ink: var(--theme-ink);
   --muted: #6B7280;
-  --brand-cobalt: #0E52FF;
-  --brand-slate: #111215;
+  --brand-cobalt: var(--theme-accent);
+  --brand-slate: var(--theme-ink);
   --line: #E5E7EB;
   --control-border: #D1D5DB;
   --error: #DC2626;

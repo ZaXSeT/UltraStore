@@ -27,7 +27,7 @@ export function StorefrontChrome({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#F8F9FA] text-slate-900 overflow-x-clip">
+    <div className="relative min-h-screen flex flex-col bg-[var(--theme-canvas)] text-[var(--theme-ink)] overflow-x-clip">
       {/* Universal Fixed Background Flickering Grid for all sections */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <FlickeringGrid

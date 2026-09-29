@@ -75,7 +75,7 @@ export function ShopFilters({
   );
 
   return (
-    <div className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
+    <div className="bg-[var(--theme-surface)] border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
       {/* Top Filter Bar: Category Tabs (Left-Aligned) + Brand Dropdown + Stock Status */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         {/* Left Column: Category Pills (Flush Left) */}
@@ -94,7 +94,7 @@ export function ShopFilters({
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
                   isActive
                     ? "bg-slate-900 text-white font-bold shadow-sm"
-                    : "bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    : "bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-[var(--theme-ink)]"
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isActive ? "text-teal-400" : "text-slate-400"}`} />
@@ -119,7 +119,7 @@ export function ShopFilters({
                 id="brand-select"
                 value={currentBrand}
                 onChange={(e) => updateFilters({ brand: e.target.value })}
-                className="appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-8 py-1.5 text-xs font-mono font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-600 cursor-pointer shadow-sm"
+                className="appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-8 py-1.5 text-xs font-mono font-medium text-[var(--theme-ink)] focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-600 cursor-pointer shadow-sm"
               >
                 <option value="">Semua Brand ({allBrands.length})</option>
                 {allBrands.map((b) => (
@@ -139,8 +139,8 @@ export function ShopFilters({
               onClick={() => updateFilters({ offer: "" })}
               className={`px-3 py-1 rounded-lg transition-all ${
                 !currentOffer
-                  ? "bg-white text-slate-900 font-bold shadow-sm"
-                  : "text-slate-600 hover:text-slate-900"
+                  ? "bg-[var(--theme-surface)] text-[var(--theme-ink)] font-bold shadow-sm"
+                  : "text-slate-600 hover:text-[var(--theme-ink)]"
               }`}
             >
               Semua
@@ -156,7 +156,7 @@ export function ShopFilters({
             >
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
-                  currentOffer === "READY" ? "bg-white" : "bg-teal-500"
+                  currentOffer === "READY" ? "bg-[var(--theme-surface)]" : "bg-teal-500"
                 }`}
               ></span>
               <span>Ready</span>
@@ -172,7 +172,7 @@ export function ShopFilters({
             >
               <span
                 className={`w-1.5 h-1.5 rounded-full ${
-                  currentOffer === "PREORDER" ? "bg-white animate-pulse" : "bg-orange-500"
+                  currentOffer === "PREORDER" ? "bg-[var(--theme-surface)] animate-pulse" : "bg-orange-500"
                 }`}
               ></span>
               <span>Pre-Order</span>
